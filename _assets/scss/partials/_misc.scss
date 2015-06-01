@@ -116,8 +116,12 @@ body#{$home-page} {
 .supermassive-cta {
     margin: em-calc(20px) 0;
     position: relative;
-    text-align: center;
+    text-align: left;
     clear: both;
+
+    @media #{$medium-up} {
+        text-align: center;
+    }
 
     .btn {
         z-index: 4;
@@ -129,6 +133,11 @@ body#{$home-page} {
         content: '';
         position: absolute;
         left: 0;
+        display: none;
+
+        @media #{$medium-up} {
+            display: block;
+        }
     }
 
     &:before {
@@ -146,6 +155,15 @@ body#{$home-page} {
         top: 0;
         width: 350px;
     }
+}
+
+.supermassive-cta__helper {
+    @extend %font-family-beta;
+    display: block;
+    font-size: rem-calc(13px);
+    font-style: italic;
+    position: relative;
+    z-index: 4;
 }
 
 
