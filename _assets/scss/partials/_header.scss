@@ -58,4 +58,7 @@ body.nav--light {
     .header__nav__item a {
         color: #fff;
     }
+    .header__nav__item--current {
+        border-color: #fff;
+    }
 }

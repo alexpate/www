@@ -1,6 +1,9 @@
 //
-// Font Variables
+// Global Variables
+// ==================
 //
+
+// Typography
 $font-family-alpha : 'Sofia Pro', Helvetica Neue, Helvetica, sans-serif;
 $font-family-beta : 'Lora', serif;
 
@@ -21,10 +24,7 @@ $font-weight-alpha: (
     bold: 700
 );
 
-//
 // Color Variables
-//
-
 $color-background: #f6f6f6;
 $color-alpha : #161920;
 $color-beta : #ffdf00;
@@ -35,7 +35,5 @@ $color-black : #161920;
 $color-white : #fff;
 
 
-//
 // Misc Variables
-//
 $home-page: '.home';

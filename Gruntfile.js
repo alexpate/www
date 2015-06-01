@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '_assets/sass/',
+                    cwd: '_assets/scss/',
                     src: ['**/*.scss'],
                     dest: '_assets/css/',
                     ext: '.css'
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
                 }
             },
             css: {
-                files: ['_assets/sass/**/*'],
+                files: ['_assets/scss/**/*'],
                 tasks: ['default']
             },
             // svg: {
@@ -106,7 +106,8 @@ module.exports = function(grunt) {
                     'index.html',
                     'journal.html',
                     'information.html',
-                    '_assets/css/base.css'
+                    '_assets/css/base.css',
+                    '404/*'
                 ],
                 tasks: ['jekyll:dev']
             }

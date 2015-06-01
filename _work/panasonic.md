@@ -3,7 +3,7 @@ layout: work
 title: Redesigning Panasonic Global
 sub: "Design &amp; Development - 2015"
 slug: panasonic
-backgroundUrl: infobg.jpg
+backgroundUrl: work/panasonic/bg.jpg
 bodyClass: nav--light
 ---
 

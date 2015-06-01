@@ -9,12 +9,7 @@
         text-shadow: 0 1px #fff;
     }
 
-    // Comment
-    .c {
-        color: #998;
-        font-style: italic;
-    }
-
+    .c     { color: #998; font-style: italic; } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error
     .k     { font-weight: bold } // Keyword
     .o     { font-weight: bold } // Operator
