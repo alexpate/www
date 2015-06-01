@@ -1,12 +1,12 @@
 # Hi there!
 This is the as-of-yet unpublished source code of my personal site.
 
-## Core technologies
+### Core technologies
 - Jekyll
 - Grunt
 - Bower
 
-## To-do list
+### To-do list
 - CDN integration
 - Social meta tags (Twitter Cards, Open Graph)
 - General speed optimisation
