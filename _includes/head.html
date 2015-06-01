@@ -1,0 +1,19 @@
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="author" href="{{ site.social.google }}">
+    <!-- Begin Custom -->
+    {% stylesheet css/base.css %}
+    <!-- End Custom -->
+
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic" rel="stylesheet" type="text/css">
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+</head>

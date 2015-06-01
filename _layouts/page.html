@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<main role="main">
+    <section class="site__content site__content--page">
+        <header class="page__header page__header--feature page__header--page-information" {% if page.backgroundUrl %}style="background: url({{ page.backgroundUrl | prepend: 'img/' | asset_path }}) no-repeat center center / cover"{% endif %}>
+            <h1 class="page__title">{{ page.title }}</h1>
+            <span class="page__sub">Est. 1994</span>
+        </header>
+
+
+        <article class="page__article page__article--full gutenberg">
+            {{ content }}
+        </article>
+    </section>
+</main>

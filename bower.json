@@ -1,0 +1,9 @@
+{
+  "name": "AlexPatePortfolio",
+  "dependencies": {
+    "foundation": "~5.5.2"
+  },
+  "resolutions": {
+    "foundation": "~5.5.2"
+  }
+}

@@ -1,0 +1,80 @@
+# Site settings
+title: Alex Pate - Digital Designer
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "http://pacific/Personal/_portfolio/jekyll/blog/_site/" # the subpath of your site, e.g. /blog/
+url: "http://pacific/Personal/_portfolio/jekyll/blog/_site/" # the base hostname & protocol for your site
+# ==================
+# Author
+# ==================
+name: Alex Pate
+author:
+    name: Alex Pate
+    firstname: Alexander
+    lastname: Pate
+    nickname: Alex
+    description: "I'm a digital developer, mostly working with the front-end (but I know my way around Laravel). I recently finished studying Web Design at Southampton Solent University, and am on the look out for a full-time gig!"
+
+email: alex@alexpate.uk
+email_secure: "&#097;&#108;&#101;&#120;&#064;&#097;&#108;&#101;&#120;&#112;&#097;&#116;&#101;&#046;&#117;&#107;"
+
+social:
+    twitter: "https://twitter.com/alexjpate"
+    twitter_handle: "alexjpate"
+    github: "https://github.com/alexpate"
+    dribbble: "https://dribbble.com/alexpate"
+    instagram: "https://instagram.com/alexjpate"
+    google: "https://plus.google.com/+AlexanderPate"
+
+availability:
+    class: full
+    copy: "I'm currently on the lookout for a full-time front end development job. Interested in hiring me?"
+
+
+
+# ============================
+# Pagination
+# ============================
+paginate     : 5
+permalink    : /journal/:title
+paginate_path: /blog/page/:num
+
+collections:
+    work:
+        output: true
+        permalink: /work/:path/
+
+# Build settings
+markdown: kramdown
+
+# ==================
+# Building
+# ==================
+exclude: [
+    "static/sass",
+    "bower_components",
+    "node_modules",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    "Gemfile",
+    "Gemfile.lock"
+]
+
+gems: [jekyll-assets]
+
+
+assets:
+    baseurl: http://pacific/Personal/_portfolio/jekyll/blog/_site/assets/
+    css_compressor: sass
+    cache: true
+    sources:
+        - _assets
+    cachebust: hard
+
+
+sass:
+    style: :compressed
+    sass_dir: _assets/scss/

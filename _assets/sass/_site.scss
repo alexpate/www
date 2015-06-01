@@ -1,0 +1,40 @@
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    @extend %font-family-alpha;
+    background: $color-background;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+}
+
+body#{$home-page} {
+    background: #161920;
+
+    .content__main {
+        text-align: left;
+
+        @media #{$medium-up} {
+            text-align: center;
+        }
+    }
+
+    ::selection {
+        background: $color-white;
+        color: $color-alpha;
+    }
+}
+
+::selection {
+    background: $color-alpha;
+    color: $color-white;
+}
+
+.global-site {
+    position: relative;
+    //margin-top: 100px;
+}

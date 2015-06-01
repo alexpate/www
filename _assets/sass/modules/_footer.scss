@@ -1,0 +1,36 @@
+.footer {
+    border-top: 1px solid #eee;
+    padding: 30px 0 50px;
+    clear: both;
+}
+
+.footer__copy {
+    color: #999;
+    display: block;
+    font-size: .8em;
+    font-weight: map-get($font-weight-alpha, medium);
+    text-align: left;
+
+    @media #{$medium-up} {
+        text-align: center;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+            color: #333;
+        }
+    }
+}
+
+body#{$home-page} {
+    .footer {
+        border-top: 1px solid #444;
+    }
+
+    .footer__copy {
+        color: #fff;
+    }
+}

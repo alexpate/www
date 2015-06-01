@@ -1,0 +1,33 @@
+<aside class="site__content--sidebar" role="complementary">
+    <div class="widget">
+        <span class="widget__title">Recent Posts</span>
+        <ul class="widget__list">
+            <li class="widget__list__item">
+                <a href="">BEM</a>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <span class="widget__title">Say Hello!</span>
+        <ul class="widget__list">
+            <li class="widget__list__item">
+                <a href="mailto:{{ site.email_secure }}">{{ site.email_secure }}</a>
+            </li>
+            <li class="widget__list__item">
+                <a href="https://twitter.com/alexjpate">@alexjpate</a>
+            </li>
+            <li class="widget__list__item">
+                <a href="https://instagram.com/alexjpate">Instagram</a>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <span class="widget__title">
+            <span class="availability availability--{{ site.availability.class }}">
+                <span class="availability__rings"></span>
+            </span>
+            Availability
+        </span>
+        <p class="widget__copy">{{ site.availability.copy }}</p>
+    </div>
+</aside>

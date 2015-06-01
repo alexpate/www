@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<main class="inner" role="main">
+    <section class="site__content site__content--post">
+        <header class="post__header">
+            <h1 class="post__title">{{ page.title }}</h1>
+            <span class="post__sub">
+                {% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %} on
+                {% assign d = page.date | date: "%-d"  %}
+                {{ page.date | date: "%B" }}
+                {% case d %}
+                    {% when '1' or '21' or '31' %}{{ d }}st
+                    {% when '2' or '22' %}{{ d }}nd
+                    {% when '3' or '23' %}{{ d }}rd
+                    {% else %}{{ d }}th
+                {% endcase %},
+                {{ page.date | date: "%Y" }}{% if page.meta %} • {{ page.meta }}{% endif %}
+            </span>
+        </header>
+
+        <article class="post__article gutenberg" itemprop="articleBody">
+            {{ content }}
+        </article>
+        {% include author.html %}
+    </section>
+
+    {% include sidebar.html %}
+</main>
