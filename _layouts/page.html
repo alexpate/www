@@ -5,42 +5,15 @@ layout: default
     <section class="site__content site__content--page">
         <header id="thisis" class="page__header page__header--page-information">
             <h1 class="page__title page__title--huge">{{ page.title }}</h1>
-<<<<<<< HEAD
+
             <span class="page__sub">{{ page.sub }}</span>
             <!-- <hr class="flare" /> -->
         </header>
 
         <article class="page__article {{ page.pageSize }} {% if page.gutenberg == false %}{% else %}gutenberg{% endif %}">
-=======
-            <span class="page__sub">Alex Pate is a digital designer based in London, currently a developer at Rareloop.</span>
-            <hr class="flare" />
-        </header>
 
-        <article class="page__article page__article--full gutenberg">
->>>>>>> origin/master
             {{ content }}
         </article>
     </section>
 </main>
-<<<<<<< HEAD
-=======
 
-
-
-<script>
-
-function parallaxScroll() {
-    var scrollLeft = (window.pageXOffset !== undefined) ? window.pageXOffset : (document.documentElement || document.body.parentNode || document.body).scrollLeft;
-    var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    var bgdiv = document.getElementById('thisis');
-    // bgdiv.style.transform = 'translateY(' + (scrollTop / 5) + 'px)';
-    // bgdiv.style.opacity = '1' -(scrollTop / 200);
-    bgdiv.style.backgroundPosition = 'center ' + (scrollTop / 4) + 'px';
-}
-
-window.onscroll = (function(e) {
-    parallaxScroll();
-});
-
-</script>
->>>>>>> origin/master
