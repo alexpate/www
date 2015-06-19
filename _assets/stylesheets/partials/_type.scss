@@ -82,6 +82,7 @@ h4 {
     font-variant-ligatures: contextual;
 }
 
+<<<<<<< HEAD:_assets/stylesheets/partials/_type.scss
 .page__title {
     font-size: rem-calc(48px);
     line-height: 1em;
@@ -96,14 +97,29 @@ h4 {
     @media #{$medium-up} {
         font-size: rem-calc(81px);
     }
+=======
+.page__title--huge {
+    font-size: rem-calc(81px);
+    line-height: 1em;
+    font-weight: map-get($font-weight-alpha, bold);
+>>>>>>> origin/master:_assets/scss/partials/_type.scss
 }
 
 .page__sub,
 .post__sub {
     color: #8d8d8d;
     display: block;
+<<<<<<< HEAD:_assets/stylesheets/partials/_type.scss
     font-weight: map-get($font-weight-alpha, regular);
     font-family: 'Playfair Display';
+=======
+    font-size: rem-calc(24px);
+    line-height: 1.2em;
+    font-weight: map-get($font-weight-alpha, regular);
+    font-family: 'Playfair Display';
+    max-width: 500px;
+    margin: 0 auto;
+>>>>>>> origin/master:_assets/scss/partials/_type.scss
 }
 
 .post__sub {
@@ -116,6 +132,7 @@ h4 {
     line-height: 1.2em;
     margin: 15px auto 0;
 
+<<<<<<< HEAD:_assets/stylesheets/partials/_type.scss
     @media #{$medium-up} {
         max-width: 500px;
         font-size: rem-calc(24px);
@@ -128,6 +145,8 @@ h4 {
 
 
 
+=======
+>>>>>>> origin/master:_assets/scss/partials/_type.scss
 .gutenberg {
     @import 'type-gutenberg';
 }

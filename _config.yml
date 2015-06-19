@@ -80,6 +80,7 @@ assets:
         - _assets
     cachebust: hard
     gzip: [text/css, application/javascript]
+<<<<<<< HEAD
 
 markdown: kramdown
 
@@ -87,3 +88,5 @@ kramdown:
     input: GFM
     syntax_highlighter: rouge
     css_class: highlight
+=======
+>>>>>>> origin/master

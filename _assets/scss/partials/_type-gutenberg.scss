@@ -1,0 +1,41 @@
+p {
+    @extend %font-family-beta;
+    color: $color-type;
+    font-size: rem-calc(17px);
+    font-weight: map-get($font-weight-alpha, light);
+    line-height: rem-calc(32px);
+    margin: 0 0 em-calc(15px);
+
+    &:first-of-type {
+        color: darken($color-type, 5%);
+        font-size: rem-calc(20px);
+    }
+
+}
+
+&.no-first-of {
+    p:first-of-type {
+        color: $color-type;
+        font-size: rem-calc(17px);
+    }
+}
+
+h2 {
+    @extend %font-family-alpha;
+    font-size: rem-calc(24px);
+    font-weight: map-get($font-weight-alpha, bold);
+    margin: .4em 0;
+
+    &.full-span {
+        @extend %font-family-beta;
+        font-size: rem-calc(20px);
+        line-height: rem-calc(32px);
+        margin: rem-calc(20px) 0;
+
+        @media #{$medium-up} {
+            font-size: rem-calc(26px);
+            line-height: rem-calc(36px);
+            margin: rem-calc(30px) 0;
+        }
+    }
+}

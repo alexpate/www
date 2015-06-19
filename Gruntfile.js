@@ -106,7 +106,10 @@ module.exports = function(grunt) {
                     'index.html',
                     'journal.html',
                     'profile.html',
+<<<<<<< HEAD
                     'blog.html',
+=======
+>>>>>>> origin/master
                     '_assets/css/base.css',
                     '404/*'
                 ],
