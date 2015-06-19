@@ -105,7 +105,7 @@ module.exports = function(grunt) {
                     '_work/*',
                     'index.html',
                     'journal.html',
-                    'information.html',
+                    'profile.html',
                     '_assets/css/base.css',
                     '404/*'
                 ],
