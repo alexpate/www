@@ -1,8 +1,6 @@
 _site
 .sass-cache
 .jekyll-assets-cache
-Gemfile.lock
-Gemfile
 bower_components
 node_modules
 _assets/css
