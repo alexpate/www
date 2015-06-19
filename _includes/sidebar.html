@@ -2,9 +2,11 @@
     <div class="widget">
         <span class="widget__title">Recent Posts</span>
         <ul class="widget__list">
+        {% for post in site.posts limit:4 %}
             <li class="widget__list__item">
-                <a href="">BEM</a>
+                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </li>
+        {% endfor %}
         </ul>
     </div>
     <div class="widget">

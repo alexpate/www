@@ -6,11 +6,16 @@ layout: default
     <section class="site__content site__content--page">
         <header class="page__header page__header--feature page__header--work-panasonic" {% if page.backgroundUrl %}style="background: url({{ page.backgroundUrl | prepend: 'img/' | asset_path }}) no-repeat center center / cover"{% endif %}>
             <h1 class="page__title">{{ page.title }}</h1>
-            <span class="page__sub">{{ page.sub }}</span>
+            <span class="page__sub page__sub--small">{{ page.sub }}</span>
         </header>
 
-        <article class="page__article page__article--full gutenberg">
+        <article class="gutenberg no-first-of">
             {{ content }}
+
+            <div class="callout">
+                <h3 class="callout__title">Interested in working together?</h3>
+                    <a href="mailto:{{ site.email_secure }}" class="btn btn--massive">{{ site.email_secure }}</a>
+            </div>
         </article>
     </section>
 </main>

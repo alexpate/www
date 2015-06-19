@@ -3,13 +3,13 @@ layout: default
 ---
 <main role="main">
     <section class="site__content site__content--page">
-        <header class="page__header page__header--feature page__header--page-information" {% if page.backgroundUrl %}style="background: url({{ page.backgroundUrl | prepend: 'img/' | asset_path }}) no-repeat center center / cover"{% endif %}>
-            <h1 class="page__title">{{ page.title }}</h1>
-            <span class="page__sub">Est. 1994</span>
+        <header id="thisis" class="page__header page__header--page-information">
+            <h1 class="page__title page__title--huge">{{ page.title }}</h1>
+            <span class="page__sub">{{ page.sub }}</span>
+            <!-- <hr class="flare" /> -->
         </header>
 
-
-        <article class="page__article page__article--full gutenberg">
+        <article class="page__article {{ page.pageSize }} {% if page.gutenberg == false %}{% else %}gutenberg{% endif %}">
             {{ content }}
         </article>
     </section>

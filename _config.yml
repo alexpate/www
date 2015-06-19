@@ -1,11 +1,12 @@
+environment: development
 # Site settings
 title: Alex Pate - Digital Designer
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "http://pacific/Personal/_portfolio/jekyll/blog/_site/" # the subpath of your site, e.g. /blog/
-url: "http://pacific/Personal/_portfolio/jekyll/blog/_site/" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
 # ==================
 # Author
 # ==================
@@ -53,28 +54,36 @@ markdown: kramdown
 # Building
 # ==================
 exclude: [
-    "static/sass",
     "bower_components",
     "node_modules",
     "bower.json",
     "Gruntfile.js",
     "package.json",
     "Gemfile",
-    "Gemfile.lock"
+    "Gemfile.lock",
+    "_work",
+    "journal.html",
+    "_posts"
 ]
 
-gems: [jekyll-assets]
+gems: ["jekyll-assets", "rouge"]
 
+sass:
+    sass_dir: _assets/stylesheets
 
 assets:
-    baseurl: http://pacific/Personal/_portfolio/jekyll/blog/_site/assets/
+    baseurl: http://127.0.0.1:4000/assets/
     css_compressor: sass
+    js_compressor: uglifier
     cache: true
     sources:
         - _assets
     cachebust: hard
+    gzip: [text/css, application/javascript]
 
+markdown: kramdown
 
-sass:
-    style: :compressed
-    sass_dir: _assets/scss/
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
+    css_class: highlight

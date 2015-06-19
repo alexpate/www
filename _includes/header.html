@@ -1,17 +1,13 @@
 <header class="header" role="banner">
     <div class="inner">
-        <span class="availability availability--full">
-            <span class="availability__tip">Full Availability</span>
-            <span class="availability__rings"></span>
-        </span>
-        <a href="{{ site.baseurl }}" class="header__logo" rel="home">Alex Pate</a>
+        <a href="{{ site.baseurl }}" class="header__logo" rel="home">alexpate</a>
         <nav class="header__nav" role="navigation">
             <ul class="nav-main">
                 <li class="header__nav__item">
-                    <a href="#" title="hello">Work</a>
+                    <a href="{{ site.baseurl }}" title="hello">Work</a>
                 </li>
-                <li class="header__nav__item {% if page.url == "/information/" %} header__nav__item--current{% endif %}">
-                    <a href="{{ site.baseurl }}information/" title="hello">Info.</a>
+                <li class="header__nav__item {% if page.url == "/profile/" %} header__nav__item--current{% endif %}">
+                    <a href="{{ site.baseurl }}profile/" title="hello">Profile</a>
                 </li>
                 <li class="header__nav__item {% if page.url == "/journal/" %} header__nav__item--current{% endif %}">
                     <a href="{{ site.baseurl }}journal/" title="hello">Journal</a>

@@ -1,0 +1,44 @@
+//
+// Global Variables
+// ==================
+//
+
+// Typography
+$font-family-alpha : 'sofia-pro', Helvetica Neue, Helvetica, sans-serif;
+$font-family-beta : 'Lora', serif;
+
+%font-family-alpha {
+    font-family: $font-family-alpha;
+}
+
+%font-family-beta {
+    font-family: $font-family-beta;
+}
+
+$font-weight-alpha: (
+    light: 300,
+    normal: 400,
+    regular: 400,
+    medium: 500,
+    semi-bold: 600,
+    bold: 700
+);
+
+// Color Variables
+$color-background: #f6f6f6;
+$color-alpha : #161920;
+$color-beta : #ffdf00;
+
+$color-type: #272b36;
+
+$color-flare-primary: #f0ff00;
+$color-flare-secondary: #3381d0;
+
+
+
+$color-black : #161920;
+$color-white : #fff;
+
+
+// Misc Variables
+$home-page: '.home';

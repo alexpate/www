@@ -1,24 +1,17 @@
 ---
+layout: page
 title: Journal
-layout: default
+sub: Musings on design and development
+pageSize: page__article--big
 permalink: /journal/
+gutenberg: false
 ---
-<main class="inner" role="main">
-    <section class="site__content site__content--post">
-        <header class="post__header">
-            <h1 class="post__title">{{ page.title }}</h1>
-        </header>
 
-    {% for post in site.posts %}
-        <article class="post-teaser" itemscope="" itemtype="http://schema.org/BlogPosting">
-            <h2 class="post-teaser__title" itemprop="name headline">
-                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
-            <span class="post-teaser__sub"><time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
-            <span class="post-teaser__copy" itemprop="articleBody">{{ post.excerpt }}</span>
-        </article>
-    {% endfor %}
-    </section>
-
-    {% include sidebar.html %}
-</main>
+{% for post in site.posts %}
+    <article class="post-teaser" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <h2 class="post-teaser__title" itemprop="name headline">
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <span class="post-teaser__sub"><time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%A %-d %b %Y" }}</time></span>
+    </article>
+{% endfor %}
