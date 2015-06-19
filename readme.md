@@ -12,3 +12,5 @@ This is the as-of-yet unpublished source code of my personal site.
   - General speed optimisation
   - Setup nginx redirects (server only)
   - Develop proper mobile menu
+  - Image optimisation (JPEGMini vs Grunt)
+  - Work pages scroll helper
