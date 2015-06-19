@@ -73,7 +73,13 @@
 }
 
 .page__header--page-information {
-    @extend %page__header--light;
+    padding: rem-calc(50px) rem-calc(15px) rem-calc(25px);
+    text-align: left;
+
+    @media #{$medium-up} {
+        padding: rem-calc(100px) 0 rem-calc(50px);
+        text-align: center;
+    }
 }
 
 %page__header--light {
@@ -111,10 +117,22 @@
     }
 }
 
+.page__article--inner {
+    @include grid-column($columns:12);
+    padding-bottom: rem-calc(30px);
+    padding-top: rem-calc(30px);
+
+    @media #{$medium-up} {
+        @include grid-column($columns:7, $center:true);
+        padding: rem-calc(50px) rem-calc(30px) !important;
+        text-align: center;
+    }
+}
+
 
 .content {
-    padding: 50px 0;
     overflow: auto;
+    padding: 50px 0;
 }
 
 

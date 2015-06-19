@@ -5,10 +5,32 @@
 }
 
 .port-grid__col {
-    @include grid-column(12);
+    @include grid-column(12, $collapse: true);
 
     @media #{$medium-up} {
+        @include grid-column($columns: 6, $collapse: true);
+
+        &:last-of-type {
+            @include grid-column($columns: 12, $collapse: true);
+
+            .port-grid__item {
+                float: left;
+                width: 50%;
+            }
+        }
+    }
+
+    @media #{$large-up} {
         @include grid-column($columns: 4, $collapse: true);
+
+        &:last-of-type {
+            @include grid-column($columns: 4, $collapse: true);
+
+            .port-grid__item {
+                float: none;
+                width: 100%;
+            }
+        }
     }
 }
 

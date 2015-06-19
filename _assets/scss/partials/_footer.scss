@@ -27,7 +27,7 @@
 
 body#{$home-page} {
     .footer {
-        border-top: 1px solid #444;
+        border-top: 1px solid lighten($color-alpha, 6%);
     }
 
     .footer__copy {

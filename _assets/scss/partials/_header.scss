@@ -36,21 +36,37 @@
 .header__nav__item {
     display: inline-block;
     margin-right: 10px;
+    padding-right: 10px;
+    position: relative;
+
+    &:after {
+        color: #eee;
+        content: '/';
+        position: relative;
+        right: -10px;
+        top: 0;
+    }
 
     &:last-of-type {
         margin-right: 0;
+        padding-right: 0;
+
+        &:after {
+            display: none;
+        }
     }
+
 
     a {
         color: #333;
-        font-size: em-calc(14px);
+        font-size: em-calc(16px);
         font-weight: map-get($font-weight-alpha, normal);
         text-decoration: none;
     }
 }
 
 .header__nav__item--current {
-    border-bottom: 1px solid lighten($color-alpha, 20%);
+    //border-bottom: 1px solid lighten($color-alpha, 20%);
 }
 
 body.nav--light {

@@ -7,7 +7,13 @@ backgroundUrl: work/panasonic/bg.jpg
 bodyClass: nav--light
 ---
 
-## Something
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+<div class="page__article--inner">
+    <h2>The Brief</h2>
+    <p>Heineken wanted to incentivise brand managers to improve their social media presence. We designed and built a responsive web app that visualises the company’s many beer brands as well as those of their main rivals. The app compares brands day to day social performance. It visualises the daily rate of change, so whether you’re managing Foster’s or Zywiec, all that matters is that days improvement.</p>
+</div>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+{% image img/work/panasonic/ipad.jpg %}
+
+<div class="page__article--inner">
+    <p>Heineken wanted to incentivise brand managers to improve their social media presence. We designed and built a responsive web app that visualises the company’s many beer brands as well as those of their main rivals. The app compares brands day to day social performance. It visualises the daily rate of change, so whether you’re managing Foster’s or Zywiec, all that matters is that days improvement.</p>
+</div>

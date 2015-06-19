@@ -3,6 +3,10 @@
 // ==================
 //
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     height: auto;
     overflow: auto;
@@ -21,9 +25,11 @@ body#{$home-page} {
     background: #161920;
 
     .content__main {
+        padding-top: 30px;
         text-align: left;
 
         @media #{$medium-up} {
+            padding-top: 50px;
             text-align: center;
         }
     }

@@ -3,14 +3,33 @@ layout: default
 ---
 <main role="main">
     <section class="site__content site__content--page">
-        <header class="page__header page__header--feature page__header--page-information" {% if page.backgroundUrl %}style="background: url({{ page.backgroundUrl | prepend: 'img/' | asset_path }}) no-repeat center center / cover"{% endif %}>
-            <h1 class="page__title">{{ page.title }}</h1>
-            <span class="page__sub">Est. 1994</span>
+        <header id="thisis" class="page__header page__header--page-information">
+            <h1 class="page__title page__title--huge">{{ page.title }}</h1>
+            <span class="page__sub">Alex Pate is a digital designer based in London, currently a developer at Rareloop.</span>
+            <hr class="flare" />
         </header>
-
 
         <article class="page__article page__article--full gutenberg">
             {{ content }}
         </article>
     </section>
 </main>
+
+
+
+<script>
+
+function parallaxScroll() {
+    var scrollLeft = (window.pageXOffset !== undefined) ? window.pageXOffset : (document.documentElement || document.body.parentNode || document.body).scrollLeft;
+    var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    var bgdiv = document.getElementById('thisis');
+    // bgdiv.style.transform = 'translateY(' + (scrollTop / 5) + 'px)';
+    // bgdiv.style.opacity = '1' -(scrollTop / 200);
+    bgdiv.style.backgroundPosition = 'center ' + (scrollTop / 4) + 'px';
+}
+
+window.onscroll = (function(e) {
+    parallaxScroll();
+});
+
+</script>
