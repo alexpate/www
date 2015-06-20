@@ -4,4 +4,3 @@ _site
 bower_components
 node_modules
 _assets/css
-Gemfile.lock
