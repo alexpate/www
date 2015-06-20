@@ -1,6 +1,6 @@
 environment: production
 
-baseurl: "http://178.62.60.106" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://178.62.60.106" # the base hostname & protocol for your site
 
 
