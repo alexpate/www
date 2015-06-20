@@ -1,4 +1,4 @@
 browsers:
-    - "last 10 versions"
+    - "last 40 versions"
     - "> 5%"
     - "Explorer 9"
