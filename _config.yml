@@ -60,12 +60,9 @@ exclude: [
     "package.json",
     "Gemfile",
     "Gemfile.lock",
-    "_work",
-    "journal.html",
-    "_posts"
 ]
 
-gems: ["jekyll-assets", "rouge"]
+gems: [jekyll-assets, rouge, autoprefixer-rails]
 
 sass:
     sass_dir: _assets/stylesheets

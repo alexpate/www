@@ -2,6 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.8)
+    autoprefixer-rails (5.2.0.1)
+      execjs
+      json
     blankslate (2.1.2.4)
     celluloid (0.16.0)
       timers (~> 4.0.0)
@@ -103,6 +106,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   coffee-script
   facets
   jekyll

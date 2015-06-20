@@ -1,0 +1,4 @@
+browsers:
+    - "last 10 versions"
+    - "> 5%"
+    - "Explorer 9"

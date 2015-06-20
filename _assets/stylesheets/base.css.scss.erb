@@ -5,24 +5,28 @@
 // See: http://thesassway.com/beginner/how-to-structure-a-sass-project
 //
 
-body {
-    background: pink;
-}
+/*!
+    Alex Pate
+    @alexjpate
+    Last Update: <%= Time.now.strftime("%d/%m/%Y") %>
+    Includes Normalize
+    normalize.css v3.0.1 | MIT License | github.com/necolas/normalize.css
+*/
 
 // Foundation
 @import 'foundation/settings';
 @import 'foundation/components/grid';
 @import 'foundation/components/block-grid';
 
-// // // Modules and Variables
+// Modules and Variables
 @import 'modules/variables';
 @import 'modules/normalize';
 @import 'modules/site';
 
-// // // Vendor
+// Vendor
 @import 'vendor/syntax-highlighting';
 
-// // Partials
+// Partials
 @import 'partials/header';
 @import 'partials/footer';
 @import 'partials/grid';

@@ -6,6 +6,7 @@ group :jekyll_plugins do
     gem "jekyll-sitemap"
 end
 
+gem "autoprefixer-rails"
 gem "rouge"
 gem "coffee-script"
 gem "facets"
