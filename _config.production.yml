@@ -1,8 +1,8 @@
 environment: production
 
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://178.62.60.106" # the base hostname & protocol for your site
+url: "http://dev.alexpate.uk" # the base hostname & protocol for your site
 
 
 assets:
-    baseurl: http://178.62.60.106/assets/
+    baseurl: http://d1712ben527am7.cloudfront.net/
