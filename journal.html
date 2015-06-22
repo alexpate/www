@@ -10,7 +10,7 @@ gutenberg: false
 {% for post in site.posts %}
     <article class="post-teaser" itemscope="" itemtype="http://schema.org/BlogPosting">
         <h2 class="post-teaser__title" itemprop="name headline">
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
         </h2>
         <span class="post-teaser__sub"><time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%A %-d %b %Y" }}</time></span>
     </article>

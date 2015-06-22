@@ -117,7 +117,7 @@ h4 {
 .page__sub {
     font-size: rem-calc(18px);
     line-height: 1.2em;
-    margin: 15px auto 0;
+    margin: 5px auto 0;
 
     @media #{$medium-up} {
         max-width: 500px;
@@ -153,7 +153,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #555;
+    border-top: 1px solid #eee;
     margin: 1em 0;
     padding: 0;
 }

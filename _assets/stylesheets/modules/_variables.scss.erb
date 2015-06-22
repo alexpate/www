@@ -4,8 +4,14 @@
 //
 
 // Typography
-$font-family-alpha : 'sofia-pro', Helvetica Neue, Helvetica, sans-serif;
+<% if site.config['environment'] == 'development' %>
+    $font-family-alpha : 'Sofia Pro', Helvetica Neue, Helvetica, sans-serif;
+<% else %>
+    $font-family-alpha : 'sofia-pro', Helvetica Neue, Helvetica, sans-serif;
+<% end %>
+
 $font-family-beta : 'Lora', serif;
+
 
 %font-family-alpha {
     font-family: $font-family-alpha;

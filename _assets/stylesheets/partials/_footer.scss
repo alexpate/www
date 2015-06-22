@@ -32,5 +32,10 @@ body#{$home-page} {
 
     .footer__copy {
         color: #fff;
+
+        a:hover {
+            color: #bbb;
+        }
+
     }
 }

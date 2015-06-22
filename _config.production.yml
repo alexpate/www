@@ -6,3 +6,8 @@ url: "http://dev.alexpate.uk" # the base hostname & protocol for your site
 
 assets:
     baseurl: http://d1712ben527am7.cloudfront.net/
+    cachebust: hard
+    css_compressor: sass
+    js_compressor: uglifier
+    debug: false
+    cache: true
