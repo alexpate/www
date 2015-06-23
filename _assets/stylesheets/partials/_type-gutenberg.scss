@@ -48,6 +48,16 @@ h2 {
     }
 }
 
+h3 {
+    font-size: rem-calc(20px);
+    font-weight: bold;
+
+    span {
+        color: #bbb;
+        font-size: rem-calc(16px);
+    }
+}
+
 .inline-image {
     display: block;
     margin: rem-calc(20px) auto;
