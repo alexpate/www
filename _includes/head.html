@@ -7,14 +7,26 @@
     <meta name="author" content="{{ site.author.name }}">
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+    <link rel="dns-prefetch" href="//d1712ben527am7.cloudfront.net">
+
     <link rel="author" href="{{ site.social.google }}">
     {% stylesheet stylesheets/base.css %}
+
+
 
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+    {% if site.environment == 'production' %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@{{ site.social.twitter_handle }}" />
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="twitter:image" content="{% asset_path img/alex.jpg %}" />
+    {% endif %}
 
     <!-- Fonts -->
     <script>

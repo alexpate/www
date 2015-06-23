@@ -7,13 +7,16 @@ backgroundUrl: work/panasonic/bg.jpg
 bodyClass: nav--light
 ---
 
-<div class="page__article--inner">
-    <h2>The Problem</h2>
-    <p>The Panasonic global site aims to serve two key strands of user: Consumers looking to research and purchase products; and enterprise users requiring information about the company. In attempting to serve both of these, the current actually fails at both.</p>
+<div class="inner-columns inner-columns--work">
+    <div class="inner-columns__col">
+        <h2>The Problem</h2>
+        <p>The Panasonic global site aims to serve two key strands of user: Consumers looking to research and purchase products; and enterprise users requiring information about the company. In attempting to serve both of these, the current actually fails at both.</p>
     <p>Visually, the current site is outdated and uninspiring.</p>
-    <hr>
-    <h2>The Task</h2>
+    </div>
+    <div class="inner-columns__col">
+        <h2>The Task</h2>
     <p>Explore ways to cater for both consumer and enterprise level users, and how users on mobile devices can be better served content.</p>
+    </div>
 </div>
 
 {% image img/work/panasonic/ipad.jpg %}
