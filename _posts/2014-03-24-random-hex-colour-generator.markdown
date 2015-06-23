@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Random HEX Colour Generator (JS)"
+title:  "Random HEX Colour Generator in JavaScript"
 date:   2014-03-24 15:12:43
 categories: jekyll update
 ---

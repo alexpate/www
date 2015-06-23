@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "Managing Responsive Breakpoints with Sass Maps"
-date:   2015-04-22 15:12:43
-categories: jekyll update
+title:  "Semantic Grid Class Names with Sass"
+date:   2015-02-12 12:12:33
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean accumsan pharetra urna id tristique. Curabitur augue justo, vehicula a lectus id, tempor bibendum velit. Sed ultricies ultrices tellus at venenatis. Fusce suscipit efficitur fringilla. Morbi lacinia arcu vitae sollicitudin maximus. Suspendisse potenti.
 

@@ -22,8 +22,9 @@
 }
 
 .widget__title {
+    @extend %font-family-beta;
     color: #1d2029;
-    font-size: rem-calc(13px);
+    font-size: rem-calc(18px);
     font-weight: map-get($font-weight-alpha, medium);
     text-transform: uppercase;
 }
@@ -35,6 +36,8 @@
 
 .widget__list__item,
 .widget__copy {
+    @extend %font-family-copy;
+
     color: #989898;
     font-size: rem-calc(14px);
     font-weight: map-get($font-weight-alpha, regular);

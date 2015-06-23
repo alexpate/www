@@ -22,15 +22,6 @@ p {
     }
 }
 
-// Global Helpers
-.color-light,
-.resume {
-    @extend %font-color-light;
-}
-
-.tc {
-    @extend %text-align-center;
-}
 
 %text-align-center {
     text-align: left;
@@ -40,100 +31,71 @@ p {
     }
 }
 
-h1 {
-    font-size: rem-calc(30px);
-    font-weight: map-get($font-weight-alpha, medium);
-    line-height: em-calc(22px);
 
-    &.smaller {
-        font-size: rem-calc(22px);
-        font-weight: map-get($font-weight-alpha, regular);
-    }
-
+p {
+    @extend %font-family-copy;
 }
 
-h2 {
-    font-size: rem-calc(24px);
-    font-weight: map-get($font-weight-alpha, normal);
-    margin: rem-calc(20px) 0 0;
-}
-
-h3 {
-    font-size: rem-calc(24px);
-    font-weight: map-get($font-weight-alpha, bold);
-
-    span {
-        font-size: rem-calc(14px);
-    }
-}
-
-h4 {
-    font-size: rem-calc(20px);
-    font-weight: map-get($font-weight-alpha, medium);
-}
-
-
+//
+// Titles and Subs
+//
 
 .page__title,
-.post__title {
-    font-size: rem-calc(30px);
-    font-weight: map-get($font-weight-alpha, medium);
-    line-height: em-calc(22px);
+.post__title,
+.work__title {
+    font-size: rem-calc(48px);
     font-variant-ligatures: contextual;
+    font-weight: map-get($font-weight-alpha, bold);
+    line-height: 1em;
 }
-
 
 .page__title {
-    font-size: rem-calc(48px);
-    line-height: 1em;
-    font-weight: map-get($font-weight-alpha, bold);
-}
-
-.page__title--huge {
-    font-size: rem-calc(50px);
-    line-height: 1em;
-    font-weight: map-get($font-weight-alpha, bold);
-
     @media #{$medium-up} {
-        font-size: rem-calc(81px);
+        max-width: 700px;
     }
-
 }
 
-.page__sub,
-.post__sub {
-    color: #8d8d8d;
+.page__meta,
+.post__meta,
+.work__meta {
+    @extend %font-family-beta;
+    color: $color-flare-secondary;
     display: block;
     font-weight: map-get($font-weight-alpha, regular);
-    font-family: 'Playfair Display';
-
+    text-decoration: none;
 }
 
-.post__sub {
+.post__meta {
     font-size: rem-calc(18px);
     line-height: 1em;
+    margin: rem-calc(10px) 0;
 }
 
-.page__sub {
-    font-size: rem-calc(18px);
+.page__meta {
+    font-size: rem-calc(17px);
     line-height: 1.2em;
-    margin: 5px auto 0;
 
     @media #{$medium-up} {
         max-width: 500px;
-        font-size: rem-calc(24px);
     }
 }
 
-.page__sub--small {
-    font-size: rem-calc(18px);
+.work__meta,
+.work__title {
+    color: #fff;
 }
 
-
+//
+// Gutenberg Inline
+//
 
 .gutenberg {
     @import 'type-gutenberg';
 }
+
+//
+// Misc Type
+//
 
 .faded {
     color: lighten(#161920, 45%) !important;
@@ -169,10 +131,17 @@ hr {
     margin: 10px 0 20px;
 }
 
-.sub-heading {
-    @extend %font-family-beta;
-    font-size: rem-calc(14px);
-    line-height: rem-calc(22px);
-    color: #fff;
-    top: -7px;
+.arrow--right {
+    @extend %font-family-alpha;
 }
+
+
+
+
+
+
+
+
+
+
+

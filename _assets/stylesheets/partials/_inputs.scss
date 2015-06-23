@@ -1,10 +1,10 @@
 .btn {
+    @extend %font-family-beta;
     background: $color-white;
     border: 1px solid #ddd;
     border-radius: 3px;
     color: #ccc;
     display: inline-block;
-    font-weight: map-get($font-weight-alpha, medium);
     line-height: .9em;
     margin: rem-calc(10px) 0;
     text-align: center;

@@ -13,8 +13,7 @@ bodyClass: nav--light
     <p>Visually, the current site is outdated and uninspiring.</p>
     <hr>
     <h2>The Task</h2>
-    <p>Explore ways how to inspire at consumer level, targeting the maximum number of users with the overall aim of creating a concept website.</p>
-
+    <p>Explore ways to cater for both consumer and enterprise level users, and how users on mobile devices can be better served content.</p>
 </div>
 
 {% image img/work/panasonic/ipad.jpg %}

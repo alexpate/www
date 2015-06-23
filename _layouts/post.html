@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-<main class="inner" role="main">
-    <section class="site__content site__content--post">
+<main role="main">
+    <section class="site__content site__content--post" itemscope itemtype="http://schema.org/BlogPosting">
         <header class="post__header">
-            <h1 class="post__title">{{ page.title }}</h1>
-            <span class="post__sub">
-                {% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %} on
+            <h1 class="post__title" itemprop="name">{{ page.title }}</h1>
+            <span class="post__meta">
+                <time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">
                 {% assign d = page.date | date: "%-d"  %}
-                {{ page.date | date: "%B" }}
+                {{ page.date | date: "%A %B" }}
                 {% case d %}
                     {% when '1' or '21' or '31' %}{{ d }}st
                     {% when '2' or '22' %}{{ d }}nd
@@ -16,11 +16,28 @@ layout: default
                     {% else %}{{ d }}th
                 {% endcase %},
                 {{ page.date | date: "%Y" }}{% if page.meta %} • {{ page.meta }}{% endif %}
+                </time>
             </span>
         </header>
 
         <article class="post__article gutenberg" itemprop="articleBody">
             {{ content }}
+
+            {% if site.environment == 'production' %}
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="alexjpate" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+            <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+            </script>
+            {% endif %}
+
+            <div class="paginate">
+                {% if page.previous.url %}
+                <a href="{{ page.previous.url }}" class="paginate__btn paginate__btn--previous"><span class="paginate__btn__arrow">&#8592;</span> Previous Post</a>
+                {% endif %}
+                {% if page.next.url %}
+                <a href="{{ page.next.url }}" class="paginate__btn paginate__btn--next">Next Post <span class="paginate__btn__arrow">&#8594;</span></a>
+                {% endif %}
+            </div>
         </article>
         {% include author.html %}
 

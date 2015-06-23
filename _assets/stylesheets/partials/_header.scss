@@ -7,17 +7,19 @@
 }
 
 .header__logo {
+    @extend %font-family-beta;
+
     color: #333;
     display: inline-block;
-    font-size: em-calc(16px);
+    font-size: rem-calc(19px);
     font-weight: map-get($font-weight-alpha, normal);
     text-decoration: none;
-    width: 75px;
+    width: 100px;
 
     span {
-        display: none;
-        font-size: em-calc(13px);
-        font-style: italic;
+        color: $color-flare-primary;
+        font-size: rem-calc(40px);
+        line-height: rem-calc(16px);
     }
 }
 
@@ -42,7 +44,7 @@
         padding-right: 10px;
 
         &:after {
-            color: #eee;
+            color: $color-flare-primary;
             content: '/';
             position: relative;
             right: -10px;
@@ -52,8 +54,9 @@
 
 
     a {
+        @extend %font-family-beta;
         color: #333;
-        font-size: em-calc(16px);
+        font-size: rem-calc(19px);
         font-weight: map-get($font-weight-alpha, normal);
         text-decoration: none;
     }

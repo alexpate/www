@@ -1,5 +1,4 @@
 p {
-    @extend %font-family-beta;
     color: $color-type;
     font-size: rem-calc(17px);
     font-weight: map-get($font-weight-alpha, light);
@@ -18,6 +17,10 @@ p {
 
 }
 
+a:not(.btn) {
+    color: $color-flare-primary;
+}
+
 &.no-first-of {
     p:first-of-type {
         color: $color-type;
@@ -26,9 +29,9 @@ p {
 }
 
 h2 {
-    @extend %font-family-alpha;
+    @extend %font-family-beta;
     font-size: rem-calc(24px);
-    font-weight: map-get($font-weight-alpha, bold);
+    font-weight: regular;
     margin: .4em 0;
 
     &.full-span {

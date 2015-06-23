@@ -5,12 +5,14 @@
 
 // Typography
 <% if site.config['environment'] == 'development' %>
-    $font-family-alpha : 'Sofia Pro', Helvetica Neue, Helvetica, sans-serif;
+    $font-family-alpha : 'kepler-std-display', Helvetica Neue, Helvetica, sans-serif;
 <% else %>
     $font-family-alpha : 'sofia-pro', Helvetica Neue, Helvetica, sans-serif;
 <% end %>
 
-$font-family-beta : 'Lora', serif;
+$font-family-alpha : 'kepler-std-display', Helvetica Neue, Helvetica, sans-serif;
+$font-family-beta : 'Good Headline Pro', serif;
+$font-family-copy : 'Lora', serif;
 
 
 %font-family-alpha {
@@ -19,6 +21,10 @@ $font-family-beta : 'Lora', serif;
 
 %font-family-beta {
     font-family: $font-family-beta;
+}
+
+%font-family-copy {
+    font-family: $font-family-copy;
 }
 
 $font-weight-alpha: (
@@ -37,8 +43,8 @@ $color-beta : #ffdf00;
 
 $color-type: #272b36;
 
-$color-flare-primary: #f0ff00;
-$color-flare-secondary: #3381d0;
+$color-flare-primary: #f00;
+$color-flare-secondary: #f00;
 
 
 $color-black : #161920;

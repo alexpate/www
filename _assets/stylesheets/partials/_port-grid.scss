@@ -45,12 +45,31 @@
         height: auto;
         max-width: 100%;
     }
+
+    &:after {
+        background: #000;
+        content: '';
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transition: all .2s ease-in-out;
+        width: 100%;
+        z-index: 2;
+    }
+
+    &:hover:after {
+        opacity: .7;
+    }
 }
 
 .port-grid__copy {
+    @extend %font-family-beta;
     bottom: 30px;
     left: 20px;
     position: absolute;
+    z-index: 3;
 }
 
 .port-grid__title,
@@ -59,11 +78,11 @@
 }
 
 .port-grid__title {
-    font-size: 1.1em;
+    font-size: rem-calc(24px);
     font-weight: map-get($font-weight-alpha, medium);
 }
 
 .port-grid__date {
-    font-size: .9em;
+    font-size: rem-calc(16px);
     font-weight: map-get($font-weight-alpha, light);
 }

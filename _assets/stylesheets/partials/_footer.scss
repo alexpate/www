@@ -5,6 +5,7 @@
 }
 
 .footer__copy {
+    @extend %font-family-beta;
     color: #999;
     display: block;
     font-size: .8em;

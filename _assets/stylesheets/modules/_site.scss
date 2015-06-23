@@ -14,30 +14,10 @@ html {
 
 body {
     @extend %font-family-alpha;
-    background: $color-background;
     font-size: 16px;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     min-height: 100%;
-}
-
-body#{$home-page} {
-    background: #161920;
-
-    .content__main {
-        padding-top: 30px;
-        text-align: left;
-
-        @media #{$medium-up} {
-            padding-top: 50px;
-            text-align: center;
-        }
-    }
-
-    ::selection {
-        background: $color-white;
-        color: $color-alpha;
-    }
 }
 
 ::selection {
