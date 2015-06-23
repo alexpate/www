@@ -1,7 +1,13 @@
 ---
-layout: page
+layout: default
 title: 404 Page Not Found
-sub: Oops
+meta: Sorry, nothing could be found
 ---
-
-<h1>Sorry, nothing could be found</h1>
+<main role="main">
+    <section class="site__content site__content--page">
+        <header class="page__header">
+            <h1 class="page__title glitch" data-glitch-text="404 Page Not Found">404 Page Not Found</h1>
+            <span class="page__meta">Sorry, nothing could be found</span>
+        </header>
+    </section>
+</main>
