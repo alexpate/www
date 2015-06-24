@@ -1,4 +1,5 @@
-.site {
+.site,
+.inner {
     @include grid-row();
 
     position: relative;
@@ -9,15 +10,15 @@
     }
 }
 
-.inner {
-    @include grid-column($columns: 12, $collapse: true);
-    padding: 0 rem-calc(15px);
-    overflow: auto;
+// .inner {
+//     @include grid-column($columns: 12, $collapse: true);
+//     padding: 0 rem-calc(15px);
+//     overflow: auto;
 
-    @media #{$medium-up} {
-        padding: 0 rem-calc(50px);
-    }
-}
+//     @media #{$medium-up} {
+//         padding: 0 rem-calc(50px);
+//     }
+// }
 
 .page__header,
 .page__article {
@@ -84,13 +85,16 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(to bottom, rgba(255, 255, 255, .001), #fff);
-        transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 0.8s cubic-bezier(.19, 1, .22, 1);
         opacity: 0;
         z-index: 2;
     }
+
 }
 
 .work__header--scrolling {
+    transform: scale(1);
+
     &:after {
         opacity: 1;
     }

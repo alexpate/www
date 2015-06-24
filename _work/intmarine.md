@@ -4,7 +4,7 @@ title: Int Marine
 sub: "Design &amp; Development - 2014"
 slug: intmarine
 backgroundUrl: work/intmarine/bg.jpg
-bodyClass: nav--light
+bodyClass: nav--light page--work
 ---
 
 <div class="page__article--inner">

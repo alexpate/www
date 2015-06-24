@@ -68,9 +68,12 @@
 
 body.nav--light {
     .header__logo,
-    .header__nav__item a {
+    .header__logo span,
+    .header__nav__item a,
+    .header__nav__item:not(:last-of-type):after {
         color: #fff;
     }
+
     .header__nav__item--current {
         border-color: #fff;
     }

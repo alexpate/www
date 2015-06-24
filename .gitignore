@@ -1,6 +1,3 @@
 _site
 .sass-cache
 .jekyll-assets-cache
-bower_components
-node_modules
-_assets/css

@@ -36,9 +36,9 @@ availability:
 # ============================
 # Pagination
 # ============================
-paginate     : 5
-permalink    : /journal/:title
-paginate_path: /blog/page/:num
+paginate: 3
+permalink: /journal/:title
+paginate_path: /journal/page/:num
 
 collections:
     work:
@@ -52,13 +52,8 @@ markdown: kramdown
 # Building
 # ==================
 exclude: [
-    "bower_components",
-    "node_modules",
-    "bower.json",
-    "Gruntfile.js",
-    "package.json",
     "Gemfile",
-    "Gemfile.lock",
+    "Gemfile.lock"
 ]
 
 gems: [jekyll-assets, rouge, autoprefixer-rails, jekyll-sitemap]
@@ -82,3 +77,6 @@ kramdown:
     input: GFM
     syntax_highlighter: rouge
     css_class: highlight
+
+pygments:
+    options: ['startinline']

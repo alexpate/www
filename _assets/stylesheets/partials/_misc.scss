@@ -21,10 +21,8 @@ body#{$home-page} {
 }
 
 .author-byline {
-    border-top: 2px solid $color-flare-primary;
     border-bottom: 2px solid #eee;
-    margin-top: rem-calc(20px);
-    padding: rem-calc(20px) 0;
+    padding: rem-calc(10px) 0;
     width: 100%;
 }
 
@@ -79,6 +77,12 @@ article img {
 
 .post-teaser {
     padding: 10px 0;
+    width: 100%;
+
+    @media #{$medium-up} {
+        width: 50%;
+        float: left;
+    }
 }
 
 .post-teaser__title,
@@ -88,9 +92,9 @@ article img {
 }
 
 .post-teaser__title {
-    font-size: rem-calc(17px);
+    font-size: rem-calc(28px);
     font-weight: map-get($font-weight-alpha, regular);
-    line-height: rem-calc(27px);
+    line-height: 1em;
 
     @media #{$medium-up} {
         font-size: rem-calc(25px);
@@ -236,6 +240,8 @@ article img {
     margin: rem-calc(10px) 0;
     width: 100%;
     overflow: hidden;
+    border-bottom: 2px solid $color-flare-primary;
+    padding: rem-calc(10px) 0;
 }
 
 .paginate__btn {

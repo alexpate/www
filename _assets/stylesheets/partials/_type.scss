@@ -32,7 +32,8 @@ p {
 }
 
 
-p {
+p,
+table {
     @extend %font-family-copy;
 }
 
@@ -43,10 +44,14 @@ p {
 .page__title,
 .post__title,
 .work__title {
-    font-size: rem-calc(48px);
+    font-size: rem-calc(36px);
     font-variant-ligatures: contextual;
     font-weight: map-get($font-weight-alpha, bold);
     line-height: 1em;
+
+    @media #{$medium-up} {
+        font-size: rem-calc(48px);
+    }
 }
 
 .page__title {

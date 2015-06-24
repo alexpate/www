@@ -1,13 +1,13 @@
 ---
 layout: default
 ---
-
 <main role="main">
-    <section class="site__content site__content--page">
-        <header class="work__header work__header--feature" {% if page.backgroundUrl %}style="background: url({{ page.backgroundUrl | prepend: 'img/' | asset_path }}) no-repeat center center / cover"{% endif %}>
-            <h1 class="work__title">{{ page.title }}</h1>
-            <span class="work__meta">{{ page.sub }}</span>
-        </header>
+
+    <header class="work__header work__header--feature" {% if page.backgroundUrl %}style="background: url({{ page.backgroundUrl | prepend: 'img/' | asset_path }}) no-repeat center center / cover"{% endif %}>
+        <h1 class="work__title">{{ page.title }}</h1>
+        <span class="work__meta">{{ page.sub }}</span>
+    </header>
+    <section class="site__content site__content--page inner">
 
         <article class="gutenberg no-first-of">
             {{ content }}
@@ -19,13 +19,22 @@ layout: default
         </article>
     </section>
 </main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 <script>
-$(window).on('scroll', function() {
-    if($(this).scrollTop()>=10){
-        $('.work__header').addClass('work__header--scrolling');
-    } else {
-        $('.work__header').removeClass('work__header--scrolling');
-    }
-});
+    var dh = window.innerHeight || document.body.clientHeight || document.documentElement.clientHeight;
+    var workHeader = document.getElementsByClassName("work__header")[0];
+    workHeader.style.height = dh + 'px';
+    console.log(dh);
+    workHeader.style.paddingTop = (dh/2)-50 + 'px';
+
+    var runOnScroll =  function(evt) {
+        var scrollTop = document.body.scrollTop;
+        if(scrollTop >=10) {
+            workHeader.classList.add('work__header--scrolling');
+        } else {
+            workHeader.classList.remove('work__header--scrolling');
+        }
+    };
+
+    window.addEventListener("scroll", runOnScroll);
 </script>

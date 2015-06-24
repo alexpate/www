@@ -62,3 +62,28 @@ h3 {
     display: block;
     margin: rem-calc(20px) auto;
 }
+
+table {
+    display: table;
+    margin: rem-calc(20px) 0;
+    width: 100%;
+
+    th {
+        @extend %font-family-beta;
+        font-size: rem-calc(23px);
+        text-align: left;
+    }
+
+    tr {
+        border-bottom: 1px solid #eee;
+    }
+
+    em {
+        font-style: normal;
+        text-decoration: underline;
+    }
+
+    td {
+        padding: 5px 0;
+    }
+}

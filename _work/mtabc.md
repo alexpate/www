@@ -4,7 +4,7 @@ title: More Than A Business Card
 sub: "Design - 2014"
 slug: mtabc
 backgroundUrl: work/mtabc/bg.jpg
-bodyClass: nav--light
+bodyClass: nav--light page--work
 ---
 
 <div class="page__article--inner">
