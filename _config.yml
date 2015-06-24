@@ -47,7 +47,7 @@ paginate_path: /journal/page/:num
 collections:
     work:
         output: true
-        permalink: /work/:path/
+        permalink: /:path/
 
 # ==================
 # Building
