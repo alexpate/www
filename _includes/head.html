@@ -1,6 +1,14 @@
 <head itemscope itemtype="http://schema.org/WebSite">
     <meta charset="utf-8">
-    <title itemprop="name">{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title itemprop="name">
+        {% if page.url == "/" %}
+            {{ site.title }}
+        {% elsif page.title %}
+            {{ page.title }} - {{ site.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
