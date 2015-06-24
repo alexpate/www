@@ -1,11 +1,17 @@
+# ==================
+# Environment
+# ==================
 environment: development
-title: Alex Pate - Digital Designer
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
 
-url: "http://127.0.0.1:4000" # the base hostname & protocol for your site
+# ==================
+# Base
+# ==================
+title: Alex Pate - Digital Designer
+description: > #
+    Alex Pate is a digital designer and front-end developer from London, currently looking for a full-time job!
+
+url: "http://127.0.0.1:4000"
+
 # ==================
 # Author
 # ==================
@@ -31,8 +37,6 @@ social:
 availability:
     class: full
 
-
-
 # ============================
 # Pagination
 # ============================
@@ -45,9 +49,6 @@ collections:
         output: true
         permalink: /work/:path/
 
-# Build settings
-markdown: kramdown
-
 # ==================
 # Building
 # ==================
@@ -58,19 +59,6 @@ exclude: [
 
 gems: [jekyll-assets, rouge, autoprefixer-rails, jekyll-sitemap]
 
-sass:
-    sass_dir: _assets/stylesheets
-
-assets:
-    baseurl: http://127.0.0.1:4000/assets/
-    cache: false
-    js_compressor: ~
-    css_compressor: ~
-    debug: true
-    sources:
-        - _assets
-    gzip: [text/css, application/javascript]
-
 markdown: kramdown
 
 kramdown:
@@ -78,5 +66,20 @@ kramdown:
     syntax_highlighter: rouge
     css_class: highlight
 
-pygments:
+highlighter:
     options: ['startinline']
+
+# ==================
+# Assets
+# ==================
+sass:
+    sass_dir: _assets/stylesheets
+
+assets:
+    baseurl: http://127.0.0.1:4000/assets/
+    cache: false
+    css_compressor: sass
+    js_compressor: uglifier
+    debug: true
+    sources:
+        - _assets

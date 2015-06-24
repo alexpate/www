@@ -1,14 +1,19 @@
+# ==================
+# Environment
+# ==================
 environment: production
 
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://dev.alexpate.uk" # the base hostname & protocol for your site
+# ==================
+# Base
+# ==================
+url: "http://dev.alexpate.uk"
 
-
+# ==================
+# Assets
+# ==================
 assets:
     baseurl: http://d1712ben527am7.cloudfront.net/
     cachebust: hard
-    css_compressor: sass
-    js_compressor: uglifier
     debug: false
     cache: true
     gzip: [text/css, application/javascript]
