@@ -12,8 +12,8 @@
     width: 100%;
 
     &:last-of-type {
-        margin-bottom: 0;
         border-bottom: 0;
+        margin-bottom: 0;
 
         @media #{$medium-up} {
             border-bottom: 1px solid #eee;

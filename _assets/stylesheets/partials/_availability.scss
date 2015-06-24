@@ -1,25 +1,28 @@
 .availability {
     display: none;
+
     &:hover {
         .availability__tip {
-            transform: translateX(0);
             opacity: 1;
+            transform: translateX(0);
         }
     }
+
     @media #{$large-up} {
         display: inline-block;
     }
 
 }
+
 .availability__rings {
     display: inline-block;
     font-weight: map-get($font-weight-alpha, medium);
-    margin: 0 5px 0;
+    height: 15px;
+    margin: 0 5px;
     padding-left: 10px;
     position: relative;
     text-align: center;
     width: 15px;
-    height: 15px;
 
     &:before,
     &:after {
@@ -94,14 +97,14 @@
     z-index: 10;
 
     &:after {
-        width: 7px;
-        height: 7px;
         background: lighten(#161920, 10%);
         content: '';
-        transform: rotate(45deg);
+        height: 7px;
         position: absolute;
         right: -3px;
         top: 12px;
+        transform: rotate(45deg);
+        width: 7px;
     }
 
     body#{$home-page} & {
@@ -116,14 +119,16 @@
 
 @keyframes pulse {
     0% {
-        transform: scale(.1, .1);
         opacity: 0;
+        transform: scale(.1, .1);
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
-        transform: scale(1.2, 1.2);
         opacity: 0;
+        transform: scale(1.2, 1.2);
     }
 }

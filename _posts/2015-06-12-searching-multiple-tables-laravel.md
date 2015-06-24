@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Searching multiple tables with one query with Laravel"
-date:   2015-06-12 11:19:15
 ---
 Whilst developing the back-end for my final year project (redesign of Panasonic Global), I ran in to the problem of how best to search multiple tables at once through the relationship models.
 

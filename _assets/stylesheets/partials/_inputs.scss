@@ -33,12 +33,12 @@
 }
 
 .btn--massive {
-    font-size: rem-calc(20px);
-    font-weight: map-get($font-weight-alpha, bold);
-    padding: 15px 50px;
     background: $color-black;
     border-color: darken($color-black, 15%);
     color: $color-white;
+    font-size: rem-calc(20px);
+    font-weight: map-get($font-weight-alpha, bold);
+    padding: 15px 50px;
     text-transform: none;
 }
 

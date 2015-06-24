@@ -37,9 +37,7 @@ bodyClass: nav--light page--work
 
 <div class="page__article--inner">
     <h2>Developing for scale</h2>
-    <p>Although the project scope was for an undergraduate degree project, I tried to approach it as if it were to be deployed live. This meant making development decisions that would allow for rapid scale  .</p>
-</div>
-
-<div class="page__article--inner">
-    <p>This project was undertaken as part of my final-year project. After being nominated for the WRTI innovation and technology awards, I was awarded first place for the project.</p>
+    <p>Although the project scope was for an undergraduate degree project, I tried to approach it as if it were to be deployed live. This meant making development decisions that would allow for rapid scale.</p>
+    <hr>
+    <p>This project was undertaken as part of my final-year project. After being nominated for the WRTI innovation and technology awards, I was <a href="http://official.blog.solent.ac.uk/press-releases/bridging-the-innovation-gap-from-necessity-to-invention/">awarded first place</a> for the project.</p>
 </div>

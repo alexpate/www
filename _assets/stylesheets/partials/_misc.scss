@@ -29,9 +29,9 @@ body#{$home-page} {
 .author-byline__copy {
     @extend %font-family-copy;
     color: #68707f;
+    display: block;
     font-size: rem-calc(14px);
     font-weight: map-get($font-weight-alpha, light);
-    display: block;
     line-height: 1.7em;
     margin-top: 10px;
 }
@@ -43,11 +43,11 @@ body#{$home-page} {
 }
 
 .author-byline__img {
-    width: 100px;
-    height: 100px;
     border-radius: 50%;
     float: right;
+    height: 100px;
     margin-left: rem-calc(40px) !important;
+    width: 100px;
 }
 
 .share-this {
@@ -80,8 +80,8 @@ article img {
     width: 100%;
 
     @media #{$medium-up} {
-        width: 50%;
         float: left;
+        width: 50%;
     }
 }
 
@@ -179,27 +179,6 @@ article img {
     }
 }
 
-//
-// Background Span
-//
-
-.span-bg {
-    background: url(../img/infobg.jpg) no-repeat center center / cover;
-    height: 600px;
-    margin-left: -15px;
-    margin-top: -250px;
-    position: absolute;
-    width: 100%;
-
-    @media #{$medium-up} {
-        margin-left: -60px;
-    }
-}
-
-.span-bg-hold {
-    position: relative;
-    z-index: 4;
-}
 
 //
 // Callout
@@ -236,12 +215,12 @@ article img {
 //
 
 .paginate {
+    border-bottom: 2px solid $color-flare-primary;
     height: auto;
     margin: rem-calc(10px) 0;
-    width: 100%;
     overflow: hidden;
-    border-bottom: 2px solid $color-flare-primary;
     padding: rem-calc(10px) 0;
+    width: 100%;
 }
 
 .paginate__btn {
@@ -254,13 +233,13 @@ article img {
 }
 
 .paginate__btn--next {
-    text-align: right;
     float: right;
+    text-align: right;
 }
 
 .paginate__btn--previous {
-    text-align: left;
     float: left;
+    text-align: left;
 }
 
 .paginate__btn__arrow {

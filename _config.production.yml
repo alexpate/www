@@ -11,3 +11,4 @@ assets:
     js_compressor: uglifier
     debug: false
     cache: true
+    gzip: [text/css, application/javascript]

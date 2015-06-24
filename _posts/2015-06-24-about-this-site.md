@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "A bit about this site"
-date:   2015-06-24 15:44:43
 ---
 
 Since finishing my degree in May, I've finally had some time to put some much needed effort in to my personal site. I thought it might be useful just to have a quick rundown of the technologies behind it.

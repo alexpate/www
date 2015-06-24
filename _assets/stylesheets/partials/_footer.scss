@@ -1,6 +1,6 @@
 .footer {
-    padding: 30px 0 50px;
     clear: both;
+    padding: 30px 0 50px;
 }
 
 .footer__copy {
@@ -22,20 +22,5 @@
         &:hover {
             color: #333;
         }
-    }
-}
-
-body#{$home-page} {
-    .footer {
-        border-top: 1px solid lighten($color-alpha, 6%);
-    }
-
-    .footer__copy {
-        color: #fff;
-
-        a:hover {
-            color: #bbb;
-        }
-
     }
 }

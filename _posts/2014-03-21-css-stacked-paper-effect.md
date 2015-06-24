@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "CSS Stacked Paper Effect"
-date:   2014-03-24 15:12:43
 ---
 Heads up: this is more of an experiment than something that would be used in production.
 
