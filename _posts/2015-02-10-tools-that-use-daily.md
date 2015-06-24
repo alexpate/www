@@ -6,10 +6,10 @@ I always find it interesting to see what tools and techniques other developers u
 
 ## Design - Sketch
 
-I've been using Sketch on and off for projects for the past couple of months. Ever since starting at Rareloop as a part-time developer, it's become the go-to design tool.
+I've been using Sketch on and off for projects for the past couple of months. However, since starting at Rareloop as a part-time developer, it's become the go-to design tool. Although I still use Photoshop every now and then for more advanced graphic/photo manipulation.
 
 ## Text Editor - Sublime Text 3
-The standard for developers these days. The huge amount of plugins available.
+Nuff said.
 
 ## Task Runner - Grunt
 Grunt manages all of my front-end tasks, from compiling Sass to optimizing images. I should note though, that I recently dropped Grunt from the workflow for this site, due there simply not being the need for it. Instead I switched over to ruby based tools (Jekyll Assets, autoprefixer-rails).
@@ -19,4 +19,4 @@ I mainly use Sequel Pro to play with databases that have already been implemente
 
 ***
 
-*With new tools and techniques coming out daily my workflow is always changing, so this is in no way a definitive list.*
+*With new tools and techniques coming out daily, my workflow is always changing, so this is in no way a definitive list.*

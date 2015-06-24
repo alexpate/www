@@ -6,7 +6,7 @@ environment: production
 # ==================
 # Base
 # ==================
-url: "http://dev.alexpate.uk"
+url: "http://alexpate.uk"
 
 # ==================
 # Assets

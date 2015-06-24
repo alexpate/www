@@ -2,6 +2,7 @@
 layout: default
 title: 404 Page Not Found
 meta: Sorry, nothing could be found
+sitemap: false
 ---
 <main role="main">
     <section class="site__content site__content--page inner">
