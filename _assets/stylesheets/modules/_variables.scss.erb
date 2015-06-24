@@ -4,16 +4,9 @@
 //
 
 // Typography
-<% if site.config['environment'] == 'development' %>
-    $font-family-alpha : 'kepler-std-display', Helvetica Neue, Helvetica, sans-serif;
-<% else %>
-    $font-family-alpha : 'sofia-pro', Helvetica Neue, Helvetica, sans-serif;
-<% end %>
-
-$font-family-alpha : "kepler-std-display", serif;
-$font-family-beta : "ff-good-headline-web-pro-con", Helvetica Neue, Helvetica, sans-serif;
-$font-family-copy : 'Lora', serif;
-
+$font-family-alpha: "kepler-std-display", Georgia, Times, serif;
+$font-family-beta: "ff-good-headline-web-pro-con", Helvetica Neue, Helvetica, sans-serif;
+$font-family-copy: 'Lora', Georgia, Times, serif;
 
 %font-family-alpha {
     font-family: $font-family-alpha;
@@ -27,15 +20,6 @@ $font-family-copy : 'Lora', serif;
     font-family: $font-family-copy;
 }
 
-$font-weight-alpha: (
-    light: 300,
-    normal: 400,
-    regular: 400,
-    medium: 500,
-    semi-bold: 600,
-    bold: 700
-);
-
 // Color Variables
 $color-background: #f6f6f6;
 $color-alpha : #161920;
@@ -46,10 +30,8 @@ $color-type: #272b36;
 $color-flare-primary: #f00;
 $color-flare-secondary: #f00;
 
-
 $color-black : #161920;
 $color-white : #fff;
-
 
 // Misc Variables
 $home-page: '.home';

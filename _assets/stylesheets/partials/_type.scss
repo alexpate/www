@@ -46,7 +46,7 @@ table {
 .work__title {
     font-size: rem-calc(36px);
     font-variant-ligatures: contextual;
-    font-weight: map-get($font-weight-alpha, bold);
+    font-weight: bold;
     line-height: 1em;
 
     @media #{$medium-up} {
@@ -66,7 +66,7 @@ table {
     @extend %font-family-beta;
     color: $color-flare-secondary;
     display: block;
-    font-weight: map-get($font-weight-alpha, regular);
+    font-weight: regular;
     text-decoration: none;
 }
 
@@ -169,17 +169,6 @@ hr {
     position: absolute;
     text-shadow: 1px 0 #00f;
     top: 0;
-}
-
-.meta {
-    color: #8d8d8d;
-    display: block;
-    font-size: rem-calc(14px);
-    font-weight: map-get($font-weight-alpha, regular);
-}
-
-.meta--post {
-    margin: 10px 0 20px;
 }
 
 .arrow--right {

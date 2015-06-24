@@ -1,5 +1,5 @@
 # Hi there!
-This is the as-of-yet unpublished source code of my personal site.
+This is the as-of-yet unpublished source code of my [personal site](http://alexpate.uk).
 
 ## What's the point of this repo?
 This repo is more for me. However, when I was first learning web development I learnt a lot looking at other developers code. Hopefully by open sourcing this, someone might find it useful.

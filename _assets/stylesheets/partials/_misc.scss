@@ -31,7 +31,7 @@ body#{$home-page} {
     color: #68707f;
     display: block;
     font-size: rem-calc(14px);
-    font-weight: map-get($font-weight-alpha, light);
+    font-weight: light;
     line-height: 1.7em;
     margin-top: 10px;
 }
@@ -39,7 +39,7 @@ body#{$home-page} {
 .author-byline__author {
     @extend %font-family-beta;
     font-size: rem-calc(22px);
-    font-weight: map-get($font-weight-alpha, regular);
+    font-weight: regular;
 }
 
 .author-byline__img {
@@ -93,7 +93,7 @@ article img {
 
 .post-teaser__title {
     font-size: rem-calc(28px);
-    font-weight: map-get($font-weight-alpha, regular);
+    font-weight: regular;
     line-height: 1em;
 
     @media #{$medium-up} {

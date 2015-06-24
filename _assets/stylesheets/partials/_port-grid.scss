@@ -80,10 +80,11 @@
 
 .port-grid__title {
     font-size: rem-calc(24px);
-    font-weight: map-get($font-weight-alpha, medium);
+    font-weight: regular;
 }
 
 .port-grid__date {
     font-size: rem-calc(16px);
-    font-weight: map-get($font-weight-alpha, light);
+    font-weight: regular;
 }
+

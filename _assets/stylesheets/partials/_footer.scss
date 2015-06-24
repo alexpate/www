@@ -8,7 +8,6 @@
     color: #999;
     display: block;
     font-size: .8em;
-    font-weight: map-get($font-weight-alpha, medium);
     text-align: left;
 
     @media #{$medium-up} {

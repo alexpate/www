@@ -25,7 +25,7 @@
     @extend %font-family-beta;
     color: #1d2029;
     font-size: rem-calc(18px);
-    font-weight: map-get($font-weight-alpha, medium);
+    font-weight: regular;
     text-transform: uppercase;
 }
 
@@ -40,7 +40,7 @@
 
     color: #989898;
     font-size: rem-calc(14px);
-    font-weight: map-get($font-weight-alpha, regular);
+    font-weight: regular;
     line-height: rem-calc(27px);
 
     a {
