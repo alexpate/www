@@ -66,7 +66,7 @@ table {
     @extend %font-family-beta;
     color: $color-flare-secondary;
     display: block;
-    font-weight: regular;
+    font-weight: normal;
     text-decoration: none;
 }
 
@@ -139,7 +139,7 @@ hr {
 .glitch:after {
     animation: noise-anim 2s infinite linear alternate-reverse;
     background: $color-white;
-    clip: rect(0,900px,0,0);
+    clip: rect(0, 900px, 0, 0);
     color: $color-black;
     content: attr(data-glitch-text);
     left: 2px;

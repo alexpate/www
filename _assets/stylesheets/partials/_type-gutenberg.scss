@@ -1,7 +1,7 @@
 p {
     color: $color-type;
     font-size: rem-calc(17px);
-    font-weight: regular;
+    font-weight: normal;
     line-height: rem-calc(32px);
     margin: 0 0 em-calc(15px);
 
@@ -31,7 +31,7 @@ a:not(.btn) {
 h2 {
     @extend %font-family-beta;
     font-size: rem-calc(24px);
-    font-weight: regular;
+    font-weight: normal;
     margin: .4em 0;
 
     &.full-span {

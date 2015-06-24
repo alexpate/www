@@ -39,7 +39,7 @@ body#{$home-page} {
 .author-byline__author {
     @extend %font-family-beta;
     font-size: rem-calc(22px);
-    font-weight: regular;
+    font-weight: normal;
 }
 
 .author-byline__img {
@@ -93,7 +93,7 @@ article img {
 
 .post-teaser__title {
     font-size: rem-calc(28px);
-    font-weight: regular;
+    font-weight: normal;
     line-height: 1em;
 
     @media #{$medium-up} {
