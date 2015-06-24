@@ -4,13 +4,19 @@
         <nav class="header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
             <ul class="nav-main">
                 <li class="header__nav__item {% if page.url contains "/work/" %} header__nav__item--current{% endif %}">
-                    <a href="/" title="hello" itemprop="url name">Work</a>
+                    <a href="/" title="hello" itemprop="url">
+                        <span itemprop="name">Work</span>
+                    </a>
                 </li>
                 <li class="header__nav__item {% if page.url == "/profile/" %} header__nav__item--current{% endif %}">
-                    <a href="/profile/" title="hello" itemprop="url name">Profile</a>
+                    <a href="/profile/" title="hello" itemprop="url">
+                        <span itemprop="name">Profile</span>
+                    </a>
                 </li>
                 <li class="header__nav__item {% if page.url contains "/journal/" %} header__nav__item--current{% endif %}">
-                    <a href="/journal/" title="hello" itemprop="url name">Journal</a>
+                    <a href="/journal/" title="hello" itemprop="url">
+                        <span itemprop="name">Journal</span>
+                    </a>
                 </li>
             </ul>
         </nav>
