@@ -1,14 +1,14 @@
 <footer class="footer" role="contentinfo">
     <div class="inner">
         <hr>
-        <span class="footer__copy">
+        <span class="footer__copy" itemscope itemtype="http://schema.org/Organization">
             &copy; {{ site.time | date: '%Y' }}
             -
-            <a href="{{ site.social.twitter }}" rel="me">Twitter</a>
+            <a href="{{ site.social.twitter }}" rel="me" itemprop="sameAs">Twitter</a>
             -
-            <a href="{{ site.social.instagram }}" rel="me">Instagram</a>
+            <a href="{{ site.social.instagram }}" rel="me" itemprop="sameAs">Instagram</a>
             -
-            <a href="{{ site.social.dribbble }}" rel="me">Dribbble</a>
+            <a href="{{ site.social.dribbble }}" rel="me" itemprop="sameAs">Dribbble</a>
             -
             <a href="http://github.com/alexpate/alexpate.uk">View Source</a>
         </span>
