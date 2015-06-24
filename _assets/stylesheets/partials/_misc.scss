@@ -206,7 +206,7 @@ article img {
 // Disqus Overrides
 //
 
-.nav-primary > ul > li.active > a:after {
+.active .publisher-nav-color::after {
     background: $color-flare-primary !important;
 }
 
