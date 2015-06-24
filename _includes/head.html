@@ -4,10 +4,12 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f00">
     <meta name="author" content="{{ site.author.name }}">
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
     <link rel="dns-prefetch" href="//d1712ben527am7.cloudfront.net">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic" rel="stylesheet" type="text/css">
 
     <link rel="author" href="{{ site.social.google }}">
     {% stylesheet stylesheets/base.css %}
@@ -22,6 +24,4 @@
     <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="twitter:image" content="{% asset_path img/alex.jpg %}" />
     {% endif %}
-
-    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic" rel="stylesheet" type="text/css">
 </head>
