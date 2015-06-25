@@ -15,8 +15,8 @@ The data is stored in tables as such:
 | *prod_id* | *cat_id* |
 | prod_name | cat_name |
 | prod_pretty | cat_slug |
-| prod_category * | ... |
-| ... |
+| prod_category * | cat_img |
+| ... | ... |
 
 
 Of course this could be done relatively easily using multiple queries, however where possible it's best to minimize the number of database queries we're making.
