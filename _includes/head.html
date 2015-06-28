@@ -1,20 +1,12 @@
 <head itemscope itemtype="http://schema.org/WebSite">
     <meta charset="utf-8">
-    <title itemprop="name">
-        {% if page.url == "/" %}
-            {{ site.title }}
-        {% elsif page.title %}
-            {{ page.title }} - {{ site.title }}
-        {% else %}
-            {{ site.title }}
-        {% endif %}
-    </title>
+    <title itemprop="name">{% if page.url == "/" %}{{ site.title }}{% elsif page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f00">
     <meta name="author" content="{{ site.author.name }}">
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="description" content="{{ description }}">
 
     <link rel="dns-prefetch" href="//d1712ben527am7.cloudfront.net">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20" rel="stylesheet" type="text/css">
@@ -31,7 +23,7 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@{{ site.social.twitter_handle }}" />
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}" />
-    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="twitter:description" content="{{ description }}" />
     <meta name="twitter:image" content="{% asset_path img/alex.jpg %}" />
     {% endif %}
 </head>
