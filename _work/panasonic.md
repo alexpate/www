@@ -11,7 +11,6 @@ description: "An unsolicited research project to redesign the Panasonic Global l
 <div class="inner-columns inner-columns--work">
     <div class="inner-columns__col">
         <h2>The Problem</h2>
-        <p>The Panasonic global site aims to serve two key strands of user: Consumers looking to research and purchase products; and enterprise users requiring information about the company. In attempting to serve both of these, the current actually fails at both.</p>
         <p>The Panasonic global site is the landing page for the core brand. It aims to serve both consumer (looking to research and purchase products), and enterprise level users (looking for information about the company). However, the site actually fails to serve either of these strands effectively.</p>
     </div>
     <div class="inner-columns__col">

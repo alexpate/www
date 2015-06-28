@@ -80,42 +80,6 @@
 
 }
 
-.availability__tip {
-    background: lighten(#161920, 10%);
-    border-radius: 3px;
-    color: #fff;
-    display: inline;
-    font-size: em-calc(13px);
-    margin-left: -115px;
-    margin-top: -5px;
-    opacity: 0;
-    padding: 5px 10px;
-    position: absolute;
-    transform: translateX(-10px);
-    transition: all .2s ease-in-out;
-    z-index: 10;
-
-    &:after {
-        background: lighten(#161920, 10%);
-        content: '';
-        height: 7px;
-        position: absolute;
-        right: -3px;
-        top: 12px;
-        transform: rotate(45deg);
-        width: 7px;
-    }
-
-    body#{$home-page} & {
-        background: #fff;
-        color: #161920;
-
-        &:after {
-            background: #fff;
-        }
-    }
-}
-
 @keyframes pulse {
     0% {
         opacity: 0;

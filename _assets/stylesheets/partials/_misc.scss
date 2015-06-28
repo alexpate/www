@@ -1,24 +1,6 @@
 //
-// Index Specific Styles
+// Author Byline
 //
-
-body#{$home-page} {
-    h1 {
-        // color: #fff;
-    }
-
-    .inner__article {
-        text-align: left;
-
-        @media #{$medium-up} {
-            text-align: center;
-        }
-    }
-
-    .btn {
-        margin: 10px 0;
-    }
-}
 
 .author-byline {
     border-bottom: 2px solid #eee;
@@ -50,13 +32,18 @@ body#{$home-page} {
     width: 100px;
 }
 
+//
+// ShareThis
+//
+
 .share-this {
     @extend .author-byline;
     border-top: 0;
 }
 
-
-// New Misc
+//
+// Article Images
+//
 
 .article-content img {
     margin: 30px 0;

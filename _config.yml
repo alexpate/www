@@ -78,6 +78,7 @@ sass:
 assets:
     baseurl: http://127.0.0.1:4000/assets/
     cache: false
+    cachebust: none
     css_compressor: sass
     js_compressor: uglifier
     debug: true
