@@ -6,13 +6,13 @@ environment: production
 # ==================
 # Base
 # ==================
-url: "http://alexpate.uk"
+url: "https://alexpate.uk"
 
 # ==================
 # Assets
 # ==================
 assets:
-    baseurl: http://d1712ben527am7.cloudfront.net/
+    baseurl: https://d1712ben527am7.cloudfront.net/
     cachebust: hard
     debug: false
     cache: true
