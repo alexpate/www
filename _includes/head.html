@@ -14,7 +14,8 @@
     <link rel="shortcut icon" href="{% asset_path img/favicon.png %}" />
 
     <link rel="author" href="{{ site.social.google }}">
-    {% stylesheet stylesheets/base.css %}
+
+    {% stylesheet stylesheets/base.css media="screen, handheld" %}
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
