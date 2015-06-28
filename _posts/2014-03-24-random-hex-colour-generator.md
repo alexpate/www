@@ -29,7 +29,7 @@ $('#change').click(function() {
 ```
 
 ## UPDATE 28-06-2015
-Two years later, have included a vanilla JavaScript version as well:
+Long overdue, have included a vanilla JavaScript version as well:
 
 ``` javascript
 var dh = window.innerHeight || document.body.clientHeight || document.documentElement.clientHeight;
