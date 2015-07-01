@@ -14,5 +14,5 @@ This repo is more for me. However, when I was first learning web development I l
 Feel free to say hello over on twitter [@alexjpate](http://twitter.com/alexjpate).
 
 ## To-do list
-- Validate Twitter Cards + Open Graph
 - General speed optimisation
+- Sort out FOUT (TypeKit)
