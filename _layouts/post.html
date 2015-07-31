@@ -32,10 +32,10 @@ layout: default
 
             <div class="paginate">
                 {% if page.previous.url %}
-                <a href="{{ page.previous.url }}" class="paginate__btn paginate__btn--previous"><span class="paginate__btn__arrow">&#8592;</span> Previous Post</a>
+                <a href="{{ page.previous.url }}" class="paginate__btn paginate__btn--previous"><span class="paginate__btn__arrow">&larr;</span> Previous Post</a>
                 {% endif %}
                 {% if page.next.url %}
-                <a href="{{ page.next.url }}" class="paginate__btn paginate__btn--next">Next Post <span class="paginate__btn__arrow">&#8594;</span></a>
+                <a href="{{ page.next.url }}" class="paginate__btn paginate__btn--next">Next Post <span class="paginate__btn__arrow">&rarr;</span></a>
                 {% endif %}
             </div>
         </article>
