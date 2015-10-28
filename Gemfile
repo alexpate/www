@@ -4,6 +4,7 @@ gem "jekyll"
 
 group :jekyll_plugins do
     gem "jekyll-sitemap"
+    gem 'jekyll-compose'
 end
 
 gem "autoprefixer-rails"
@@ -15,3 +16,4 @@ gem "kramdown"
 gem "sass"
 gem "typogruby"
 gem "uglifier"
+gem "jekyll-compose"

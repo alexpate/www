@@ -11,13 +11,13 @@ The examples below are just that, so remember to make the nesscary changes befor
 ## 1 - Generate CSR
 Open up the terminal, and SSH in to your server. The following will generate a CSR block.
 
-``` bash
+{% highlight bash %}
 openssl req -new -newkey rsa:2048 -nodes -keyout your_domain_here.key -out your_domain_here.csr
-```
+{% endhighlight %}
 
 You will then be asked to put in some more information about the admin of the certificate:
 
-``` bash
+{% highlight bash %}
 You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
@@ -37,16 +37,16 @@ Please enter the following 'extra' attributes
 to be sent with your certificate request
 A challenge password []:
 An optional company name []:
-```
+{% endhighlight %}
 
 Those last three are optional, so just press enter to skip through them.
 
 ## 2 - Copy CSR
 Open the CSR in terminal with the following. It should be a jumble of letters and numbers.
 
-``` python
+{% highlight python %}
 nano your_domain_here.csr
-```
+{% endhighlight %}
 
 ## 3 - Paste in to issuer.
 Depending on who you purchased the certificate from, there might be some different steps. If you purchased from NameCheap, then you'll need to login to your account, head to 'manage SSL Certificates', and click on 'issue'. You'll then be asked to select the server configuration (nginx), and then paste the contents of the CSR in to the box.
@@ -56,12 +56,12 @@ They also might require some other information. Likewise, once this is done, you
 ## 4 - Prepare the certificate
 A couple of minutes later, you'll receive an email containing the main bulk of the certificate. You should have four main files in the zip:
 
-``` bash
+{% highlight bash %}
 AddTrustExternalCARoot.crt
 your_domain.crt
 COMODORSAAddTrustCA.crt
 COMODORSADomainValidationSecureServerCA.crt
-```
+{% endhighlight %}
 
 You can ignore the AddTrustExternalCARoot.crt for the moment, that's not required.
 
@@ -71,25 +71,25 @@ Before we upload the files, we need to bundle them in to a single file. To do th
 
 Paste the following:
 
-``` bash
+{% highlight bash %}
 cat your_domain.crt COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt > your_domain.cer
-```
+{% endhighlight %}
 
 ## 5 - Upload to server
 You'll now see that a new file (your_domain.cer) has been created. Upload this file to your server. I always keep my certificates here:
 
-``` bash
+{% highlight bash %}
 /etc/ssl/customcerts
-```
+{% endhighlight %}
 
 but as long as you're consistent, it doesn't really matter.
 
 Likewise, when you were generating your CSR, you might have noticed a .key file was also created. Copy this file to the certificates folder. You'll also want to change the permissions on this file.
 
-``` bash
+{% highlight bash %}
 cd /etc/ssl/customcerts
 chmod 400 your_domain.key
-```
+{% endhighlight %}
 
 ## 6 - Upload your nginx server block
 Open up your nginx config file (/etc/nginx/sites-available/).
@@ -98,7 +98,7 @@ There's no right way of doing this, but here's an excerpt of what mine looks lik
 
 The bottom block redirects non-https to https.
 
-``` nginx
+{% highlight nginx %}
 server {
     listen 443 default ssl ipv6only=on;
 
@@ -117,13 +117,13 @@ server {
     server_name alexpate.uk;
     rewrite ^ https://$server_name$request_uri? permanent;
 }
-```
+{% endhighlight %}
 
 
 ## 7 - Restart nginx
 Restart nginx, and you're all good to go!
 
-``` bash
+{% highlight bash %}
 service nginx restart
-```
+{% endhighlight %}
 

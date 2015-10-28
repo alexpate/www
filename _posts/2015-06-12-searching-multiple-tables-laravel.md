@@ -25,9 +25,9 @@ Of course this could be done relatively easily using multiple queries, however w
 
 {% highlight php startinline %}
 
-    $products = Product::whereHas('category', function($query) use($term) {
-        $query->where('cat_name', 'like', '%'.$term.'%');
-    })->orWhere('prod_pretty','LIKE','%'.$term.'%')->orderBy($order, 'asc')->get();
+$products = Product::whereHas('category', function($query) use($term) {
+    $query->where('cat_name', 'like', '%'.$term.'%');
+})->orWhere('prod_pretty','LIKE','%'.$term.'%')->orderBy($order, 'asc')->get();
 
 {% endhighlight %}
 
@@ -48,3 +48,5 @@ If this returns no results, then we fall back to the second query, where we quer
     ->orWhere('prod_pretty','LIKE','%'.$term.'%')->get();
 
 {% endhighlight %}
+
+This is quite a brief post, and one which I plan to edit and go in to more detail in the future. In the mean time, if you have any questions, feel free to comment below and I'll try my best to answer.

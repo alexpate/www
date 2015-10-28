@@ -6,12 +6,12 @@ Heads up: this is more of an experiment than something that would be used in pro
 
 See it in [action here](http://codepen.io/alexpate/pen/MwjMxP).
 
-``` html
+{% highlight html %}
 <div class="paper">
 </div>
-```
+{% endhighlight %}
 
-``` scss
+{% highlight scss %}
 .paper {
   background: #fff;
   box-shadow: 0 0 2px rgba(0, 0, 0, .34);
@@ -48,4 +48,4 @@ See it in [action here](http://codepen.io/alexpate/pen/MwjMxP).
 
 }
 
-```
+{% endhighlight %}

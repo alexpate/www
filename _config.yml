@@ -63,17 +63,13 @@ markdown: kramdown
 
 kramdown:
     input: GFM
-    syntax_highlighter: rouge
     css_class: highlight
-
-pygments:
-    options: ['startinline']
 
 # ==================
 # Assets
 # ==================
 sass:
-    sass_dir: _assets/stylesheets
+    sass_dir: assets/stylesheets
 
 assets:
     baseurl: http://127.0.0.1:4000/assets/
@@ -83,4 +79,4 @@ assets:
     js_compressor: uglifier
     debug: true
     sources:
-        - _assets
+        - assets/

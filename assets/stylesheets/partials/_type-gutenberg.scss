@@ -17,7 +17,7 @@ p {
 
 }
 
-a:not(.btn) {
+a:not(.btn):not(.no-default) {
     color: $color-flare-primary;
 }
 
@@ -33,6 +33,8 @@ h2 {
     font-size: rem-calc(24px);
     font-weight: normal;
     margin: .4em 0;
+    border-bottom: 1px solid $color-flare-primary;
+    padding-bottom: 10px;
 
     &.full-span {
         @extend %font-family-beta;
@@ -95,4 +97,10 @@ table {
         text-decoration: underline;
     }
 
+}
+
+ol li {
+    @extend %font-family-beta;
+    font-size: rem-calc(19px);
+    padding: rem-calc(4px) 0;
 }

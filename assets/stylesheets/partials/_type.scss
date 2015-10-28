@@ -121,6 +121,11 @@ a {
     color: $color-flare-primary;
 }
 
+a.no-default {
+    color: inherit;
+    text-decoration: none;
+}
+
 //
 // Text Glitch Effect - 404
 // Shamelessly stolen from css-tricks.com/glitch-effect-text-images-svg/

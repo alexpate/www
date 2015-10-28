@@ -7,15 +7,17 @@ I first made this when I was getting started with jQuery. At the time, I guess i
 The basic idea is to generate a random hex colour, and update some DOM elements by setting their background/text color/and contents to the value of the new hew code.
 
 ## The Markup
-``` html
+
+{% highlight html %}
 <div id="container">
     <h1 id="colour">#e63c44</h1>
     <button id="change">New Colour</button>
 </div>
-```
+{% endhighlight %}
 
 ## jQuery
-``` javascript
+
+{% highlight javascript %}
 dh = $(document).height();
 
 $('#container').css({'padding-top':dh/3});
@@ -26,12 +28,12 @@ $('#change').click(function() {
     $('#change').css({'color':newColour});
     $('#colour').text(newColour);
 });
-```
+{% endhighlight %}
 
 ## UPDATE 28-06-2015
 Long overdue, have included a vanilla JavaScript version as well:
 
-``` javascript
+{% highlight javascript %}
 var dh = window.innerHeight || document.body.clientHeight || document.documentElement.clientHeight;
 
 document.getElementById('container').style.paddingTop = (dh/3);
@@ -45,4 +47,4 @@ btn.addEventListener('click', function() {
     btn.style.color = newColour;
     text.innerText = newColour;
 });
-```
+{% endhighlight %}

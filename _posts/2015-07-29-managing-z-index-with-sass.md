@@ -8,13 +8,13 @@ Rather than having multiple references to our z-index values spread out across t
 
 One of the biggest benefits of this other than maintainability, is that it removes the need to have elements with z-index's of 99999.
 
-``` scss
+{% highlight scss %}
 $z-stack: site, globalHeader, modal, modalOverlay
-```
+{% endhighlight %}
 
 Then, where ever we need to add a z-index, we can reference this variable like so:
 
-``` scss
+{% highlight scss %}
 .global-header {
   z-index: index($z-stack, globalHeader);
 }
@@ -22,11 +22,11 @@ Then, where ever we need to add a z-index, we can reference this variable like s
 .modal {
   z-index: index($z-stack, modal);
 }
-```
+{% endhighlight %}
 
 Which would generate:
 
-``` css
+{% highlight css %}
 .global-header {
   z-index: 2;
 }
@@ -34,5 +34,5 @@ Which would generate:
 .modal {
   z-index: 3;
 }
-```
+{% endhighlight %}
 
