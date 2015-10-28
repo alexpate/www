@@ -21,7 +21,7 @@ author:
     firstname: Alexander
     lastname: Pate
     nickname: Alex
-    description: "I'm a digital developer, mostly working with the front-end (but I know my way around Laravel). I'm currently a front-end developer at Pusher."
+    description: "I'm a digital developer, mostly working with the front-end (but I know my way around Laravel). I'm currently working in London at Pusher as a front-end developer."
 
 email: alex@alexpate.uk
 email_secure: "&#097;&#108;&#101;&#120;&#064;&#097;&#108;&#101;&#120;&#112;&#097;&#116;&#101;&#046;&#117;&#107;"
@@ -33,6 +33,7 @@ social:
     dribbble: "https://dribbble.com/alexpate"
     instagram: "https://instagram.com/alexjpate"
     google: "https://plus.google.com/+AlexanderPate"
+    codepen: "http://codepen.io/alexpate"
 
 availability:
     class: full
