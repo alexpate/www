@@ -1,18 +1,16 @@
 # Hi there!
-This is the as-of-yet unpublished source code of my [personal site](http://alexpate.uk).
+This is the source code of my [personal site](http://alexpate.uk).
 
 ## What's the point of this repo?
-This repo is more for me. However, when I was first learning web development I learnt a lot looking at other developers code. Hopefully by open sourcing this, someone might find it useful.
+Besides being an obvious place for me to keep track of my code, I would like to think that someone might find this useful. Got any questions, send me an email.
 
-## The workflow
-- Local development
-- Commit changes to GitHub
-- GitHub sends posthook to my server
-- Server pulls latest master and runs `jekyll build`
+## Installation
+Want to use this site locally?
+
+- `git clone` the repo somewhere safe
+- Run `bundle install` to fetch dependencies
+- To serve the site, `jekyll serve`
+- The site should now be running at http://127.0.0.1:4000
 
 ## Say hello!
 Feel free to say hello over on twitter [@alexjpate](http://twitter.com/alexjpate).
-
-## To-do list
-- General speed optimisation
-- Sort out FOUT (TypeKit)
