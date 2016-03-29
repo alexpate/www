@@ -11,11 +11,11 @@
     <link rel="dns-prefetch" href="//d1712ben527am7.cloudfront.net">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic" rel="stylesheet" type="text/css">
 
-    <link rel="shortcut icon" href="{% asset_path img/favicon.png %}" />
+    <link rel="shortcut icon" href="{% asset_path favicon.png %}" />
 
     <link rel="author" href="{{ site.social.google }}">
 
-    {% stylesheet stylesheets/base.css media="screen, handheld" %}
+    {% stylesheet base.css media="screen, handheld" %}
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
@@ -25,6 +25,6 @@
     <meta name="twitter:site" content="@{{ site.social.twitter_handle }}" />
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}" />
     <meta name="twitter:description" content="{{ description }}" />
-    <meta name="twitter:image" content="{% asset_path img/alex.jpg %}" />
+    <meta name="twitter:image" content="{% asset_path alex.jpg %}" />
     {% endif %}
 </head>

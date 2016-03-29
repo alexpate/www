@@ -19,13 +19,13 @@ description: "An unsolicited research project to redesign the Panasonic Global l
     </div>
 </div>
 
-{% image img/work/panasonic/ipad.jpg alt="Panasonic site on iPad" %}
+{% image work/panasonic/ipad.jpg alt="Panasonic site on iPad" %}
 
 <div class="page__article--inner">
     <h2>What I Did</h2>
     <p>Created a responsive set of templates demonstrating what the site could look like. Time was spent considering both user requirements in terms of devices, as well as location.</p>
 </div>
-{% image img/work/panasonic/devices.jpg alt="The site on responsive devices" %}
+{% image work/panasonic/devices.jpg alt="The site on responsive devices" %}
 
 <div class="page__article--inner">
     <h2>A Global Navigation</h2>
@@ -33,7 +33,7 @@ description: "An unsolicited research project to redesign the Panasonic Global l
     <p>Inspired largely by the BBC Orb navigation, I designed a clean navigation bar that can either be static at the top of the page, or float slightly below.</p>
 </div>
 
-{% image img/work/panasonic/perspective.jpg alt="The new global navigation" %}
+{% image work/panasonic/perspective.jpg alt="The new global navigation" %}
 
 <div class="page__article--inner">
     <h2>Developing for scale</h2>

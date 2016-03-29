@@ -8,7 +8,7 @@ environment: development
 # ==================
 title: Alex Pate - Front-end Engineer
 description: > #
-    Alex Pate is a digital designer and front-end engineer from London.
+  Alex Pate is a digital designer and front-end engineer from London.
 
 url: "http://127.0.0.1:4000"
 
@@ -17,26 +17,26 @@ url: "http://127.0.0.1:4000"
 # ==================
 name: Alex Pate
 author:
-    name: Alex Pate
-    firstname: Alexander
-    lastname: Pate
-    nickname: Alex
-    description: "I'm a digital developer, mostly working with the front-end (but I know my way around Laravel). I'm currently working in London at Pusher as a front-end engineer."
+  name: Alex Pate
+  firstname: Alexander
+  lastname: Pate
+  nickname: Alex
+  description: "I'm a digital developer, mostly working with the front-end (but I know my way around Laravel). I'm currently working in London at Pusher as a front-end engineer."
 
 email: alex@alexpate.uk
 email_secure: "&#097;&#108;&#101;&#120;&#064;&#097;&#108;&#101;&#120;&#112;&#097;&#116;&#101;&#046;&#117;&#107;"
 
 social:
-    twitter: "https://twitter.com/alexjpate"
-    twitter_handle: "alexjpate"
-    github: "https://github.com/alexpate"
-    dribbble: "https://dribbble.com/alexpate"
-    instagram: "https://instagram.com/alexjpate"
-    google: "https://plus.google.com/+AlexanderPate"
-    codepen: "http://codepen.io/alexpate"
+  twitter: "https://twitter.com/alexjpate"
+  twitter_handle: "alexjpate"
+  github: "https://github.com/alexpate"
+  dribbble: "https://dribbble.com/alexpate"
+  instagram: "https://instagram.com/alexjpate"
+  google: "https://plus.google.com/+AlexanderPate"
+  codepen: "http://codepen.io/alexpate"
 
 availability:
-    class: full
+  class: full
 
 # ============================
 # Pagination
@@ -46,42 +46,45 @@ permalink: /journal/:title
 paginate_path: /journal/page/:num
 
 collections:
-    work:
-        output: true
-        permalink: /:path/
+  work:
+    output: true
+    permalink: /:path/
 
 # ==================
 # Building
 # ==================
 exclude: [
-    "Gemfile",
-    "Gemfile.lock"
+  "Gemfile",
+  "Gemfile.lock",
+  "node_modules",
+  "gulpfile.js"
 ]
 
-gems: [jekyll-assets, rouge, autoprefixer-rails, jekyll-sitemap]
+gems: [jekyll-assets, rouge, jekyll-sitemap]
 
 markdown: kramdown
 
 kramdown:
-    input: GFM
-    syntax_highlighter: rouge
-    css_class: highlight
+  input: GFM
+  syntax_highlighter: rouge
+  css_class: highlight
 
 pygments:
-    options: ['startinline']
+  options: ['startinline']
 
 # ==================
 # Assets
 # ==================
 sass:
-    sass_dir: _assets/stylesheets
+  sass_dir: _assets/stylesheets
 
 assets:
-    baseurl: http://127.0.0.1:4000/assets/
-    cache: false
-    cachebust: none
-    css_compressor: sass
-    js_compressor: uglifier
-    debug: true
-    sources:
-        - _assets
+  cache: false
+  cachebust: none
+  css_compressor: sass
+  js_compressor: uglifier
+  debug: true
+  sources:
+      - "_assets/css"
+      - "_assets/js"
+      - "_assets/img"

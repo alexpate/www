@@ -1,0 +1,27 @@
+{
+  "name": "alexpate.uk",
+  "version": "1.6.0",
+  "description": "Source files for personal site",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexpate/alexpate.uk.git"
+  },
+  "author": "Alex Pate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexpate/alexpate.uk/issues"
+  },
+  "homepage": "https://github.com/alexpate/alexpate.uk#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-shell": "^0.5.2",
+    "gulp-rename": "^1.2.2"
+  }
+}
