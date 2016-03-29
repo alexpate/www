@@ -12,7 +12,7 @@ bodyClass: nav--light page--work
     <p>I was approached in late 2014 to create the new visuals for the user-facing side of morethanabusinesscard.com. The pre-exsiting branding was to be used, however as the sole designer, I had full reign over direction.</p>
 </div>
 
-{% image img/work/panasonic/ipad.jpg %}
+{% image work/panasonic/ipad.jpg %}
 
 <div class="page__article--inner">
     <h2>What the client thought</h2>

@@ -12,7 +12,6 @@ url: "https://alexpate.uk"
 # Assets
 # ==================
 assets:
-    baseurl: https://d1712ben527am7.cloudfront.net/
     cachebust: hard
     debug: false
     cache: true
