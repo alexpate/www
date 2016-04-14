@@ -1,0 +1,31 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Pagination
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.paginate {
+  border-bottom: 2px solid $color-primary;
+  height: auto;
+  margin: rem-calc(10px) 0;
+  overflow: hidden;
+  padding: rem-calc(10px) 0;
+  width: 100%;
+}
+
+.paginate__btn {
+  @extend %font-family-beta;
+  font-size: rem-calc(16px);
+  height: 50px;
+  padding-top: 20px;
+  text-decoration: none;
+  width: 50%;
+}
+
+.paginate__btn--next {
+  float: right;
+  text-align: right;
+}
+
+.paginate__btn--previous {
+  float: left;
+  text-align: left;
+}

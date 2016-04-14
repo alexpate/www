@@ -1,0 +1,30 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// General Layout
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.page__header,
+.page__article {
+  width: 100%;
+}
+
+.page__header {
+  padding: rem-calc(50px) 0 rem-calc(25px);
+
+  @media #{$medium-up} {
+    padding: rem-calc(100px) 0 rem-calc(50px);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.work__header {
+  height: calc(80vh - 200px);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .page__title {
+    color: #fff;
+  }
+}

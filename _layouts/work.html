@@ -3,38 +3,43 @@ layout: default
 ---
 <main role="main">
 
-    <header class="work__header work__header--feature" {% if page.backgroundUrl %}style="background: url({{ page.backgroundUrl | asset_path }}) no-repeat center center / cover"{% endif %}>
-        <h1 class="work__title">{{ page.title }}</h1>
-        <span class="work__meta">{{ page.sub }}</span>
-    </header>
-    <section class="site__content site__content--page inner">
+  <header class="work__header work__header--feature" {% if page.backgroundUrl %}style="background: url({{ page.backgroundUrl | asset_path }}) no-repeat center center / cover"{% endif %}>
+    <div>
+      <h1 class="page__title">{{ page.title }}</h1>
+      <span class="page__meta">{{ page.sub }}</span>
+    </div>
+  </header>
+  <section class="grid inner">
 
-        <article class="gutenberg no-first-of">
-            {{ content }}
+    <article class="gutenberg grid__small-12 grid__medium-8 grid__medium-centered grid__columns">
+      {{ content }}
 
-            <div class="callout">
-                <h3 class="callout__title">Interested in working together?</h3>
-                <a href="mailto:{{ site.email_secure }}" class="btn btn--massive">{{ site.email_secure }}</a>
-            </div>
-        </article>
-    </section>
+      {% include post_pagination.html %}
+      
+      {% include author.html %}
+    </article>
+
+    {% include disqus.html %}
+
+  </section>
+
 </main>
 
 <script>
-    var dh = window.innerHeight || document.body.clientHeight || document.documentElement.clientHeight;
-    var workHeader = document.getElementsByClassName("work__header")[0];
-    workHeader.style.height = dh + 'px';
-    console.log(dh);
-    workHeader.style.paddingTop = (dh/2)-50 + 'px';
+    // var dh = window.innerHeight || document.body.clientHeight || document.documentElement.clientHeight;
+    // var workHeader = document.getElementsByClassName("work__header")[0];
+    // workHeader.style.height = dh + 'px';
+    // console.log(dh);
+    // workHeader.style.paddingTop = (dh/2)-50 + 'px';
 
-    var runOnScroll =  function(evt) {
-        var scrollTop = document.body.scrollTop;
-        if(scrollTop >=10) {
-            workHeader.classList.add('work__header--scrolling');
-        } else {
-            workHeader.classList.remove('work__header--scrolling');
-        }
-    };
+    // var runOnScroll =  function(evt) {
+    //     var scrollTop = document.body.scrollTop;
+    //     if(scrollTop >=10) {
+    //         workHeader.classList.add('work__header--scrolling');
+    //     } else {
+    //         workHeader.classList.remove('work__header--scrolling');
+    //     }
+    // };
 
-    window.addEventListener("scroll", runOnScroll);
+    // window.addEventListener("scroll", runOnScroll);
 </script>

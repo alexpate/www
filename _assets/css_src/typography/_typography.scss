@@ -1,0 +1,11 @@
+@import 'base';
+@import 'titles';
+@import 'helpers';
+@import 'syntax_highlighting';
+
+@mixin CHAMELEON-typography {
+  @include chameleon-typography-base;
+  @include chameleon-typography-titles;
+  @include chameleon-typography-helpers;
+  @include chameleon-typography-syntax-highlighting;
+}

@@ -1,59 +1,38 @@
 ---
 layout: default
 ---
-<main role="main" class="inner">
-    <section class="site__content site__content--post" itemscope itemtype="http://schema.org/BlogPosting">
-        <header class="post__header">
-            <h1 class="post__title" itemprop="name">{{ page.title }}</h1>
-            <span class="post__meta">
-                <time datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">
-                {% assign d = page.date | date: "%-d"  %}
-                {{ page.date | date: "%A %B" }}
-                {% case d %}
-                    {% when '1' or '21' or '31' %}{{ d }}st
-                    {% when '2' or '22' %}{{ d }}nd
-                    {% when '3' or '23' %}{{ d }}rd
-                    {% else %}{{ d }}th
-                {% endcase %},
-                {{ page.date | date: "%Y" }}{% if page.meta %} • {{ page.meta }}{% endif %}
-                </time>
-            </span>
-        </header>
+<main role="main" class="grid">
+  <section class="grid__small-12 grid__medium-7 grid__medium-centered grid__columns" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="page__header">
+      <h1 class="page__title" itemprop="name">{{ page.title }}</h1>
+      <span class="page__meta">
+        <time datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">
+          {% assign d = page.date | date: "%-d"  %}
+          {{ page.date | date: "%A %B" }}
+          {% case d %}
+              {% when '1' or '21' or '31' %}{{ d }}st
+              {% when '2' or '22' %}{{ d }}nd
+              {% when '3' or '23' %}{{ d }}rd
+              {% else %}{{ d }}th
+          {% endcase %},
+          {{ page.date | date: "%Y" }}{% if page.meta %} • {{ page.meta }}{% endif %}
+        </time>
+      </span>
+    </header>
+    <article class="page__article gutenberg" itemprop="articleBody">
+      {{ content }}
 
-        <article class="post__article gutenberg" itemprop="articleBody">
-            {{ content }}
+      {% if site.environment == 'production' %}
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="alexjpate" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+      <script>
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
+      {% endif %}
 
-            {% if site.environment == 'production' %}
-            <a href="https://twitter.com/share" class="twitter-share-button" data-via="alexjpate" data-size="large" data-count="none" data-dnt="true">Tweet</a>
-            <script>
-                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-            </script>
-            {% endif %}
+      {% include post_pagination.html %}
+    </article>
+    {% include author.html %}
 
-            <div class="paginate">
-                {% if page.previous.url %}
-                <a href="{{ page.previous.url }}" class="paginate__btn paginate__btn--previous"><span class="paginate__btn__arrow">&larr;</span> Previous Post</a>
-                {% endif %}
-                {% if page.next.url %}
-                <a href="{{ page.next.url }}" class="paginate__btn paginate__btn--next">Next Post <span class="paginate__btn__arrow">&rarr;</span></a>
-                {% endif %}
-            </div>
-        </article>
-        {% include author.html %}
-
-        {% if site.environment == 'production' %}
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            var disqus_shortname = 'alexpateuk';
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-        {% endif %}
-    </section>
-
-    {% include sidebar.html %}
+    {% include disqus.html %}
+  </section>
 </main>

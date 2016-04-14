@@ -6,10 +6,10 @@
 }
 
 .port-grid__col {
-    @include grid-column(12, $collapse: true);
+    @include grid-column(12, $collapse: false);
 
     @media #{$medium-up} {
-        @include grid-column($columns: 6, $collapse: true);
+        @include grid-column($columns: 6, $collapse: false);
 
         &:last-of-type {
             @include grid-column($columns: 12, $collapse: true);
@@ -22,10 +22,10 @@
     }
 
     @media #{$large-up} {
-        @include grid-column($columns: 4, $collapse: true);
+        @include grid-column($columns: 4, $collapse: false);
 
         &:last-of-type {
-            @include grid-column($columns: 4, $collapse: true);
+            @include grid-column($columns: 4, $collapse: false);
 
             .port-grid__item {
                 float: none;

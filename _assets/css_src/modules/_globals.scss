@@ -1,0 +1,75 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Global Variables & Styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Typography
+$font-family-alpha: "Graphik", Georgia, Times, serif;
+$font-family-beta: "GT Pressura Mono Trial", Helvetica Neue, Helvetica, sans-serif;
+$font-family-copy: 'Graphik', Georgia, Times, serif;
+
+%font-family-alpha {
+    font-family: $font-family-alpha;
+}
+
+%font-family-beta {
+    font-family: $font-family-beta;
+}
+
+%font-family-copy {
+    font-family: $font-family-copy;
+    font-weight: 400;
+}
+
+// Color
+$color-palette: (
+  primary: #00f,
+  secondary: #ffdf00,
+  flare_primary: #00f,
+  flare_secondary: #a6a6ff
+);
+
+$color-primary: map-get($color-palette, primary);
+$color-secondary: map-get($color-palette, secondary);
+$color-flare-primary: map-get($color-palette, flare_primary);
+$color-flare-secondary: map-get($color-palette, flare_secondary);
+
+$color-background: #f6f6f6;
+$color-alpha : #161920;
+$color-beta : #ffdf00;
+
+$color-type: #272b36;
+
+$color-flare-primary: #00f;
+$color-flare-secondary: lighten($color-flare-primary, 35%);
+
+$color-black : #161920;
+$color-white : #fff;
+
+// Misc Variables
+$home-page: '.home';
+
+
+// Layout & Grid
+$global-width: 1200px;
+$global-left: left;
+$global-right: right;
+
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+) !default;
+
+$breakpoint-classes: (small medium large) !default;
+
+$grid-row-width: $global-width;
+$grid-column-count: 12 !default;
+$grid-column-gutter: (
+  small: 20px,
+  medium: 30px,
+) !default;
+
+$grid-column-align-edge: true;
+$block-grid-max: 8;

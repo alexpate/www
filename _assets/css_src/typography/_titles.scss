@@ -1,0 +1,80 @@
+@mixin chameleon-typography-titles {
+  .title-block {
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-size: rem-calc(28px);
+    line-height: 1.2em;
+    font-weight: 400;
+
+    strong {
+      font-weight: 500;
+    }
+
+    @media #{$medium-up} {
+      font-size: rem-calc(40px);
+    }
+  }
+
+  .feature-title {
+    font-size: rem-calc(38px);
+    font-weight: 400;
+    line-height: 1em;
+    margin-bottom: 5px;
+
+    strong {
+      font-weight: 500;
+    }
+
+    @media #{$medium-up} {
+      font-size: rem-calc(58px);
+      letter-spacing: -1px;
+    }
+  }
+
+  h2 {
+    font-size: rem-calc(24px);
+    line-height: 1.15em;
+    font-weight: 400;
+    color: $color-black;
+
+    @media #{$medium-up} {
+      font-size: rem-calc(28px);
+    }
+  }
+
+  h3 {
+    font-size: rem-calc(22px);
+    font-weight: 400;
+    line-height: 1.15em;
+  }
+
+  h4 {
+    font-size: rem-calc(20px);
+    font-weight: 400;
+    line-height: 1.2em;
+  }
+
+
+  h6 {
+    text-transform: uppercase;
+    font-size: rem-calc(16px);
+    font-weight: 600;
+    color: $color-black;
+    line-height: 1.3em;
+  }
+
+  .shoutout {
+    font-size: rem-calc(31px);
+    font-weight: 400;
+    line-height: 1.3em;
+    text-align: left;
+
+    @media #{$medium-up} {
+      font-size: rem-calc(36px);
+      text-align: center;
+      
+    }
+  }
+}

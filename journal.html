@@ -7,11 +7,17 @@ gutenberg: false
 description: "Experiments and thoughts on design and development."
 ---
 
-{% for post in site.posts %}
-    <article class="post-teaser" itemscope="" itemtype="http://schema.org/BlogPosting">
-        <h2 class="post-teaser__title" itemprop="name headline">
-            <a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-teaser__sub"><time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%A %-d %b %Y" }}</time></span>
-    </article>
-{% endfor %}
+<div class="grid">
+  {% for post in site.posts %}
+  <div class="grid__small-12 grid__medium-4 grid__columns">
+    <a class="post-teaser" href="{{ post.url | prepend: site.url }}" itemscope="" itemtype="http://schema.org/BlogPosting">
+      <div>
+        <h2 class="post-teaser__title" itemprop="name headline">{{ post.title }}</h2>
+        <span class="post-teaser__sub">
+          <time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%A %-d %b %Y" }}</time>
+        </span>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>

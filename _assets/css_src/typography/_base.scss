@@ -1,0 +1,49 @@
+@mixin chameleon-typography-base {
+  div,
+  dl,
+  dt,
+  dd,
+  ul,
+  ol,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  form,
+  p,
+  blockquote,
+  th,
+  td {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: $color-primary;
+  }
+
+  p,
+  ul li,
+  ol li {
+    font-size: rem-calc(18px);
+    line-height: 1.4em;
+    font-weight: 400;
+  }
+
+  .p-boosted,
+  .p-max {
+    font-size: rem-calc(18px);
+  }
+
+  .p-min {
+    font-size: rem-calc(14px);
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
