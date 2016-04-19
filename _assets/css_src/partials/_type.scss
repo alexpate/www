@@ -72,6 +72,10 @@ table {
   @media #{$medium-up} {
     text-align: center;
   }
+
+  .work__header & {
+    color: rgba(255, 255, 255, .7);
+  }
 }
 
 

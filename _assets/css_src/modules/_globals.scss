@@ -3,21 +3,24 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Typography
-$font-family-alpha: "Graphik", Georgia, Times, serif;
-$font-family-beta: "GT Pressura Mono Trial", Helvetica Neue, Helvetica, sans-serif;
-$font-family-copy: 'Graphik', Georgia, Times, serif;
+$font-family-alpha: "Graphik Web", Helvetica Neue, Helvetica, Arial, sans-serif;
+$font-family-beta: "GT Pressura", Courier, monospace;
+$font-family-copy: $font-family-alpha;
+
+$fonts-location: '/assets/';
 
 %font-family-alpha {
-    font-family: $font-family-alpha;
+  font-family: $font-family-alpha;
+  font-feature-settings: "liga", "kern";
 }
 
 %font-family-beta {
-    font-family: $font-family-beta;
+  font-family: $font-family-beta;
 }
 
 %font-family-copy {
-    font-family: $font-family-copy;
-    font-weight: 400;
+  font-family: $font-family-copy;
+  font-weight: 400;
 }
 
 // Color

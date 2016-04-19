@@ -124,10 +124,10 @@
 .signpost__helper {
     @extend %font-family-beta;
     display: block;
-    font-size: rem-calc(13px);
-    font-style: italic;
+    font-size: rem-calc(12px);
     position: relative;
     z-index: 4;
+    color: #444;
 }
 
 .signpost--dark {

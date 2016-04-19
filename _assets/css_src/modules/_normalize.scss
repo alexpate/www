@@ -130,6 +130,10 @@ pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
+  font-feature-settings: normal;
+  background-color: $color-background;
+  padding: 4px 2px;
+  border-radius: 3px;
 }
 
 button,

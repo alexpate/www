@@ -5,25 +5,49 @@
 .stream-item {
   margin: 0 0 2em;
   width: 100%;
-  min-height: 200px;
-  max-height: 400px;
-  background: #fff;
-  padding: 30px 40px;
-  margin-bottom: 20px;
-  display: inline-flex;
-  align-items: flex-end;
+  height: 160px;
+  background: #C6CED8;
+  padding: 30px;
+  margin-bottom: 10px;
+  display: inline-block;
   text-decoration: none;
-  border: 1px solid #eee;
+
+  @media #{$medium-up} {
+    padding: 30px 90px 30px 40px;
+    margin-bottom: 20px;
+  }
 
   &--project {
-    background-color: pink;
+    height: 260px;
+
+    @media #{$medium-up} {
+      height: 460px;
+    }
+
+    &.pusher-dashboard {
+      background-color: #3cd6ee;
+    }
+
+    &.pusher-rebrand {
+      background-color: #29ecba;
+    }
+
+    &.pusher-chameleon {
+      background-color: #fecc25;
+      -webkit-animation: hue 40s infinite linear;
+    }
+  }
+
+  &__title,
+  &__sub {
+    color: #fff;
   }
 
   &__title {
     font-size: rem-calc(18px);
     font-weight: normal;
     line-height: 1em;
-    margin-bottom: rem-calc(10px);
+    margin-bottom: rem-calc(6px);
 
     @media #{$medium-up} {
       font-size: rem-calc(18px);
@@ -31,54 +55,37 @@
   }
 
   &__sub {
-    font-size: rem-calc(12px);
+    @extend %font-family-beta;
+    font-size: rem-calc(16px);
+    position: relative;
+
+    &:after {
+      width: 30px;
+      height: 4px;
+      background-color: #fff;
+      display: block;
+      bottom: -20px;
+      content: "";
+      position: absolute;
+    }
   }
 }
 
 .stream {
-  column-count: 3;
-  column-gap: 2em;
-  // @for $i from 1 through 10 {
-  //   .stream-item:nth-of-type(#{$i}) {
-  //     height: (random(100) * 10) + px;
-  //   }
-  // }
+  margin: 40px auto 0 !important;
+
+  @media #{$medium-up} {
+    column-gap: 2em;
+    column-count: 2;
+  }
 }
 
-.steam-item {
-  &:nth-of-type(1) {
-    height: 200px;
+@-webkit-keyframes hue {
+  from {
+  -webkit-filter: hue-rotate(0deg);
   }
 
-  &:nth-of-type(2) {
-    height: 400px;
-  }
-
-  &:nth-of-type(3) {
-    height: 280px;
-  }
-
-  &:nth-of-type(4) {
-    height: 340px;
-  }
-
-  &:nth-of-type(5) {
-    height: 380px;
-  }
-
-  &:nth-of-type(6) {
-    height: 120px;
-  }
-
-  &:nth-of-type(7) {
-    height: 320px;
-  }
-
-  &:nth-of-type(8) {
-    height: 400px;
-  }
-
-  &:nth-of-type(1) {
-    height: 360px;
+  to {
+  -webkit-filter: hue-rotate(360deg);
   }
 }
