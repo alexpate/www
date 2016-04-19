@@ -11,17 +11,21 @@ gutenberg: false
 
 <div class="grid stream">
 
-  {% for post in site.posts %}
+    {% for post in site.posts %}
 
-      <a class="stream-item{% if post.category == 'project' %} stream-item--project{% endif %}" href="{{ post.url | prepend: site.url }}" itemscope="" itemtype="http://schema.org/BlogPosting">
+      <a class="stream-item{% if post.category == 'project' %} stream-item--project {{post.slug}}{% endif %}" href="{{ post.url }}" itemscope="" itemtype="http://schema.org/BlogPosting">
         <div>
           <h3 class="stream-item__title">{{ post.title }}</h3>
           <span class="stream-item__sub">
-            <time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%A %-d %b %Y" }}</time>
+            {% if post.category == 'project' %}
+              {{ post.sub }}
+            {% else %}
+              <time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%A %-d %b %Y" }}</time>
+            {% endif %}
           </span>
         </div>
       </a>
 
+    {% endfor %}
 
-  {% endfor %}
 </div>

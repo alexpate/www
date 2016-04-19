@@ -1,0 +1,103 @@
+---
+title:  "Chameleon - Our Living Styleguide"
+sub: "How to share front-end assets across projects"
+layout: work
+category: project
+slug: pusher-chameleon
+---
+
+**Context**: Last week I ran a session with the rest of the Pusher team to introduce a new project I've been working on, to help manage our front-end assets across multiple projects. This article accompanies the presentation.
+
+## The Problem - 50 shades of grey
+
+CSS is a pretty easy language to write. But this makes it near impossible to manage. When I joined Pusher 6 months ago as the first dedicated front-end developer, it was clear we had a problem. Styles were scoped to individual patterns on individual pages, and among these, styles differed.
+
+A quick run through CSS Stats, showed us that we were using over 600 different text colors, and 402 different font sizes. Not only was this impacting the visual consitency, but it also made it difficult to maintain.
+
+Further to this, there was also little consitency in naming conventions. The color white was defined in every possible combination: `#fff`, `#fffff`, `#FFF`, `#FFFFFF`, `white`, `rgb(255, 255, 255)`...
+
+{% img 2016/04/chameleon_css_stats.png %}
+
+## Bring in Bootstrap/Foundation
+Bootstrap is a great tool for getting a site up and running quickly. My issue with bootstrap isn't in it's use, but rather how it's used.
+
+If you were to look through all of the main stylesheets from all of our projects, somewhere near the top, this is probably what you'll see:
+
+```sass
+@import 'bootstrap';
+```
+
+What's the problem with this? Abstraction. There's no way of knowing what's actually being included in the compiled code without going and looking at it. This is to CSS what jQuery is to JavaScript. When we take a look, we see an extra 6000+ lines of uncompressed CSS that's been prepended to our stylesheet. Do we really need those progress bar styles on a blog?
+
+## So what styles do we actually need?
+Rather than starting with a bootstrapped site and removing what we don't use, we took the approach to only ever start with what's required. And that's the grid, some Sass utilities, and a few helper classes. Everything else such as our buttons, our dropdowns, and our typography is custom to us.
+
+## Sharing assets across projects
+Now that we had a repo of assets (not just css, javascript and images as well), it was now a case of working out how we actually include that in to projects that require those assets.
+
+Most of our projects are written in Ruby (rails), apart from our blog which runs on WordPress. Because of this, it was important to remove any bias towards any framework or language, and for the core Chameleon repo to be able to stand alone.
+
+However, in order to make the non rails standard directory structure (`app/assets/*`) place nicely with Rail's asset pipeline, we added helpers to allow Chameleon to adapt to it's parent environment.
+
+For example, when in a Rails app:
+
+```ruby
+# lib/pusher_chameleon/engine.rb
+module PusherChameleon
+  module Rails
+    class Engine < ::Rails::Engine
+
+      initializer 'pusher_chameleon.assets.precompile' do |app|
+        %w(stylesheets javascripts fonts).each do |sub|
+          app.config.assets.paths << root.join(sub).to_s
+        end
+      end
+
+    end
+  end
+end
+```
+
+
+## Only what you need, and nothing else
+Certain projects only need certain styles. As such, every pattern in Chameleon is scoped inside a mixin. Simply adding `@import 'chameleon'` won't give you any styles. In order to output any CSS, patterns need to be explicity included:
+
+```sass
+// Bring in all mixins/variables/utils
+@import 'chameleon';
+
+// Define what patterns we actually want
+@include CHAMELEON-base
+@include CHAMELEON-grid
+@include CHAMELEON-typography
+@include CHAMELEON-forms
+@include CHAMELEON-flex-aligners
+@include CHAMELEON-visibility-classes
+@include CHAMELEON-spacers
+```
+
+## Simple to use
+As the primary front-end engineer, it's likely that most of the front-end work will be done myself. However, there are still times when others (be they platform engineers, or designers) are making changes to the CSS. Because of this, it was important that Chameleon gives you as much for free as possible.
+
+Inputs don't require extra classes, buttons are classed as expected (`btn`), and title styles are applied through using the relevant HTML tag, or by adding a class for when use of the semantic tag doesn't make sense:
+
+```html
+<h1>Big Page Title</h1>
+<span class="h1">Big Page Title</span>
+```
+
+{% image 2016/04/chameleon_color.png %}
+
+
+## Chameleon = Control
+Ultimately, this whole project has been about grasping control in two key areas:
+
+1 - Having total control over what's actually going into our compiled stylesheets.
+2 - Having more control over our patterns in order to reduce the need to maintain multiple codebases.
+
+
+* * *
+
+### Notes and Extended Reading
+- [Move Slow and Fix Things - Dan Eden](https://www.youtube.com/watch?v=zmjfh099zYg)
+- [GOV.UK Elements](https://www.gov.uk/service-manual/user-centred-design/resources/elements/index.html)

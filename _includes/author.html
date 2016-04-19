@@ -1,11 +1,6 @@
 <div class="author-byline">
-    {% image 2015/10/alex.png class="author-byline__img" alt="Alex Pate" [no-autosize] %}
+    {% img 2015/10/alex.png class:"author-byline__img" alt:"Alex Pate" %}
     <h2 class="author-byline__author">Posted by <span itemprop="author">{{ site.author.name }}</span></h2>
-    <span class="author-byline__copy">
-      {% if page.category == 'project' %}
-        Interested in working together? I'm currently available for small projects. Interested in hiring me? Check out my <a href="https://alexpate.s3.amazonaws.com/resume.pdf">resume.</a>
-      {% else %}
-        {{ site.author.description }}
-      {% endif %}
+    <span class="author-byline__copy">{{ site.author.description }}{% if page.category == 'project' %}Interested in working together? <a href="mailto:{{ site.email_secure }}?subject=Hey there!">Get in touch</a>, or take a look at my <a href="https://alexpate.s3.amazonaws.com/resume.pdf">resume.</a>{% endif %}
     </span>
 </div>
