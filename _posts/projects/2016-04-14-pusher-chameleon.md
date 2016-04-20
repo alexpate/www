@@ -33,11 +33,13 @@ What's the problem with this? Abstraction. There's no way of knowing what's actu
 Rather than starting with a bootstrapped site and removing what we don't use, we took the approach to only ever start with what's required. And that's the grid, some Sass utilities, and a few helper classes. Everything else such as our buttons, our dropdowns, and our typography is custom to us.
 
 ## Sharing assets across projects
-Now that we had a repo of assets (not just css, javascript and images as well), it was now a case of working out how we actually include that in to projects that require those assets.
+Now that we had a repo of assets (not just css: javascript and images as well), it was now a case of working out how we actually include that in to projects that require those assets.
 
 Most of our projects are written in Ruby (rails), apart from our blog which runs on WordPress. Because of this, it was important to remove any bias towards any framework or language, and for the core Chameleon repo to be able to stand alone.
 
-However, in order to make the non rails standard directory structure (`app/assets/*`) place nicely with Rail's asset pipeline, we added helpers to allow Chameleon to adapt to it's parent environment.
+We then have individual build procesess to port to specific languages. For example, Rails apps import Chameleon as a standard Gem.
+
+However, in order to make the non rails standard directory structure (`app/assets/*`) place nicely with Rail's asset pipeline, we also added helpers to allow Chameleon to adapt to it's parent environment.
 
 For example, when in a Rails app:
 
@@ -58,9 +60,8 @@ module PusherChameleon
 end
 ```
 
-
 ## Only what you need, and nothing else
-Certain projects only need certain styles. As such, every pattern in Chameleon is scoped inside a mixin. Simply adding `@import 'chameleon'` won't give you any styles. In order to output any CSS, patterns need to be explicity included:
+Certain projects only need certain styles. As such, every pattern in Chameleon is scoped inside a mixin. Simply adding `@import 'chameleon'` won't give you any styles. In order to output any CSS, patterns need to be explicitly included:
 
 ```sass
 // Bring in all mixins/variables/utils
@@ -79,7 +80,7 @@ Certain projects only need certain styles. As such, every pattern in Chameleon i
 ## Simple to use
 As the primary front-end engineer, it's likely that most of the front-end work will be done myself. However, there are still times when others (be they platform engineers, or designers) are making changes to the CSS. Because of this, it was important that Chameleon gives you as much for free as possible.
 
-Inputs don't require extra classes, buttons are classed as expected (`btn`), and title styles are applied through using the relevant HTML tag, or by adding a class for when use of the semantic tag doesn't make sense:
+Inputs don't require extra classes, buttons are classed as expected (`.btn`), and title styles are applied through using the relevant HTML tag, or by adding a class for when use of the semantic tag doesn't make sense:
 
 ```html
 <h1>Big Page Title</h1>
@@ -89,7 +90,7 @@ Inputs don't require extra classes, buttons are classed as expected (`btn`), and
 {% image 2016/04/chameleon_color.png %}
 
 
-## Chameleon = Control
+## Chameleon == Control
 Ultimately, this whole project has been about grasping control in two key areas:
 
 1 - Having total control over what's actually going into our compiled stylesheets.
