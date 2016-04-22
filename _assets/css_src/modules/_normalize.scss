@@ -1,3 +1,7 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Normalize
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
@@ -126,6 +130,10 @@ pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
+  font-feature-settings: normal;
+  background-color: $color-background;
+  padding: 4px 2px;
+  border-radius: 3px;
 }
 
 button,

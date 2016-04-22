@@ -1,3 +1,7 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Inputs
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
 .btn {
     @extend %font-family-beta;
     background: $color-white;
@@ -36,7 +40,7 @@
     background: $color-black;
     border-color: darken($color-black, 15%);
     color: $color-white;
-    font-size: rem-calc(20px);
+    font-size: rem-calc(14px);
     padding: 15px 50px;
     text-transform: none;
 }

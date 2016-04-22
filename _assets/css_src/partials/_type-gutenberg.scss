@@ -1,98 +1,129 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Gutenberg Type Styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
 p {
+  color: $color-type;
+  font-size: rem-calc(16px);
+  line-height: rem-calc(30px);
+  margin: 0 0 rem-calc(15px);
+
+  &:first-of-type {
+    color: darken($color-type, 5%);
+    font-size: rem-calc(19px);
+    line-height: rem-calc(31px);
+  }
+
+  &.no-first-of:first-of-type {
     color: $color-type;
     font-size: rem-calc(17px);
-    font-weight: normal;
-    line-height: rem-calc(32px);
-    margin: 0 0 em-calc(15px);
+  }
 
-    &:first-of-type {
-        color: darken($color-type, 5%);
-        font-size: rem-calc(20px);
-    }
-
-    &.no-first-of:first-of-type {
-        color: $color-type;
-        font-size: rem-calc(17px);
-    }
+  strong {
+    font-weight: 500;
+  }
 
 }
 
 a:not(.btn) {
-    color: $color-flare-primary;
+  color: $color-flare-primary;
 }
 
 &.no-first-of {
-    p:first-of-type {
-        color: $color-type;
-        font-size: rem-calc(17px);
-    }
+  p:first-of-type {
+    color: $color-type;
+    font-size: rem-calc(17px);
+  }
 }
 
 h2 {
-    @extend %font-family-beta;
-    font-size: rem-calc(24px);
-    font-weight: normal;
-    margin: .4em 0;
+  font-size: rem-calc(16px);
+  font-weight: 500;
+  margin: rem-calc(20px) 0;
 
-    &.full-span {
-        @extend %font-family-beta;
-        font-size: rem-calc(20px);
-        line-height: rem-calc(32px);
-        margin: rem-calc(20px) 0;
-
-        @media #{$medium-up} {
-            font-size: rem-calc(26px);
-            line-height: rem-calc(36px);
-            margin: rem-calc(30px) 0;
-        }
-    }
+  span {
+    color: #bbb;
+    font-size: rem-calc(14px);
+  }
 }
 
 h3 {
-    font-size: rem-calc(20px);
-    font-weight: bold;
+  @extend %font-family-beta;
+  font-size: rem-calc(16px);
+  font-weight: 400;
+  line-height: 1.4em;
+  color: #8E97A9;
 
-    span {
-        color: #bbb;
-        font-size: rem-calc(16px);
-    }
+  span {
+    font-size: rem-calc(13px);
+    color:lighten(#8E97A9, 10%);
+  }
 }
 
 .inline-image {
-    display: block;
-    margin: rem-calc(20px) auto;
+  display: block;
+  margin: rem-calc(40px) auto;
+}
+
+img:not(.author-byline__img) {
+  width: 100%;
+  border-radius: 0;
+  max-width: none;
+  margin: rem-calc(20px) 0;
+
+  @media #{$medium-up} {
+    width: calc(100% + 200px);
+    margin: rem-calc(40px) 0 rem-calc(40px) rem-calc(-100px);
+  }
 }
 
 table {
-    display: table;
-    margin: rem-calc(20px) 0;
-    width: 100%;
+  display: table;
+  margin: rem-calc(20px) 0;
+  width: 100%;
 
+  th {
+    @extend %font-family-beta;
+    padding: 8px 10px;
+    background: #eee;
+    font-size: rem-calc(16px);
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: left;
+  }
 
-    th {
-        @extend %font-family-beta;
-        padding: em-calc(8px) em-calc(10px);
-        background: #eee;
-        font-size: rem-calc(21px);
-        font-weight: normal;
-        text-align: left;
+  tr {
+    background: #fff;
+
+    &:nth-child(even) {
+      background: #f5f5f5;
+    }
+  }
+
+  td {
+    padding: 8px 10px;
+  }
+
+  em {
+    font-style: normal;
+    text-decoration: underline;
     }
 
-    tr {
-        background: #fff;
+}
 
-        &:nth-child(even) {
-            background: #f5f5f5;
-        }
-    }
+ul li,
+ol li {
+  padding: 5px 0;
+}
 
-    td {
-        padding: em-calc(8px) em-calc(10px);
-    }
-
-    em {
-        font-style: normal;
-        text-decoration: underline;
-    }
-
+blockquote {
+  margin: 0;
+  padding: 0 0 0 20px;
+  padding: 20px 0;
+  text-align: center;
+  border-width: 0;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-color: #eee;
+  border-style: solid;
 }

@@ -1,3 +1,7 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
 h1,
 h2,
 h3,
@@ -5,97 +9,82 @@ h4,
 h5,
 h6,
 p {
-    color: $color-black;
-    margin: 0;
-    padding: 0;
+  color: $color-black;
+  margin: 0;
+  padding: 0;
 }
 
 %font-color-light {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-        color: #fff;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: #fff;
+  }
 }
 
 
-%text-align-center {
-    text-align: left;
 
-    @media #{$medium-up} {
-        text-align: center;
-    }
+%text-align-center {
+  text-align: left;
+
+  @media #{$medium-up} {
+    text-align: center;
+  }
 }
 
 
 p,
 table {
-    @extend %font-family-copy;
+  @extend %font-family-copy;
 }
 
 //
 // Titles and Subs
 //
 
-.page__title,
-.post__title,
-.work__title {
-    font-size: rem-calc(36px);
-    font-variant-ligatures: contextual;
-    font-weight: bold;
-    line-height: 1em;
-
-    @media #{$medium-up} {
-        font-size: rem-calc(48px);
-    }
-}
-
 .page__title {
-    @media #{$medium-up} {
-        max-width: 700px;
-    }
+  font-size: rem-calc(24px);
+  font-weight: 400;
+  line-height: 1.2em;
+  color: $color-flare-primary;
+
+  @media #{$medium-up} {
+    font-size: rem-calc(28px);
+    text-align: center;
+  }
 }
 
-.page__meta,
-.post__meta,
-.work__meta {
-    @extend %font-family-beta;
-    color: $color-flare-secondary;
-    display: block;
-    font-weight: normal;
-    text-decoration: none;
-}
-
-.post__meta {
-    font-size: rem-calc(18px);
-    line-height: 1em;
-    margin: rem-calc(10px) 0;
-}
 
 .page__meta {
-    font-size: rem-calc(17px);
-    line-height: 1.2em;
+  @extend %font-family-beta;
+  color: $color-flare-secondary;
+  display: block;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: rem-calc(14px);
+  line-height: 1.2em;
+  margin: rem-calc(10px) 0;
 
-    @media #{$medium-up} {
-        max-width: 500px;
-    }
+  @media #{$medium-up} {
+    text-align: center;
+  }
+
+  .work__header & {
+    color: rgba(255, 255, 255, .7);
+  }
 }
 
-.work__meta,
-.work__title {
-    color: #fff;
-}
 
 //
 // Gutenberg Inline
 //
 
 .gutenberg {
-    @import 'type-gutenberg';
+  @import 'type-gutenberg';
 }
 
 //
@@ -103,22 +92,22 @@ table {
 //
 
 .faded {
-    color: lighten(#161920, 45%) !important;
-    font-size: rem-calc(16px);
+  color: lighten(#161920, 45%) !important;
+  font-size: rem-calc(16px);
 }
 
 
 hr {
-    border: 0;
-    border-top: 1px solid #eee;
-    display: block;
-    height: 1px;
-    margin: 1em 0;
-    padding: 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
 }
 
 a {
-    color: $color-flare-primary;
+  color: $color-flare-primary;
 }
 
 //
@@ -127,54 +116,54 @@ a {
 //
 
 .glitch {
-    color: $color-black;
-    position: relative;
+  color: $color-black;
+  position: relative;
 }
 
 @keyframes noise-anim{
-    $steps:20;
-    @for $i from 0 through $steps {
-        #{percentage($i*(1/$steps))}{
-            clip:rect(random(100)+px, 9999px, random(100)+px, 0);
-        }
+  $steps:20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))}{
+        clip:rect(random(100)+px, 9999px, random(100)+px, 0);
     }
+  }
 }
 
 .glitch:after {
-    animation: noise-anim 2s infinite linear alternate-reverse;
-    background: $color-white;
-    clip: rect(0, 900px, 0, 0);
-    color: $color-black;
-    content: attr(data-glitch-text);
-    left: 2px;
-    overflow: hidden;
-    position: absolute;
-    text-shadow: -1px 0 #f00;
-    top: 0;
+  animation: noise-anim 2s infinite linear alternate-reverse;
+  background: $color-white;
+  clip: rect(0, 900px, 0, 0);
+  color: $color-black;
+  content: attr(data-glitch-text);
+  left: 2px;
+  overflow: hidden;
+  position: absolute;
+  text-shadow: -1px 0 #f00;
+  top: 0;
 }
 
 @keyframes noise-anim-2{
-    $steps:20;
-    @for $i from 0 through $steps {
-        #{percentage($i*(1/$steps))}{
-            clip:rect(random(100)+px,9999px,random(100)+px,0);
-        }
+  $steps:20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
     }
+  }
 }
 
 .glitch:before {
-    animation: noise-anim-2 3s infinite linear alternate-reverse;
-    background: $color-white;
-    clip: rect(0, 900px, 0, 0);
-    color: $color-black;
-    content: attr(data-glitch-text);
-    left: -2px;
-    overflow: hidden;
-    position: absolute;
-    text-shadow: 1px 0 #00f;
-    top: 0;
+  animation: noise-anim-2 3s infinite linear alternate-reverse;
+  background: $color-white;
+  clip: rect(0, 900px, 0, 0);
+  color: $color-black;
+  content: attr(data-glitch-text);
+  left: -2px;
+  overflow: hidden;
+  position: absolute;
+  text-shadow: 1px 0 #00f;
+  top: 0;
 }
 
 .arrow--right {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }

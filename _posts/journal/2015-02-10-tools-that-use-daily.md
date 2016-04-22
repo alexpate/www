@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Tools that I use on a daily basis"
+category: journal
 ---
 I always find it interesting to see what tools and techniques other developers use in their workflow. Of course these are often dictated by the team, and scoped to the project. None the less, here's a quick rundown of design/development tools that I use day to day.
 

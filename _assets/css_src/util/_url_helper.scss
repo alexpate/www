@@ -1,0 +1,14 @@
+$url-helper-path: false !default;
+
+// A function which can either output a image-url to be used with the Rails
+// Asset Pipeline or Compass or a plain url which is prefixed with a defined
+// path variable.
+@function file-url($file) {
+  $url: '';
+  @if $url-helper-path {
+    $url: url($path + $file);
+  } @else {
+    $url: asset-url($file);
+  }
+  @return $url;
+}

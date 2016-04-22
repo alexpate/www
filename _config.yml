@@ -21,8 +21,7 @@ author:
   firstname: Alexander
   lastname: Pate
   nickname: Alex
-  description: "I'm a digital developer, mostly working with the front-end (but I know my way around Laravel). I'm currently working in London at Pusher as a front-end engineer."
-
+  description: "I'm a digital designer, mostly working with the front-end (but I spend alot of time with rails and PHP). I'm currently working in London at Pusher as a front-end engineer."
 email: alex@alexpate.uk
 email_secure: "&#097;&#108;&#101;&#120;&#064;&#097;&#108;&#101;&#120;&#112;&#097;&#116;&#101;&#046;&#117;&#107;"
 
@@ -42,13 +41,9 @@ availability:
 # Pagination
 # ============================
 paginate: 3
-permalink: /journal/:title
-paginate_path: /journal/page/:num
+permalink: /:categories/:title/
+paginate_path: /:categories/page/:num
 
-collections:
-  work:
-    output: true
-    permalink: /:path/
 
 # ==================
 # Building
@@ -60,7 +55,10 @@ exclude: [
   "gulpfile.js"
 ]
 
-gems: [jekyll-assets, rouge, jekyll-sitemap]
+gems:
+  - jekyll-assets
+  - rouge
+  - jekyll-sitemap
 
 markdown: kramdown
 
@@ -85,6 +83,9 @@ assets:
   js_compressor: uglifier
   debug: true
   sources:
-      - "_assets/css"
-      - "_assets/js"
-      - "_assets/img"
+      - _assets/css_src
+      - _assets/js
+      - _assets/img
+      - uploads
+  features:
+    automatic_img_size: false

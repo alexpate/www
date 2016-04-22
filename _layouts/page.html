@@ -1,19 +1,21 @@
 ---
 layout: default
 ---
-<main role="main">
-    <section class="site__content site__content--page inner">
-        <header class="page__header">
-            <h1 class="page__title">{{page.title }}</h1>
-            {% if page.metaLink %}
-            <a href="{{ page.metaLink }}" class="page__meta">{{ page.meta }}</a>
-            {% else %}
-            <span class="page__meta">{{ page.meta }}</span>
-            {% endif %}
-        </header>
-        <article class="page__article {% if page.gutenberg == false %}{% else %}gutenberg{% endif %}">
-            {{ content }}
-        </article>
-    </section>
-</main>
+<main role="main" class="grid">
+  <section class="grid__small-12 grid__medium-12 grid__medium-centered grid__columns">
 
+    <header class="page__header">
+      <h1 class="page__title">{{page.title }}</h1>
+      {% if page.metaLink %}
+      <a href="{{ page.metaLink }}" class="page__meta">{{ page.meta }}</a>
+      {% else %}
+      <span class="page__meta">{{ page.meta }}</span>
+      {% endif %}
+    </header>
+
+    <article class="page__article {% if page.gutenberg == false %}{% else %}gutenberg{% endif %}">
+      {{ content }}
+    </article>
+
+  </section>
+</main>

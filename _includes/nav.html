@@ -1,24 +1,30 @@
 <header class="header" role="banner">
-    <div class="inner">
-        <a href="/" class="header__logo" rel="home">alexpate<span>.</span></a>
-        <nav class="header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-            <ul class="nav-main">
-                <li class="header__nav__item {% if page.url contains "/work/" %} header__nav__item--current{% endif %}">
-                    <a href="/" title="hello" itemprop="url">
-                        <span itemprop="name">Work</span>
-                    </a>
-                </li>
-                <li class="header__nav__item {% if page.url == "/profile/" %} header__nav__item--current{% endif %}">
-                    <a href="/profile/" title="hello" itemprop="url">
-                        <span itemprop="name">Profile</span>
-                    </a>
-                </li>
-                <li class="header__nav__item {% if page.url contains "/journal/" %} header__nav__item--current{% endif %}">
-                    <a href="/journal/" title="hello" itemprop="url">
-                        <span itemprop="name">Journal</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+  <div class="grid">
+
+    <div class="grid__small-3 grid__medium-4 grid__columns">
+      <a href="/" class="header__logo" rel="home">alexpate<span>.</span></a>
     </div>
+
+    <div class="grid__small-9 grid__medium-8 grid__columns">
+      <nav class="header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+        <ul class="nav-main">
+          <li class="header__nav__item {% if page.url contains "/work/" %} header__nav__item--current{% endif %}">
+            <a href="/" title="hello" itemprop="url">
+              <span itemprop="name">Stream</span>
+            </a>
+          </li>
+
+          <li class="header__nav__item {% if page.url == "/profile/" %} header__nav__item--current{% endif %}">
+            <a href="/profile/" title="hello" itemprop="url">
+              <span itemprop="name">Profile</span>
+            </a>
+          </li>
+          
+        </ul>
+
+      </nav>
+    </div>
+
+  </div>
 </header>

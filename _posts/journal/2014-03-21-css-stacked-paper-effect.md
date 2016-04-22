@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "CSS Stacked Paper Effect"
+category: journal
 ---
-Heads up: this is more of an experiment than something that would be used in production.
+A quick experiment to make a stacked paper effect in (S)CSS with one div.
 
 See it in [action here](http://codepen.io/alexpate/pen/MwjMxP).
 

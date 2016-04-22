@@ -36,7 +36,7 @@ gulp.task('minify', ['buildSite'], function() {
     .pipe(gulp.dest('_site'));
 });
 
-gulp.task('jekyll-build', shell.task(['bundle exec jekyll build --watch']));
+gulp.task('jekyll-build', shell.task(['jekyll build --watch']));
 gulp.task('jekyll-build-once', ['buildSite', 'minify']);
 
 gulp.task('jekyll-serve', function() {

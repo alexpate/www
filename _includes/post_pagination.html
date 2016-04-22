@@ -1,0 +1,8 @@
+<div class="paginate">
+  {% if page.previous.url %}
+  <a href="{{ page.previous.url }}" class="paginate__btn paginate__btn--previous">Previous Post</a>
+  {% endif %}
+  {% if page.next.url %}
+  <a href="{{ page.next.url }}" class="paginate__btn paginate__btn--next">Next Post</a>
+  {% endif %}
+</div>

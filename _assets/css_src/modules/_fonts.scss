@@ -1,0 +1,35 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Web Fonts
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@font-face {
+  font-family: 'GT Pressura';
+  src: url('/static/fonts/GT-Pressura/GT-Pressura-Mono-Regular.eot');
+    src: url('/static/fonts/GT-Pressura/GT-Pressura-Mono-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/static/fonts/GT-Pressura/GT-Pressura-Mono-Regular.woff') format('woff'),
+       url('/static/fonts/GT-Pressura/GT-Pressura-Mono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url('/static/fonts/Graphik/Graphik-Regular-Web.eot');
+  src: url('/static/fonts/Graphik/Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+      url('/static/fonts/Graphik/Graphik-Regular-Web.woff2') format('woff2'),
+      url('/static/fonts/Graphik/Graphik-Regular-Web.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url('/static/fonts/Graphik/Graphik-Medium-Web.eot');
+  src: url('/static/fonts/Graphik/Graphik-Medium-Web.eot?#iefix') format('embedded-opentype'),
+      url('/static/fonts/Graphik/Graphik-Medium-Web.woff2') format('woff2'),
+      url('/static/fonts/Graphik/Graphik-Medium-Web.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}

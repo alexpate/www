@@ -20,6 +20,8 @@
 
     @media #{$medium-up} {
         padding: rem-calc(100px) 0 rem-calc(50px);
+        max-width: 600px;
+        margin: 0 auto;
     }
 }
 
@@ -39,6 +41,8 @@
 
     @media #{$large-up} {
         @include grid-column($columns:7, $collapse: true);
+        margin: 0 auto;
+        float: none;
     }
 }
 
@@ -171,6 +175,20 @@
         &:nth-of-type(2) {
             padding-left: 1.875rem;
         }
+    }
+}
+
+.pull-out-left {
+    display: inline;
+    left: 0;
+    position: relative;
+
+    @media #{$large-up} {
+        position: absolute;
+        left: -180px;
+        display: block;
+        text-align: right;
+        width: 140px;
     }
 }
 

@@ -2,60 +2,23 @@
 // Author Byline
 //
 
-.author-byline {
-    border-bottom: 2px solid #eee;
-    padding: rem-calc(10px) 0;
-    width: 100%;
-}
-
-.author-byline__copy {
-    @extend %font-family-copy;
-    color: #68707f;
-    display: block;
-    font-size: rem-calc(14px);
-    font-weight: light;
-    line-height: 1.7em;
-    margin-top: 10px;
-}
-
-.author-byline__author {
-    @extend %font-family-beta;
-    font-size: rem-calc(22px);
-    font-weight: normal;
-}
-
-.author-byline__img {
-    border-radius: 50%;
-    float: right;
-    height: 100px;
-    margin-left: rem-calc(40px) !important;
-    width: 100px;
-}
 
 //
 // ShareThis
 //
 
 .share-this {
-    @extend .author-byline;
-    border-top: 0;
+  @extend .author-byline;
+  border-top: 0;
 }
 
 //
 // Article Images
 //
 
-.article-content img {
-    margin: 30px 0;
-}
-
-article img {
-    border-radius: 10px;
-    max-width: 100%;
-}
 
 .screen-reader-text {
-    display: none;
+  display: none;
 }
 
 //
@@ -63,28 +26,40 @@ article img {
 //
 
 .post-teaser {
-    padding: 10px 0;
-    width: 100%;
+  padding: 20px 30px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #eee;
+  margin: 10px 0;
+  height: 200px;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
 
-    @media #{$medium-up} {
-        float: left;
-        width: 50%;
-    }
+  @media #{$medium-up} {
+    padding: 30px 60px;
+  }
+
+  &:hover {
+    border-bottom: 2px solid #eee;
+    background-color: #fafafa;
+  }
 }
 
 .post-teaser__title,
-.post-teaser__sub {
-    @extend %font-family-beta;
-    text-align: left;
+.post-teaser__sub { 
+  @extend %font-family-alpha;
+  text-align: left;
 }
 
 .post-teaser__title {
-    font-size: rem-calc(28px);
+    font-size: rem-calc(18px);
     font-weight: normal;
     line-height: 1em;
+    margin-bottom: rem-calc(10px);
 
     @media #{$medium-up} {
-        font-size: rem-calc(25px);
+        font-size: rem-calc(22px);
     }
 
     a {
@@ -149,10 +124,10 @@ article img {
 .signpost__helper {
     @extend %font-family-beta;
     display: block;
-    font-size: rem-calc(13px);
-    font-style: italic;
+    font-size: rem-calc(12px);
     position: relative;
     z-index: 4;
+    color: #444;
 }
 
 .signpost--dark {
@@ -197,38 +172,3 @@ article img {
     background: $color-flare-primary !important;
 }
 
-//
-// Paginate Links
-//
-
-.paginate {
-    border-bottom: 2px solid $color-flare-primary;
-    height: auto;
-    margin: rem-calc(10px) 0;
-    overflow: hidden;
-    padding: rem-calc(10px) 0;
-    width: 100%;
-}
-
-.paginate__btn {
-    @extend %font-family-beta;
-    font-size: rem-calc(20px);
-    height: 50px;
-    padding-top: 20px;
-    text-decoration: none;
-    width: 50%;
-}
-
-.paginate__btn--next {
-    float: right;
-    text-align: right;
-}
-
-.paginate__btn--previous {
-    float: left;
-    text-align: left;
-}
-
-.paginate__btn__arrow {
-    font-family: 'Helvetica Neue', Helvetica, Arial;
-}
