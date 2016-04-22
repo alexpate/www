@@ -53,6 +53,11 @@ h3 {
   font-weight: 400;
   line-height: 1.4em;
   color: #8E97A9;
+
+  span {
+    font-size: rem-calc(13px);
+    color:lighten(#8E97A9, 10%);
+  }
 }
 
 .inline-image {
