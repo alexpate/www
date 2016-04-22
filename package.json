@@ -1,6 +1,6 @@
 {
   "name": "alexpate.uk",
-  "version": "1.6.1",
+  "version": "2.0.1",
   "description": "Source files for personal site",
   "main": "gulpfile.js",
   "repository": {
