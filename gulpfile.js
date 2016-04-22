@@ -23,28 +23,25 @@ gulp.task('styles', function() {
 });
 
 
-gulp.task('buildSite', shell.task('bundle exec jekyll build'));
+gulp.task('buildSite', ['styles'], shell.task('bundle exec jekyll build --incremental --source ~/repos/tmp/git/alexpate --destination temp-build'));
 
 gulp.task('minify', ['buildSite'], function() {
   return gulp.src('_site/**/*.html')
     .pipe(htmlmin({
-      collapseWhiteSpace: true,
-      removeTagWhitespace: true,
-      lint: true,
-      minifyJS: true
+      collapseWhiteSpace: true
       }))
     .pipe(gulp.dest('_site'));
 });
 
-gulp.task('jekyll-build', shell.task(['jekyll build --watch']));
+// gulp.task('jekyll-build', shell.task(['jekyll build --watch']));
 gulp.task('jekyll-build-once', ['buildSite', 'minify']);
 
-gulp.task('jekyll-serve', function() {
-  browserSync.init({ server: { baseDir: '_site/' }, port: 4000 });
-  gulp.watch('_assets/css_src/**/*.scss', ['styles']);
-  gulp.watch('_site/**/*.*').on('change', browserSync.reload);
-  gulp.watch('_assets/css/base.css').on('change', browserSync.reload);
-});
+// gulp.task('jekyll-serve', function() {
+//   browserSync.init({ server: { baseDir: '_site/' }, port: 4000 });
+//   gulp.watch('_assets/css_src/**/*.scss', ['styles']);
+//   gulp.watch('_site/**/*.*').on('change', browserSync.reload);
+//   gulp.watch('_assets/css/base.css').on('change', browserSync.reload);
+// });
 
 gulp.task('default', ['jekyll-build', 'jekyll-serve', 'styles']);
-gulp.task('build', ['styles', 'jekyll-build-once']);
+gulp.task('buildOnServerOnly', ['styles', 'jekyll-build-once']);
