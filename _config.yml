@@ -83,9 +83,9 @@ assets:
   js_compressor: uglifier
   debug: true
   sources:
-      - _assets/css_src
-      - _assets/js
-      - _assets/img
-      - uploads
+    - _assets/css_src
+    - _assets/js
+    - _assets/img
+    - uploads
   features:
     automatic_img_size: false

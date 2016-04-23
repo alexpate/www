@@ -12,7 +12,16 @@ url: "https://alexpate.uk"
 # Assets
 # ==================
 assets:
-    cachebust: hard
-    debug: false
-    cache: true
-    gzip: [text/css, application/javascript]
+  cache: true
+  cachebust: hard
+  css_compressor: sass
+  js_compressor: uglifier
+  debug: false
+  sources:
+    - _assets/css_src
+    - _assets/js
+    - _assets/img
+    - uploads
+  features:
+    automatic_img_size: false
+  gzip: [text/css, application/javascript]
