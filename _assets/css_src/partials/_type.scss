@@ -118,9 +118,34 @@ a {
 .glitch {
   color: $color-black;
   position: relative;
+
+  &:after,
+  &:before {
+    width: 100%;
+    text-align: center;
+    background: $color-white;
+    clip: rect(0, 900px, 0, 0);
+    color: $color-black;
+    content: attr(data-glitch-text);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+  }
+
+  &:before {
+    animation: glitch-before 3s infinite linear alternate-reverse;
+    left: -2px;
+    text-shadow: 1px 0 #00f;
+  }
+
+  &:after {
+    animation: glitch-after 2s infinite linear alternate-reverse;
+    left: 2px;
+    text-shadow: -1px 0 #f00;
+  }
 }
 
-@keyframes noise-anim{
+@keyframes glitch-before {
   $steps:20;
   @for $i from 0 through $steps {
     #{percentage($i*(1/$steps))}{
@@ -129,41 +154,11 @@ a {
   }
 }
 
-.glitch:after {
-  animation: noise-anim 2s infinite linear alternate-reverse;
-  background: $color-white;
-  clip: rect(0, 900px, 0, 0);
-  color: $color-black;
-  content: attr(data-glitch-text);
-  left: 2px;
-  overflow: hidden;
-  position: absolute;
-  text-shadow: -1px 0 #f00;
-  top: 0;
-}
-
-@keyframes noise-anim-2{
+@keyframes glitch-after {
   $steps:20;
   @for $i from 0 through $steps {
     #{percentage($i*(1/$steps))}{
       clip:rect(random(100)+px,9999px,random(100)+px,0);
     }
   }
-}
-
-.glitch:before {
-  animation: noise-anim-2 3s infinite linear alternate-reverse;
-  background: $color-white;
-  clip: rect(0, 900px, 0, 0);
-  color: $color-black;
-  content: attr(data-glitch-text);
-  left: -2px;
-  overflow: hidden;
-  position: absolute;
-  text-shadow: 1px 0 #00f;
-  top: 0;
-}
-
-.arrow--right {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
