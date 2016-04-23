@@ -33,5 +33,10 @@
     height: 70px;
     margin: rem-calc(10px) 0 0 rem-calc(40px) !important;
     width: 70px;
+    display: none;
+
+    @media #{$medium-up} {
+      display: block;
+    }
   }
 }

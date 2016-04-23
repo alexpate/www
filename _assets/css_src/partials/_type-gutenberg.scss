@@ -2,14 +2,23 @@
 // Gutenberg Type Styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-p {
+p,
+ul li,
+ol li {
   color: $color-type;
   font-size: rem-calc(16px);
   line-height: rem-calc(30px);
   margin: 0 0 rem-calc(15px);
+}
 
+ul li,
+ol li {
+  margin: 0 0 rem-calc(5px);
+}
+
+p {
   &:first-of-type {
-    color: darken($color-type, 5%);
+    color: darken($color-type, 10%);
     font-size: rem-calc(19px);
     line-height: rem-calc(31px);
   }
@@ -111,10 +120,6 @@ table {
 
 }
 
-ul li,
-ol li {
-  padding: 5px 0;
-}
 
 blockquote {
   margin: 0;
