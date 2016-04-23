@@ -24,28 +24,22 @@ Of course this could be done relatively easily using multiple queries, however w
 
 ## The Solution
 
-{% highlight php startinline %}
-
-    $products = Product::whereHas('category', function($query) use($term) {
-        $query->where('cat_name', 'like', '%'.$term.'%');
-    })->orWhere('prod_pretty','LIKE','%'.$term.'%')->orderBy($order, 'asc')->get();
-
-{% endhighlight %}
+```php?start_inline=1
+$products = Product::whereHas('category', function($query) use($term) {
+    $query->where('cat_name', 'like', '%'.$term.'%');
+})->orWhere('prod_pretty','LIKE','%'.$term.'%')->orderBy($order, 'asc')->get();
+```
 
 So first, we search (via a product model) for all products that have a category name that is like the category name:
 
-{% highlight php startinline %}
-
-    Product::whereHas('category', function($query) use($term) {
-        $query->where('cat_name', 'like', '%'.$term.'%');
-    })
-
-{% endhighlight %}
+```php?start_inline=1
+Product::whereHas('category', function($query) use($term) {
+    $query->where('cat_name', 'like', '%'.$term.'%');
+})
+```
 
 If this returns no results, then we fall back to the second query, where we query the product directly, checking if the product name is like the search query:
 
-{% highlight php startinline %}
-
-    ->orWhere('prod_pretty','LIKE','%'.$term.'%')->get();
-
-{% endhighlight %}
+```php?start_inline=1
+->orWhere('prod_pretty','LIKE','%'.$term.'%')->get();
+```
