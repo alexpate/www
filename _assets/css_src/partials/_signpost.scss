@@ -1,0 +1,63 @@
+.signpost {
+    clear: both;
+    margin: em-calc(20px) 0;
+    position: relative;
+    text-align: left;
+
+    @media #{$medium-up} {
+        text-align: center;
+    }
+
+    .btn {
+        position: relative;
+        z-index: 4;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: none;
+        left: 0;
+        position: absolute;
+
+        @media #{$medium-up} {
+            display: block;
+        }
+    }
+
+    &:before {
+        background: #ddd;
+        height: 1px;
+        top: rem-calc(35px);
+        width: 100%;
+    }
+
+    &:after {
+        background: #fff;
+        height: 100%;
+        margin: 0 auto;
+        right: 0;
+        top: 0;
+        width: 350px;
+    }
+}
+
+.signpost__helper {
+    @extend %font-family-beta;
+    display: block;
+    font-size: rem-calc(12px);
+    position: relative;
+    z-index: 4;
+    color: #444;
+}
+
+.signpost--dark {
+
+    &:before {
+        background: lighten($color-black, 5%);
+    }
+
+    &:after {
+        background: $color-black;
+    }
+}
