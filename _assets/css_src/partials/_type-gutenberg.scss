@@ -17,15 +17,10 @@ ol li {
 }
 
 p {
-  &:first-of-type {
+  &:first-of-type:not(.no-first-of) {
     color: darken($color-type, 10%);
     font-size: rem-calc(19px);
     line-height: rem-calc(31px);
-  }
-
-  &.no-first-of:first-of-type {
-    color: $color-type;
-    font-size: rem-calc(17px);
   }
 
   strong {
@@ -38,12 +33,6 @@ a:not(.btn) {
   color: $color-flare-primary;
 }
 
-&.no-first-of {
-  p:first-of-type {
-    color: $color-type;
-    font-size: rem-calc(17px);
-  }
-}
 
 h2 {
   font-size: rem-calc(16px);
@@ -67,11 +56,6 @@ h3 {
     font-size: rem-calc(13px);
     color:lighten(#8E97A9, 10%);
   }
-}
-
-.inline-image {
-  display: block;
-  margin: rem-calc(40px) auto;
 }
 
 img:not(.author-byline__img) {
