@@ -16,7 +16,7 @@ A quick run through CSS Stats, showed us that we were using over 600 different t
 
 Further to this, there was also a variety of naming conventions. The color white was defined in every possible combination: `#fff`, `#fffff`, `#FFF`, `#FFFFFF`, `white`, `rgb(255, 255, 255)`...
 
-{% img 2016/04/chameleon_css_stats.png %}
+{% img 2016/04/chameleon_css_stats.jpg %}
 
 ## Bring in Bootstrap/Foundation
 Bootstrap is a great tool for getting a site up and running quickly. My issue with bootstrap isn't in it's use, but rather how it's used.
@@ -100,7 +100,7 @@ Inputs don't require extra classes, buttons are classed as expected (`.btn`), an
 <span class="h1">Big Page Title</span>
 ```
 
-{% image 2016/04/chameleon_color.png %}
+{% image 2016/04/chameleon_color.jpg %}
 
 
 ## Into the future
