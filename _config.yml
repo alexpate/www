@@ -77,11 +77,11 @@ sass:
   sass_dir: _assets/stylesheets
 
 assets:
+  compress:
+    css: false
+    js: false
   cache: false
-  cachebust: none
-  css_compressor: sass
-  js_compressor: uglifier
-  debug: true
+  digest: false
   sources:
     - _assets/css_src
     - _assets/js
