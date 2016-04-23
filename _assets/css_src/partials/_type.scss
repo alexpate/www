@@ -110,6 +110,22 @@ a {
   color: $color-flare-primary;
 }
 
+.social-link {
+  $social-colors: (
+    "twitter": #55acee,
+    "instagram": #3f729b,
+    "codepen": #222222,
+    "github": #4183c4,
+    "dribbble": #ea4c89
+  );
+
+  @each $brand, $brandColor in $social-colors {
+    &.#{$brand} {
+      color: $brandColor !important;
+    }
+  }
+}
+
 //
 // Text Glitch Effect - 404
 // Shamelessly stolen from css-tricks.com/glitch-effect-text-images-svg/
