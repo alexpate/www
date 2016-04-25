@@ -23,7 +23,7 @@ gulp.task('styles', function() {
 });
 
 
-gulp.task('buildSite', ['styles'], shell.task('bundle exec jekyll build --incremental --source ~/repos/tmp/git/alexpate --destination temp-build'));
+gulp.task('buildSite', ['styles'], shell.task('jekyll build --incremental --source argv.source --destination argv.destination'));
 
 gulp.task('minify', ['buildSite'], function() {
   return gulp.src('_site/**/*.html')
