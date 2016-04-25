@@ -1,5 +1,6 @@
 #!/bin/bash -l
 
+git clone
 gulp buildOnServerOnly
 
 # git clone $GIT_REPO $TMP_GIT_CLONE
