@@ -8,6 +8,7 @@ var cp            = require('child_process');
 var browserSync   = require('browser-sync').create();
 var htmlmin       = require('gulp-html-minifier');
 var rename        = require('gulp-rename');
+var argv          = require('yargs').argv;
 
 
 gulp.task('styles', function() {
