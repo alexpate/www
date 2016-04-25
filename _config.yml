@@ -83,7 +83,7 @@ assets:
   cache: false
   digest: false
   sources:
-    - _assets/css_src
+    - _assets/css
     - _assets/js
     - _assets/img
     - uploads
