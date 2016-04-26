@@ -24,8 +24,7 @@ gulp.task('styles', function() {
 });
 
 
-// gulp.task('buildSite', ['styles'], shell.task('jekyll build --config ' + argv.source + '/_config.yml,' + argv.source + '/_config.production.yml --source ' + argv.source + ' --destination ' + argv.destination));
-gulp.task('buildSite', ['styles'], shell.task('jekyll build --incremental --config _config.yml,_config.production.yml JEKYLL_ENV=production'));
+gulp.task('buildSite', ['styles'], shell.task('jekyll build --config _config.yml,_config.production.yml --destination ' + argv.destination));
 
 gulp.task('minify', ['buildSite'], function() {
   return gulp.src('_site/**/*.html')
