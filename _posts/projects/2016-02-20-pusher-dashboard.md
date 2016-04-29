@@ -9,64 +9,27 @@ category: project
 ---
 
 ## The Project
-Besides raw code, the dashboard is the main point of interaction that customers have with Pusher. As the company has grown, new features have been added, however these addtions have been at the cost of the overall user experience and aesthetic.
+Besides raw code, the dashboard is the main point of interaction that customers have with Pusher. As the company has grown, new features have been added, however these additions have resulted in a bloated interface that's no longer fit for purpose.
 
-These UX issues, combined with mah visual inconsitencies, lead us to rebuilding the dashboard from scratch.
+These UX issues, combined with various visual inconsitencies, led us to rebuilding the dashboard from scratch.
 
-As the dashboard is the interface to our main product, it quickly became clear that there were going to be many opinions from many voices on the project. Whilst it was important that we didn't just shut out others from being involved, we had to manage how we dealt with feedback. As way to better define who was directly involved in the project, we created a subteam consisting of myself, [Hamilton](https://twitter.com/hamchapman) (the project owner), and [Lauren](https://twitter.com/laurenmplews) (our lead designer).
-
+As one of the companies biggest assets, it quickly became clear that there were going to be many opinions on the project. Whilst it was important that we didn't just shut out others from being involved, we had to manage how we dealt with feedback. As a way to better define who was directly involved in the project, we created a subteam consisting of myself, [Hamilton](https://twitter.com/hamchapman) (the project owner), and [Lauren](https://twitter.com/laurenmplews) (our lead designer).
 
 {% image 2016/04/pusher_dashboard_nav.gif alt:"Quick access to all apps" %}
 
-## Simple from the off
-The dashboard works great when it's filled with information, but what's the experience like if you've just started? We wanted to encourage a sense of exploration for new users, and so developed the onboarding wizard. 
+<h2>Designing with <del>real data</del> <ins>no data</ins></h2> 
+Dashboards work great when they're filled with information, but what's the experience like if you've just started?
+
+As a new user, being dumped into a half-blank view is disorientating. We wanted to encourage users to explore their new dashboard. In order to aid this journey, we developed the onboarding wizard which guides users through the process of creating their first app.
+
+Since the wizard was first implemented, over 48,000 new apps have been created through it.
 
 {% image 2016/04/pusher_dashboard_wizard.png alt:"The all new onboarding wizard" %}
 
 ## Code to last
 From a development perspective, one of the most glaring issues with the front-end code, was the wide variety of naming conventions, and duplicated styles.
 
-In order to help better manage this in the future, I opted for a modular development process, whereby every pattern is scoped to it's own partial. 
-
-For example, the CSS for a user avatar should live in one place.
-
-As the product grows and new features are added, it's important that the front-end codebase remains as slick and as tight as possible. Every style from the graphs down to the titles have been componentized.
-
-```scss
-// stylesheets/partials/_user-avatar.scss
-.user-avatar {
-  border-radius: 50%;
-  box-sizing: border-box;
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-  overflow: hidden;
-  margin: 0 10px 0 0;
-  padding: 0;
-
-  > img {
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-$user-avatar-sizes: (
-  sm: 24px,
-  md: 30px,
-  lg: 48px
-);
-
-@each $avatarPrefix, $avatarSize in $user-avatar-sizes {
-  .user-avatar--#{$avatarPrefix} {
-    height: $avatarSize;
-    width: $avatarSize;
-    min-width: $avatarSize;
-  }
-}
-```
-
+In order to help better manage this in the future, I opted for a modular development process. Every pattern is clearly scoped, and split in to its own name-spaced partial.
 
 ```sass
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -74,18 +37,18 @@ $user-avatar-sizes: (
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @import "partials/base";
-@import "partials/grid";
-@import "partials/boards";
-@import "partials/typography";
-@import "partials/buttons";
-@import "partials/forms";
-@import "partials/alerts";
-@import "partials/modal";
-@import "partials/tabs";
-@import "partials/table";
-@import "partials/account-manager";
-@import "partials/empty-state";
-@import "partials/user-avatar";
+@import "grid/grid";
+@import "components/boards";
+@import "components/typography";
+@import "components/buttons";
+@import "components/forms";
+@import "components/alerts";
+@import "components/modal";
+@import "components/tabs";
+@import "components/table";
+@import "components/account-manager";
+@import "components/empty-state";
+@import "components/user-avatar";
 ...
 ```
 
