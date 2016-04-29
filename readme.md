@@ -8,9 +8,11 @@ Besides being an obvious place for me to keep track of my code, I would like to 
 Want to use this site locally?
 
 - `git clone` the repo somewhere safe
-- Run `bundle install` to fetch dependencies
-- To serve the site, `jekyll serve`
-- The site should now be running at http://127.0.0.1:4000
+- Run `bundle install && npm install`* 
+- To serve the site, `gulp`
+- The site should now be running at http://localhost:4000
+
+I prefer to bypass Jekyll's built in asset pipeline, and use Gulp.
 
 ## Say hello!
 Feel free to say hello over on twitter [@alexjpate](http://twitter.com/alexjpate).
