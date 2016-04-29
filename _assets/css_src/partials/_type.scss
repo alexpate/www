@@ -78,6 +78,19 @@ table {
   }
 }
 
+.stream-title {
+  @extend %font-family-beta;
+  font-size: 14px;
+  font-weight: normal;
+  color: #c6ced8;
+  display: inline-block;
+  transform: matrix(1, 0, 0, 1, 0, 20);
+
+  @media #{$large-up} {
+    transform: matrix(1, 0, 0, 1, -140, 180) rotate(-90deg);
+  }
+}
+
 
 //
 // Gutenberg Inline
