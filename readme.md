@@ -1,5 +1,5 @@
 # Hi there!
-This is the source code of my [personal site](http://alexpate.uk).
+This is the source code of my [personal site](https://alexpate.uk).
 
 ## What's the point of this repo?
 Besides being an obvious place for me to keep track of my code, I would like to think that someone might find this useful. Got any questions, send me an email.
