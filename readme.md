@@ -12,7 +12,7 @@ Want to use this site locally?
 - To serve the site, `gulp`
 - The site should now be running at http://localhost:4000
 
-I prefer to bypass Jekyll's built in asset pipeline, and use Gulp.
+**I prefer to bypass Jekyll's built in asset pipeline, and use Gulp.*
 
 ## Say hello!
 Feel free to say hello over on twitter [@alexjpate](http://twitter.com/alexjpate).
