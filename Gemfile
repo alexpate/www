@@ -6,7 +6,7 @@ group :jekyll_plugins do
     gem "jekyll-sitemap"
 end
 
-gem "rouge"
+gem "rouge", :git => 'https://github.com/alexpate/rouge.git'
 gem "coffee-script"
 gem "facets"
 gem "jekyll-assets"
