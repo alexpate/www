@@ -14,7 +14,7 @@
 
     .c     { color: #998; font-style: italic; } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error
-    .k     { font-weight: bold } // Keyword
+    .k     { color: #8959a8; font-weight: bold } // Keyword
     .o     { font-weight: bold } // Operator
     .cm    { color: #998; font-style: italic } // Comment.Multiline
     .cp    { color: #999; font-weight: bold } // Comment.Preproc
@@ -35,7 +35,7 @@
     .kc    { font-weight: bold } // Keyword.Constant
     .kd    { font-weight: bold } // Keyword.Declaration
     .kp    { font-weight: bold } // Keyword.Pseudo
-    .kr    { font-weight: bold } // Keyword.Reserved
+    .kr    { color: #8959a8; font-weight: bold } // Keyword.Reserved
     .kt    { color: #458; font-weight: bold } // Keyword.Type
     .m     { color: #099 } // Literal.Number
     .s     { color: #07A } // Literal.String
