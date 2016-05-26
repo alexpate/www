@@ -15,7 +15,7 @@ gutenberg: false
 
     {% for post in site.posts %}
 
-      <a class="stream-item{% if post.category == 'project' %} stream-item--project {{post.slug}}{% endif %}" href="{{ post.url }}" itemscope="" itemtype="http://schema.org/BlogPosting">
+      <a class="stream-item{% if post.category == 'project' %} stream-item--project {{post.slug}}{% endif %}" href="{{ post.url }}" itemscope="" itemtype="http://schema.org/BlogPosting" alt="{{ post.title }}" title="{{ post.title }}">
         <div>
           <h3 class="stream-item__title">{{ post.title }}</h3>
           <span class="stream-item__sub">
