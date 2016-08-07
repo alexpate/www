@@ -6,7 +6,7 @@ permalink: /profile/
 gutenberg: true
 ---
 <div class="profile-feature" id="feature-container">
-  <div class="profile-feature__item" data-lag="7">
+  <div class="profile-feature__item ee-this" data-lag="7">
     {% img 2016/08/ee.jpg alt:"Eastern Electrics" %}
   </div>
   <div class="profile-feature__item" data-lag="2">
@@ -81,7 +81,10 @@ gutenberg: true
 <script>
   var containerWidth = getComputedStyle(document.getElementById('feature-container')).width.slice(0, -2),
       containerHeight = getComputedStyle(document.getElementById('feature-container')).height.slice(0, -2),
-      featureElements = document.getElementsByClassName('profile-feature__item');
+      featureElements = document.getElementsByClassName('profile-feature__item'),
+      eeThis = document.getElementsByClassName('ee-this')[0],
+      isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
 
   document.addEventListener('mousemove', function(event) {
     var rx = (containerHeight / 2 - event.pageY) / 50,
@@ -93,6 +96,16 @@ gutenberg: true
       _y = (rx * 2) / _dm;
       featureElements[i].style.transform = "matrix(1,0,0,1," + _x + "," + _y + ")";
     }
-    
   })
+
+  if(isChrome) {
+    eeThis.addEventListener('mouseover', function() {
+      eeThis.style.webkitFilter = "invert(100%)";
+    });
+
+    eeThis.addEventListener('mouseout', function() {
+      eeThis.style.webkitFilter = "none";
+    });
+  }
+
 </script>

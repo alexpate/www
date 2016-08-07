@@ -33,6 +33,7 @@
     height: 390px;
     top: 10px;
     left: 40px;
+    z-index: 3
   }
   
   &:nth-of-type(2) {
@@ -40,6 +41,7 @@
     height: 400px;
     top: 120px;
     left: 0;
+    z-index: 3;
   }
   
   &:nth-of-type(3) {
@@ -47,7 +49,7 @@
     height: 390px;
     left: 300px;
     top: 90px;
-    z-index: 5;
+    z-index: 2;
   }
   
   &:nth-of-type(4) {
