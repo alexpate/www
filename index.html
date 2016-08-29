@@ -22,7 +22,7 @@ gutenberg: false
             {% if post.category == 'project' %}
               {{ post.sub }}
             {% else %}
-              <time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | date: "%A %-d %b %Y" }}</time>
+              <time datetime="{{ post.date | date: "%Y-%m-%d" }}" itemprop="datePublished">{{ post.date | prettyDate }}</time>
             {% endif %}
           </span>
         </div>

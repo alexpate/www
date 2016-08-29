@@ -7,15 +7,8 @@ layout: default
       <h1 class="page__title" itemprop="name headline">{{ page.title }}</h1>
       <span class="page__meta">
         <time datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">
-          {% assign d = page.date | date: "%-d"  %}
-          {{ page.date | date: "%A %B" }}
-          {% case d %}
-              {% when '1' or '21' or '31' %}{{ d }}st
-              {% when '2' or '22' %}{{ d }}nd
-              {% when '3' or '23' %}{{ d }}rd
-              {% else %}{{ d }}th
-          {% endcase %}
-          {{ page.date | date: "%Y" }}{% if page.meta %} • {{ page.meta }}{% endif %}
+          {{ page.date | prettyDate }}
+          {% if page.meta %} • {{ page.meta }}{% endif %}
         </time>
       </span>
     </header>
