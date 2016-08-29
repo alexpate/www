@@ -14,15 +14,15 @@
   },
   "homepage": "https://github.com/alexpate/alexpate.uk#readme",
   "devDependencies": {
-    "browser-sync": "^2.11.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-cssnano": "^2.1.1",
-    "gulp-html-minifier": "^0.1.8",
-    "gulp-htmlmin": "^1.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
-    "gulp-shell": "^0.5.2",
-    "yargs": "^4.6.0"
+    "browser-sync": "^2.14.0",
+    "gulp": "*",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-html-minifier": "*",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-rename": "*",
+    "gulp-sass": "^2.3.2",
+    "gulp-shell": "*",
+    "yargs": "^5.0.0"
   }
 }
