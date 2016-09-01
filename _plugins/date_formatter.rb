@@ -3,7 +3,7 @@ module Jekyll
 
     def prettyDate(date)
       weekday = time(date).strftime("%A")
-      day = returnOrdinal(time(date).strftime("%e"))
+      day = returnOrdinal(time(date).strftime("%e").to_i)
       month = time(date).strftime("%B")
       year = time(date).strftime("%Y")
 
@@ -12,12 +12,11 @@ module Jekyll
 
     def returnOrdinal(d)
       case d
-      when "1" || "21" || "31"
+      when 1, 21, 31
         return "#{d}st"
-        puts "st"
-      when 2 || 22
+      when 2, 22
         return "#{d}nd"
-      when 3 || 23
+      when 3, 23
         return "#{d}rd"
       else
         return "#{d}th"
