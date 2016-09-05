@@ -16,3 +16,4 @@ assets:
     css: true
     js: true
   digest: true
+  cdn: https://dn9zc8o6p92dz.cloudfront.net
