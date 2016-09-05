@@ -24,7 +24,7 @@ gulp.task('styles', function() {
 });
 
 
-gulp.task('buildSite', ['styles'], shell.task('jekyll build --config _config.yml,_config.production.yml --destination ' + argv.destination));
+gulp.task('buildSite', ['styles'], shell.task('JEKYLL_ENV=production jekyll build --config _config.yml,_config.production.yml --destination ' + argv.destination));
 
 gulp.task('minify', ['buildSite'], function() {
   return gulp.src('_site/**/*.html')
