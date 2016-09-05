@@ -2,12 +2,11 @@ module Jekyll
   module PrettyDate
 
     def prettyDate(date)
-      weekday = time(date).strftime("%A")
       day = returnOrdinal(time(date).strftime("%e").to_i)
       month = time(date).strftime("%B")
       year = time(date).strftime("%Y")
 
-      return "#{weekday}, #{day} #{month} #{year}"
+      return "#{month} #{day}, #{year}"
     end
 
     def returnOrdinal(d)
