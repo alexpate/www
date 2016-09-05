@@ -38,6 +38,14 @@ availability:
   class: full
 
 
+# ============================
+# Pagination
+# ============================
+paginate: 3
+permalink: /:categories/:title/
+paginate_path: /:categories/page/:num
+
+
 # ==================
 # Building
 # ==================
