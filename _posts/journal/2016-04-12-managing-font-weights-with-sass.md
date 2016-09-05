@@ -24,7 +24,7 @@ h1 {
 }
 ```
 
-### The improved way
+### The Improved way
 
 ```scss
 %font-weight-regular {

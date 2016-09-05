@@ -21,7 +21,7 @@ I have two font families on the site: GT Pressura Mono, and Graphik.
 
 ## Other
 
-The entire site is hosted at [DigitalOcean](https://m.do.co/c/ab7c3d0a9c23). I could definelty get away with sticking it on S3 or GitHub Pages, but as I have other sites in the same droplet, it makes sense just to keep it there.
+The entire site is hosted at [DigitalOcean](https://m.do.co/c/ab7c3d0a9c23). I could definitely get away with sticking it on S3 or GitHub Pages, but as I have other sites in the same droplet, it makes sense just to keep it there.
 
 The deployment process it pretty simple. I have git running on the server, which is set up as a git remote on my local machine. This means deploying is a simple task of:
 
@@ -35,4 +35,4 @@ There's then a `post-receive` hook which `cd`'s in to a new directory, runs the 
 
 ## Check out the source
 
-A lot of what I've learnt about web development, has been from looking at the source code of other developers. I would like to think that by [open sourcing this site](https://github.com/alexpate/alexpate.uk), you (most likely a developer) and others might find it useful.
+A lot of what I've learned about web development, has been from looking at the source code of other developers. I would like to think that by [open sourcing this site](https://github.com/alexpate/alexpate.uk), you (most likely a developer) and others might find it useful.
