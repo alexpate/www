@@ -37,13 +37,6 @@ social:
 availability:
   class: full
 
-# ============================
-# Pagination
-# ============================
-paginate: 3
-permalink: /:categories/:title/
-paginate_path: /:categories/page/:num
-
 
 # ==================
 # Building
@@ -89,3 +82,4 @@ assets:
     - uploads
   features:
     automatic_img_size: false
+  cdn: https://dn9zc8o6p92dz.cloudfront.net
