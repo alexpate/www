@@ -4,7 +4,7 @@ title:  "How to name Sass color variables"
 category: journal
 ---
 
-When it comes to naming Sass variables, I suck. I think I've found the perfect solution, get half way through a project, and realise what a terrible mistake I'd made
+When it comes to naming Sass variables, I suck. I think I've found the perfect solution, get half way through a project, and realise what a terrible mistake I'd made.
 
 Variables in any language are often overlooked. They're treated as these things that 'ultimately only developers will see, so who cares'. But having a proper naming convention can really help save time, keep your code DRY, and more importantly make your codebase easier to understand for other developers.
 
