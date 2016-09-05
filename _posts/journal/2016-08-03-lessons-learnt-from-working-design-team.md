@@ -6,6 +6,8 @@ category: journal
 
 Originally I wrote this post for anyone who's about to or has just started working in a creative role. But further to that, I always find it interesting learning about how design teams function in other companies. So here's a few rambled ideas and insights in to how our team works at Pusher.
 
+{% image 2016/09/what-i-learnt-first-year-design-team-header.jpg alt:"The Old Pusher Office" %}
+
 ## The Structure
 
 At Pusher, the design team (or creative team) consists of myself, a front-end engineer, [Lauren](https://twitter.com/laurenmplews) our lead designer. Historically we came under marketing, however a few months back we divided off in to what we know refer to as a 'service team'. The idea is that we're not tied to anyone area of the company, and can float between different teams to assist with design/implementation based projects.
