@@ -26,15 +26,14 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('./_assets/css/'))
 });
 
-
 gulp.task('buildSite', ['styles'], shell.task('JEKYLL_ENV=production jekyll build --config _config.yml,_config.production.yml --destination ' + argv.destination));
 
 gulp.task('minify', ['buildSite'], function() {
-  return gulp.src('_site/**/*.html')
+  return gulp.src(argv.destination + '/**/*.html')
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
-    .pipe(gulp.dest('_site'));
+    .pipe(gulp.dest(argv.destination));
 });
 
 gulp.task('jekyll-build', shell.task(['jekyll build --watch --drafts']));
