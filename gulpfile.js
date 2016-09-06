@@ -31,7 +31,8 @@ gulp.task('buildSite', ['styles'], shell.task('JEKYLL_ENV=production jekyll buil
 gulp.task('minify', ['buildSite'], function() {
   return gulp.src(argv.destination + '/**/*.html')
     .pipe(htmlmin({
-      collapseWhitespace: true
+      collapseWhitespace: true,
+      minifyJS: true
     }))
     .pipe(gulp.dest(argv.destination));
 });
