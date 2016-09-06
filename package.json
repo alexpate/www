@@ -18,7 +18,6 @@
     "gulp": "*",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-cssnano": "^2.1.2",
-    "gulp-html-minifier": "*",
     "gulp-htmlmin": "^2.0.0",
     "gulp-rename": "*",
     "gulp-sass": "^2.3.2",
