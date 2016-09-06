@@ -1,3 +1,6 @@
+// This file is largely based on the Gulpfile built by Dan Eden
+// https://github.com/daneden/daneden.me/blob/master/gulpfile.js
+
 var gulp          = require('gulp');
 var util          = require('util');
 var sass          = require('gulp-sass');
@@ -6,7 +9,7 @@ var shell         = require('gulp-shell');
 var autoprefixer  = require('gulp-autoprefixer');
 var cp            = require('child_process');
 var browserSync   = require('browser-sync').create();
-var htmlmin       = require('gulp-html-minifier');
+var htmlmin       = require('gulp-htmlmin');
 var rename        = require('gulp-rename');
 var argv          = require('yargs').argv;
 
@@ -29,13 +32,12 @@ gulp.task('buildSite', ['styles'], shell.task('JEKYLL_ENV=production jekyll buil
 gulp.task('minify', ['buildSite'], function() {
   return gulp.src('_site/**/*.html')
     .pipe(htmlmin({
-      collapseWhiteSpace: true
-      }))
+      collapseWhitespace: true
+    }))
     .pipe(gulp.dest('_site'));
 });
 
 gulp.task('jekyll-build', shell.task(['jekyll build --watch --drafts']));
-gulp.task('jekyll-build-once', ['buildSite', 'minify']);
 
 gulp.task('jekyll-serve', function() {
   browserSync.init({ server: { baseDir: '_site/' }, port: 4000 });
@@ -45,4 +47,4 @@ gulp.task('jekyll-serve', function() {
 });
 
 gulp.task('default', ['jekyll-build', 'jekyll-serve', 'styles']);
-gulp.task('buildOnServerOnly', ['styles', 'jekyll-build-once']);
+gulp.task('buildOnServerOnly', ['styles', 'buildSite', 'minify']);
