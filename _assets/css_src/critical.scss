@@ -3,10 +3,13 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @import 'util/util';
+
 @import 'modules/globals';
 @import 'modules/normalize';
 @import 'modules/site';
 @import 'modules/fonts';
+
+@import 'grid/grid';
 
 @import 'partials/header';
 @import 'partials/type';
