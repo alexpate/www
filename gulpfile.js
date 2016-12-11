@@ -12,10 +12,10 @@ const argv = require('yargs').argv
 
 
 gulp.task('styles', () => {
-  return gulp.src('./_assets/css_src/base.scss')
+  return gulp.src(['./_assets/css_src/base.scss', './_assets/css_src/critical.scss'])
     .pipe(sass())
     .pipe(autoprefixer({
-      browsers: ['last 30 versions'],
+      browsers: ['last 5 versions'],
       cascade: false
     }))
     .pipe(gulp.dest('./_assets/css'))
