@@ -92,6 +92,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
+  dotenv
   facets
   jekyll
   jekyll-assets
