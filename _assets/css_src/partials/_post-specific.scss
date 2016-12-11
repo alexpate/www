@@ -1,0 +1,44 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Post specific styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.pusher-dashboard-svg-feature {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-width: 700px;
+  opacity: .4;
+
+  #line-offset {
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation: line-animation 2000ms linear forwards;
+  }
+
+  .points {
+
+    &__point {
+      opacity: 0;
+      animation: points-animation 200ms linear forwards;
+    }
+
+    @for $i from 1 through 12 {
+      &__point:nth-of-type(#{$i}) {
+        animation-delay: 1600ms + (100ms * $i);
+      }
+    }
+  }
+}
+
+@keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes points-animation {
+  to {
+    opacity: 1;
+  }
+}

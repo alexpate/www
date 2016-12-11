@@ -12,7 +12,9 @@
 
     <link rel="author" href="{{ site.social.google }}">
 
-    {% stylesheet base.css media="screen, handheld" %}
+    <style>
+      {% asset 'critical' %}
+    </style>
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />

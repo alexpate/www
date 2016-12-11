@@ -6,10 +6,12 @@ index_document: index.html
 error_document: 404/index.html
 
 max_age:
-  "assets/*": 6000
+  "assets/*": 2628000
+  "uploads/*": 2628000
+  "static/*": 2628000
   "*": 300
 
-cache_control: public, no-transform, max-age=6000, s-maxage=6000
+cache_control: public, no-transform, max-age=2628000, s-maxage=2628000
 
 gzip: true
 gzip:
