@@ -8,6 +8,10 @@ slug: pusher-chameleon
 
 **Context**: Last week I ran a session with the rest of the Pusher team to introduce a new project I've been working on, to help manage our front-end assets across multiple projects. This article accompanies the presentation.
 
+<span class="alert">
+_Update:_ We recently open sourced Chameleon, so after you've read this, go check it out on [GitHub](https://github.com/pusher/chameleon)!
+</span>
+
 ## The Problem - 50 shades of grey
 
 CSS is a pretty easy language to write. But this makes it near impossible to manage. When I joined Pusher 6 months ago as the first dedicated front-end developer, it was clear we had a problem. Styles were scoped to individual patterns on individual pages, and among these, styles differed.
