@@ -5,7 +5,7 @@
 .stream-item {
   margin: 0 0 2em;
   width: 100%;
-  height: 220px;
+  height: 160px;
   padding: 30px;
   margin-bottom: 10px;
   background-color: #fff;
@@ -18,6 +18,7 @@
     padding: 30px 90px 30px 40px;
     margin-bottom: 20px;
     box-shadow: 0 16px 16px rgba(0, 0, 0 , 0.05);
+    height: 220px;
 
     &:hover {
       box-shadow: 0 16px 16px rgba(0, 0, 0 , 0.1);
