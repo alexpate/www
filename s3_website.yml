@@ -19,3 +19,6 @@ gzip:
   - .css
   - .js
   - .md
+
+cloudfront_distribution_id: <%= ENV['AWS_CLOUDFRONT_DISTRIBUTION_ID'] %>
+cloudfront_wildcard_invalidation: true
