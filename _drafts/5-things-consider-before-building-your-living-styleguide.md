@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "5 steps to take before building your living styleguide"
+title:  "5 things to consider before building your living styleguide"
 category: journal
 ---
 
 It's been about 6 months since we properly began to integrate our living styleguide ([Chameleon](/project/pusher-chameleon/)) into production projects. Before that, there was about a month or 2 of trying things out, scrapping them, and trying more things out.
 
-This article will provides a few lessons that we learnt that you can use as a checklist if you're planning to build out your own living styleguide.
+This article provides a few lessons that we learnt that you can use as a checklist if you're planning to build out your own living styleguide.
 
 * * *
 
@@ -21,8 +21,8 @@ It should be noted though, that these aren't mutually exclusive. You could poten
 
 * * *
 
-## 2 - Define the granularity of the components.
-At what level will the styleguide sit? Is this a company wide tool that will dictate the UI of every project? Or is this for a specific project, your dashboard maybe?
+## 2 - Define the granularity of the patterns.
+At what level will the styleguide sit? Is this a company wide tool that will dictate the UI of every project? Or is this for a specific project, your dashboard maybe? Remember, you're building a guide. Make sure you know who you're meant to be guiding.
 
 Likewise, what sort of elements are going to sit in the styleguide? Is this just for Sass variables, or will it include larger components such as navigation bars and footers?
 
@@ -33,7 +33,7 @@ Once you've defined what projects the styleguide is going to be used in, you'll 
 
 {% image 2016/12/styleguides-importing.jpg %}
 
-For example, consider how the styleguide is going to be imported in to your projects? Maybe you're a Ruby company, so bundling it as a Gem would work. Or maybe you would prefer to use NPM. Whatever you use, just be aware of the impacts that these transports will have on your code. And likewise, try to stay aware that what may be _the_ package manager of today, might not be the first choice in 6 months time.
+For example, consider how the styleguide is going to be imported in to your projects? Maybe you're a Ruby developer, so bundling it as a Gem would work. Or maybe you would prefer to use NPM. Whatever you use, just be aware of the impacts that these transports will have on your code. And likewise, remember that what may be _the_ package manager of today, might not be the first choice in 6 months time.
 
 I'm a big fan of how the GDS team deal with this. They have three repositories, one which is the main repo which holds the 'actual' styleguide and has no bias towards any language. And two others that consume this and wrap it to be an NPM module/Gem.
 
@@ -47,12 +47,12 @@ I'm a big fan of how the GDS team deal with this. They have three repositories, 
 ## 4 - Build a process to manage it.
 One of the hardest parts of development, is building processes. How should new components be reviewed before they're added in? How often are old components reviewed to prevent them from becoming stale?
 
-At Pusher, [Craig](https://twitter.com/_ctfd_uk) (our new product designer) has started to roll out a process to manage this. We have a Trello board that holds the state of every component (requests, ready, in development, in production), and we then meet every 3 months or so to review the entire library and pick out points or improvements that could be made. Maybe it's a certain icon that isn't as recognisable anymore, or  updating colours so that they're more accessible.
+At Pusher, [Craig](https://twitter.com/_ctfd_uk) (our new product designer) has started to roll out a process to manage this. We have a Trello board that holds the state of every component (requests, ready, in development, in production), and we then meet every 3 months or so to review the entire library and pick out points or improvements that could be made. Maybe it's a certain icon that isn't as recognisable anymore, or  updating colours so that they're more accessible. Maybe it's a certain icon that doesn't make sense anymore, or removing a variation of a button that we don't use anymore.
 
 * * *
 
 ## 5 - Keep it lightweight.
-Having a process in place should help enforce this. But your styleguide shouldn't be a place where you dump every variable/component/element. Excluding patterns is just as important as adding new ones.
+Having a process in place should help enforce this, but your styleguide shouldn't be a place where you dump every variable/component/element. Excluding patterns is just as important as adding new ones.
 
 <span class="alert">
 **Source Code**: If you're interested in seeing how we implemented our living styleguide at Pusher, go check out the source code on  [GitHub](https://github.com/pusher/chameleon)!
