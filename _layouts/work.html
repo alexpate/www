@@ -17,16 +17,16 @@ layout: default
   </header>
   <section class="grid inner">
 
-    <article class="gutenberg grid__small-12 grid__medium-8 grid__medium-centered grid__columns work__article">
-      {{ content }}
+    <div class="grid__small-12 grid__medium-8 grid__medium-centered grid__columns">
 
-      {% include post_pagination.html %}
-
+      <article class="gutenberg work__article">
+        {{ content }}
+        {% include post_pagination.html %}
+      </article>
+      
       {% include author.html %}
-    </article>
-
+    </div>
     {% include disqus.html %}
 
   </section>
-
 </main>
