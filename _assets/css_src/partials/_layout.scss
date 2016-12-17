@@ -12,8 +12,21 @@
 
   @media #{$medium-up} {
     padding: rem-calc(100px) 0 rem-calc(50px);
-    max-width: 600px;
     margin: 0 auto;
+  }
+}
+
+.home,
+.profile,
+.work {
+  .page__header {
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .page__title,
+  .page__meta {
+    text-align: center;
   }
 }
 

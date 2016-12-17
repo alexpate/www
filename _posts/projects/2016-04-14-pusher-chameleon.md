@@ -4,6 +4,7 @@ sub: "How to share front-end assets across projects"
 layout: work
 category: project
 slug: pusher-chameleon
+bodyClass: work
 ---
 
 **Context**: Last week I ran a session with the rest of the Pusher team to introduce a new project I've been working on, to help manage our front-end assets across multiple projects. This article accompanies the presentation.

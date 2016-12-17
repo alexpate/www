@@ -6,6 +6,7 @@ slug: pusher-dashboard
 backgroundColor: #3cd6ee
 description: "The story of how we redesigned our API dashboard"
 category: project
+bodyClass: work
 ---
 
 ## The Project
@@ -17,7 +18,7 @@ As one of the companies biggest assets, it quickly became clear that there were 
 
 {% image 2016/04/pusher_dashboard_nav.gif alt:"Quick access to all apps" %}
 
-<h2>Designing with <del>real data</del> <ins>no data</ins></h2> 
+<h2>Designing with <del>real data</del> <ins>no data</ins></h2>
 Dashboards work great when they're filled with information, but what's the experience like if you've just started?
 
 As a new user, being dumped into a half-blank view is disorientating. We wanted to encourage users to explore their new dashboard. In order to aid this journey, we developed the onboarding wizard which guides users through the process of creating their first app.
@@ -57,4 +58,3 @@ In order to help better manage this in the future, I opted for a modular develop
 After some testing with a small set of beta users, we finally launched our new dashboard into the wild. Through tools such as FullStory, we quickly identified areas where users were stuggling, and quickly rolled out fixes.
 
 For further reading, check out [these](http://blog.invisionapp.com/redesigning-api-dashboard/) [articles](http://thenextweb.com/dd/2016/02/26/pushers-new-interface-lets-developers-worry-about-apps-instead-of-infrastructure/).
-

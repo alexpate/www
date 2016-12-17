@@ -53,8 +53,7 @@ table {
   color: $color-flare-primary;
 
   @media #{$medium-up} {
-    font-size: rem-calc(28px);
-    text-align: center;
+    font-size: rem-calc(39px);
   }
 }
 
@@ -68,10 +67,6 @@ table {
   font-size: rem-calc(14px);
   line-height: 1.2em;
   margin: rem-calc(10px) 0;
-
-  @media #{$medium-up} {
-    text-align: center;
-  }
 
   .work__header & {
     color: rgba(255, 255, 255, .7);
