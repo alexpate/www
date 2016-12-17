@@ -25,6 +25,8 @@ Likewise, what sort of elements are going to sit in the styleguide? Is this just
 
 Once you've defined what projects the styleguide is going to be used in, you'll have a better idea of what language constraints you'll have to deal with.
 
+{% image 2016/12/styleguides-importing.jpg %}
+
 For example, consider how the styleguide is going to be imported in to your projects? Maybe you're a Ruby company, so bundling it as a Gem would work. Or maybe you would prefer to use NPM. Whatever you use, just be aware of the impacts that these transports will have on your code.
 
 I'm a big fan of how the GDS team deal with this. They have three repositories, one which is the main repo which holds the 'actual' styleguide. And two others that consume this and wrap it to be an NPM module/Gem.
