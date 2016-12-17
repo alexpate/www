@@ -21,12 +21,18 @@
 .work {
   .page__header {
     max-width: 700px;
-    text-align: center;
+
+    @media #{$medium-up} {
+      text-align: center;
+    }
+
   }
 
   .page__title,
   .page__meta {
-    text-align: center;
+    @media #{$medium-up} {
+      text-align: center;
+    }
   }
 }
 
