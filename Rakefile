@@ -4,6 +4,7 @@ namespace :deploy do
 
   desc "Build locally"
   task :gulp_build do
+    system "rm -rf _site"
     system "gulp buildForProduction"
   end
 
