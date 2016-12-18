@@ -20,7 +20,7 @@ p {
   &:first-of-type:not(.no-first-of) {
     color: darken($color-type, 10%);
     font-size: rem-calc(19px);
-    line-height: rem-calc(31px);
+    line-height: rem-calc(32px);
   }
 
   strong {
@@ -35,10 +35,11 @@ a:not(.btn) {
 
 
 h2 {
-  font-size: rem-calc(16px);
+  font-size: rem-calc(22px);
   font-weight: 500;
   margin: rem-calc(20px) 0;
   line-height: 1.6em;
+  color: #3e3e42;
 
   span {
     color: #bbb;
