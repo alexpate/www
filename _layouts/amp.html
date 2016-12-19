@@ -31,6 +31,7 @@ layout: amp
     <article class="page__article {% if page.gutenberg == false %}{% else %}gutenberg{% endif %}">
       {{ content | markdownify | amp_images }}
     </article>
+    {% include author.html %}
 
   </section>
 </main>
