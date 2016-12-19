@@ -99,12 +99,6 @@ table {
 // Misc Type
 //
 
-.faded {
-  color: lighten(#161920, 45%) !important;
-  font-size: rem-calc(16px);
-}
-
-
 hr {
   border: 0;
   border-top: 1px solid #eee;
@@ -129,7 +123,7 @@ a {
 
   @each $brand, $brandColor in $social-colors {
     &.#{$brand} {
-      color: $brandColor !important;
+      color: $brandColor;
     }
   }
 }

@@ -87,7 +87,7 @@
 }
 
 .stream {
-  margin: 40px auto 0 !important;
+  margin: 40px auto 0;
 
   @media #{$medium-up} {
     column-gap: 1.4em;

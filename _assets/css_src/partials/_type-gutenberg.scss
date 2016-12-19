@@ -29,7 +29,7 @@ p {
 
 }
 
-a:not(.btn) {
+a:not(.btn):not(.social-link) {
   color: #3e3e42;
 }
 
