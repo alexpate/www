@@ -16,7 +16,11 @@
       {% asset 'critical' %}
     </style>
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
+    {% if page.date %}
+      <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
+    {% else %}
+      <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
+    {% endif %}
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
     {% if site.environment == 'production' %}
