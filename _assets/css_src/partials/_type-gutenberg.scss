@@ -60,7 +60,7 @@ h3 {
   }
 }
 
-img:not(.author-byline__img) {
+img:not(.author-byline__img):not(.profile-feature__item__img) {
   width: 100%;
   height: auto;
   border-radius: 0;
