@@ -58,6 +58,9 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
     mercenary (0.3.6)
+    mini_portile2 (2.1.0)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     posix-spawn (0.3.11)
     pygments.rb (0.6.3)
       posix-spawn (~> 0.3.6)
@@ -94,10 +97,12 @@ DEPENDENCIES
   coffee-script
   dotenv
   facets
+  fastimage
   jekyll
   jekyll-assets
   jekyll-sitemap
   kramdown
+  nokogiri
   pygments.rb
   rouge!
   s3_website
