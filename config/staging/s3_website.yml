@@ -1,0 +1,24 @@
+s3_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+s3_secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+s3_bucket: <%= ENV['AWS_S3_STAGING_BUCKET'] %>
+
+index_document: index.html
+error_document: 404/index.html
+
+max_age:
+  "assets/*": 100
+  "uploads/*": 100
+  "static/*": 100
+  "*": 100
+
+cache_control: public, no-transform, max-age=100, s-maxage=100
+
+gzip: true
+gzip:
+  - .html
+  - .css
+  - .js
+  - .md
+
+cloudfront_distribution_id: <%= ENV['AWS_CLOUDFRONT_STAGING_DISTRIBUTION_ID'] %>
+cloudfront_wildcard_invalidation: true
