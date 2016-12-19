@@ -6,7 +6,7 @@ category: journal
 
 A couple of months ago, I wrote a [post](https://blog.pusher.com/3-lessons-learned-after-6-months-in-a-startup/) on the Pusher blog about a few lessons that I learned after 6 months of working in a startup. This is a follow up post, but with more of a focus on what it's like working in a design team.
 
-{% image 2016/09/what-i-learnt-first-year-design-team-header.jpg alt:"The Old Pusher Office" %}
+{% image 2016/09/what-i-learnt-first-year-design-team-header.jpg alt:"The Old Pusher Office" width:1200 height:500 %}
 
 
 ## 1) Learning how to give feedback is important, but so is learning to take it
@@ -19,7 +19,7 @@ Everyone has an opinion. But be careful who’s you take it and how you apply th
 
 ## 2) Stay relevant
 
-This isn't just a case of staying up to date with trends, but it’s about always forming your opinion and thoughts on design. It’s one of the things that you’ll hear over and over again: ‘Don’t let your opinion influence your design’. But learn to form your own thinking. 
+This isn't just a case of staying up to date with trends, but it’s about always forming your opinion and thoughts on design. It’s one of the things that you’ll hear over and over again: ‘Don’t let your opinion influence your design’. But learn to form your own thinking.
 
 At Pusher for example, even though we pretty much sit next to each other, as a team we like to take some time out to share our thoughts and build up a discussion every now and again. Besides also being a way of blowing off some steam on a Friday afternoon, it’s also a great way to hear someone else’s perspective through a medium other than Twitter.
 
