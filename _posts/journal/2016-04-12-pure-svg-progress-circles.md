@@ -21,7 +21,7 @@ We've also added a few stylistic properties such as giving it a 3px grey stroke.
 </svg>
 ```
 
-{% image 2016/04/svg_progress_circle_one.png %}
+{% image 2016/04/svg_progress_circle_one.png width:1446 height:452 %}
 
 ## 2 - Add the progress circle
 
@@ -47,7 +47,7 @@ Now we need to jump into the CSS. SVG provides us with two properties called `st
 }
 ```
 
-{% image 2016/04/svg_progress_circle_two.png %}
+{% image 2016/04/svg_progress_circle_two.png width:1254 height:514 %}
 
 We can then add a simple keyframes animation to change this value:
 
@@ -67,7 +67,7 @@ We can then add a simple keyframes animation to change this value:
   }
 }
 ```
-{% image 2016/04/svg_progress_offset.gif %}
+{% image 2016/04/svg_progress_offset.gif width:1468 height:600 %}
 
 ## 4 - Working out what stroke-dashoffset to set
 

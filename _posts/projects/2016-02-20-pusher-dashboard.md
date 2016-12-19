@@ -16,7 +16,7 @@ These UX issues, combined with various visual inconsitencies, led us to rebuildi
 
 As one of the companies biggest assets, it quickly became clear that there were going to be many opinions on the project. Whilst it was important that we didn't just shut out others from being involved, we had to manage how we dealt with feedback. As a way to better define who was directly involved in the project, we created a subteam consisting of myself, [Hamilton](https://twitter.com/hamchapman) (the project owner), and [Lauren](https://twitter.com/laurenmplews) (our lead designer).
 
-{% image 2016/04/pusher_dashboard_nav.gif alt:"Quick access to all apps" %}
+{% image 2016/04/pusher_dashboard_nav.gif alt:"Quick access to all apps" width:800 height:600 %}
 
 <h2>Designing with <del>real data</del> <ins>no data</ins></h2>
 Dashboards work great when they're filled with information, but what's the experience like if you've just started?
@@ -25,7 +25,7 @@ As a new user, being dumped into a half-blank view is disorientating. We wanted 
 
 Since the wizard was first implemented, over 48,000 new apps have been created through it.
 
-{% image 2016/04/pusher_dashboard_wizard.png alt:"The all new onboarding wizard" %}
+{% image 2016/04/pusher_dashboard_wizard.png alt:"The all new onboarding wizard" width:2156 height:1488 %}
 
 ## Code to last
 From a development perspective, one of the most glaring issues with the front-end code, was the wide variety of naming conventions, and duplicated styles.

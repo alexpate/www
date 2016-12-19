@@ -31,7 +31,7 @@ Likewise, what sort of elements are going to sit in the styleguide? Is this just
 ## 3 - Keep it language agnostic. Try to stray from building for a specific language/platform.
 Once you've defined what projects the styleguide is going to be used in, you'll have a better idea of what language constraints you'll have to deal with.
 
-{% image 2016/12/styleguides-importing.jpg %}
+{% image 2016/12/styleguides-importing.jpg width:1047 height:751 %}
 
 For example, consider how the styleguide is going to be imported in to your projects? Maybe you're a Ruby developer, so bundling it as a Gem would work. Or maybe you would prefer to use NPM. Whatever you use, just be aware of the impacts that these transports will have on your code. And likewise, remember that what may be _the_ package manager of today, might not be the first choice in 6 months time.
 
