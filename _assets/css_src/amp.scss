@@ -1,18 +1,24 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-// The main Sass File
+// AMP CSS
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 @import 'util/util';
+
 @import 'modules/globals';
+@import 'modules/normalize';
+@import 'modules/site';
+@import 'modules/fonts';
 
-@import 'vendor/syntax-highlighting';
+@import 'grid/grid';
 
+@import 'partials/header';
+@import 'partials/type';
+@import 'partials/alert';
+@import 'partials/layout';
 @import 'partials/footer';
-@import 'partials/inputs';
 @import 'partials/signpost';
 @import 'partials/pagination';
 @import 'partials/author';
-@import 'partials/stream';
-@import 'partials/profile-feature';
-@import 'partials/glitch';
 @import 'partials/post-specific';
+
+@import 'vendor/syntax-highlighting';
