@@ -13,6 +13,8 @@ max_age:
 
 cache_control: public, no-transform, max-age=100, s-maxage=100
 
+ignore_on_server: robots.txt
+
 gzip: true
 gzip:
   - .html
