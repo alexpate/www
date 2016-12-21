@@ -25,7 +25,7 @@ gulp.task('styles', () => {
 
 gulp.task('buildSite',
   ['styles'],
-  shell.task('JEKYLL_ENV=production jekyll build --config _config.yml,_config.production.yml')
+  shell.task('JEKYLL_ENV=production jekyll build --config config/shared/_config.yml,config/production/_config.yml')
 )
 
 gulp.task('minify', ['buildSite'], () => {
@@ -37,7 +37,7 @@ gulp.task('minify', ['buildSite'], () => {
     .pipe(gulp.dest('_site/'))
 })
 
-gulp.task('jekyll-build', shell.task(['jekyll build --watch --drafts']))
+gulp.task('jekyll-build', shell.task(['jekyll build --watch --drafts --config config/shared/_config.yml']))
 
 gulp.task('jekyll-serve', () => {
   browserSync.init({
