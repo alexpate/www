@@ -25,12 +25,11 @@
 }
 
 .profile-block {
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eff2f5;
   margin: rem-calc(10px) 0;
   padding: rem-calc(10px) 0;
 
   &.profile-block--last {
-    border-bottom: 0;
     padding-bottom: 0;
   }
 
