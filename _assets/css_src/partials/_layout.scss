@@ -5,6 +5,7 @@
 .grid {
   margin: 0 auto;
   padding: 0 rem-calc(10px);
+  position: relative;
   max-width: 1200px;
   width: 100%;
 
@@ -135,7 +136,7 @@
     min-height: 400px;
   }
 
-  > .grid__columns {
+  > .grid {
     z-index: 5;
     flex: 1;
   }

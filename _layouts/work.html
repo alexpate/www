@@ -8,25 +8,21 @@ layout: default
       {% include work-feature/pusher-dashboard.html %}
     {% endif %}
 
-    <div class="grid__small-12 grid__medium-10 grid__large-8 grid__medium-centered grid__columns">
-      <div class="grid">
-        <h1 class="page__title">{{ page.title }}</h1>
-        <span class="page__meta">{{ page.sub }}</span>
-      </div>
+    <div class="grid">
+      <h1 class="page__title">{{ page.title }}</h1>
+      <span class="page__meta">{{ page.sub }}</span>
     </div>
+    
   </header>
-  <section class="grid inner">
-
-    <div class="grid__small-12 grid__medium-8 grid__medium-centered grid__columns">
+  <section class="grid grid--min">
 
       <article class="gutenberg work__article">
         {{ content }}
         {% include post_pagination.html %}
       </article>
-      
+
       {% include author.html %}
-    </div>
-    {% include disqus.html %}
+      {% include disqus.html %}
 
   </section>
 </main>
