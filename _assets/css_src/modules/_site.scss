@@ -20,9 +20,15 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
   background-color: #fff;
+  border-style: solid;
+  border-width: 0;
+  border-color: #eff2f5;
+  border-left-width: 10px;
+  border-right-width: 10px;
 
   &.home {
     background-color: #f4f7f9;
+    border-color: #fff;
   }
 
   &.page--work {
