@@ -5,7 +5,7 @@ layout: default
   <section class="grid__small-12 grid__medium-10 grid__large-8 grid__medium-centered grid__columns" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="page__header">
       <h1 class="page__title" itemprop="name headline">{{ page.title }}</h1>
-      <span class="page__meta">
+      <span class="page__meta">By {{ site.author.name }} on 
         <time datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">
           {{ page.date | prettyDate }}
           {% if page.meta %} • {{ page.meta }}{% endif %}
