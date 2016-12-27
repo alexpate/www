@@ -4,7 +4,7 @@
 
 .grid {
   margin: 0 auto;
-  padding: 0 rem-calc(10px);
+  padding: 0 rem-calc($gutter);
   position: relative;
   max-width: 1200px;
   width: 100%;
