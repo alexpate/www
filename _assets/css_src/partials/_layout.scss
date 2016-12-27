@@ -2,18 +2,53 @@
 // General Layout
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.page__header,
-.page__article {
+.grid {
+  margin: 0 auto;
+  padding: 0 rem-calc($gutter);
+  position: relative;
+  max-width: 1200px;
   width: 100%;
+
+  .grid {
+    padding: 0;
+  }
+}
+
+.grid--min {
+  max-width: 780px;
+}
+
+.text-columns {
+  @media #{$medium-up} {
+    column-count: 2;
+  }
+}
+
+.profile-block {
+  border-top: 1px solid #eff2f5;
+  margin: rem-calc(10px) 0;
+  padding: rem-calc(10px) 0;
+
+  &.profile-block--last {
+    padding-bottom: 0;
+  }
+
+  @media #{$medium-up} {
+    display: flex;
+
+    > div {
+      width: 50%;
+    }
+  }
 }
 
 .page__header {
-  padding: rem-calc(50px) 0 rem-calc(25px);
+  padding: rem-calc(30px) 0 rem-calc(25px);
 
   @media #{$medium-up} {
     padding: rem-calc(120px) 0 rem-calc(60px);
-    margin: 0 auto;
     text-align: center;
+    margin: 0 auto;
   }
 }
 
@@ -100,7 +135,7 @@
     min-height: 400px;
   }
 
-  > .grid__columns {
+  > .grid {
     z-index: 5;
     flex: 1;
   }
