@@ -11,8 +11,9 @@
   padding: rem-calc(50px) 0 rem-calc(25px);
 
   @media #{$medium-up} {
-    padding: rem-calc(100px) 0 rem-calc(50px);
+    padding: rem-calc(120px) 0 rem-calc(60px);
     margin: 0 auto;
+    text-align: center;
   }
 }
 
