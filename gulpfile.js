@@ -37,7 +37,7 @@ gulp.task('minify', ['buildSite'], () => {
     .pipe(gulp.dest('_site/'))
 })
 
-gulp.task('jekyll-build', shell.task(['jekyll build --watch --drafts --config config/shared/_config.yml']))
+gulp.task('jekyll-build', shell.task(['jekyll build --watch --drafts --incremental --config config/shared/_config.yml']))
 
 gulp.task('jekyll-serve', () => {
   browserSync.init({
