@@ -46,18 +46,18 @@ layout: amp
 </head>
 <body>
   {% include nav.html %}
-  <main role="main" class="grid">
+  <main role="main" class="grid" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="page__header">
-      <h1 class="page__title">{{ page.title }}</h1>
-      {% if page.metaLink %}
-      <a href="{{ page.metaLink }}" class="page__meta">{{ page.meta }}</a>
-      {% else %}
-      <span class="page__meta">{{ page.meta }}</span>
-      {% endif %}
+      <h1 class="page__title" itemprop="name headline">{{ page.title }}</h1>
+      <span class="page__meta">By {{ site.author.name }} on
+        <time datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">
+          {{ page.date | prettyDate }}
+        </time>
+      </span>
     </header>
 
-    <article class="page__article {% if page.gutenberg == false %}{% else %}gutenberg{% endif %}">
+    <article class="page__article gutenberg" itemprop="articleBody">
       {{ content | markdownify | amp_images }}
     </article>
     {% capture author %}{% include author.html %}{% endcapture %}
