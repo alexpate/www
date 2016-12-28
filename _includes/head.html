@@ -17,7 +17,7 @@
     </style>
 
     {% if page.date %}
-      <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
+      <link rel="amphtml" href="{{ page.url | replace:'index.html','' | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
     {% else %}
       <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
     {% endif %}
