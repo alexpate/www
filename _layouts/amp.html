@@ -21,6 +21,7 @@ layout: amp
     "@type": "BlogPosting",
     "headline": "{{ page.title }}",
     "description": "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}",
+    "image": "{{ site.url }}{% asset_path graph.png %}",
     "mainEntityOfPage": {
       "@type":"WebPage",
       "@id":"{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}"
@@ -37,8 +38,8 @@ layout: amp
       "logo": {
         "@type": "ImageObject",
         "url": "{{ site.url }}{% asset_path 2015/10/alex.jpg %}",
-        "width": 80,
-        "height": 80
+        "width": "80px",
+        "height": "80px"
       }
      }
    }
@@ -46,18 +47,18 @@ layout: amp
 </head>
 <body>
   {% include nav.html %}
-  <main role="main" class="grid" itemscope itemtype="http://schema.org/BlogPosting">
+  <main role="main" class="grid">
 
     <header class="page__header">
-      <h1 class="page__title" itemprop="name headline">{{ page.title }}</h1>
+      <h1 class="page__title">{{ page.title }}</h1>
       <span class="page__meta">By {{ site.author.name }} on
-        <time datetime="{{ page.date | date: "%Y-%m-%d" }}" itemprop="datePublished">
+        <time datetime="{{ page.date | date: "%Y-%m-%d" }}">
           {{ page.date | prettyDate }}
         </time>
       </span>
     </header>
 
-    <article class="page__article gutenberg" itemprop="articleBody">
+    <article class="page__article gutenberg">
       {{ content | markdownify | amp_images }}
     </article>
     {% capture author %}{% include author.html %}{% endcapture %}
