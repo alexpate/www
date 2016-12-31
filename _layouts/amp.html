@@ -21,7 +21,12 @@ layout: amp
     "@type": "BlogPosting",
     "headline": "{{ page.title }}",
     "description": "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}",
-    "image": "{{ site.url }}{% asset_path graph.png %}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}{% asset_path graph.png %}",
+      "width": "220px",
+      "height": "220px"
+    },
     "mainEntityOfPage": {
       "@type":"WebPage",
       "@id":"{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}"
