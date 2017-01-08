@@ -10,6 +10,7 @@ gem "rouge", :git => 'https://github.com/alexpate/rouge.git'
 gem "coffee-script"
 gem "facets"
 gem "jekyll-assets"
+gem "jekyll-paginate"
 gem "kramdown"
 gem "sass"
 gem "typogruby"
