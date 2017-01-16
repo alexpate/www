@@ -45,7 +45,7 @@ layout: default
   var postHeaderElement = document.querySelectorAll('.post-persistent-header')[0]
 
   var showHeaderBar = function() {
-    var scrollTop = document.documentElement.scrollTop
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
     if (scrollTop >= 350) {
       postHeaderElement.classList.add('is-visible')
@@ -54,5 +54,5 @@ layout: default
     }
   }
 
-  document.addEventListener('scroll', showHeaderBar, true)
+  window.addEventListener('scroll', showHeaderBar, true)
 </script>
