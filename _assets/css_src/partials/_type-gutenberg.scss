@@ -35,11 +35,10 @@ a:not(.btn):not(.social-link) {
 
 
 h2 {
-  font-size: rem-calc(18px);
-  font-weight: 500;
+  font-size: rem-calc(20px);
+  font-weight: 400;
   margin: rem-calc(16px) 0;
   line-height: 1.6em;
-  color: #3e3e42;
 
   span {
     color: #bbb;
@@ -47,7 +46,7 @@ h2 {
   }
 
   @media #{$medium-up} {
-    font-size: rem-calc(22px);
+    font-size: rem-calc(25px);
     margin: rem-calc(20px) 0;
   }
 }
