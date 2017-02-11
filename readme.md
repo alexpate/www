@@ -22,7 +22,9 @@ In order to deploy, you will first need to create a `.env` file with the followi
 ```bash
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
-AWS_S3_BUCKET=
+
+# Dev/Staging::Production
+AWS_S3_BUCKET=alexpate.uk
 AWS_CLOUDFRONT_DISTRIBUTION_ID=
 ```
 
