@@ -8,7 +8,7 @@ environment: development
 # ==================
 title: Alex Pate - A Design Engineer in London
 description: > #
-  Alex Pate is a design engineer in London, building things at Pusher. Working somewhere on the boundary between design and code.
+  Alex Pate is a design engineer in London, building things at Lystable. Working somewhere on the boundary between design and code.
 
 url: "http://127.0.0.1:4000"
 
@@ -21,7 +21,7 @@ author:
   firstname: Alexander
   lastname: Pate
   nickname: Alex
-  description: "I'm a design engineer, mostly working with the front-end (although I know how to wrangle with Rails). I'm currently working in London at Pusher as a front-end designer."
+  description: "I'm a design engineer, mostly working with the front-end (although I know how to wrangle with Rails). I'm currently working in London at Lystable as UI Engineer."
 email: alex@alexpate.uk
 email_secure: "&#097;&#108;&#101;&#120;&#064;&#097;&#108;&#101;&#120;&#112;&#097;&#116;&#101;&#046;&#117;&#107;"
 
