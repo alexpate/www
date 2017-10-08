@@ -1,0 +1,49 @@
+{
+  "name": "gatsby-blog-starter-kit",
+  "description": "Gatsby blog starter example",
+  "version": "1.1.0",
+  "author": "Dustin Schau <dustinschau@gmail.com>",
+  "dependencies": {
+    "gatsby": "~1.9.45",
+    "gatsby-link": "~1.6.17",
+    "gatsby-plugin-catch-links": "~1.0.1",
+    "gatsby-plugin-react-helmet": "~1.0.1",
+    "gatsby-plugin-react-next": "~1.0.4",
+    "gatsby-plugin-sharp": "~1.6.8",
+    "gatsby-plugin-styled-components": "^1.0.5",
+    "gatsby-remark-images": "~1.5.13",
+    "gatsby-remark-prismjs": "^1.2.8",
+    "gatsby-source-filesystem": "~1.5.1",
+    "gatsby-transformer-remark": "~1.7.12",
+    "grid-styled": "^2.0.0-11",
+    "react": "~16.0.0",
+    "react-dom": "~16.0.0",
+    "react-icons": "~2.2.5",
+    "styled-components": "^2.2.1",
+    "styled-system": "^1.0.7"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "gh-pages": "~1.0.0",
+    "prettier": "^1.7.4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths",
+    "postdeploy": "gh-pages -d public",
+    "develop": "gatsby develop",
+    "preserve": "npm run build",
+    "serve": "gatsby serve",
+    "start": "npm run develop",
+    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
+    "test": "echo \"Should probably write some tests!\""
+  }
+}

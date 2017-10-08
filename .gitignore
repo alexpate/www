@@ -1,7 +1,6 @@
-_site
-.sass-cache
-.jekyll-assets-cache
-.jekyll-metadata
 node_modules
-_assets/css/
-.env
+.cache/
+public/
+.DS_Store
+yarn-error.log
+yarn.lock
