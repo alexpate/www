@@ -1,42 +1,34 @@
 import React from 'react';
-import styled from 'styled-components';
 import {Flex} from 'grid-styled';
 
-import {H1} from 'components/typography';
+const CURRENT_YEAR = new Date().getFullYear();
 
 const StyledFooter = Flex.extend`
   width: 100%;
-  padding: 32px 0;
+  padding: 16px 0 32px;
   margin-top: 40px;
-  border-top: 1px solid #3f4252;
+  border-top: 1px solid ${props => props.theme.colors.text};
   font-size: 14px;
+  color: ${props => props.theme.colors.text};
 
   a {
     margin: 0 8px;
-    color: #fff;
+    color: ${props => props.theme.colors.text};
     text-decoration: none;
   }
 `;
-
-const currentYear = new Date().getFullYear();
 
 const Footer = () => (
   <StyledFooter>
     <span itemScope="" itemType="http://schema.org/Organization">
       <link itemProp="url" href="https://alexpate.uk" />
-      &copy; {currentYear} -
+      &copy; {CURRENT_YEAR} -
       <a href="https://twitter.com/alexjpate" rel="me" itemProp="sameAs">
         Twitter
       </a>
-      -
-      <a href="http://codepen.io/alexpate" rel="me" itemProp="sameAs">
-        CodePen
+      <a href="http://github.com/alexpate" rel="me" itemProp="sameAs">
+        GitHub
       </a>
-      -
-      <a href="https://dribbble.com/alexpate" rel="me" itemProp="sameAs">
-        Dribbble
-      </a>
-      -
       <a href="http://github.com/alexpate/alexpate.uk">View Source</a>
     </span>
   </StyledFooter>

@@ -8,14 +8,10 @@ body {
   font-family: 'Interface', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #101321;
-  /* background-color: #3336c7; */
   min-height: 100vh;
-  color: #fff;
 }
 
 a {
-  color: #fff;
   text-decoration: none;
   position: relative;
 }

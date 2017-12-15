@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import {Box} from 'grid-styled';
 
-import Header from 'components/header';
+import PageHeader from 'components/page-header';
 import {H1, Text} from 'components/typography';
 
 const Article = styled.div`
@@ -11,14 +11,14 @@ const Article = styled.div`
 `;
 
 const StyledMain = Box.extend`
-  color: #fff;
+  color: ${props => props.theme.colors.text};
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
 `;
 
 const Main = ({children, ...otherProps}) => (
-  <StyledMain as="main" py={[10, 20]} {...otherProps}>
+  <StyledMain as="main" {...otherProps}>
     {children}
   </StyledMain>
 );
@@ -29,10 +29,10 @@ export default function Template({data, pathContext}) {
   return (
     <Article>
       <Helmet title={post.frontmatter.title} />
-      <Header>
-        <H1>{post.frontmatter.title}</H1>
-        <Text>{post.frontmatter.date}</Text>
-      </Header>
+      <PageHeader
+        title={post.frontmatter.title}
+        subTitle={post.frontmatter.date}
+      />
       <Main className="md" dangerouslySetInnerHTML={{__html: post.html}} />
     </Article>
   );

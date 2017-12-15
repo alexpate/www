@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react';
 import styled from 'styled-components';
 import {fontSize, fontWeight} from 'styled-system';
@@ -7,6 +8,7 @@ const Title = Box.extend`
   ${fontSize};
   ${fontWeight};
   margin: 0;
+  color: ${props => props.theme.colors.heading};
 `;
 
 const H1 = ({children, ...otherProps}) => (
@@ -34,10 +36,10 @@ const H4 = ({children, ...otherProps}) => (
 );
 
 const Text = styled.p`
-  margin: 0;
+  margin: ${props => (props.margin ? props.margin : '0 0 10px')};
   font-weight: 400;
   line-height: 1.6em;
-  color: ${props => (props.small ? '#abadbb' : 'unset')};
+  color: ${props => props.theme.colors.text};
   font-size: ${props => (props.small ? '14px' : '18px')};
 `;
 

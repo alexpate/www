@@ -7,7 +7,7 @@ import {Flex, Box} from 'grid-styled';
 import Header from 'components/header';
 import {H1, H2, H3, Text} from 'components/typography';
 
-const Main = styled.main`
+const ContentMain = styled.main`
   padding: 20px 0;
 `;
 
@@ -46,38 +46,46 @@ const ProfileCard = ({title, subTitle, description}) => {
   );
 };
 
+const Section = styled.section`
+  padding: 40px 0;
+`;
+
 const Profile = ({data}) => (
   <div>
-    <Header>
-      <Box width={1 / 2}>
-        <H1>Profile</H1>
-        <Text large>
-          I'm Alex, a design engineer in London, currently working at Kalo. As a
-          design engineer, I help close the gaps between design and code,
-          whether this be through writing code, or by creating processes and
-          tooling to assist other developers.
+    <ContentHeader>
+      <H1>Profile</H1>
+      <Text large>
+        I'm Alex, a design engineer in London, currently working at Kalo. As a
+        design engineer, I help close the gaps between design and code, whether
+        this be through writing code, or by creating processes and tooling to
+        assist other developers.
+      </Text>
+    </ContentHeader>
+    <main>
+      <Box>
+        <H3>Experience</H3>
+      </Box>
+      <Section>
+        <H3>Kalo (2017 - present)</H3>
+        <Text>Closing the seams between design and engineering.</Text>
+      </Section>
+      <Section>
+        <H3>Pusher (2015 - 2017)</H3>
+        <Text>
+          Worked in London for Pusher as a front-end designer. Key projects
+          include the redesign of the client dashboard, and building out the new
+          marketing site. Was also fortunate enough to attend several
+          international developer conferences in a developer relations capacity.
         </Text>
-      </Box>
-    </Header>
-    <Main>
-      <Box ml="25%">
-        <H3 mb={[1, 3]}>Experience</H3>
-      </Box>
-      <ProfileCard
-        title="Kalo 🙆‍♂️"
-        subTitle="2015"
-        description="Closing the seams between design and engineering."
-      />
-      <ProfileCard
-        title="Pusher 📲"
-        subTitle="2015 - 2017"
-        description="Worked in London for Pusher as a front-end designer. Key projects include the redesign of the client dashboard, and building out the new marketing site. Was also fortunate enough to attend several international developer conferences in a developer relations capacity."
-      />
-      <ProfileCard
-        title="Rareloop ∞"
-        subTitle="2015"
-        description="Creative developer at Rareloop two days a week whilst finishing my degree. Worked on several live client briefs."
-      />
+      </Section>
+      <Section>
+        <H3>Rareloop ∞ (2015)</H3>
+        <Text>
+          Creative developer at Rareloop two days a week whilst finishing my
+          degree. Worked on several live client briefs.
+        </Text>
+      </Section>
+
       <Box ml="25%">
         <H3 my={[1, 3]}>Writing</H3>
       </Box>
@@ -109,7 +117,7 @@ const Profile = ({data}) => (
         subTitle="2012 - 2015"
         description="Graduated with a first class honours degree in Web Design"
       />
-    </Main>
+    </main>
   </div>
 );
 
