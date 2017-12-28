@@ -21,6 +21,7 @@ p {
   padding: 0;
 }
 
+<<<<<<< Updated upstream
 a:after {
   width: 100%;
   height: 1px;
@@ -39,6 +40,8 @@ a:hover:after {
   opacity: 1;
 }
 
+=======
+>>>>>>> Stashed changes
 .md p,
 .md li {
   font-size: 16px;

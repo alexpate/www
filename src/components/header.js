@@ -16,7 +16,11 @@ const Logo = styled('a')`
 
 const StyledNav = Flex.extend`
   width: 100%;
+<<<<<<< Updated upstream
   padding: 32px 0 16px;
+=======
+  padding: 32px 0 24px;
+>>>>>>> Stashed changes
   background-color: ${props => props.theme.colors.background};
   position: sticky;
   top: 0;
@@ -92,17 +96,29 @@ export default class Header extends PureComponent {
         <Nav>
           <ul>
             <li>
+<<<<<<< Updated upstream
               <Text margin={0} small>
+=======
+              <Text margin={0} small style={{lineHeight: '1em'}}>
+>>>>>>> Stashed changes
                 <Link to="/">Home</Link>
               </Text>
             </li>
             <li>
+<<<<<<< Updated upstream
               <Text margin={0} small>
+=======
+              <Text margin={0} small style={{lineHeight: '1em'}}>
+>>>>>>> Stashed changes
                 <Link to="/profile">Profile</Link>
               </Text>
             </li>
             <li>
+<<<<<<< Updated upstream
               <Text margin={0} small>
+=======
+              <Text margin={0} small style={{lineHeight: '1em'}}>
+>>>>>>> Stashed changes
                 <Link to="https://twitter.com/alexjpate">Twitter</Link>
               </Text>
             </li>
