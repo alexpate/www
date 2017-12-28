@@ -1,27 +1,58 @@
 {
   "name": "alexpate.uk",
-  "version": "2.0.1",
-  "description": "Source files for personal site",
-  "main": "gulpfile.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexpate/alexpate.uk.git"
-  },
+  "description": "Source files for my personal site",
+  "version": "1.1.0",
   "author": "Alex Pate",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexpate/alexpate.uk/issues"
+  "dependencies": {
+    "gatsby": "~1.9.45",
+    "gatsby-link": "~1.6.17",
+    "gatsby-plugin-catch-links": "~1.0.1",
+    "gatsby-plugin-react-helmet": "~1.0.1",
+    "gatsby-plugin-react-next": "~1.0.4",
+    "gatsby-plugin-sharp": "~1.6.8",
+    "gatsby-plugin-styled-components": "^1.0.5",
+    "gatsby-remark-images": "~1.5.13",
+    "gatsby-remark-prismjs": "^1.2.8",
+    "gatsby-source-filesystem": "~1.5.1",
+    "gatsby-transformer-remark": "~1.7.12",
+    "grid-styled": "^2.0.0-11",
+    "react": "~16.2.0",
+    "react-dom": "~16.0.0",
+    "react-icons": "~2.2.5",
+    "react-pure-render": "^1.0.2",
+    "styled-components": "^2.2.1",
+    "styled-system": "^1.0.7"
   },
-  "homepage": "https://github.com/alexpate/alexpate.uk#readme",
   "devDependencies": {
-    "browser-sync": "^2.14.0",
-    "gulp": "*",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-htmlmin": "^2.0.0",
-    "gulp-rename": "*",
-    "gulp-sass": "^2.3.2",
-    "gulp-shell": "*",
-    "yargs": "^5.0.0"
+    "eslint": "^4.8.0",
+    "babel-eslint": "^8.0.1",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "gh-pages": "~1.0.0",
+    "prettier": "^1.7.4"
+  },
+  "keywords": [
+    "Alex Pate",
+    "gatsby",
+    "personal",
+    "portfolio",
+    "blog",
+    "static"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths",
+    "postdeploy": "gh-pages -d public",
+    "develop": "gatsby develop",
+    "preserve": "npm run build",
+    "serve": "gatsby serve",
+    "start": "npm run develop",
+    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\""
   }
 }
