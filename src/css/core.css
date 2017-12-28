@@ -21,27 +21,6 @@ p {
   padding: 0;
 }
 
-<<<<<<< Updated upstream
-a:after {
-  width: 100%;
-  height: 1px;
-  background-color: white;
-  bottom: -2px;
-  content: '';
-  left: 0;
-  position: absolute;
-  transform: translateY(2px);
-  transition: all 200ms ease-in-out;
-  opacity: 0;
-}
-
-a:hover:after {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-=======
->>>>>>> Stashed changes
 .md p,
 .md li {
   font-size: 16px;
