@@ -4,18 +4,7 @@ import styled from 'styled-components';
 import PageHeader from 'components/page-header';
 import Header from 'components/header';
 import {H3, H2, Text, P} from 'components/typography';
-
-const Section = styled.section`
-  padding: 20px 0;
-  border-bottom: 2px solid ${props => props.theme.colors.flare};
-  margin-bottom: 36px;
-  padding-bottom: 36px;
-`;
-
-const SectionTitle = styled(H2)`
-  color: ${props => props.theme.colors.flare};
-  margin-bottom: 16px;
-`;
+import Section, {SectionTitle} from 'components/section';
 
 export default () => (
   <div>

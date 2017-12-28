@@ -5,12 +5,9 @@ import {Box} from 'grid-styled';
 
 import {H3, Text, P} from 'components/typography';
 import Header from 'components/header';
+import Section, {SectionTitle} from 'components/section';
 
 import coverPhoto from './index-cover.png';
-
-const Section = Box.extend`
-  padding-bottom: 40px;
-`;
 
 const Index = ({data}) => {
   const {edges: posts} = data.allMarkdownRemark;
@@ -22,7 +19,7 @@ const Index = ({data}) => {
         <Section pt={[20, 40]}>
           <img
             src={coverPhoto}
-            style={{width: '100%'}}
+            style={{width: '100%', marginBottom: 16}}
             alt="San Franciso Bay"
           />
           <P>
@@ -41,7 +38,7 @@ const Index = ({data}) => {
           </P>
         </Section>
         <Section>
-          <H3 mb={[1, 2]}>Writing</H3>
+          <SectionTitle>Writing</SectionTitle>
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
             .map(({node: post}) => (
