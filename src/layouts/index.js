@@ -1,9 +1,6 @@
 import React from 'react';
 import styled, {ThemeProvider, injectGlobal} from 'styled-components';
-import Header from 'components/header';
 import Footer from 'components/footer';
-
-import 'css/core.css';
 
 import GraphikRegular from 'static-assets/fonts/graphik-regular.woff';
 import GraphikRegular2 from 'static-assets/fonts/graphik-regular.woff2';
@@ -22,6 +19,7 @@ const Inner = styled.div`
   padding: 0 16px;
 `;
 
+// eslint-disable-next-line no-unused-expressions
 injectGlobal`
   @font-face {
     font-family: 'Graphik Web';
@@ -35,6 +33,31 @@ injectGlobal`
     src: url(${GraphikMedium2}) format('woff2'),
       url(${GraphikMedium}) format('woff');
     font-weight: 500;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Graphik Web', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  a {
+    text-decoration: none;
+    position: relative;
+    border-bottom: 1px solid blue;
+    padding-bottom: 1px;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
   }
 `;
 
