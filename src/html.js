@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const BUILD_TIME = new Date().getTime();
 
@@ -26,6 +25,11 @@ export default function HTML(props) {
       <body>
         <div id="___gatsby" dangerouslySetInnerHTML={{__html: props.body}} />
         {props.postBodyComponents}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `console.log('Built at ${Date(BUILD_TIME)}')`,
+          }}
+        />
       </body>
     </html>
   );

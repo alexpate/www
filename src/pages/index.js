@@ -1,9 +1,9 @@
-/* @flow */
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import Helmet from 'react-helmet';
 import {Box} from 'grid-styled';
-import {H3, Text} from 'components/typography';
+
+import {H3, Text} from '../components/typography';
 
 const Section = Box.extend`
   padding: 40px 0;
@@ -16,12 +16,15 @@ const Index = ({data}) => {
       <Helmet title="Alex Pate - UI Engineer" />
       <Section pt={[20, 40, 100]}>
         <Text>
-          👋
+          <span role="img" aria-label="wave">
+            👋
+          </span>
           <br />
-          I'm Alex, a design engineer in London, currently working at Kalo. As a
-          design engineer, I help close the gaps between design and code,
-          whether this be through writing code, or by creating processes and
-          tooling to assist other developers.
+          I’m Alex, a design engineer in London, currently working at{' '}
+          <a href="https://kalohq.com">Kalo</a>. As a design engineer, I help
+          close the gaps between design and code, whether this be through
+          writing code, or by creating processes and tooling to assist other
+          developers.
         </Text>
         <Text>
           Although I spend most of my day working with the front-end and design,
@@ -35,10 +38,15 @@ const Index = ({data}) => {
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({node: post}) => (
-            <GatsbyLink to={post.frontmatter.path}>
-              <Text> {post.frontmatter.title} </Text>
-              <Text small> {post.frontmatter.date} </Text>
-            </GatsbyLink>
+            <Box mb={2}>
+              <GatsbyLink
+                to={post.frontmatter.path}
+                key={post.frontmatter.title}
+              >
+                <Text>{post.frontmatter.title}</Text>
+                <Text small>{post.frontmatter.date} </Text>
+              </GatsbyLink>
+            </Box>
           ))}
       </Section>
     </main>
@@ -52,6 +60,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
+          excerpt(pruneLength: 250)
           id
           frontmatter {
             title

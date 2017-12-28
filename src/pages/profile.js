@@ -4,12 +4,8 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import {Flex, Box} from 'grid-styled';
 
-import Header from 'components/header';
-import {H1, H2, H3, Text} from 'components/typography';
-
-const ContentMain = styled.main`
-  padding: 20px 0;
-`;
+import PageHeader from '../components/page-header';
+import {H1, H2, H3, Text} from '../components/typography';
 
 const StyledProfileCard = styled.section`
   padding: 8px 0;
@@ -47,20 +43,12 @@ const ProfileCard = ({title, subTitle, description}) => {
 };
 
 const Section = styled.section`
-  padding: 40px 0;
+  padding: 20px 0;
 `;
 
 const Profile = ({data}) => (
   <div>
-    <ContentHeader>
-      <H1>Profile</H1>
-      <Text large>
-        I'm Alex, a design engineer in London, currently working at Kalo. As a
-        design engineer, I help close the gaps between design and code, whether
-        this be through writing code, or by creating processes and tooling to
-        assist other developers.
-      </Text>
-    </ContentHeader>
+    <PageHeader title="Profile" />
     <main>
       <Box>
         <H3>Experience</H3>
@@ -85,38 +73,30 @@ const Profile = ({data}) => (
           degree. Worked on several live client briefs.
         </Text>
       </Section>
-
-      <Box ml="25%">
-        <H3 my={[1, 3]}>Writing</H3>
+      <Section>
+        <H3>Writing</H3>
+        <ul>
+          <li>
+            <Text>.net mag - side project of the month: JuniorJobs (2017)</Text>
+          </li>
+          <li>
+            <Text>
+              .net mag - How to get started with pattern libraries (2016)
+            </Text>
+          </li>
+          <li>
+            <Text>.net mag - Design Challenge (2014)</Text>
+          </li>
+          <li>
+            <Text>WebDesignerMag - Spotlight Interview (2014)</Text>
+          </li>
+        </ul>
+      </Section>
+      <Box>
+        <H3>Education</H3>
       </Box>
-      <ProfileCard
-        title=".net mag 📔"
-        subTitle="2017"
-        description="Side project of the month: JuniorJobs"
-      />
-      <ProfileCard
-        title=".net mag 📗"
-        subTitle="2016"
-        description="How to get started with pattern libraries"
-      />
-      <ProfileCard
-        title=".net mag 📘"
-        subTitle="2014"
-        description="Design Challenge"
-      />
-      <ProfileCard
-        title="WebDesignerMag 📙"
-        subTitle="2014"
-        description="Spotlight Interview"
-      />
-      <Box ml="25%">
-        <H3 my={[1, 3]}>Education</H3>
-      </Box>
-      <ProfileCard
-        title="Southampton Solent University 👨‍🎓"
-        subTitle="2012 - 2015"
-        description="Graduated with a first class honours degree in Web Design"
-      />
+      <H3>Southampton Solent University</H3>
+      <Text>Graduated with a first class honours degree in Web Design</Text>
     </main>
   </div>
 );

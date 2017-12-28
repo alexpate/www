@@ -8,39 +8,52 @@ const Title = Box.extend`
   ${fontSize};
   ${fontWeight};
   margin: 0;
+  line-height: 1.2em;
   color: ${props => props.theme.colors.heading};
 `;
 
-const H1 = ({children, ...otherProps}) => (
-  <Title is="h1" fontWeight="300" fontSize={[4, 5, 7]} {...otherProps}>
+export const H1 = ({children, ...otherProps}) => (
+  <Title is="h1" fontWeight="400" fontSize={[4, 5, 7]} {...otherProps}>
     {children}
   </Title>
 );
 
-const H2 = ({children, ...otherProps}) => (
+export const H2 = ({children, ...otherProps}) => (
   <Title is="h2" fontWeight="400" fontSize={[2, 4, 5]} {...otherProps}>
     {children}
   </Title>
 );
 
-const H3 = ({children, ...otherProps}) => (
-  <Title is="h3" fontWeight="400" fontSize={[1, 2, 3]} {...otherProps}>
+export const H3 = ({children, ...otherProps}) => (
+  <Title is="h3" fontWeight="500" fontSize={[1, 2, 3]} {...otherProps}>
     {children}
   </Title>
 );
 
-const H4 = ({children, ...otherProps}) => (
+export const H4 = ({children, ...otherProps}) => (
   <Title is="h4" fontWeight="400" fontSize={[1, 2]} {...otherProps}>
     {children}
   </Title>
 );
 
-const Text = styled.p`
-  margin: ${props => (props.margin ? props.margin : '0 0 10px')};
+export const Text = styled.p`
   font-weight: 400;
-  line-height: 1.6em;
+  line-height: 1.8em;
   color: ${props => props.theme.colors.text};
   font-size: ${props => (props.small ? '14px' : '18px')};
+
+  a {
+    color: ${props => props.theme.colors.link};
+    font-weight: 500;
+  }
 `;
 
-export {H1, H2, H3, H4, Title, Text};
+export const P = styled(Text)`
+  margin-bottom: 0.4em;
+`;
+
+export const SubTitle = styled.span`
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+`;

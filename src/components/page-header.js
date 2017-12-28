@@ -1,12 +1,12 @@
 import React from 'react';
 import {Box} from 'grid-styled';
 
-import {H1} from 'components/typography';
+import {H1, SubTitle} from './typography';
 
 const PageHeader = ({title, subTitle}) => (
-  <Box pt={[24, 48]}>
+  <Box py={[24, 48]}>
     <H1>{title}</H1>
-    <h4>{subTitle}</h4>
+    <SubTitle>{subTitle}</SubTitle>
   </Box>
 );
 export default PageHeader;

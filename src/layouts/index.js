@@ -1,13 +1,14 @@
 import React from 'react';
 import styled, {ThemeProvider} from 'styled-components';
-import Header from 'components/header';
-import Footer from 'components/footer';
+import Header from '../components/header';
+import Footer from '../components/footer';
 import PureComponent from 'react-pure-render/component';
 
-import 'css/core.css';
+import '../css/core.css';
 
 const Page = styled.div`
   background-color: ${props => props.theme.colors.background};
+  min-height: 100vh;
 `;
 
 const Inner = styled.div`
@@ -48,6 +49,8 @@ export default class Template extends PureComponent {
           text: '#fff',
           toggleBackground: '#fcfdff',
           toggleButton: '#3336c7',
+          border: '#5657e0',
+          link: '#fff',
         },
       },
       light: {
@@ -58,6 +61,8 @@ export default class Template extends PureComponent {
           text: '#4E6087',
           toggleBackground: '#3336c7',
           toggleButton: '#fcfdff',
+          border: '#e6e9ef',
+          link: '#3336c7',
         },
       },
     };

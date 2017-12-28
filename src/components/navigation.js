@@ -10,7 +10,7 @@ const Logo = styled('a')`
   color: ${props => props.theme.colors.text};
   text-decoration: none;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 const StyledNav = Flex.extend`

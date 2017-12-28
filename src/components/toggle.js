@@ -12,9 +12,8 @@ const StyledToggle = styled('div')`
   align-items: center;
   transition: background-color 0.1s ease-in-out;
 
-  &:after {
+  span {
     transition: left 0.1s ease-in-out;
-    content: '';
     border-radius: 50%;
     width: 14px;
     height: 14px;
@@ -41,10 +40,13 @@ export default class Toggle extends PureComponent {
     this.props.onToggle();
 
     this.setState({on: !this.state.on});
-    console.log(this.state.on);
   }
 
   render() {
-    return <StyledToggle on={this.state.on} onClick={this.onToggle} />;
+    return (
+      <StyledToggle on={this.state.on} onClick={this.onToggle}>
+        <span />
+      </StyledToggle>
+    );
   }
 }

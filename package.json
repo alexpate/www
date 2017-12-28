@@ -35,7 +35,9 @@
     "gh-pages": "~1.0.0",
     "prettier": "^1.7.4"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -46,8 +48,7 @@
     "preserve": "npm run build",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "format":
-      "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
+    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Should probably write some tests!\""
   }
 }
