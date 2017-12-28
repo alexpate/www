@@ -13,10 +13,11 @@ export default () => (
     <main>
       <Section>
         <P>
-          I'm Alex, a design engineer in London, currently working at Kalo. As a
-          design engineer, I help close the gaps between design and code,
-          whether this be through writing code, or by creating processes and
-          tooling to assist other developers.
+          I'm Alex, a design engineer in London, currently working at{' '}
+          <a href="https://kalohq.com">Kalo</a>. As a design engineer, I help
+          close the gaps between design and code, whether this be through
+          writing code, or by creating processes and tooling to assist other
+          developers.
         </P>
         <P>
           Although I spend most of my day working with the front-end and design,
