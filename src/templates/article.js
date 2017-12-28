@@ -6,54 +6,11 @@ import {Box} from 'grid-styled';
 import Alert from 'components/alert';
 import PageHeader from 'components/page-header';
 import Header from 'components/header';
+import Markdown from 'components/markdown';
 
 const Article = styled.div`
   padding: 40px 0;
 `;
-
-const StyledMain = Box.extend`
-  color: ${props => props.theme.colors.text};
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-
-  table {
-    display: table;
-    margin: 24px 0;
-    width: 100%;
-
-    th {
-      padding: 8px 10px;
-      background: #f4f7fd;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: left;
-    }
-
-    tr {
-      background: #fff;
-
-      &:nth-child(even) {
-        background: #f4f7fd;
-      }
-    }
-
-    td {
-      padding: 8px 10px;
-    }
-
-    em {
-      font-style: normal;
-      text-decoration: underline;
-    }
-  }
-`;
-
-const Main = ({children, ...otherProps}) => (
-  <StyledMain as="main" {...otherProps}>
-    {children}
-  </StyledMain>
-);
 
 export default function Template({data}) {
   const {markdownRemark: post} = data;
@@ -84,11 +41,7 @@ export default function Template({data}) {
             date.
           </Alert>
         ) : null}
-        <Main
-          className="md"
-          dangerouslySetInnerHTML={{__html: post.html}}
-          id="top"
-        />
+        <Markdown dangerouslySetInnerHTML={{__html: post.html}} id="top" />
       </Article>
     </div>
   );
