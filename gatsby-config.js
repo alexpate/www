@@ -1,10 +1,8 @@
-const {name} = require('./package.json');
-
 module.exports = {
   pathPrefix: `/`,
   siteMetadata: {
     author: 'Alex Pate',
-    title: `Alex Pate - User Interface Engineer`,
+    title: `Alex Pate - UI Engineer`,
   },
   plugins: [
     'gatsby-plugin-styled-components',
