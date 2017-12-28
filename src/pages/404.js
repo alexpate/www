@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import {Text, H1} from '../components/typography';
 import {Box} from 'grid-styled';
+import {Text, H1} from 'components/typography';
 
 const steps = [
   0,

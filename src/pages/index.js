@@ -3,7 +3,7 @@ import GatsbyLink from 'gatsby-link';
 import Helmet from 'react-helmet';
 import {Box} from 'grid-styled';
 
-import {H3, Text} from '../components/typography';
+import {H3, Text} from 'components/typography';
 
 const Section = Box.extend`
   padding: 40px 0;

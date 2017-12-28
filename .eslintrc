@@ -8,6 +8,9 @@
       }
     }
   },
+  "globals": {
+    "graphql": true
+  },
   "rules": {
     "prettier/prettier": [
       2,

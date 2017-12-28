@@ -3,9 +3,9 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import {Box} from 'grid-styled';
 
-import Alert from '../components/alert';
-import PageHeader from '../components/page-header';
-import {H1, Text} from '../components/typography';
+import Alert from 'components/alert';
+import PageHeader from 'components/page-header';
+import {H1, Text} from 'components/typography';
 
 const Article = styled.div`
   padding: 40px 0;

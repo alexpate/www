@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 import {Flex, Box} from 'grid-styled';
+
 import {Text} from 'components/typography';
 import Toggle from 'components/toggle';
 
