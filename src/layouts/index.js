@@ -35,6 +35,11 @@ injectGlobal`
     font-weight: 500;
   }
 
+  ::selection {
+    background-color: #00f;
+    color: #fff;
+  }
+
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
