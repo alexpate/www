@@ -5,6 +5,7 @@ import {Box} from 'grid-styled';
 
 import Alert from 'components/alert';
 import PageHeader from 'components/page-header';
+import Header from 'components/header';
 import {H1, Text} from 'components/typography';
 
 const Article = styled.div`
@@ -65,20 +66,27 @@ export default function Template({data, pathContext}) {
   const isOldPost = (dateToday - datePost) / (1000 * 3600 * 24 * 365) > 1;
 
   return (
-    <Article>
-      <Helmet title={post.frontmatter.title} />
-      <PageHeader
-        title={post.frontmatter.title}
-        subTitle={`By Alex Pate on ${post.frontmatter.date}`}
-      />
-      {isOldPost ? (
-        <Alert type="warning">
-          Please note, that this post is over a year old. Some the content may
-          be out of date.
-        </Alert>
-      ) : null}
-      <Main className="md" dangerouslySetInnerHTML={{__html: post.html}} />
-    </Article>
+    <div>
+      <Header scrollTitle={post.frontmatter.title} />
+      <Article>
+        <Helmet title={`${post.frontmatter.title} - Alex Pate - UI Engineer`} />
+        <PageHeader
+          title={post.frontmatter.title}
+          subTitle={`By Alex Pate on ${post.frontmatter.date}`}
+        />
+        {isOldPost ? (
+          <Alert type="warning">
+            This post is over a year old. Some of the content may be out of
+            date.
+          </Alert>
+        ) : null}
+        <Main
+          className="md"
+          dangerouslySetInnerHTML={{__html: post.html}}
+          id="top"
+        />
+      </Article>
+    </div>
   );
 }
 

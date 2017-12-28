@@ -18,13 +18,13 @@ export const H1 = ({children, ...otherProps}) => (
 );
 
 export const H2 = ({children, ...otherProps}) => (
-  <Title is="h2" fontWeight="400" fontSize={[2, 4, 5]} {...otherProps}>
+  <Title is="h2" fontWeight="500" fontSize={[2, 2, 3]} {...otherProps}>
     {children}
   </Title>
 );
 
 export const H3 = ({children, ...otherProps}) => (
-  <Title is="h3" fontWeight="500" fontSize={[1, 2, 3]} {...otherProps}>
+  <Title is="h3" fontWeight="500" fontSize={[1, 2]} {...otherProps}>
     {children}
   </Title>
 );
@@ -43,7 +43,6 @@ export const Text = styled.p`
 
   a {
     color: ${props => props.theme.colors.link};
-    font-weight: 500;
   }
 `;
 
@@ -53,6 +52,6 @@ export const P = styled(Text)`
 
 export const SubTitle = styled.span`
   font-size: 14px;
-  text-transform: uppercase;
   font-weight: 500;
+  color: ${props => props.theme.colors.text};
 `;

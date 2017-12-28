@@ -3,56 +3,58 @@ import GatsbyLink from 'gatsby-link';
 import Helmet from 'react-helmet';
 import {Box} from 'grid-styled';
 
-import {H3, Text} from 'components/typography';
+import {H3, Text, P} from 'components/typography';
+import Header from 'components/header';
 
 import coverPhoto from './index-cover.png';
 
 const Section = Box.extend`
-  padding: 40px 0;
+  padding-bottom: 40px;
 `;
 
 const Index = ({data}) => {
   const {edges: posts} = data.allMarkdownRemark;
   return (
-    <main>
-      <Helmet title="Alex Pate - UI Engineer" />
-      <Section pt={[20, 40, 100]}>
-        <Text>
+    <div>
+      <Header />
+      <main>
+        <Helmet title="Alex Pate - UI Engineer" />
+        <Section pt={[20, 40]}>
           <img src={coverPhoto} style={{width: '100%'}} />
-          <span role="img" aria-label="wave">
-            👋
-          </span>
-          <br />
-          I’m Alex, a design engineer in London, currently working at{' '}
-          <a href="https://kalohq.com">Kalo</a>. As a design engineer, I help
-          close the gaps between design and code, whether this be through
-          writing code, or by creating processes and tooling to assist other
-          developers.
-        </Text>
-        <Text>
-          Although I spend most of my day working with the front-end and design,
-          I always enjoy playing around with server-side tech. But most of all,
-          I enjoy making tools. You can find me on Twitter, CodePen, GitHub, and
-          Dribbble.
-        </Text>
-      </Section>
-      <Section>
-        <H3 mb={[1, 3]}> Writing </H3>
-        {posts
-          .filter(post => post.node.frontmatter.title.length > 0)
-          .map(({node: post}) => (
-            <Box mb={2}>
-              <GatsbyLink
-                to={post.frontmatter.path}
-                key={post.frontmatter.title}
-              >
-                <Text>{post.frontmatter.title}</Text>
-                <Text small>{post.frontmatter.date} </Text>
-              </GatsbyLink>
-            </Box>
-          ))}
-      </Section>
-    </main>
+          <P>
+            <span role="img" aria-label="wave">
+              👋
+            </span>
+            <br />
+            I’m Alex, a UI engineer based in London. I work with startups and
+            agencies, straddling the line between design and code.
+          </P>
+          <P>
+            I have a particular focus on the internal role that UI engineering
+            plays, in regards to design systems, and creating tooling and
+            processes to help product teams scale. I’m currently working at
+            Kalo, leading the development of our internal design system.
+          </P>
+        </Section>
+        <Section>
+          <H3 mb={[1, 2]}>Writing</H3>
+          {posts
+            .filter(post => post.node.frontmatter.title.length > 0)
+            .map(({node: post}) => (
+              <Box mb={2} key={post.frontmatter.title}>
+                <GatsbyLink to={post.frontmatter.path}>
+                  <Text>{post.frontmatter.title}</Text>
+                  <Text small>
+                    <time dateTime={post.frontmatter.date}>
+                      {post.frontmatter.date}
+                    </time>
+                  </Text>
+                </GatsbyLink>
+              </Box>
+            ))}
+        </Section>
+      </main>
+    </div>
   );
 };
 

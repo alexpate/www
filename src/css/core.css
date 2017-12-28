@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Graphik', sans-serif;
+  font-family: 'Graphik Web', sans-serif;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -41,8 +41,13 @@ a:hover:after {
 
 .md p,
 .md li {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.9em;
+}
+
+.md p:first-of-type {
+  font-size: 19px;
+  line-height: 1.8em;
 }
 
 .md img {
