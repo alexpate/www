@@ -15,6 +15,7 @@ const StyledFooter = Flex.extend`
     margin: 0 8px;
     color: ${props => props.theme.colors.text};
     text-decoration: none;
+    border-bottom: 0;
   }
 `;
 

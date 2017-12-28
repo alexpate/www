@@ -10,6 +10,7 @@ const Logo = styled('a')`
   display: block;
   color: ${props => props.theme.colors.text};
   text-decoration: none;
+  border-bottom: 0;
   font-weight: 500;
   font-size: 14px;
 `;
@@ -42,6 +43,7 @@ const Nav = Box.extend`
 
   a {
     color: ${props => props.theme.colors.text};
+    border-bottom: 0;
 
     &:hover {
       color: ${props => props.theme.colors.textHover};
