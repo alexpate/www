@@ -1,13 +1,23 @@
-# gatsby-starter-default
-The default Gatsby starter
+# Hi there!
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+This is the source code of my [personal site](https://alexpate.uk).
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+## Installation
 
-## Deploy
+How to get this site running locally:
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+* `git clone https://github.com/alexpate/alexpate.uk`
+* `npm install`
+* To develop the site: `npm run start`
+* To build the site for production: `npm run build`
+* The site should now be running at http://localhost:8000
+
+## Deployment
+
+As it's a static site, the site is hosted in an S3 bucket, which is then served via a heavily cached cloudfront instance.
+
+Deployment happens on CodeBuild, which is triggered whenever a commit is pushed to master (or staging).
+
+## Say hello!
+
+Feel free to say hello over on twitter [@alexjpate](http://twitter.com/alexjpate).
