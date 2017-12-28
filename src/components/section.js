@@ -1,15 +1,22 @@
+import React from 'react';
 import styled from 'styled-components';
+import {Box} from 'grid-styled';
 import {H2} from 'components/typography';
 
-const Section = styled.section`
-  padding: 20px 0;
+const StyledSection = Box.extend`
   border-bottom: 2px solid ${props => props.theme.colors.flare};
-  margin-bottom: 36px;
-  padding-bottom: 36px;
 `;
-export default Section;
 
-export const SectionTitle = styled(H2)`
+export default props => (
+  <StyledSection mb={[2, 2, 3]} pb={[2, 2, 3]}>
+    {props.children}
+  </StyledSection>
+);
+
+const StyledSectionTitle = styled(H2)`
   color: ${props => props.theme.colors.flare};
-  margin-bottom: 16px;
 `;
+
+export const SectionTitle = props => (
+  <StyledSectionTitle mb={[2, 2, 3]}>{props.children}</StyledSectionTitle>
+);

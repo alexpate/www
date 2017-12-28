@@ -94,17 +94,17 @@ export default class Header extends PureComponent {
         <Nav>
           <ul>
             <li>
-              <Text margin={0} small style={{lineHeight: '1em'}}>
+              <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
                 <Link to="/">Home</Link>
               </Text>
             </li>
             <li>
-              <Text margin={0} small style={{lineHeight: '1em'}}>
+              <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
                 <Link to="/profile">Profile</Link>
               </Text>
             </li>
             <li>
-              <Text margin={0} small style={{lineHeight: '1em'}}>
+              <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
                 <Link to="https://twitter.com/alexjpate">Twitter</Link>
               </Text>
             </li>

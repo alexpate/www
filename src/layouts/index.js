@@ -65,6 +65,7 @@ export default props => {
   const themes = {
     dark: {
       fontWeight: [300, 400, 500, 600],
+      fontSize: [12, 14, 16, 18, 20, 24, 32, 48, 64, 72],
       colors: {
         background: '#0b1023',
         heading: '#fff',
@@ -77,6 +78,7 @@ export default props => {
     },
     light: {
       fontWeight: [300, 400, 500, 600],
+      fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 72],
       colors: {
         background: '#fcfdff',
         heading: '#494E72',

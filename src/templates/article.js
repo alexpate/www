@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import {Box} from 'grid-styled';
 
 import Alert from 'components/alert';
 import PageHeader from 'components/page-header';
