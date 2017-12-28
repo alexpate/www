@@ -16,6 +16,37 @@ const StyledMain = Box.extend`
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+
+  table {
+    display: table;
+    margin: 24px 0;
+    width: 100%;
+
+    th {
+      padding: 8px 10px;
+      background: #f4f7fd;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    tr {
+      background: #fff;
+
+      &:nth-child(even) {
+        background: #f4f7fd;
+      }
+    }
+
+    td {
+      padding: 8px 10px;
+    }
+
+    em {
+      font-style: normal;
+      text-decoration: underline;
+    }
+  }
 `;
 
 const Main = ({children, ...otherProps}) => (

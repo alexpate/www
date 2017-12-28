@@ -6,7 +6,7 @@ import {Flex, Box} from 'grid-styled';
 import {Text} from 'components/typography';
 import Toggle from 'components/toggle';
 
-const Logo = styled('a')`
+const Logo = styled.a`
   display: block;
   color: ${props => props.theme.colors.text};
   text-decoration: none;
@@ -21,7 +21,7 @@ const StyledNav = Flex.extend`
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid ${props => props.theme.colors.text};
+  border-bottom: 1px solid #e7eefd;
 `;
 
 const Nav = Box.extend`

@@ -5,6 +5,8 @@ import {Box} from 'grid-styled';
 
 import {H3, Text} from 'components/typography';
 
+import coverPhoto from './index-cover.png';
+
 const Section = Box.extend`
   padding: 40px 0;
 `;
@@ -16,6 +18,7 @@ const Index = ({data}) => {
       <Helmet title="Alex Pate - UI Engineer" />
       <Section pt={[20, 40, 100]}>
         <Text>
+          <img src={coverPhoto} style={{width: '100%'}} />
           <span role="img" aria-label="wave">
             👋
           </span>

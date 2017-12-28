@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import {Flex, Box} from 'grid-styled';
 
 import PageHeader from 'components/page-header';
-import {H1, H2, H3, Text} from 'components/typography';
+import {H1, H2, H3, H4, Text} from 'components/typography';
 
 const StyledProfileCard = styled.section`
   padding: 8px 0;
