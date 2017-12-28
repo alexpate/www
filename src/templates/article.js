@@ -67,7 +67,13 @@ export default function Template({data}) {
     <div>
       <Header scrollTitle={post.frontmatter.title} />
       <Article>
-        <Helmet title={`${post.frontmatter.title} - Alex Pate - UI Engineer`} />
+        <Helmet title={`${post.frontmatter.title} - Alex Pate - UI Engineer`}>
+          <meta
+            name="twitter:title"
+            content={`${post.frontmatter.title} - Alex Pate - UI Engineer`}
+          />
+          <meta name="twitter:description" content={post.excerpt} />
+        </Helmet>
         <PageHeader
           title={post.frontmatter.title}
           subTitle={`By Alex Pate on ${post.frontmatter.date}`}
@@ -92,6 +98,8 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: {path: {eq: $path}}) {
       html
+      excerpt
+      timeToRead
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

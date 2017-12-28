@@ -5,10 +5,10 @@ import Footer from 'components/footer';
 
 import 'css/core.css';
 
-import GraphikRegular from 'fonts/graphik-regular.woff';
-import GraphikRegular2 from 'fonts/graphik-regular.woff2';
-import GraphikMedium from 'fonts/graphik-medium.woff';
-import GraphikMedium2 from 'fonts/graphik-medium.woff2';
+import GraphikRegular from 'static-assets/fonts/graphik-regular.woff';
+import GraphikRegular2 from 'static-assets/fonts/graphik-regular.woff2';
+import GraphikMedium from 'static-assets/fonts/graphik-medium.woff';
+import GraphikMedium2 from 'static-assets/fonts/graphik-medium.woff2';
 
 const Page = styled.div`
   background-color: ${props => props.theme.colors.background};
