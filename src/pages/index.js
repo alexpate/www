@@ -20,7 +20,11 @@ const Index = ({data}) => {
       <main>
         <Helmet title="Alex Pate - UI Engineer" />
         <Section pt={[20, 40]}>
-          <img src={coverPhoto} style={{width: '100%'}} />
+          <img
+            src={coverPhoto}
+            style={{width: '100%'}}
+            alt="San Franciso Bay"
+          />
           <P>
             <span role="img" aria-label="wave">
               👋

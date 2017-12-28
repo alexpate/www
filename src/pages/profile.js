@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
-import {Box} from 'grid-styled';
 
 import PageHeader from 'components/page-header';
 import Header from 'components/header';

@@ -6,7 +6,6 @@ import {Box} from 'grid-styled';
 import Alert from 'components/alert';
 import PageHeader from 'components/page-header';
 import Header from 'components/header';
-import {H1, Text} from 'components/typography';
 
 const Article = styled.div`
   padding: 40px 0;
@@ -56,9 +55,8 @@ const Main = ({children, ...otherProps}) => (
   </StyledMain>
 );
 
-export default function Template({data, pathContext}) {
+export default function Template({data}) {
   const {markdownRemark: post} = data;
-  const {next, prev} = pathContext;
 
   const dateToday = new Date();
   const datePost = new Date(post.frontmatter.date);

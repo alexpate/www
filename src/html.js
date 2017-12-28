@@ -1,7 +1,5 @@
 import React from 'react';
 
-const BUILD_TIME = new Date().getTime();
-
 export default function HTML(props) {
   let css;
   if (process.env.NODE_ENV === 'production') {
@@ -27,7 +25,7 @@ export default function HTML(props) {
         {props.postBodyComponents}
         <script
           dangerouslySetInnerHTML={{
-            __html: `console.log('Built at ${Date(BUILD_TIME)}')`,
+            __html: `console.log('Built at ${Date(new Date().getTime())}')`,
           }}
         />
       </body>
