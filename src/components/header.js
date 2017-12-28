@@ -44,14 +44,11 @@ const Nav = Box.extend`
   }
 `;
 
-const Header = ({onToggle, toggleIsOn}) => (
+const Header = () => (
   <StyledNav justify="space-between">
     <Logo href="/">Alex Pate</Logo>
     <Nav>
       <ul>
-        <li>
-          <Toggle on={toggleIsOn} onToggle={onToggle} />
-        </li>
         <li>
           <Link to="/profile">
             <Text margin={0} small>
