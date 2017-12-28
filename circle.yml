@@ -11,9 +11,9 @@ deployment:
     branch: staging
     commands:
       - npm run build
-      - aws s3 sync ${source}/ s3://${STAGING_BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
+      - aws s3 sync public/ s3://${STAGING_BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
   production:
     branch: master
     commands:
       - npm run build
-      - aws s3 sync ${source}/ s3://${PRODUCTON_BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
+      - aws s3 sync public/ s3://${PRODUCTON_BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
