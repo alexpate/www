@@ -1,6 +1,11 @@
 machine:
   node:
     version: 8.2.0
+
+test:
+  override:
+    - test 0 = 0
+
 deployment:
   development:
     branch: staging
