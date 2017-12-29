@@ -7,9 +7,9 @@ const StyledSection = Box.extend`
   border-bottom: 2px solid ${props => props.theme.colors.flare};
 `;
 
-export default props => (
-  <StyledSection mb={[2, 2, 3]} pb={[2, 2, 3]}>
-    {props.children}
+export default ({children, ...otherProps}) => (
+  <StyledSection mb={[2, 2, 3]} pb={[2, 2, 3]} {...otherProps}>
+    {children}
   </StyledSection>
 );
 
@@ -18,5 +18,5 @@ const StyledSectionTitle = styled(H2)`
 `;
 
 export const SectionTitle = props => (
-  <StyledSectionTitle mb={[2, 2, 3]}>{props.children}</StyledSectionTitle>
+  <StyledSectionTitle mb={[2, 2, 2]}>{props.children}</StyledSectionTitle>
 );

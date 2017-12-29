@@ -1,13 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import {fontSize, fontWeight} from 'styled-system';
+import {fontSize, fontWeight, removeProps, space} from 'styled-system';
 import {Box} from 'grid-styled';
 
-const BaseType = Box.extend`
-  ${fontSize};
-  ${fontWeight};
+const BaseComponent = props => {
+  const next = removeProps(props);
+  return <Box {...next} />;
+};
+
+const BaseType = styled(BaseComponent)`
+  margin: 0;
+  padding: 0;
   line-height: 1.2em;
   color: ${props => props.theme.colors.heading};
+  ${fontSize};
+  ${fontWeight};
+  ${space};
 `;
 
 export const H1 = ({children, ...otherProps}) => (
@@ -38,7 +46,7 @@ export const Text = ({children, ...otherProps}) => (
   <BaseType
     is="p"
     fontWeight="400"
-    fontSize={[1, 2, 3]}
+    fontSize={[2, 2, 3]}
     style={{lineHeight: '1.8em'}}
     {...otherProps}
   >

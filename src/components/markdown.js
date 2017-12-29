@@ -1,4 +1,5 @@
 import {Box} from 'grid-styled';
+import {H2} from 'components/typography';
 
 const Markdown = Box.extend`
   color: ${props => props.theme.colors.text};
@@ -48,14 +49,31 @@ const Markdown = Box.extend`
     line-height: 1.8em;
   }
 
+  strong {
+    font-weight: 500;
+  }
+
   img {
     width: calc(100% + 200px);
     margin: 32px 0 23px -100px;
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 500;
+    line-height: 1.4em;
+  }
+
+  @media screen and (min-width: 40em) {
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (min-width: 52em) {
+    h2 {
+      font-size: 18px;
+    }
   }
 
   hr {

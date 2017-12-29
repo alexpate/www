@@ -20,7 +20,7 @@ const StyledFooter = Flex.extend`
 `;
 
 const Footer = () => (
-  <StyledFooter>
+  <StyledFooter is="footer">
     <span itemScope="" itemType="http://schema.org/Organization">
       <link itemProp="url" href="https://alexpate.uk" />
       &copy; {CURRENT_YEAR} -

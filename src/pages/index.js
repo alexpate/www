@@ -1,7 +1,8 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import {Box} from 'grid-styled';
+import styled from 'styled-components';
 
 import {H3, Text, P} from 'components/typography';
 import Header from 'components/header';
@@ -9,13 +10,17 @@ import Section, {SectionTitle} from 'components/section';
 
 import coverPhoto from './index-cover.png';
 
+const PostDate = styled(Text)`
+  font-size: 0.8em;
+`;
+
 const Index = ({data}) => {
   const {edges: posts} = data.allMarkdownRemark;
   return (
     <div>
-      <Header />
       <main>
         <Helmet title="Alex Pate - UI Engineer" />
+        <Header />
         <Section pt={[20, 40]}>
           <img
             src={coverPhoto}
@@ -43,14 +48,12 @@ const Index = ({data}) => {
             .filter(post => post.node.frontmatter.title.length > 0)
             .map(({node: post}) => (
               <Box mb={2} key={post.frontmatter.title}>
-                <GatsbyLink to={post.frontmatter.path}>
+                <Link to={post.frontmatter.path}>
                   <Text>{post.frontmatter.title}</Text>
-                  <Text small>
-                    <time dateTime={post.frontmatter.date}>
-                      {post.frontmatter.date}
-                    </time>
-                  </Text>
-                </GatsbyLink>
+                  <PostDate is="time" dateTime={post.frontmatter.date}>
+                    {post.frontmatter.date}
+                  </PostDate>
+                </Link>
               </Box>
             ))}
         </Section>

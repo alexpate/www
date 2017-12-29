@@ -105,7 +105,9 @@ export default class Header extends PureComponent {
             </li>
             <li>
               <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
-                <Link to="https://twitter.com/alexjpate">Twitter</Link>
+                <a href="https://twitter.com/alexjpate" target="_blank">
+                  Twitter
+                </a>
               </Text>
             </li>
           </ul>

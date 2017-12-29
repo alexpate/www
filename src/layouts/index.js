@@ -56,8 +56,17 @@ injectGlobal`
   a {
     text-decoration: none;
     position: relative;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid #00f;
     padding-bottom: 1px;
+  }
+
+  a:visited {
+    color: inherit;
+  }
+
+  a:active {
+    background-color: #00f;
+    color: #fff;
   }
 
   p {

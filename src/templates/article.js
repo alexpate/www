@@ -7,10 +7,6 @@ import PageHeader from 'components/page-header';
 import Header from 'components/header';
 import Markdown from 'components/markdown';
 
-const Article = styled.div`
-  padding: 40px 0;
-`;
-
 export default function Template({data}) {
   const {markdownRemark: post} = data;
 
@@ -22,7 +18,7 @@ export default function Template({data}) {
   return (
     <div>
       <Header scrollTitle={post.frontmatter.title} />
-      <Article>
+      <article>
         <Helmet title={`${post.frontmatter.title} - Alex Pate - UI Engineer`}>
           <meta
             name="twitter:title"
@@ -41,7 +37,7 @@ export default function Template({data}) {
           </Alert>
         ) : null}
         <Markdown dangerouslySetInnerHTML={{__html: post.html}} id="top" />
-      </Article>
+      </article>
     </div>
   );
 }
