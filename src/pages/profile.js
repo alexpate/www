@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import PageHeader from 'components/page-header';
 import Header from 'components/header';
-import {H3, H2, Text, P} from 'components/typography';
+import {H3, Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
 
 export default () => (
@@ -13,34 +12,29 @@ export default () => (
     <main>
       <Section>
         <P>
-          I'm Alex, a design engineer in London, currently working at{' '}
-          <a href="https://kalohq.com">Kalo</a>. As a design engineer, I help
-          close the gaps between design and code, whether this be through
-          writing code, or by creating processes and tooling to assist other
-          developers.
+          I’m Alex, a UI engineer based in London. I work with startups and
+          agencies, straddling the line between design and code.
         </P>
         <P>
-          Although I spend most of my day working with the front-end and design,
-          I always enjoy playing around with server-side tech. But most of all,
-          I enjoy making tools. You can find me on Twitter, CodePen, GitHub, and
-          Dribbble.
+          I have a particular focus on the internal role that UI engineering
+          plays, in regards to design systems, and creating tooling and
+          processes to help product teams scale. I’m currently working at{' '}
+          <a href="https://kalohq.com">Kalo</a>, leading the development of our
+          internal design system.
         </P>
       </Section>
       <Section>
         <SectionTitle>Experience</SectionTitle>
-        <Text>
-          As the first UI engineering hire at Kalo (2017 - present), I am
-          responsible for ensuring that the highest standards are kept in the
-          platform. Before that, I worked in London for Pusher (2015 - 2017) as
-          a front-end designer. Key projects include the redesign of the client
-          dashboard, and building out the new marketing site. Was also fortunate
-          enough to attend several international developer conferences in a
-          developer relations capacity.
-        </Text>
-        <Text>
-          Creative developer at Rareloop (2015) two days a week whilst finishing
-          my degree. Worked on several live client briefs.
-        </Text>
+        <P>
+          As the first UI engineering hire at Kalo (2017 - present), I have been
+          leading the development of our internal design system.
+        </P>
+        <P>
+          Before that, I was a front-end developer at Pusher (2015 - 2017),
+          where I helped work on the development of the new client dashboard,
+          the new marketing website, as well as creating an internal pattern
+          library.
+        </P>
       </Section>
 
       <Section>

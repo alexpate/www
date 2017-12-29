@@ -43,7 +43,7 @@ const Index = ({data}) => {
           </P>
         </Section>
         <Section>
-          <SectionTitle>Writing</SectionTitle>
+          <SectionTitle>Recent articles</SectionTitle>
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
             .map(({node: post}) => (
