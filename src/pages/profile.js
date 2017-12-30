@@ -16,8 +16,9 @@ export default () => (
         I have a particular focus on the internal role that UI engineering
         plays, in regards to design systems, and creating tooling and processes
         to help product teams scale. I’m currently working at{' '}
-        <a href="https://kalohq.com">Kalo</a>, leading the development of our
-        internal design system.
+        <a href="https://kalohq.com" target="_blank" rel="noopener noreferrer">
+          Kalo
+        </a>, leading the development of our internal design system.
       </P>
     </Section>
     <Section>
