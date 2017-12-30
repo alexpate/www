@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import Alert from 'components/alert';
 import PageHeader from 'components/page-header';
-import Header from 'components/header';
 import Markdown from 'components/markdown';
 
 export default function Template({data}) {
@@ -16,8 +15,7 @@ export default function Template({data}) {
   const isOldPost = (dateToday - datePost) / (1000 * 3600 * 24 * 365) > 1;
 
   return (
-    <div>
-      <Header scrollTitle={post.frontmatter.title} />
+    <main>
       <article>
         <Helmet title={`${post.frontmatter.title} - Alex Pate - UI Engineer`}>
           <meta
@@ -36,9 +34,13 @@ export default function Template({data}) {
             date.
           </Alert>
         ) : null}
-        <Markdown dangerouslySetInnerHTML={{__html: post.html}} id="top" />
+        <Markdown
+          dangerouslySetInnerHTML={{__html: post.html}}
+          id="top"
+          className="content"
+        />
       </article>
-    </div>
+    </main>
   );
 }
 

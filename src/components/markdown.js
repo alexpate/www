@@ -38,6 +38,10 @@ const Markdown = Box.extend`
     }
   }
 
+  p {
+    margin-bottom: 16px;
+  }
+
   p,
   li {
     font-size: 16px;
@@ -78,6 +82,10 @@ const Markdown = Box.extend`
 
   hr {
     border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .gatsby-resp-image-wrapper {
+    margin: 24px 0;
   }
 
   code[class*='language-'],
