@@ -24,13 +24,29 @@ const Footer = () => (
     <span itemScope="" itemType="http://schema.org/Organization">
       <link itemProp="url" href="https://alexpate.uk" />
       &copy; {CURRENT_YEAR} -
-      <a href="https://twitter.com/alexjpate" rel="me" itemProp="sameAs">
+      <a
+        target="_blank"
+        rel="noopener noreferrer me"
+        href="https://twitter.com/alexjpate"
+        itemProp="sameAs"
+      >
         Twitter
       </a>
-      <a href="http://github.com/alexpate" rel="me" itemProp="sameAs">
+      <a
+        target="_blank"
+        rel="noopener noreferrer me"
+        href="http://github.com/alexpate"
+        itemProp="sameAs"
+      >
         GitHub
       </a>
-      <a href="http://github.com/alexpate/alexpate.uk">View Source</a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://github.com/alexpate/alexpate.uk"
+      >
+        View Source
+      </a>
     </span>
   </StyledFooter>
 );
