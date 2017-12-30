@@ -1,7 +1,7 @@
 ---
 title:  "Inlining SVG's with Rails"
 date: "2016-04-23"
-path: "/journal/inlining-svg-with-rails"
+path: "/journal/inlining-svg-with-rails/"
 ---
 
 As part of our recent redesign of the Pusher dashboard, we changed the way that we bring in icons. Previously, we used FontAwesome to provide a simple way to use icons across the project. It was easy enough for anyone to use, and provided some level of customization (color, width/height, position).
@@ -15,10 +15,10 @@ Control - The icons are glyphs in a font, and as such we only have limited contr
 
 SVG seemed like the best option. They can be rendered through all of the ways that an image can be, plus more:
 
-- Through the `<img>` tag
-- Through the CSS `url` value (used in background-image and content)
-- Through the `<object>` tag
-- Inlined
+* Through the `<img>` tag
+* Through the CSS `url` value (used in background-image and content)
+* Through the `<object>` tag
+* Inlined
 
 The first three work well however, they don't allow for full manipulation of the SVG's code.
 
@@ -47,7 +47,8 @@ The benefit of this is that we can control elements of the SVG with CSS, just as
 This is great, but it now starts to spin up issues concerning maintenance. Let's say an icon is used 10 times across a site. If we inlined the icon in those 10 places and we want to update the icon, it would involve making changes in 10 seperate places. We need to keep the code DRY.
 
 ## What we did
-*Our dashboard is built on rails, so although this code is ruby specific, the methodology can be ported to any language/framework.*
+
+_Our dashboard is built on rails, so although this code is ruby specific, the methodology can be ported to any language/framework._
 
 Our solution was to build a helper that searches our store of svg files, pulls the relevant one, and inlines it for us. We can then call the helper in multiple places, and pull the SVG from a single source. This inherits the basic pattern of partials, that's used across web development.
 
@@ -87,7 +88,7 @@ end
 ### Which spits out:
 
 ```html
-<a href="/" class="global-nav__logo"> 
+<a href="/" class="global-nav__logo">
   <svg class="svg-pusher-logo" width="70" height="35" role="img" version="1.1" viewBox="0 0 120 37">
     <path d="M23.4196429,3.26418269 C19.8125,1.53870192 16.1607143,3.6377403..." fill="#ffffff"></path>
   </svg>

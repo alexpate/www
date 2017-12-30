@@ -1,7 +1,7 @@
 ---
 title: "How to name Sass color variables"
 date: "2016-09-05"
-path: "/journal/naming-sass-color-variables"
+path: "/journal/naming-sass-color-variables/"
 ---
 
 When it comes to naming Sass variables, I suck. I think I've found the perfect solution, get half way through a project, and realise what a terrible mistake I'd made.
@@ -21,10 +21,10 @@ $text-color: #1a1a1a;
 
 What's the problem here?
 
-- The variable names provide no clues as to where they sit in the hierarchy, or their relationship with one another.
-- What's the primary color? Red? Blue?
-- What happens if our color scheme changes? We suddenly have to change every instance of `$red`, with our new color. These defeats the point of having variables in the first place.
-- *'Darker Red'*? How much darker is darker?
+* The variable names provide no clues as to where they sit in the hierarchy, or their relationship with one another.
+* What's the primary color? Red? Blue?
+* What happens if our color scheme changes? We suddenly have to change every instance of `$red`, with our new color. These defeats the point of having variables in the first place.
+* _'Darker Red'_? How much darker is darker?
 
 ## Better
 
@@ -35,7 +35,6 @@ $text-color: #1a1a1a;
 ```
 
 Now we've provided some context, we can better see the relationship between our colors. We have a `$primary-color` and `$secondary-color`, which would be our brand colors, and then provide some other utility variables such as `$text-color`.
-
 
 ## Even Better
 

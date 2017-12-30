@@ -1,7 +1,7 @@
 ---
 title: "A few lessons learnt from my first year in a design team"
 date: "2016-08-03"
-path: "/journal/lessons-learnt-from-working-design-team"
+path: "/journal/lessons-learnt-from-working-design-team/"
 ---
 
 A couple of months ago, I wrote a [post](https://blog.pusher.com/3-lessons-learned-after-6-months-in-a-startup/) on the Pusher blog about a few lessons that I learned after 6 months of working in a startup. This is a follow up post, but with more of a focus on what it's like working in a design team.
@@ -14,7 +14,7 @@ This is something that I was hesitant to put in, as it's something that's totall
 
 Everyone has an opinion. But be careful who’s you take it and how you apply them. ‘Opinion’ is simply someone's personal views on something. It doesn't mean it's right, nor does it mean it's wrong. User testing wins over opinion.
 
-* * *
+---
 
 ## 2) Stay relevant
 
@@ -28,13 +28,13 @@ We have a weekly 'Inspire, Create, Debate' session, where we set aside 20-to-30 
 * Inspire: Bloomberg and brutalism
 * Debate: Where does design end?
 
-* * *
+---
 
 ## 3) In this industry, done doesn't exist
 
-Whatever you’re working on will never be complete. Business goals, the market, user needs, whatever, something *will* change. And with that, so will your design. So don’t worry that you didn’t get to try another 5 shades of blue on that call to action. Ship it. review it, and improve it later. Iterate in production.
+Whatever you’re working on will never be complete. Business goals, the market, user needs, whatever, something _will_ change. And with that, so will your design. So don’t worry that you didn’t get to try another 5 shades of blue on that call to action. Ship it. review it, and improve it later. Iterate in production.
 
-* * *
+---
 
 ## 4) Process is everything
 

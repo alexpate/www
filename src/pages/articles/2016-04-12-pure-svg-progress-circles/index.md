@@ -1,8 +1,9 @@
 ---
 title: "Pure SVG Progress Circles"
 date: "2016-04-12"
-path: "/journal/pure-svg-progress-circles"
+path: "/journal/pure-svg-progress-circles/"
 ---
+
 Progress circles are a classic dashboard element. They provide stats in a quick to digest view. There are several ways to go about implementing one. You can either use javascript and render it in canvas, hack it together in CSS, use an image, or use SVG's.
 
 ## [View The Demo](http://codepen.io/alexpate/pen/NNBEoq)
@@ -20,8 +21,8 @@ We've also added a few stylistic properties such as giving it a 3px grey stroke.
   <circle r="90" cy="120" cx="120" stroke-width="3" stroke="#333" fill="none"/>
 </svg>
 ```
-![SVG progress circle base](./svg_progress_circle_one.png)
 
+![SVG progress circle base](./svg_progress_circle_one.png)
 
 ## 2 - Add the progress circle
 
@@ -67,6 +68,7 @@ We can then add a simple keyframes animation to change this value:
   }
 }
 ```
+
 ![Offsetting](./svg_progress_offset.gif)
 
 ## 4 - Working out what stroke-dashoffset to set
@@ -88,8 +90,8 @@ $stroke_percentage: $circumference - (($percent / 100) * $circumference);
 }
 
 #progress {
-    animation: progressAnimation 1600ms linear 500ms forwards;
-    transition: stroke-dasharray 400ms linear;
+  animation: progressAnimation 1600ms linear 500ms forwards;
+  transition: stroke-dasharray 400ms linear;
 }
 
 @keyframes progressAnimation {
@@ -109,5 +111,6 @@ However if you try this, you might find that the graph is slightly off. The stro
 
 I've added a slightly more pimped version up on [CodePen](http://codepen.io/alexpate/pen/NNBEoq), which also has some further docs about the maths in the code. If you have any questions regarding this, or if it doesn't work, feel free to leave a comment below!
 
-* * *
-*Update: Just out of interest, I have also added a JS version [here](http://codepen.io/alexpate/pen/wGxVZd).*
+---
+
+_Update: Just out of interest, I have also added a JS version [here](http://codepen.io/alexpate/pen/wGxVZd)._

@@ -62,7 +62,7 @@ export default () => (
         </li>
         <li>
           <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile/">Profile</Link>
           </Text>
         </li>
         <li>

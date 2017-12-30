@@ -1,22 +1,22 @@
 ---
 title: "CSS Stacked Paper Effect"
 date: "2014-03-21"
-path: "/journal/css-stacked-paper-effect"
+path: "/journal/css-stacked-paper-effect/"
 ---
 
 A quick experiment to make a stacked paper effect in (S)CSS with one div.
 
 See it in [action here](http://codepen.io/alexpate/pen/MwjMxP).
 
-``` html
+```html
 <div class="paper">
 </div>
 ```
 
-``` scss
+```scss
 .paper {
   background: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, .34);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.34);
   height: 400px;
   margin: 50px auto 0 auto;
   position: relative;
@@ -25,18 +25,18 @@ See it in [action here](http://codepen.io/alexpate/pen/MwjMxP).
   &:before,
   &:after {
     background: #fff;
-    box-shadow: 0 0 2px rgba(0, 0, 0, .34);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.34);
     content: '';
     height: 100%;
     position: absolute;
     transform: rotate(3deg);
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     width: 100%;
-    z-index:-1;
+    z-index: -1;
   }
 
   &:after {
-    box-shadow: 0 0 2px rgba(0, 0, 0, .34);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.34);
     left: 0;
     top: 0;
     transform: rotate(1deg);
@@ -47,7 +47,5 @@ See it in [action here](http://codepen.io/alexpate/pen/MwjMxP).
     box-shadow: none;
     transform: rotate(0deg);
   }
-
 }
-
 ```

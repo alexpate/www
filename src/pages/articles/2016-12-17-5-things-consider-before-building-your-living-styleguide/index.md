@@ -1,7 +1,7 @@
 ---
 title:  "5 things to consider before building your living styleguide"
 date: "2016-12-17"
-path: "/journal/5-things-consider-before-building-your-living-styleguide"
+path: "/journal/5-things-consider-before-building-your-living-styleguide/"
 ---
 
 It's been about 6 months since we properly began to integrate our living styleguide ([Chameleon](/project/pusher-chameleon/)) into production projects. Before that, there was about a month or 2 of trying things out, scrapping them, and trying more things out.

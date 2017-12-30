@@ -1,8 +1,9 @@
 ---
 title:  "Managing font weights with Sass"
 date: "2016-04-12"
-path: "/journal/managing-font-weights-with-sass"
+path: "/journal/managing-font-weights-with-sass/"
 ---
+
 Managing font families and weights shouldn't be a big deal. Add the font family to the body tag, and define the font weights on the individual titles.
 
 However, when dealing with some web font providers (looking at you fonts.com!), you might find that different font weights require entirely seperate font families. For example the DIN Next family is provided as two fonts. One for the `light`, `medium`, and `bold` weights, and another for the `regular` weight.
@@ -12,7 +13,8 @@ However, when dealing with some web font providers (looking at you fonts.com!), 
 The way that we solved this at Pusher, is to use Sass's placeholder classes. These allow us to define multiple CSS properties with just one line. Think of them as multiline variables.
 
 ### The Old Way
-``` scss
+
+```scss
 $font-family-primary: 'Open Sans', sans-serif;
 
 body {
@@ -53,7 +55,6 @@ h1 {
 The added benefit of this, is that any selector that is extended by the `%font-weight-XXX` classes will be grouped, helping to reduce duplication in your compiled CSS:
 
 ```css
-
 body {
   font-family: 'Open Sans WF Regular', sans-serif;
   font-weight: regular;
