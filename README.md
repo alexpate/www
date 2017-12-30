@@ -16,7 +16,7 @@ How to get this site running locally:
 
 As it's a static site, the site is hosted in an S3 bucket, which is then served via a heavily cached cloudfront instance.
 
-Deployment happens on CodeBuild, which is triggered whenever a commit is pushed to master (or staging).
+Deployment happens on CircleCI, which is triggered whenever a commit is pushed to master (or staging).
 
 ## Say hello!
 
