@@ -46,7 +46,7 @@ exports.createPages = ({boundActionCreators, graphql}) => {
   });
 };
 
-exports.modifyWebpackConfig = function({config, env}) {
+exports.modifyWebpackConfig = ({config, env}) => {
   config.merge({
     resolve: {
       root: path.resolve(__dirname, './src'),
