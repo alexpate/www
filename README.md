@@ -1,6 +1,6 @@
-# Hi there!
+# alexpate.uk [![CircleCI](https://circleci.com/gh/alexpate/alexpate.uk.svg?style=svg)](https://circleci.com/gh/alexpate/alexpate.uk)
 
-This is the source code of my [personal site](https://alexpate.uk).
+👋 Welcome to the source code of my [personal site](https://alexpate.uk).
 
 ## Installation
 
