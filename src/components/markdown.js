@@ -63,21 +63,17 @@ const Markdown = Box.extend`
   }
 
   h2 {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 1.4em;
+    margin: 16px 0;
   }
 
-  @media screen and (min-width: 40em) {
-    h2 {
-      font-size: 16px;
-    }
-  }
-
-  @media screen and (min-width: 52em) {
-    h2 {
-      font-size: 18px;
-    }
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4em;
+    margin: 16px 0;
   }
 
   hr {
