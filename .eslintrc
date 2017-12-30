@@ -1,0 +1,37 @@
+{
+  "plugins": ["react", "import", "prettier"],
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["src", "node_modules"]
+      }
+    }
+  },
+  "globals": {
+    "graphql": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      2,
+      {
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "bracketSpacing": false
+      }
+    ],
+    "comma-dangle": [2, "always-multiline"],
+    "import/no-duplicates": 2,
+    "import/first": 0,
+    "no-duplicate-imports": 0,
+    "no-useless-escape": 0,
+    "arrow-parens": 0,
+    "object-property-newline": [2, {"allowMultiplePropertiesPerLine": true}],
+    "react/no-unused-prop-types": 0,
+    "react/prop-types": 0,
+    "react/no-danger": 0,
+    "react/jsx-filename-extension": 0,
+    "import/no-extraneous-dependencies": 0,
+    "jsx-a11y/anchor-is-valid": 0
+  }
+}

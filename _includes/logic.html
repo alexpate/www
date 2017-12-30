@@ -1,8 +1,0 @@
-{% assign description = site.description %}
-{% if page.layout == 'project' %}
-    {% assign description = page.description | strip_html | strip_newlines | truncate: 160 %}
-{% elsif page.id %}
-    {% assign description = page.excerpt | strip_html | strip_newlines | truncate: 160 %}
-{% elsif page.description %}
-    {% assign description = page.description | strip_html | strip_newlines | truncate: 160 %}
-{% endif %}
