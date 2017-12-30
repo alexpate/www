@@ -67,7 +67,11 @@ export default () => (
         </li>
         <li>
           <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
-            <a href="https://twitter.com/alexjpate" target="_blank">
+            <a
+              href="https://twitter.com/alexjpate"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Twitter
             </a>
           </Text>
