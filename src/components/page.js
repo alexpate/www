@@ -33,7 +33,7 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Graphik Web', sans-serif;
+    font-family: 'Graphik Web', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -41,10 +41,6 @@ injectGlobal`
 
   a {
     text-decoration: none;
-
-    &:visited {
-      color: #4E6087;
-    }
 
     &:hover {
       color: ${props => props.theme.colors.primary};
