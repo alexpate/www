@@ -40,17 +40,16 @@ const Markdown = Box.extend`
 
   p {
     margin-bottom: 16px;
+
+    &:first-of-type {
+      font-size: 1.1em;
+    }
   }
 
   p,
   li {
     font-size: 16px;
     line-height: 1.9em;
-  }
-
-  p:first-of-type {
-    font-size: 19px;
-    line-height: 1.8em;
   }
 
   strong {

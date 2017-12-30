@@ -19,7 +19,14 @@ const BaseType = styled(BaseComponent)`
 `;
 
 export const H1 = ({children, ...otherProps}) => (
-  <BaseType is="h1" fontWeight="400" fontSize={[5, 6, 7]} {...otherProps}>
+  <BaseType
+    is="h1"
+    fontWeight="400"
+    fontSize={[6, 6, 7]}
+    mt={[8]}
+    mb={[16]}
+    {...otherProps}
+  >
     {children}
   </BaseType>
 );

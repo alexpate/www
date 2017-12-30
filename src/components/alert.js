@@ -7,6 +7,7 @@ const StyledAlert = Box.extend`
   background-color: ${props =>
     props.type === 'warning' ? '#ffece1' : '#e9f7ff'};
   font-size: 14px;
+  line-height: 1.6em;
   color: ${props => props.theme.colors.text};
 `;
 
