@@ -2,7 +2,6 @@ import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import {Box} from 'grid-styled';
 import {Text, H1} from 'components/typography';
-import Header from 'components/header';
 
 const steps = [
   0,
@@ -70,11 +69,8 @@ const Glitch = styled(H1)`
 `;
 
 export default () => (
-  <div>
-    <Header />
-    <Box pt={[24, 48]}>
-      <Glitch>404 Page Not Found</Glitch>
-      <Text>Sorry, nothing could be found</Text>
-    </Box>
-  </div>
+  <Box is="main" pt={[24, 48]}>
+    <Glitch>404 Page Not Found</Glitch>
+    <Text>Sorry, nothing could be found</Text>
+  </Box>
 );
