@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
     author: 'Alex Pate',
     title: `Alex Pate - UI Engineer`,
+    siteUrl: 'https://alexpate.uk',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -34,6 +35,9 @@ module.exports = {
           },
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
