@@ -48,13 +48,10 @@ const Index = ({data}) => {
             .map(({node: post}) => (
               <Box mb={2} key={post.frontmatter.title}>
                 <Text>
-                  <Link
-                    to={post.frontmatter.path}
-                    style={{textDecoration: 'none'}}
-                  >
+                  <Link to={post.fields.slug} style={{textDecoration: 'none'}}>
                     {post.frontmatter.title}
-                    <PostDate is="time" dateTime={post.frontmatter.date}>
-                      {post.frontmatter.date}
+                    <PostDate is="time" dateTime={post.fields.date}>
+                      {post.fields.date}
                     </PostDate>
                   </Link>
                 </Text>
@@ -70,15 +67,17 @@ export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+    allMarkdownRemark(sort: {fields: [fields___date], order: DESC}) {
       edges {
         node {
           excerpt(pruneLength: 250)
           id
+          fields {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+          }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
-            path
           }
         }
       }

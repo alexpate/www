@@ -10,7 +10,7 @@ export default function Template({data}) {
   const {markdownRemark: post} = data;
 
   const dateToday = new Date();
-  const datePost = new Date(post.frontmatter.date);
+  const datePost = new Date(post.fields.date);
 
   const isOldPost = (dateToday - datePost) / (1000 * 3600 * 24 * 365) > 1;
 
@@ -26,7 +26,7 @@ export default function Template({data}) {
         </Helmet>
         <PageHeader
           title={post.frontmatter.title}
-          subTitle={`By Alex Pate on ${post.frontmatter.date}`}
+          subTitle={`By Alex Pate on ${post.fields.date}`}
         />
         {isOldPost ? (
           <Alert type="warning">
@@ -45,14 +45,16 @@ export default function Template({data}) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: {path: {eq: $path}}) {
+  query BlogPostByPath($slug: String!) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
       html
       excerpt
       timeToRead
-      frontmatter {
+      fields {
         date(formatString: "MMMM DD, YYYY")
-        path
+        slug
+      }
+      frontmatter {
         title
       }
     }
