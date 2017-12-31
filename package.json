@@ -21,6 +21,7 @@
     "react-dom": "~16.0.0",
     "react-icons": "~2.2.5",
     "react-pure-render": "^1.0.2",
+    "slug": "^0.9.1",
     "styled-components": "^2.2.1",
     "styled-system": "^1.0.7"
   },
@@ -54,7 +55,6 @@
     "preserve": "npm run build",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "format":
-      "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\""
+    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\""
   }
 }
