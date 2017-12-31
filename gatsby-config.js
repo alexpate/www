@@ -28,7 +28,7 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
             },
@@ -37,7 +37,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: 'gatsby-plugin-sitemap',
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-41936976-3',
+      },
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
