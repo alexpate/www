@@ -1,4 +1,60 @@
 const path = require('path');
+const slugify = require('slug');
+const {createFilePath} = require('gatsby-source-filesystem');
+
+const BLOG_POST_SLUG_REGEX = /^\/.+\/([\d]{4})-([\d]{2})-([\d]{2})-(.+)\/$/;
+
+exports.onCreateNode = ({node, getNode, boundActionCreators}) => {
+  const {createNodeField} = boundActionCreators;
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const permalink = node.frontmatter.path;
+    const relativePath = createFilePath({
+      node,
+      getNode,
+      basePath: 'pages',
+    });
+
+    let slug = permalink;
+
+    if (!slug && relativePath.includes('journal')) {
+      // Generate final path + graphql fields for blog posts
+      const match = BLOG_POST_SLUG_REGEX.exec(relativePath);
+      if (match) {
+        const year = match[1];
+        const month = match[2];
+        const day = match[3];
+        const filename = match[4];
+
+        slug = `/journal/${slugify(filename)}/`;
+
+        const date = new Date(
+          Number.parseInt(year),
+          Number.parseInt(month) - 1,
+          Number.parseInt(day)
+        );
+
+        // Blog posts are sorted by date and display the date in their header.
+        createNodeField({
+          node,
+          name: 'date',
+          value: date.toJSON(),
+        });
+      }
+    }
+
+    if (!slug) {
+      slug = relativePath;
+    }
+
+    // Used to generate URL to view this content.
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    });
+  }
+};
 
 exports.createPages = ({boundActionCreators, graphql}) => {
   const {createPage} = boundActionCreators;
@@ -6,20 +62,11 @@ exports.createPages = ({boundActionCreators, graphql}) => {
   const blogPostTemplate = path.resolve(`src/templates/article.js`);
   return graphql(`
     {
-      allMarkdownRemark(
-        sort: {order: DESC, fields: [frontmatter___date]}
-        limit: 1000
-      ) {
+      allMarkdownRemark(limit: 1000) {
         edges {
           node {
-            excerpt(pruneLength: 250)
-            html
-            id
-            timeToRead
-            frontmatter {
-              date
-              path
-              title
+            fields {
+              slug
             }
           }
         }
@@ -34,11 +81,15 @@ exports.createPages = ({boundActionCreators, graphql}) => {
 
     // Create pages for each markdown file.
     posts.forEach(({node}, index) => {
+      const {slug} = node.fields;
       const prev = index === 0 ? false : posts[index - 1].node;
       const next = index === posts.length - 1 ? false : posts[index + 1].node;
       createPage({
-        path: node.frontmatter.path,
+        path: slug,
         component: blogPostTemplate,
+        context: {
+          slug,
+        },
       });
     });
 
