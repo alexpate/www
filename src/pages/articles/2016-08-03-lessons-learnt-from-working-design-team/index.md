@@ -1,7 +1,5 @@
 ---
 title: "A few lessons learnt from my first year in a design team"
-date: "2016-08-03"
-path: "/journal/lessons-learnt-from-working-design-team/"
 ---
 
 A couple of months ago, I wrote a [post](https://blog.pusher.com/3-lessons-learned-after-6-months-in-a-startup/) on the Pusher blog about a few lessons that I learned after 6 months of working in a startup. This is a follow up post, but with more of a focus on what it's like working in a design team.

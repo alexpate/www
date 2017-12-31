@@ -1,7 +1,5 @@
 ---
 title: "Managing the z-index with Sass"
-date: "2015-07-29"
-path: "/journal/managing-z-index-with-sass/"
 ---
 
 As it goes, the z-index can quickly become a messy thing to control, particularly in a large code-base. Fortunately, Sass can be used to make it ever so slightly more manageable.

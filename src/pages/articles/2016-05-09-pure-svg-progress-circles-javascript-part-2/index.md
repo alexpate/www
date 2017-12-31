@@ -1,7 +1,5 @@
 ---
 title: "SVG Progress Circles Part 2 - With JavaScript"
-date: "2016-05-09"
-path: "/journal/pure-svg-progress-circles-javascript-part-2/"
 ---
 
 This is a follow on post from my previous post a few weeks ago, about implementing an [SVG progress circle using Sass](/journal/pure-svg-progress-circles/). I mentioned briefly that it could be done in JavaScript, so here's the code:

@@ -1,7 +1,5 @@
 ---
 title:  "Installing a Positive SSL certificate on Nginx"
-date: "2015-06-28"
-path: "/journal/installing-ssl-certificate-nginx/"
 ---
 
 This is a quick guide of how to install an SSL certificate on an nginx server. It assumes that you already have a server set up, and have purchased an SSL certificate. If not, you can pick one up from [namecheap](http://www.namecheap.com/?aff=88180) for a pretty decent price. (And yes, that is an affiliate link!)

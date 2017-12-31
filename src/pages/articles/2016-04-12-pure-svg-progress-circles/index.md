@@ -1,7 +1,5 @@
 ---
 title: "Pure SVG Progress Circles"
-date: "2016-04-12"
-path: "/journal/pure-svg-progress-circles/"
 ---
 
 Progress circles are a classic dashboard element. They provide stats in a quick to digest view. There are several ways to go about implementing one. You can either use javascript and render it in canvas, hack it together in CSS, use an image, or use SVG's.

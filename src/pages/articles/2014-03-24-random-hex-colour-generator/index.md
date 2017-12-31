@@ -1,7 +1,5 @@
 ---
 title:  "Random HEX Colour Generator in JavaScript"
-date: "2014-03-24"
-path: "/journal/random-hex-colour-generator/"
 ---
 
 I first made this when I was getting started with jQuery. At the time, I guess it seemed like a good little exercise to do. Check out a working [demo here](http://codepen.io/alexpate/pen/oxddzg).

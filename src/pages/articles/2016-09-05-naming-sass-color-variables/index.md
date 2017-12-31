@@ -1,7 +1,5 @@
 ---
 title: "How to name Sass color variables"
-date: "2016-09-05"
-path: "/journal/naming-sass-color-variables/"
 ---
 
 When it comes to naming Sass variables, I suck. I think I've found the perfect solution, get half way through a project, and realise what a terrible mistake I'd made.

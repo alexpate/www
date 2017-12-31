@@ -1,8 +1,7 @@
 ---
 title:  "Searching multiple tables with one query with Laravel"
-date: "2015-06-12"
-path: "/journal/searching-multiple-tables-laravel/"
 ---
+
 Whilst developing the back-end for my final year project (redesign of Panasonic Global), I ran in to the problem of how best to search multiple tables at once through the relationship models.
 
 ## The Problem
@@ -37,15 +36,14 @@ class Category {
 
 The data is stored in tables as such:
 
-| Products            | Categories |
-|---------------------|------------|
-| *product_id*        | *category_id* |
+| Products            | Categories    |
+| ------------------- | ------------- |
+| _product_id_        | _category_id_ |
 | product_name        | category_name |
-| product_category *  | category_slug |
-| ...                 | ... |
+| product_category \* | category_slug |
+| ...                 | ...           |
 
 The `product_category` refers to the `category_id`.
-
 
 Of course this could be done relatively easily using multiple queries, however where possible it's best to minimize the number of database queries we're making.
 
@@ -77,8 +75,8 @@ If this returns no results, then we fall back to the second query, where we quer
 
 Here's a quick breakdown in pseudocode:
 
-- User searches for something
-- First, find all products that are in categories, and match the search query against each category name.
-- If this returns any results, great!
-- Next, find all products that have a name containing the search query
-- If we have results, show them. Otherwise, show something else.
+* User searches for something
+* First, find all products that are in categories, and match the search query against each category name.
+* If this returns any results, great!
+* Next, find all products that have a name containing the search query
+* If we have results, show them. Otherwise, show something else.

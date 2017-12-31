@@ -1,7 +1,5 @@
 ---
 title: "CSS Stacked Paper Effect"
-date: "2014-03-21"
-path: "/journal/css-stacked-paper-effect/"
 ---
 
 A quick experiment to make a stacked paper effect in (S)CSS with one div.

@@ -1,7 +1,5 @@
 ---
 title:  "Managing font weights with Sass"
-date: "2016-04-12"
-path: "/journal/managing-font-weights-with-sass/"
 ---
 
 Managing font families and weights shouldn't be a big deal. Add the font family to the body tag, and define the font weights on the individual titles.

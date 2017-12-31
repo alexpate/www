@@ -1,7 +1,5 @@
 ---
 title:  "Inlining SVG's with Rails"
-date: "2016-04-23"
-path: "/journal/inlining-svg-with-rails/"
 ---
 
 As part of our recent redesign of the Pusher dashboard, we changed the way that we bring in icons. Previously, we used FontAwesome to provide a simple way to use icons across the project. It was easy enough for anyone to use, and provided some level of customization (color, width/height, position).
