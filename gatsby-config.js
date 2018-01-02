@@ -19,8 +19,7 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [
-          {
+        plugins: [{
             resolve: 'gatsby-remark-images',
             options: {
               linkImagesToOriginal: false,
@@ -43,6 +42,12 @@ module.exports = {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-41936976-3',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gosquared`,
+      options: {
+        token: 'GSN-735683-L',
       },
     },
     'gatsby-plugin-react-helmet',
