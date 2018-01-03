@@ -26,7 +26,7 @@ export default function Template({data}) {
         </Helmet>
         <PageHeader
           title={post.frontmatter.title}
-          subTitle={`By Alex Pate on ${post.fields.date}`}
+          subTitle={`By ${meta.author} on ${post.fields.date}`}
         />
         {isOldPost ? (
           <Alert type="warning">
@@ -48,6 +48,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($slug: String!) {
     site {
       siteMetadata {
+        author
         defaultTitle
         defaultDescription
       }
