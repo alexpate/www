@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import {Box} from 'grid-styled';
 import styled from 'styled-components';
 
-import {H3, Text, P} from 'components/typography';
+import {Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
 
 import coverPhoto from './index-cover.png';
@@ -16,10 +16,14 @@ const PostDate = styled(Text)`
 
 const Index = ({data}) => {
   const {edges: posts} = data.allMarkdownRemark;
+  const meta = data.site.siteMetadata;
   return (
     <div>
       <main>
-        <Helmet title="Alex Pate - UI Engineer" />
+        <Helmet title={meta.defaultTitle}>
+          <meta name="twitter:title" content={meta.defaultTitle} />
+          <meta name="twitter:description" content={meta.defaultDescription} />
+        </Helmet>
         <Section pt={[20, 40]}>
           <img
             src={coverPhoto}
@@ -67,6 +71,12 @@ export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery {
+    site {
+      siteMetadata {
+        defaultTitle
+        defaultDescription
+      }
+    }
     allMarkdownRemark(sort: {fields: [fields___date], order: DESC}) {
       edges {
         node {

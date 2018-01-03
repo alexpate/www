@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
 
 import Alert from 'components/alert';
 import PageHeader from 'components/page-header';
@@ -8,6 +7,7 @@ import Markdown from 'components/markdown';
 
 export default function Template({data}) {
   const {markdownRemark: post} = data;
+  const meta = data.site.siteMetadata;
 
   const dateToday = new Date();
   const datePost = new Date(post.fields.date);
@@ -17,10 +17,10 @@ export default function Template({data}) {
   return (
     <main>
       <article>
-        <Helmet title={`${post.frontmatter.title} - Alex Pate - UI Engineer`}>
+        <Helmet title={`${post.frontmatter.title} - ${meta.defaultTitle}`}>
           <meta
             name="twitter:title"
-            content={`${post.frontmatter.title} - Alex Pate - UI Engineer`}
+            content={`${post.frontmatter.title} - ${meta.defaultTitle}`}
           />
           <meta name="twitter:description" content={post.excerpt} />
         </Helmet>
@@ -46,6 +46,12 @@ export default function Template({data}) {
 
 export const pageQuery = graphql`
   query BlogPostByPath($slug: String!) {
+    site {
+      siteMetadata {
+        defaultTitle
+        defaultDescription
+      }
+    }
     markdownRemark(fields: {slug: {eq: $slug}}) {
       html
       excerpt

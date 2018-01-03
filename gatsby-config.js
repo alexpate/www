@@ -4,6 +4,9 @@ module.exports = {
     author: 'Alex Pate',
     title: `Alex Pate - UI Engineer`,
     siteUrl: 'https://alexpate.uk',
+    defaultTitle: 'Alex Pate - UI Engineer',
+    defaultDescription:
+      'Alex Pate is a UI engineer in London, building things at Kalo. Working somewhere on the boundary between design and code.',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -19,7 +22,8 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [{
+        plugins: [
+          {
             resolve: 'gatsby-remark-images',
             options: {
               linkImagesToOriginal: false,
