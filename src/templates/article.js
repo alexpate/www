@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import Alert from 'components/alert';
 import PageHeader from 'components/page-header';
 import Markdown from 'components/markdown';
+import FollowButton from 'components/follow-button';
 
 export default function Template({data}) {
   const {markdownRemark: post} = data;
@@ -39,6 +40,7 @@ export default function Template({data}) {
           id="top"
           className="content"
         />
+        <FollowButton mt={1} />
       </article>
     </main>
   );
