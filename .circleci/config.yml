@@ -36,21 +36,21 @@ workflows:
   version: 2
   production:
     jobs:
-      - build
-      - deploy:
-          requires: 
-            - build
+      - build:
           filters:
             branches:
               only: master
+      - deploy:
+          requires: 
+            - build
           context: site-production
   staging:
     jobs:
-      - build
-      - deploy:
-          requires:
-            - build
+      - build:
           filters:
             branches:
               only: feature/circle-2
+      - deploy:
+          requires:
+            - build
           context: site-staging
