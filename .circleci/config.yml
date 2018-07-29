@@ -49,7 +49,7 @@ workflows:
       - build:
           filters:
             branches:
-              only: feature/circle-2
+              only: staging
       - deploy:
           requires:
             - build
