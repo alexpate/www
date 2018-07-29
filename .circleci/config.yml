@@ -1,5 +1,4 @@
-version: 2.0
-
+version: 2
 jobs:
   build:
     docker:
@@ -30,20 +29,19 @@ workflows:
     jobs:
       - build
       - deploy:
-        requires: build
-          filters:
-            branches:
-              only:
-                - master
-          context: site-production
-
+        requires: 
+          - build
+        filters:
+          branches:
+            only: master
+        context: site-production
   deploy-staging:
     jobs:
       - build
       - deploy:
-        requires: build
-          filters:
-            branches:
-              only:
-                - feature/circle-2
-          context: site-staging
+        requires:
+          - build
+        filters:
+          branches:
+            only: feature/circle-2
+        context: site-staging
