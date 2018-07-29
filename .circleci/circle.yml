@@ -1,26 +1,44 @@
-version: 2
+version: 2.0
+
 jobs:
   build:
     node:
       version: 8.2.0
     steps:
       - checkout
+      - run: npm install
       - run: npm run build
-  deploy_staging:
+  deploy:
+    machine:
+        enabled: true
     steps:
       - checkout
-      - run: aws s3 sync public/ s3://${STAGING_BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
-      - run: aws cloudfront create-invalidation --distribution-id ${STAGING_CLOUDFRONT_DISTRIBUTION} --paths '/*'
-    filters:
-      branches:
-        only:
-          - staging
-  deploy_production:
-    steps:
-      - checkout
-      - run: aws s3 sync public/ s3://${PRODUCTION_BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
-      - run: aws cloudfront create-invalidation --distribution-id ${PRODUCTION_CLOUDFRONT_DISTRIBUTION} --paths '/*'
-    filters:
-      branches:
-        only:
-          - master
+      - run: sudo pip install awscli
+      - run: aws s3 sync public/ s3://${BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
+      - run: aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION} --paths '/*'
+
+workflows:
+  version: 2
+  deploy-production:
+    jobs:
+      - build
+      - deploy:
+        requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+          context: site-production
+
+  deploy-staging:
+    jobs:
+      - build
+      - deploy:
+        requires:
+            - build
+          filters:
+            branches:
+              only:
+                - feature/circle-2
+          context: site-staging
