@@ -4,9 +4,11 @@ import Link from 'gatsby-link';
 import {Flex, Box} from 'grid-styled';
 
 import {Text} from 'components/typography';
+import StyledSwitch from './theme-switch';
 
 const Logo = styled('a')`
-  display: block;
+  display: flex;
+  align-items: center;
   color: ${props => props.theme.colors.text};
   text-decoration: none;
   border-bottom: 0;
@@ -21,7 +23,7 @@ const StyledNav = Flex.extend`
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid #e7eefd;
+  border-bottom: 1px solid ${props => props.theme.colors.mutedBorder};
 `;
 
 const Nav = Box.extend`
@@ -43,6 +45,7 @@ const Nav = Box.extend`
   a {
     color: ${props => props.theme.colors.text};
     border-bottom: 0;
+    text-decoration: none;
 
     &:hover {
       color: ${props => props.theme.colors.textHover};
@@ -50,7 +53,7 @@ const Nav = Box.extend`
   }
 `;
 
-export default () => (
+export default ({onThemeChange, selectedTheme}) => (
   <StyledNav is="header" justify="space-between">
     <Logo href="/">alexpate</Logo>
     <Nav is="nav">
@@ -77,6 +80,7 @@ export default () => (
           </Text>
         </li>
       </ul>
+      <StyledSwitch value={selectedTheme} onClick={onThemeChange} />
     </Nav>
   </StyledNav>
 );

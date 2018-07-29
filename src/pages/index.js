@@ -35,8 +35,8 @@ const Index = ({data}) => {
               👋
             </span>
             <br />
-            I’m Alex, a UI engineer based in London. I work with startups and
-            agencies, straddling the line between design and code.
+            I’m Alex, a digital product designer based in London. I work with
+            startups and agencies, straddling the line between design and code.
           </P>
           <P>
             I have a particular focus on the internal role that UI engineering

@@ -2,11 +2,11 @@ module.exports = {
   pathPrefix: `/`,
   siteMetadata: {
     author: 'Alex Pate',
-    title: `Alex Pate - UI Engineer`,
+    title: `Alex Pate - Design & Code`,
     siteUrl: 'https://alexpate.uk',
-    defaultTitle: 'Alex Pate - UI Engineer',
+    defaultTitle: 'Alex Pate - Design & Code',
     defaultDescription:
-      'Alex Pate is a UI engineer in London, building things at Kalo. Working somewhere on the boundary between design and code.',
+      'Alex Pate is a digital product designer in London, building things at Kalo. Working somewhere on the boundary between design and code.',
   },
   plugins: [
     'gatsby-plugin-styled-components',

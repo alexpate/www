@@ -9,6 +9,7 @@ const StyledButton = styled(Box)`
   color: #fff;
   border-radius: 4px;
   font-size: 14px;
+  text-decoration: none;
 `;
 
 export default props => (

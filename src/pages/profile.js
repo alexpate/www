@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import PageHeader from 'components/page-header';
-import {H3, Text, P} from 'components/typography';
+import {Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
 
 export default ({data}) => {
@@ -16,8 +16,8 @@ export default ({data}) => {
       <PageHeader title="Profile" />
       <Section>
         <P>
-          I’m Alex, a UI engineer based in London. I work with startups and
-          agencies, straddling the line between design and code.
+          I’m Alex, a digital product designer based in London. I work with
+          startups and agencies, straddling the line between design and code.
         </P>
         <P>
           I have a particular focus on the internal role that UI engineering
@@ -34,15 +34,21 @@ export default ({data}) => {
       </Section>
       <Section>
         <SectionTitle>Experience</SectionTitle>
+        <P fontWeight={500}>Kalo (2017 - present)</P>
         <P>
-          As the first UI engineering hire at Kalo (2017 - present), I have been
-          leading the development of our internal design system.
+          Lead the development of the internal design system, which is used
+          across the product team by designers and engineers.
+        </P>
+        <P fontWeight={500}>Pusher (2015 - 2017)</P>
+        <P>
+          Joined the marketing team as a front-end developer where I helped work
+          on evolving the brand, building external marketing sites, and
+          representing the company at tech conferences around the world.
         </P>
         <P>
-          Before that, I was a front-end developer at Pusher (2015 - 2017),
-          where I helped work on the development of the new client dashboard,
-          the new marketing website, as well as creating an internal pattern
-          library.
+          Also worked with the product team implementing a new client dashboard,
+          and creating an internal pattern library to speed up the development
+          of future features.
         </P>
       </Section>
 
@@ -73,9 +79,12 @@ export default ({data}) => {
         <Text>WebDesignerMag - Spotlight Interview (2014)</Text>
       </Section>
       <Section>
-        <SectionTitle>Education</SectionTitle>
-        <H3>Southampton Solent University (2012 - 2015)</H3>
-        <Text>Graduated with a first class honours degree in Web Design</Text>
+        <SectionTitle>Resume</SectionTitle>
+        <Text>
+          <a href="https://alexpate.s3.amazonaws.com/resume.pdf">
+            Download as PDF
+          </a>
+        </Text>
       </Section>
     </main>
   );
