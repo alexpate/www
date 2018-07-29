@@ -24,6 +24,10 @@ const theme = {
       mutedBorder: '#e7eefd',
       link: '#3336c7',
       primary: '#00f',
+      syntax: {
+        background: '#f4f7fd',
+        text: '#586e75',
+      },
     },
   },
   dark: {
@@ -37,8 +41,12 @@ const theme = {
       toggleButton: '#fcfdff',
       border: '#26282b',
       mutedBorder: '#292c33',
-      link: '#766cf9',
-      primary: '#766cf9',
+      link: '#673ab7',
+      primary: '#673ab7',
+      syntax: {
+        background: '#1e1e1e',
+        text: '#6f8186',
+      },
     },
   },
 };

@@ -104,8 +104,8 @@ const Markdown = Box.extend`
     tab-size: 4;
     -ms-hyphens: none;
     hyphens: none;
-    background-color: #f4f7fd;
-    color: #586e75;
+    background-color: ${props => props.theme.colors.syntax.background};
+    color: ${props => props.theme.colors.syntax.text};
     border-radius: 4px;
   }
 

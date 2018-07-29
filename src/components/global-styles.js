@@ -23,7 +23,7 @@ const Global = ({theme}) => {
     }
 
     ::selection {
-      background-color: #00f;
+      background-color: ${theme.colors.primary};
       color: #fff;
     }
 
@@ -31,6 +31,10 @@ const Global = ({theme}) => {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       box-sizing: border-box;
+    }
+
+    html {
+      background-color: ${theme.colors.background};
     }
 
     body {
