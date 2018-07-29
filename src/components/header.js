@@ -44,6 +44,7 @@ const Nav = Box.extend`
   a {
     color: ${props => props.theme.colors.text};
     border-bottom: 0;
+    text-decoration: none;
 
     &:hover {
       color: ${props => props.theme.colors.textHover};

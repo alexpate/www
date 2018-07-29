@@ -83,11 +83,6 @@ const Markdown = Box.extend`
     margin: 24px 0;
   }
 
-  a {
-    padding-bottom: 1px;
-    border-bottom: 1px solid ${props => props.theme.colors.primary};
-  }
-
   code[class*='language-'],
   pre[class*='language-'] {
     font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',

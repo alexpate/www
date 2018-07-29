@@ -47,6 +47,7 @@ const Global = ({theme}) => {
     a {
       text-decoration: none;
       color: ${theme.colors.link};
+      text-decoration: underline;
     }
 
     p {
@@ -54,20 +55,6 @@ const Global = ({theme}) => {
       padding: 0;
     }
 
-    .content {
-      a {
-        border-bottom: 1px solid ${theme.colors.primary};
-
-        &:visited {
-          color: inherit;
-        }
-
-        &:active {
-          background-color: ${theme.colors.primary};
-          color: #fff;
-        }
-      }
-    }
   `;
   return true;
 };
