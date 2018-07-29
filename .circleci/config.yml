@@ -1,0 +1,56 @@
+version: 2.0
+
+jobs:
+  build:
+    working_directory: ~/site
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - dependencies-{{ checksum "package-lock.json" }}
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run build
+      - persist_to_workspace:
+          root: ~/site
+          paths: 
+          - public
+         
+  deploy:
+    working_directory: ~/site
+    machine:
+      enabled: true
+    steps:
+      - attach_workspace:
+          at: ~/site
+      - run: sudo pip install awscli
+      - run: aws s3 sync public s3://${BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
+      - run: aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION} --paths '/*'
+
+workflows:
+  version: 2
+  production:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires: 
+            - build
+          context: site-production
+  staging:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: staging
+      - deploy:
+          requires:
+            - build
+          context: site-staging
