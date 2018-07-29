@@ -14,6 +14,7 @@ const theme = {
   light: {
     ...sharedTheme,
     colors: {
+      theme: 'light',
       background: '#fcfdff',
       heading: '#494E72',
       text: '#4E6087',
@@ -33,6 +34,7 @@ const theme = {
   dark: {
     ...sharedTheme,
     colors: {
+      theme: 'dark',
       background: '#121212',
       heading: '#fff',
       text: '#fff',
