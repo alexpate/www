@@ -7,7 +7,8 @@ import {Text} from 'components/typography';
 import StyledSwitch from './theme-switch';
 
 const Logo = styled('a')`
-  display: block;
+  display: flex;
+  align-items: center;
   color: ${props => props.theme.colors.text};
   text-decoration: none;
   border-bottom: 0;
