@@ -2,16 +2,36 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import {Box} from 'grid-styled';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 import {Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
 
-import coverPhoto from './index-cover.png';
-
 const PostDate = styled(Text)`
   font-size: 0.8em;
   display: block;
+`;
+
+const BARS = ['#ebbb3b', '#e5410d', '#c51b1b', '#97143a', '#6a1842'];
+
+const HomeFeature = styled(Box)`
+  overflow: hidden;
+  min-height: 320px;
+
+  div {
+    width: 600px;
+    height: 36px;
+
+    ${BARS.map(
+      (barColor, i) => css`
+        &:nth-of-type(${i + 1}) {
+          background-color: ${barColor};
+          transform: rotate(-45deg) translateX(${25 * i + 60}px)
+            translateY(${10 * i}px);
+        }
+      `
+    )};
+  }
 `;
 
 const Index = ({data}) => {
@@ -24,12 +44,14 @@ const Index = ({data}) => {
           <meta name="twitter:title" content={meta.defaultTitle} />
           <meta name="twitter:description" content={meta.defaultDescription} />
         </Helmet>
-        <Section pt={[20, 40]}>
-          <img
-            src={coverPhoto}
-            style={{width: '100%', marginBottom: 16}}
-            alt="San Franciso Bay"
-          />
+        <Section>
+          <HomeFeature>
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+          </HomeFeature>
           <P>
             <span role="img" aria-label="wave">
               👋
