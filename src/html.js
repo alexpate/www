@@ -27,10 +27,7 @@ export default function HTML(props) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@alexjpate" />
         <meta name="twitter:creator" content="@alexjpate" />
-        <meta
-          name="twitter:image"
-          content={`https://alexpate.uk${twitterCard}`}
-        />
+        <meta name="twitter:image" content={twitterCard} />
 
         {props.headComponents}
         {css}
