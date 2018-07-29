@@ -28,7 +28,6 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/site/public
-      - checkout
       - run: sudo pip install awscli
       - run: aws s3 sync public s3://${BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
       - run: aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION} --paths '/*'
