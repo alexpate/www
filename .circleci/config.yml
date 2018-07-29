@@ -2,6 +2,7 @@ version: 2.0
 
 jobs:
   build:
+    working_directory: ~/site
     docker:
       - image: circleci/node:8
     steps:
@@ -16,6 +17,7 @@ jobs:
           key: dependencies-{{ checksum "package-lock.json" }}
       - run: npm run build
   deploy:
+    working_directory: ~/site
     machine:
         enabled: true
     steps:
@@ -35,7 +37,7 @@ workflows:
           filters:
             branches:
               only: master
-          context: site-production   
+          context: site-production
   staging:
     jobs:
       - build
