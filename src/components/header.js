@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import {Flex, Box} from 'grid-styled';
 
 import {Text} from 'components/typography';
+import StyledSwitch from './theme-switch';
 
 const Logo = styled('a')`
   display: block;
@@ -50,7 +51,7 @@ const Nav = Box.extend`
   }
 `;
 
-export default () => (
+export default ({onThemeChange, selectedTheme}) => (
   <StyledNav is="header" justify="space-between">
     <Logo href="/">alexpate</Logo>
     <Nav is="nav">
@@ -77,6 +78,7 @@ export default () => (
           </Text>
         </li>
       </ul>
+      <StyledSwitch value={selectedTheme} onClick={onThemeChange} />
     </Nav>
   </StyledNav>
 );

@@ -7,7 +7,7 @@ const StyledFooter = Flex.extend`
   width: 100%;
   padding: 16px 0 32px;
   margin-top: 40px;
-  border-top: 1px solid #e7eefd;
+  border-top: 1px solid ${props => props.theme.colors.mutedBorder};
   font-size: 14px;
   color: ${props => props.theme.colors.text};
 

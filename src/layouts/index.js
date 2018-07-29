@@ -50,15 +50,59 @@ const Inner = styled.div`
   padding: 0 16px;
 `;
 
-export default props => (
-  <ThemeProvider theme={theme.dark}>
-    <Page>
-      <GlobalStyles />
-      <Inner>
-        <Header />
-        {props.children()}
-        <Footer />
-      </Inner>
-    </Page>
-  </ThemeProvider>
-);
+export default class Index extends React.Component {
+  constructor(props) {
+    super(props);
+
+    if (
+      global.window &&
+      global.window.localStorage &&
+      global.window.localStorage.getItem('theme')
+    ) {
+      this.state = {
+        selectedTheme: JSON.parse(global.window.localStorage.getItem('theme')),
+      };
+    } else {
+      this.state = {
+        selectedTheme: 'dark',
+      };
+    }
+
+    this.onThemeChange = this.onThemeChange.bind(this);
+  }
+
+  onThemeChange() {
+    const newSelectedTheme =
+      this.state.selectedTheme === 'dark' ? 'light' : 'dark';
+    this.setState({
+      selectedTheme: newSelectedTheme,
+    });
+
+    if (global.window && global.window.localStorage) {
+      global.window.localStorage.setItem(
+        'theme',
+        JSON.stringify(newSelectedTheme)
+      );
+    }
+  }
+
+  render() {
+    const {children} = this.props;
+    const {selectedTheme} = this.state;
+    return (
+      <ThemeProvider theme={theme[selectedTheme]}>
+        <Page>
+          <GlobalStyles />
+          <Inner>
+            <Header
+              onThemeChange={this.onThemeChange}
+              selectedTheme={selectedTheme}
+            />
+            {children()}
+            <Footer />
+          </Inner>
+        </Page>
+      </ThemeProvider>
+    );
+  }
+}
