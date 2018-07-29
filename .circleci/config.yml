@@ -16,11 +16,18 @@ jobs:
             - node_modules
           key: dependencies-{{ checksum "package-lock.json" }}
       - run: npm run build
+      - persist_to_workspace:
+          root: ~/site
+          paths: 
+          - public
+         
   deploy:
     working_directory: ~/site
     machine:
-        enabled: true
+      enabled: true
     steps:
+      - attach_workspace:
+          at: ~/site/public
       - checkout
       - run: sudo pip install awscli
       - run: aws s3 sync public s3://${BUCKET} --region us-east-1 --cache-control "max-age=31536000" --delete
