@@ -41,8 +41,8 @@ const theme = {
       toggleButton: '#fcfdff',
       border: '#26282b',
       mutedBorder: '#292c33',
-      link: '#673ab7',
-      primary: '#673ab7',
+      link: '#757bff',
+      primary: '#757bff',
       syntax: {
         background: '#1e1e1e',
         text: '#6f8186',
