@@ -21,7 +21,7 @@ const StyledNav = Flex.extend`
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid #e7eefd;
+  border-bottom: 1px solid ${props => props.theme.colors.mutedBorder};
 `;
 
 const Nav = Box.extend`
