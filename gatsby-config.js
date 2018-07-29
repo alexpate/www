@@ -28,6 +28,7 @@ module.exports = {
             options: {
               linkImagesToOriginal: false,
               maxWidth: 740,
+              withWebp: true,
             },
           },
           {
@@ -36,6 +37,7 @@ module.exports = {
               classPrefix: 'language-',
             },
           },
+          'gatsby-plugin-sharp',
         ],
       },
     },
@@ -55,6 +57,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
   ],
 };

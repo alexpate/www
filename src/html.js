@@ -1,7 +1,6 @@
 import React from 'react';
 
 import favicon from 'static-assets/favicon.png';
-import twitterCard from 'static-assets/twitter-card.png';
 
 export default function HTML(props) {
   let css;
@@ -27,7 +26,10 @@ export default function HTML(props) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@alexjpate" />
         <meta name="twitter:creator" content="@alexjpate" />
-        <meta name="twitter:image" content={twitterCard} />
+        <meta
+          name="twitter:image"
+          content="https://alexpate.uk/static/twitter-card.png"
+        />
 
         {props.headComponents}
         {css}

@@ -50,13 +50,8 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths",
-    "postdeploy": "gh-pages -d public",
-    "develop": "gatsby develop",
-    "preserve": "npm run build",
-    "serve": "gatsby serve",
-    "start": "npm run develop",
+    "build": "gatsby build && cp src/static-assets/twitter-card.png public/static/twitter-card.png",
+    "start": "gatsby develop",
     "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\""
   }
 }
