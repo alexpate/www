@@ -14,17 +14,17 @@ const Markdown = Box.extend`
 
     th {
       padding: 8px 10px;
-      background: #f4f7fd;
+      background: rgba(0, 0, 0, 0.1);
       font-size: 16px;
       font-weight: 600;
       text-align: left;
     }
 
     tr {
-      background: #fff;
+      background: transparent;
 
       &:nth-child(even) {
-        background: #f4f7fd;
+        background: rgba(0, 0, 0, 0.1);
       }
     }
 
