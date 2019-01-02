@@ -63,7 +63,7 @@ const Markdown = Box.extend`
 
   h2 {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.4em;
     margin: 16px 0;
   }

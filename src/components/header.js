@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'gatsby-link';
 import {Flex, Box} from 'grid-styled';
 
@@ -12,7 +11,6 @@ const StyledNav = Flex.extend`
   padding: 32px 0 24px;
   background-color: ${props => props.theme.colors.primary};
   z-index: 10;
-  /* border-bottom: 1px solid ${props => props.theme.colors.mutedBorder}; */
 `;
 
 const Nav = Box.extend`

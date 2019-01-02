@@ -22,7 +22,7 @@ export const H1 = ({children, ...otherProps}) => (
   <BaseType
     is="h1"
     fontWeight="600"
-    fontSize={[5, 5, 7]}
+    fontSize={[6, 6, 7]}
     mt={[8]}
     mb={[16]}
     {...otherProps}
@@ -32,7 +32,7 @@ export const H1 = ({children, ...otherProps}) => (
 );
 
 export const H2 = ({children, ...otherProps}) => (
-  <BaseType is="h2" fontWeight="700" fontSize={[3, 3, 4]} {...otherProps}>
+  <BaseType is="h2" fontWeight="700" fontSize={[4, 5]} {...otherProps}>
     {children}
   </BaseType>
 );

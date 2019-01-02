@@ -9,6 +9,7 @@ import GlobalStyles from 'components/global-styles';
 const sharedTheme = {
   fontWeight: [300, 400, 500, 600],
   fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 72],
+  space: [4, 8, 16, 32, 64, 128],
 };
 
 const theme = {

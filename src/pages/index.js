@@ -16,7 +16,6 @@ const PostDate = styled(Text)`
 const HomeFeature = styled(Flex)`
   align-items: center;
   overflow: hidden;
-  min-height: 60vh;
   background-color: ${props => props.theme.colors.primary};
   position: relative;
 `;
@@ -31,7 +30,7 @@ const Index = ({data}) => {
           <meta name="twitter:title" content={meta.defaultTitle} />
           <meta name="twitter:description" content={meta.defaultDescription} />
         </Helmet>
-        <HomeFeature>
+        <HomeFeature py={[3, 4, 5]}>
           <Inner>
             <H1>Alex Pate is a London based UI/UX Engineer</H1>
             <P>
@@ -46,13 +45,13 @@ const Index = ({data}) => {
             </P>
           </Inner>
         </HomeFeature>
-        <Section pt={4}>
+        <Section>
           <Inner>
             <SectionTitle>Articles</SectionTitle>
             {posts
               .filter(post => post.node.frontmatter.title.length > 0)
               .map(({node: post}) => (
-                <Box mb={2} key={post.frontmatter.title}>
+                <Box mb={3} key={post.frontmatter.title}>
                   <Text fontWeight="500">
                     <Link
                       to={post.fields.slug}
@@ -62,6 +61,7 @@ const Index = ({data}) => {
                       <PostDate is="time" dateTime={post.fields.date}>
                         {post.fields.date}
                       </PostDate>
+                      <Text fontSize={1}>{post.excerpt}</Text>
                     </Link>
                   </Text>
                 </Box>
@@ -86,7 +86,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: {fields: [fields___date], order: DESC}) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 100)
           id
           fields {
             date(formatString: "MMMM DD, YYYY")

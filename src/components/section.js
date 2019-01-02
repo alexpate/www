@@ -13,10 +13,4 @@ export default ({children, ...otherProps}) => (
   </StyledSection>
 );
 
-const StyledSectionTitle = styled(H2)`
-  color: ${props => props.theme.colors.secondary};
-`;
-
-export const SectionTitle = props => (
-  <StyledSectionTitle mb={[2, 2, 2]}>{props.children}</StyledSectionTitle>
-);
+export const SectionTitle = props => <H2 mb={[2, 2, 2]}>{props.children}</H2>;
