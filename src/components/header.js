@@ -40,7 +40,7 @@ const Nav = Box.extend`
     text-decoration: none;
 
     &:hover {
-      color: ${props => props.theme.colors.textHover};
+      color: ${props => props.theme.colors.link};
     }
   }
 `;

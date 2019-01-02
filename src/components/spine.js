@@ -9,8 +9,7 @@ const StyledSpine = styled.div`
   top: -4rem;
   left: 0;
   z-index: 11;
-  background-color: ${props => props.theme.colors.spine};
-  border-top: 1px solid ${props => props.theme.colors.mutedBorder};
+  background-color: ${props => props.theme.colors.secondary};
   align-items: center;
   transform: rotateZ(90deg);
   transform-origin: bottom left;
