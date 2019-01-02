@@ -32,9 +32,9 @@ const IndexPage = ({data}) => {
         </Helmet>
         <HomeFeature py={[3, 4, 5]}>
           <Inner>
-            <H1>Alex Pate is a London based UI/UX Engineer</H1>
+            <H1>Design &amp; code, at scale.</H1>
             <P>
-              I’m Alex, a UI/UX Engineer based in London. Although being an
+              I’m Alex, a UI Engineer based in London. Although being an
               engineer by trade, I straddle the line between design and code.
             </P>
             <P>

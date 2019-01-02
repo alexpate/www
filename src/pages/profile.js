@@ -23,7 +23,7 @@ const ProfilePage = ({data}) => {
         <Inner>
           <Section>
             <P>
-              I’m Alex, a UI/UX Engineer based in London. Although being an
+              I’m Alex, a UI Engineer based in London. Although being an
               engineer by trade, I straddle the line between design and code.
             </P>
             <P>
