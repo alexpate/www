@@ -61,7 +61,7 @@ const ProfilePage = ({data}) => {
           </Section>
 
           <Section>
-            <SectionTitle>Projects</SectionTitle>
+            <SectionTitle>Personal projects</SectionTitle>
             <Text>
               <a href="https://github.com/alexpate/awesome-design-systems">
                 Awesome Design Systems - A collection of design systems
