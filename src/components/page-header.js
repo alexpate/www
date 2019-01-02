@@ -1,6 +1,6 @@
 import React from 'react';
-import {Box} from 'grid-styled';
 
+import {Box} from 'components/system';
 import {H1, Text} from 'components/typography';
 import {Inner} from 'layouts';
 

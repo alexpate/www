@@ -1,19 +1,20 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import {Flex, Box} from 'grid-styled';
+import styled from 'styled-components';
+import {Link} from 'gatsby';
 
+import {Flex, Box} from 'components/system';
 import {Text} from 'components/typography';
 import {Inner} from 'layouts';
 import StyledSwitch from './theme-switch';
 
-const StyledNav = Flex.extend`
+const StyledNav = styled(Flex)`
   width: 100%;
   padding: 32px 0 24px;
   background-color: ${props => props.theme.colors.primary};
   z-index: 10;
 `;
 
-const Nav = Box.extend`
+const Nav = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,9 +47,9 @@ const Nav = Box.extend`
 `;
 
 export default ({onThemeChange, selectedTheme}) => (
-  <StyledNav is="header" justify="space-between">
+  <StyledNav as="header" justify="space-between">
     <Inner>
-      <Nav is="nav">
+      <Nav as="nav">
         <ul>
           <li>
             <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>

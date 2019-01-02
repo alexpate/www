@@ -1,9 +1,11 @@
 import React from 'react';
-import {Flex} from 'grid-styled';
+import styled from 'styled-components';
+
+import {Flex} from 'components/system';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
-const StyledFooter = Flex.extend`
+const StyledFooter = styled(Flex)`
   width: 100%;
   padding: 16px 0 32px;
   margin-top: 40px;
@@ -20,7 +22,7 @@ const StyledFooter = Flex.extend`
 `;
 
 const Footer = () => (
-  <StyledFooter is="footer">
+  <StyledFooter as="footer">
     <span itemScope="" itemType="http://schema.org/Organization">
       <link itemProp="url" href="https://alexpate.uk" />
       &copy; {CURRENT_YEAR} -

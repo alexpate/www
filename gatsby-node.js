@@ -4,8 +4,8 @@ const {createFilePath} = require('gatsby-source-filesystem');
 
 const BLOG_POST_SLUG_REGEX = /^\/.+\/([\d]{4})-([\d]{2})-([\d]{2})-(.+)\/$/;
 
-exports.onCreateNode = ({node, getNode, boundActionCreators}) => {
-  const {createNodeField} = boundActionCreators;
+exports.onCreateNode = ({node, getNode, actions}) => {
+  const {createNodeField} = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
     const permalink = node.frontmatter.path;
@@ -56,8 +56,8 @@ exports.onCreateNode = ({node, getNode, boundActionCreators}) => {
   }
 };
 
-exports.createPages = ({boundActionCreators, graphql}) => {
-  const {createPage} = boundActionCreators;
+exports.createPages = ({actions, graphql}) => {
+  const {createPage} = actions;
 
   const blogPostTemplate = path.resolve(`src/templates/article.js`);
   return graphql(`
@@ -82,8 +82,6 @@ exports.createPages = ({boundActionCreators, graphql}) => {
     // Create pages for each markdown file.
     posts.forEach(({node}, index) => {
       const {slug} = node.fields;
-      const prev = index === 0 ? false : posts[index - 1].node;
-      const next = index === posts.length - 1 ? false : posts[index + 1].node;
       createPage({
         path: slug,
         component: blogPostTemplate,
@@ -97,12 +95,10 @@ exports.createPages = ({boundActionCreators, graphql}) => {
   });
 };
 
-exports.modifyWebpackConfig = ({config, env}) => {
-  config.merge({
+exports.onCreateWebpackConfig = ({stage, actions}) => {
+  actions.setWebpackConfig({
     resolve: {
-      root: path.resolve(__dirname, './src'),
-      extensions: ['', '.js', '.jsx', '.json'],
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
   });
-  return config;
 };

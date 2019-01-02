@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import {Box} from 'grid-styled';
 
+import {Box} from 'components/system';
 import {Text, H1} from 'components/typography';
-import {Inner} from 'layouts';
+import Site, {Inner} from 'layouts';
 
 const steps = [
   0,
@@ -71,10 +71,12 @@ const Glitch = styled(H1)`
 `;
 
 export default () => (
-  <Box is="main" pt={[24, 48]}>
-    <Inner>
-      <Glitch>404 Page Not Found</Glitch>
-      <Text>Sorry, nothing could be found</Text>
-    </Inner>
-  </Box>
+  <Site>
+    <Box as="main" pt={[24, 48]}>
+      <Inner>
+        <Glitch>404 Page Not Found</Glitch>
+        <Text>Sorry, nothing could be found</Text>
+      </Inner>
+    </Box>
+  </Site>
 );

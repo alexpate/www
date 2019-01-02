@@ -1,7 +1,9 @@
 import React from 'react';
-import {Box} from 'grid-styled';
+import styled from 'styled-components';
 
-const StyledAlert = Box.extend`
+import {Box} from 'components/system';
+
+const StyledAlert = styled(Box)`
   width: 100%;
   background-color: ${props => props.theme.colors.secondary};
   font-size: 14px;

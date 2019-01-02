@@ -48,7 +48,7 @@ export const Inner = styled.div`
   padding: 0 16px;
 `;
 
-export default class Index extends React.Component {
+export default class Site extends React.Component {
   constructor(props) {
     super(props);
 
@@ -96,7 +96,7 @@ export default class Index extends React.Component {
             onThemeChange={this.onThemeChange}
             selectedTheme={selectedTheme}
           />
-          {children()}
+          {children}
           <Inner>
             <Footer />
           </Inner>

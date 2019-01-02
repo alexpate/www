@@ -38,9 +38,11 @@ const Flair = styled.span`
 
 export default () => (
   <StyledSpine>
-    <Logo fontSize={1} fontWeight="500" mr={3} href="/" is="a">
-      alexpate
-    </Logo>
+    <a href="/">
+      <Logo fontSize={1} fontWeight="500" mr={3} href="/">
+        alexpate
+      </Logo>
+    </a>
     <Mo fontSize={1}>
       London Based UI/UX Engineer currently building design systems at Kalo
     </Mo>

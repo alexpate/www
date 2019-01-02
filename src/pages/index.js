@@ -1,12 +1,12 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import {StaticQuery, graphql, Link} from 'gatsby';
 import Helmet from 'react-helmet';
-import {Box, Flex} from 'grid-styled';
 import styled from 'styled-components';
 
+import {Box, Flex} from 'components/system';
 import {H1, Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
-import {Inner} from 'layouts';
+import Site, {Inner} from 'layouts';
 
 const PostDate = styled(Text)`
   font-size: 0.8em;
@@ -20,11 +20,11 @@ const HomeFeature = styled(Flex)`
   position: relative;
 `;
 
-const Index = ({data}) => {
+const IndexPage = ({data}) => {
   const {edges: posts} = data.allMarkdownRemark;
   const meta = data.site.siteMetadata;
   return (
-    <div>
+    <Site>
       <main>
         <Helmet title={meta.defaultTitle}>
           <meta name="twitter:title" content={meta.defaultTitle} />
@@ -71,34 +71,37 @@ const Index = ({data}) => {
           </Inner>
         </Section>
       </main>
-    </div>
+    </Site>
   );
 };
 
-export default Index;
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        defaultTitle
-        defaultDescription
-      }
-    }
-    allMarkdownRemark(sort: {fields: [fields___date], order: DESC}) {
-      edges {
-        node {
-          excerpt(pruneLength: 100)
-          id
-          fields {
-            date(formatString: "MMMM DD, YYYY")
-            slug
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query IndexQuery {
+        site {
+          siteMetadata {
+            defaultTitle
+            defaultDescription
           }
-          frontmatter {
-            title
+        }
+        allMarkdownRemark(sort: {fields: [fields___date], order: DESC}) {
+          edges {
+            node {
+              excerpt(pruneLength: 100)
+              id
+              fields {
+                date(formatString: "MMMM DD, YYYY")
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
           }
         }
       }
-    }
-  }
-`;
+    `}
+    render={data => <IndexPage data={data} />}
+  />
+);

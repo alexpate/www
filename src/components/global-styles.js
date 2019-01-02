@@ -1,4 +1,4 @@
-import {injectGlobal, withTheme} from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 
 import GraphikRegular from 'static-assets/fonts/graphik-regular.woff';
 import GraphikRegular2 from 'static-assets/fonts/graphik-regular.woff2';
@@ -7,9 +7,7 @@ import GraphikMedium2 from 'static-assets/fonts/graphik-medium.woff2';
 import GraphikBold from 'static-assets/fonts/graphik-bold.woff';
 import GraphikBold2 from 'static-assets/fonts/graphik-bold.woff2';
 
-const Global = ({theme}) => {
-  // eslint-disable-next-line no-unused-expressions
-  injectGlobal`
+export default createGlobalStyle`
     @font-face {
       font-family: 'graphik-001-web';
       src: url(${GraphikRegular2}) format('woff2'),
@@ -32,7 +30,7 @@ const Global = ({theme}) => {
     }
 
     ::selection {
-      background-color: ${theme.colors.secondary};
+      background-color: ${props => props.theme.colors.secondary};
       color: #fff;
     }
 
@@ -43,7 +41,7 @@ const Global = ({theme}) => {
     }
 
     html {
-      background-color: ${theme.colors.primary};
+      background-color: ${props => props.theme.colors.primary};
     }
 
     body {
@@ -65,7 +63,3 @@ const Global = ({theme}) => {
     }
 
   `;
-  return true;
-};
-
-export default withTheme(Global);

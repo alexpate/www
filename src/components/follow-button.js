@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Box} from 'grid-styled';
+
+import {Box} from 'components/system';
 
 const StyledButton = styled(Box)`
   display: inline-block;
@@ -14,7 +15,7 @@ const StyledButton = styled(Box)`
 
 export default props => (
   <StyledButton
-    is="a"
+    as="a"
     href="https://twitter.com/alexjpate"
     target="_blank"
     {...props}
