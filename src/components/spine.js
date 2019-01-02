@@ -43,7 +43,7 @@ export default () => (
       alexpate
     </Logo>
     <Mo fontSize={1}>
-      London Based UX/UI Engineer currently building design systems at Kalo
+      London Based UI/UX Engineer currently building design systems at Kalo
     </Mo>
     <Flair>
       <span role="img" aria-label="lion">

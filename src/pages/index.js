@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import {Box, Flex} from 'grid-styled';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 import {H1, Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
@@ -17,10 +17,7 @@ const HomeFeature = styled(Flex)`
   align-items: center;
   overflow: hidden;
   min-height: 60vh;
-  /* background-image: conic-gradient(#ed13eb, #efecec); */
-  background: #d9d4d4;
   background-color: ${props => props.theme.colors.primary};
-  /* box-shadow: 0 2px 0 3px rgba(197, 197, 197, 0.5); */
   position: relative;
 `;
 
