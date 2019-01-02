@@ -32,7 +32,7 @@ export const H1 = ({children, ...otherProps}) => (
 );
 
 export const H2 = ({children, ...otherProps}) => (
-  <BaseType is="h2" fontWeight="600" fontSize={[3, 3, 5]} {...otherProps}>
+  <BaseType is="h2" fontWeight="700" fontSize={[3, 3, 4]} {...otherProps}>
     {children}
   </BaseType>
 );
