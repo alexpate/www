@@ -32,6 +32,7 @@ const theme = {
       theme: 'dark',
       primary: '#121212',
       secondary: '#d9d4d4',
+      link: '#2b32fd',
       syntax: {
         background: '#1e1e1e',
         text: '#6f8186',
