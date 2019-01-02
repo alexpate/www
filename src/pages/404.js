@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import {Box} from 'grid-styled';
+
 import {Text, H1} from 'components/typography';
+import {Inner} from 'layouts';
 
 const steps = [
   0,
@@ -37,7 +39,7 @@ const keyframesGlitch = keyframes`
 `;
 
 const Glitch = styled(H1)`
-  color: ${props => props.theme.colors.text};
+  color: ${props => props.theme.colors.secondary};
   position: relative;
   display: inline;
 
@@ -47,7 +49,7 @@ const Glitch = styled(H1)`
     text-align: center;
     background: ${props => props.theme.colors.background};
     clip: rect(0, 900px, 0, 0);
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.secondary};
     content: "${props => props.children}";
     overflow: hidden;
     position: absolute;
@@ -70,7 +72,9 @@ const Glitch = styled(H1)`
 
 export default () => (
   <Box is="main" pt={[24, 48]}>
-    <Glitch>404 Page Not Found</Glitch>
-    <Text>Sorry, nothing could be found</Text>
+    <Inner>
+      <Glitch>404 Page Not Found</Glitch>
+      <Text>Sorry, nothing could be found</Text>
+    </Inner>
   </Box>
 );

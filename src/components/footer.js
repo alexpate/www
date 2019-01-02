@@ -9,11 +9,11 @@ const StyledFooter = Flex.extend`
   margin-top: 40px;
   border-top: 1px solid ${props => props.theme.colors.secondary};
   font-size: 14px;
-  color: ${props => props.theme.colors.text};
+  color: ${props => props.theme.colors.secondary};
 
   a {
     margin: 0 8px;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.secondary};
     text-decoration: none;
     border-bottom: 0;
   }
