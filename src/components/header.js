@@ -4,31 +4,21 @@ import Link from 'gatsby-link';
 import {Flex, Box} from 'grid-styled';
 
 import {Text} from 'components/typography';
+import {Inner} from 'layouts';
 import StyledSwitch from './theme-switch';
-
-const Logo = styled('a')`
-  display: flex;
-  align-items: center;
-  color: ${props => props.theme.colors.text};
-  text-decoration: none;
-  border-bottom: 0;
-  font-weight: 500;
-  font-size: 14px;
-`;
 
 const StyledNav = Flex.extend`
   width: 100%;
   padding: 32px 0 24px;
-  background-color: ${props => props.theme.colors.background};
-  position: sticky;
-  top: 0;
+  background-color: ${props => props.theme.colors.primary};
   z-index: 10;
-  border-bottom: 1px solid ${props => props.theme.colors.mutedBorder};
+  /* border-bottom: 1px solid ${props => props.theme.colors.mutedBorder}; */
 `;
 
 const Nav = Box.extend`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-shrink: 0;
 
   ul {
@@ -39,6 +29,10 @@ const Nav = Box.extend`
     li {
       display: inline-block;
       padding: 0 8px;
+
+      &:first-of-type {
+        padding-left: 0;
+      }
     }
   }
 
@@ -55,32 +49,33 @@ const Nav = Box.extend`
 
 export default ({onThemeChange, selectedTheme}) => (
   <StyledNav is="header" justify="space-between">
-    <Logo href="/">alexpate</Logo>
-    <Nav is="nav">
-      <ul>
-        <li>
-          <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
-            <Link to="/">Home</Link>
-          </Text>
-        </li>
-        <li>
-          <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
-            <Link to="/profile/">Profile</Link>
-          </Text>
-        </li>
-        <li>
-          <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
-            <a
-              href="https://twitter.com/alexjpate"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-          </Text>
-        </li>
-      </ul>
-      <StyledSwitch value={selectedTheme} onClick={onThemeChange} />
-    </Nav>
+    <Inner>
+      <Nav is="nav">
+        <ul>
+          <li>
+            <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
+              <Link to="/">Home</Link>
+            </Text>
+          </li>
+          <li>
+            <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
+              <Link to="/profile/">Profile</Link>
+            </Text>
+          </li>
+          <li>
+            <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
+              <a
+                href="https://twitter.com/alexjpate"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
+            </Text>
+          </li>
+        </ul>
+        <StyledSwitch value={selectedTheme} onClick={onThemeChange} />
+      </Nav>
+    </Inner>
   </StyledNav>
 );

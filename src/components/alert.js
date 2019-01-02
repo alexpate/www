@@ -3,15 +3,14 @@ import {Box} from 'grid-styled';
 
 const StyledAlert = Box.extend`
   width: 100%;
-  border-radius: 4px;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.secondary};
   font-size: 14px;
   line-height: 1.6em;
-  color: #fff;
+  color: ${props => props.theme.colors.primary};
 `;
 
 export default props => (
-  <StyledAlert px={[8, 16]} py={[16, 24]} my={[8, 16]} type={props.type}>
+  <StyledAlert px={[8, 16]} py={[16]} my={[8, 16]}>
     {props.children}
   </StyledAlert>
 );

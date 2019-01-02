@@ -5,6 +5,7 @@ import Alert from 'components/alert';
 import PageHeader from 'components/page-header';
 import Markdown from 'components/markdown';
 import FollowButton from 'components/follow-button';
+import {Inner} from 'layouts';
 
 export default function Template({data}) {
   const {markdownRemark: post} = data;
@@ -29,18 +30,20 @@ export default function Template({data}) {
           title={post.frontmatter.title}
           subTitle={`By ${meta.author} on ${post.fields.date}`}
         />
-        {isOldPost ? (
-          <Alert type="warning">
-            This post is over a year old. Some of the content may be out of
-            date.
-          </Alert>
-        ) : null}
-        <Markdown
-          dangerouslySetInnerHTML={{__html: post.html}}
-          id="top"
-          className="content"
-        />
-        <FollowButton mt={1} />
+        <Inner>
+          {isOldPost ? (
+            <Alert type="warning">
+              This post is over a year old. Some of the content may be out of
+              date.
+            </Alert>
+          ) : null}
+          <Markdown
+            dangerouslySetInnerHTML={{__html: post.html}}
+            id="top"
+            className="content"
+          />
+          <FollowButton mt={1} />
+        </Inner>
       </article>
     </main>
   );

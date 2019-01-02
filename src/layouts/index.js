@@ -3,6 +3,7 @@ import styled, {ThemeProvider} from 'styled-components';
 import Footer from 'components/footer';
 import Header from 'components/header';
 import Page from 'components/page';
+import Spine from 'components/spine';
 import GlobalStyles from 'components/global-styles';
 
 const sharedTheme = {
@@ -15,18 +16,21 @@ const theme = {
     ...sharedTheme,
     colors: {
       theme: 'light',
-      background: '#fcfdff',
-      heading: '#494E72',
-      text: '#4E6087',
+      primary: '#d9d4d4',
+      secondary: '#121212',
+
+      background: '#efecec',
+      spine: '#121212',
+      heading: '#121212',
+      text: '#121212',
       textHover: '#3336c7',
       toggleBackground: '#3336c7',
       toggleButton: '#fcfdff',
       border: '#e6e9ef',
       mutedBorder: '#e7eefd',
-      link: '#3336c7',
-      primary: '#00f',
+      link: '#2B32FD',
       syntax: {
-        background: '#f4f7fd',
+        background: '#ccc5c5',
         text: '#586e75',
       },
     },
@@ -35,7 +39,11 @@ const theme = {
     ...sharedTheme,
     colors: {
       theme: 'dark',
+      primary: '#121212',
+      secondary: '#d9d4d4',
+
       background: '#121212',
+      spine: '#efecec',
       heading: '#fff',
       text: '#fff',
       textHover: '#3336c7',
@@ -43,8 +51,8 @@ const theme = {
       toggleButton: '#fcfdff',
       border: '#26282b',
       mutedBorder: '#292c33',
-      link: '#757bff',
-      primary: '#757bff',
+      link: '#2B32FD',
+      // primary: '#ed13eb',
       syntax: {
         background: '#1e1e1e',
         text: '#6f8186',
@@ -53,7 +61,7 @@ const theme = {
   },
 };
 
-const Inner = styled.div`
+export const Inner = styled.div`
   width: 100%;
   max-width: 740px;
   margin: 0 auto;
@@ -102,13 +110,14 @@ export default class Index extends React.Component {
     return (
       <ThemeProvider theme={theme[selectedTheme]}>
         <Page>
+          <Spine />
           <GlobalStyles />
+          <Header
+            onThemeChange={this.onThemeChange}
+            selectedTheme={selectedTheme}
+          />
+          {children()}
           <Inner>
-            <Header
-              onThemeChange={this.onThemeChange}
-              selectedTheme={selectedTheme}
-            />
-            {children()}
             <Footer />
           </Inner>
         </Page>

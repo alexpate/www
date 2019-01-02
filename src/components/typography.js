@@ -12,7 +12,7 @@ const BaseType = styled(BaseComponent)`
   margin: 0;
   padding: 0;
   line-height: 1.2em;
-  color: ${props => props.theme.colors.heading};
+  color: ${props => (props.color ? props.color : props.theme.colors.heading)};
   ${fontSize};
   ${fontWeight};
   ${space};
@@ -21,8 +21,8 @@ const BaseType = styled(BaseComponent)`
 export const H1 = ({children, ...otherProps}) => (
   <BaseType
     is="h1"
-    fontWeight="400"
-    fontSize={[6, 6, 7]}
+    fontWeight="600"
+    fontSize={[5, 5, 7]}
     mt={[8]}
     mb={[16]}
     {...otherProps}
@@ -32,7 +32,7 @@ export const H1 = ({children, ...otherProps}) => (
 );
 
 export const H2 = ({children, ...otherProps}) => (
-  <BaseType is="h2" fontWeight="500" fontSize={[1, 2, 3]} {...otherProps}>
+  <BaseType is="h2" fontWeight="600" fontSize={[3, 3, 5]} {...otherProps}>
     {children}
   </BaseType>
 );
