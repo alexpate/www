@@ -55,7 +55,7 @@ const Global = ({theme}) => {
 
     a {
       text-decoration: none;
-      color: ${theme.colors.link};
+      color: inherit;
       text-decoration: underline;
     }
 

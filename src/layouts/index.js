@@ -52,7 +52,7 @@ const theme = {
       toggleButton: '#fcfdff',
       border: '#26282b',
       mutedBorder: '#292c33',
-      link: '#2B32FD',
+      link: '#8C13ED',
       // primary: '#ed13eb',
       syntax: {
         background: '#1e1e1e',

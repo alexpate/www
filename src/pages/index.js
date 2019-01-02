@@ -61,7 +61,9 @@ const Index = ({data}) => {
                       <PostDate is="time" dateTime={post.fields.date}>
                         {post.fields.date}
                       </PostDate>
-                      <Text fontSize={1}>{post.excerpt}</Text>
+                      <Text is="span" fontSize={1}>
+                        {post.excerpt}
+                      </Text>
                     </Link>
                   </Text>
                 </Box>
