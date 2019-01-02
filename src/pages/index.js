@@ -38,15 +38,14 @@ const Index = ({data}) => {
           <Inner>
             <H1>Alex Pate is a London based UI/UX Engineer</H1>
             <P>
-              I’m Alex, a digital product designer based in London. I work with
-              startups and agencies, straddling the line between design and
-              code.
+              I’m Alex, a UI/UX Engineer based in London. Although being an
+              engineer by trade, I straddle the line between design and code.
             </P>
             <P>
               I have a particular focus on the internal role that UI engineering
               plays, in regards to design systems, and creating tooling and
               processes to help product teams scale. I’m currently working at
-              Kalo, leading the development of our internal design system.
+              Kalo, developing an internal design system.
             </P>
           </Inner>
         </HomeFeature>

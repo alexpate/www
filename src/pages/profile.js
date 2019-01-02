@@ -18,8 +18,8 @@ export default ({data}) => {
       <Inner>
         <Section>
           <P>
-            I’m Alex, a digital product designer based in London. I work with
-            startups and agencies, straddling the line between design and code.
+            I’m Alex, a UI/UX Engineer based in London. Although being an
+            engineer by trade, I straddle the line between design and code.
           </P>
           <P>
             I have a particular focus on the internal role that UI engineering
@@ -31,7 +31,8 @@ export default ({data}) => {
               rel="noopener noreferrer"
             >
               Kalo
-            </a>, leading the development of our internal design system.
+            </a>
+            , developing an internal design system.
           </P>
         </Section>
         <Section>
