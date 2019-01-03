@@ -14,4 +14,4 @@ export default ({children, ...otherProps}) => (
   </StyledSection>
 );
 
-export const SectionTitle = props => <H2 mb={[2, 2, 2]}>{props.children}</H2>;
+export const SectionTitle = ({children}) => <H2 mb={[2, 2, 2]}>{children}</H2>;

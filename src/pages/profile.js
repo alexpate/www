@@ -5,7 +5,8 @@ import {StaticQuery, graphql} from 'gatsby';
 import PageHeader from 'components/page-header';
 import {Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
-import Site, {Inner} from 'layouts';
+import Site from 'components/site';
+import {Inner} from 'components/system';
 
 const ProfilePage = ({data}) => {
   const meta = data.site.siteMetadata;

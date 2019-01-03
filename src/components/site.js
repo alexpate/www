@@ -1,15 +1,17 @@
 import React from 'react';
-import styled, {ThemeProvider} from 'styled-components';
+import {ThemeProvider} from 'styled-components';
+
 import Footer from 'components/footer';
 import Header from 'components/header';
 import Page from 'components/page';
 import Spine from 'components/spine';
+import {Inner} from 'components/system';
 import GlobalStyles from 'components/global-styles';
 
 const sharedTheme = {
   fontWeight: [300, 400, 500, 600],
   fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 72],
-  space: [4, 8, 16, 32, 64, 128],
+  space: [0, 8, 16, 32, 64, 128],
 };
 
 const theme = {
@@ -17,7 +19,7 @@ const theme = {
     ...sharedTheme,
     colors: {
       theme: 'light',
-      primary: '#d9d4d4',
+      primary: '#e7e2e2',
       secondary: '#121212',
       link: '#2b32fd',
       syntax: {
@@ -31,7 +33,7 @@ const theme = {
     colors: {
       theme: 'dark',
       primary: '#121212',
-      secondary: '#d9d4d4',
+      secondary: '#e7e2e2',
       link: '#2b32fd',
       syntax: {
         background: '#1e1e1e',
@@ -40,13 +42,6 @@ const theme = {
     },
   },
 };
-
-export const Inner = styled.div`
-  width: 100%;
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 0 16px;
-`;
 
 export default class Site extends React.Component {
   constructor(props) {
@@ -70,11 +65,9 @@ export default class Site extends React.Component {
   }
 
   onThemeChange() {
-    const newSelectedTheme =
-      this.state.selectedTheme === 'dark' ? 'light' : 'dark';
-    this.setState({
-      selectedTheme: newSelectedTheme,
-    });
+    const newSelectedTheme = this.setState(prevState => ({
+      selectedTheme: prevState === 'dark' ? 'light' : 'dark',
+    }));
 
     if (global.window && global.window.localStorage) {
       global.window.localStorage.setItem(

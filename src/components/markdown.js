@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import {Box} from 'components/system';
-import {H2} from 'components/typography';
 
 const Markdown = styled(Box)`
   color: ${props => props.theme.colors.secondary};

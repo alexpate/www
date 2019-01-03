@@ -1,12 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import {StaticQuery, graphql} from 'gatsby';
+import {graphql} from 'gatsby';
 
+import Site from 'components/site';
+import {Inner} from 'components/system';
 import Alert from 'components/alert';
 import PageHeader from 'components/page-header';
 import Markdown from 'components/markdown';
 import FollowButton from 'components/follow-button';
-import Site, {Inner} from 'layouts';
 
 export default function Template({data}) {
   const {markdownRemark: post} = data;

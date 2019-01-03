@@ -2,13 +2,13 @@ import React from 'react';
 
 import favicon from 'static-assets/favicon.png';
 
-export default function HTML(props) {
+export default function HTML({headComponents, body, postBodyComponents}) {
   let css;
   if (process.env.NODE_ENV === 'production') {
     css = (
       <style
         dangerouslySetInnerHTML={{
-          __html: require('!raw!../public/styles.css'),
+          __html: require('!raw!../public/styles.css'), // eslint-disable-line
         }}
       />
     );
@@ -31,12 +31,12 @@ export default function HTML(props) {
           content="https://alexpate.uk/static/twitter-card.png"
         />
 
-        {props.headComponents}
+        {headComponents}
         {css}
       </head>
       <body>
-        <div id="___gatsby" dangerouslySetInnerHTML={{__html: props.body}} />
-        {props.postBodyComponents}
+        <div id="___gatsby" dangerouslySetInnerHTML={{__html: body}} />
+        {postBodyComponents}
         <script
           dangerouslySetInnerHTML={{
             __html: `console.log('Built at ${Date(new Date().getTime())}')`,

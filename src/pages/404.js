@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 
-import {Box} from 'components/system';
+import Site from 'components/site';
+import {Box, Inner} from 'components/system';
 import {Text, H1} from 'components/typography';
-import Site, {Inner} from 'layouts';
 
 const steps = [
   0,

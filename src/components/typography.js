@@ -1,6 +1,3 @@
-import React from 'react';
-import styled from 'styled-components';
-import {fontSize, fontWeight, space, lineHeight} from 'styled-system';
 import system from '@rebass/components';
 
 const BaseType = system(

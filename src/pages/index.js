@@ -3,10 +3,10 @@ import {StaticQuery, graphql, Link} from 'gatsby';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
-import {Box, Flex} from 'components/system';
+import Site from 'components/site';
+import {Box, Flex, Inner} from 'components/system';
 import {H1, Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
-import Site, {Inner} from 'layouts';
 
 const PostDate = styled(Text)`
   font-size: 0.8em;

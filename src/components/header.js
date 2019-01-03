@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'gatsby';
 
-import {Flex, Box} from 'components/system';
+import {Flex, Box, Inner} from 'components/system';
 import {Text} from 'components/typography';
-import {Inner} from 'layouts';
+
 import StyledSwitch from './theme-switch';
 
 const StyledNav = styled(Flex)`

@@ -11,8 +11,8 @@ const StyledAlert = styled(Box)`
   color: ${props => props.theme.colors.primary};
 `;
 
-export default props => (
+export default ({children}) => (
   <StyledAlert px={[8, 16]} py={[16]} my={[8, 16]}>
-    {props.children}
+    {children}
   </StyledAlert>
 );
