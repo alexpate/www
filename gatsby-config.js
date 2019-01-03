@@ -49,12 +49,6 @@ module.exports = {
         trackingId: 'UA-41936976-3',
       },
     },
-    {
-      resolve: `gatsby-plugin-gosquared`,
-      options: {
-        token: 'GSN-735683-L',
-      },
-    },
     'gatsby-plugin-react-helmet',
   ],
 };
