@@ -3,16 +3,6 @@ import React from 'react';
 import favicon from 'static-assets/favicon.png';
 
 export default function HTML({headComponents, body, postBodyComponents}) {
-  let css;
-  if (process.env.NODE_ENV === 'production') {
-    css = (
-      <style
-        dangerouslySetInnerHTML={{
-          __html: require('!raw!../public/styles.css'), // eslint-disable-line
-        }}
-      />
-    );
-  }
   return (
     <html lang="en">
       <head>
@@ -32,7 +22,6 @@ export default function HTML({headComponents, body, postBodyComponents}) {
         />
 
         {headComponents}
-        {css}
       </head>
       <body>
         <div id="___gatsby" dangerouslySetInnerHTML={{__html: body}} />
