@@ -65,16 +65,19 @@ export default class Site extends React.Component {
   }
 
   onThemeChange() {
-    const newSelectedTheme = this.setState(prevState => ({
-      selectedTheme: prevState === 'dark' ? 'light' : 'dark',
-    }));
-
-    if (global.window && global.window.localStorage) {
-      global.window.localStorage.setItem(
-        'theme',
-        JSON.stringify(newSelectedTheme)
-      );
-    }
+    this.setState(
+      prevState => ({
+        selectedTheme: prevState.selectedTheme === 'dark' ? 'light' : 'dark',
+      }),
+      () => {
+        if (global.window && global.window.localStorage) {
+          global.window.localStorage.setItem(
+            'theme',
+            JSON.stringify(this.state.selectedTheme)
+          );
+        }
+      }
+    );
   }
 
   render() {
