@@ -23,8 +23,8 @@ const theme = {
       secondary: '#121212',
       link: '#2b32fd',
       syntax: {
-        background: '#ccc5c5',
-        text: '#586e75',
+        background: '#e1d7d7',
+        text: '#394244',
       },
     },
   },
