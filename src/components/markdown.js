@@ -1,8 +1,9 @@
-import {Box} from 'grid-styled';
-import {H2} from 'components/typography';
+import styled from 'styled-components';
 
-const Markdown = Box.extend`
-  color: ${props => props.theme.colors.text};
+import {Box} from 'components/system';
+
+const Markdown = styled(Box)`
+  color: ${props => props.theme.colors.secondary};
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -14,17 +15,17 @@ const Markdown = Box.extend`
 
     th {
       padding: 8px 10px;
-      background: #f4f7fd;
+      background: rgba(0, 0, 0, 0.1);
       font-size: 16px;
       font-weight: 600;
       text-align: left;
     }
 
     tr {
-      background: #fff;
+      background: transparent;
 
       &:nth-child(even) {
-        background: #f4f7fd;
+        background: rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -63,7 +64,7 @@ const Markdown = Box.extend`
 
   h2 {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.4em;
     margin: 16px 0;
   }

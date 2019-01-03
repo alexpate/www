@@ -1,10 +1,11 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import {StaticQuery, graphql, Link} from 'gatsby';
 import Helmet from 'react-helmet';
-import {Box} from 'grid-styled';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
-import {Text, P} from 'components/typography';
+import Site from 'components/site';
+import {Box, Flex, Inner} from 'components/system';
+import {H1, Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
 
 const PostDate = styled(Text)`
@@ -12,107 +13,95 @@ const PostDate = styled(Text)`
   display: block;
 `;
 
-const BARS = ['#ebbb3b', '#e5410d', '#c51b1b', '#97143a', '#6a1842'];
-
-const HomeFeature = styled(Box)`
+const HomeFeature = styled(Flex)`
+  align-items: center;
   overflow: hidden;
-  min-height: 320px;
-
-  div {
-    width: 600px;
-    height: 36px;
-
-    ${BARS.map(
-      (barColor, i) => css`
-        &:nth-of-type(${i + 1}) {
-          background-color: ${barColor};
-          transform: rotate(-45deg) translateX(${25 * i + 60}px)
-            translateY(${10 * i}px);
-        }
-      `
-    )};
-  }
+  background-color: ${props => props.theme.colors.primary};
+  position: relative;
 `;
 
-const Index = ({data}) => {
+const IndexPage = ({data}) => {
   const {edges: posts} = data.allMarkdownRemark;
   const meta = data.site.siteMetadata;
   return (
-    <div>
+    <Site>
       <main>
         <Helmet title={meta.defaultTitle}>
           <meta name="twitter:title" content={meta.defaultTitle} />
           <meta name="twitter:description" content={meta.defaultDescription} />
         </Helmet>
+        <HomeFeature py={[3, 4, 5]}>
+          <Inner>
+            <H1>Design &amp; code, at scale.</H1>
+            <P>
+              I’m Alex, a UI Engineer based in London. Although being an
+              engineer by trade, I straddle the line between design and code.
+            </P>
+            <P>
+              I have a particular focus on the internal role that UI engineering
+              plays, in regards to design systems, and creating tooling and
+              processes to help product teams scale. I’m currently working at
+              Kalo, developing an internal design system.
+            </P>
+          </Inner>
+        </HomeFeature>
         <Section>
-          <HomeFeature>
-            <div />
-            <div />
-            <div />
-            <div />
-            <div />
-          </HomeFeature>
-          <P>
-            <span role="img" aria-label="wave">
-              👋
-            </span>
-            <br />
-            I’m Alex, a digital product designer based in London. I work with
-            startups and agencies, straddling the line between design and code.
-          </P>
-          <P>
-            I have a particular focus on the internal role that UI engineering
-            plays, in regards to design systems, and creating tooling and
-            processes to help product teams scale. I’m currently working at
-            Kalo, leading the development of our internal design system.
-          </P>
-        </Section>
-        <Section>
-          <SectionTitle>Recent articles</SectionTitle>
-          {posts
-            .filter(post => post.node.frontmatter.title.length > 0)
-            .map(({node: post}) => (
-              <Box mb={2} key={post.frontmatter.title}>
-                <Text>
-                  <Link to={post.fields.slug} style={{textDecoration: 'none'}}>
-                    {post.frontmatter.title}
-                    <PostDate is="time" dateTime={post.fields.date}>
-                      {post.fields.date}
-                    </PostDate>
-                  </Link>
-                </Text>
-              </Box>
-            ))}
+          <Inner>
+            <SectionTitle>Articles</SectionTitle>
+            {posts
+              .filter(post => post.node.frontmatter.title.length > 0)
+              .map(({node: post}) => (
+                <Box mb={3} key={post.frontmatter.title}>
+                  <Text fontWeight="500">
+                    <Link
+                      to={post.fields.slug}
+                      style={{textDecoration: 'none'}}
+                    >
+                      {post.frontmatter.title}
+                      <PostDate is="time" dateTime={post.fields.date}>
+                        {post.fields.date}
+                      </PostDate>
+                      <Text is="span" fontSize={1}>
+                        {post.excerpt}
+                      </Text>
+                    </Link>
+                  </Text>
+                </Box>
+              ))}
+          </Inner>
         </Section>
       </main>
-    </div>
+    </Site>
   );
 };
 
-export default Index;
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        defaultTitle
-        defaultDescription
-      }
-    }
-    allMarkdownRemark(sort: {fields: [fields___date], order: DESC}) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          id
-          fields {
-            date(formatString: "MMMM DD, YYYY")
-            slug
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query IndexQuery {
+        site {
+          siteMetadata {
+            defaultTitle
+            defaultDescription
           }
-          frontmatter {
-            title
+        }
+        allMarkdownRemark(sort: {fields: [fields___date], order: DESC}) {
+          edges {
+            node {
+              excerpt(pruneLength: 100)
+              id
+              fields {
+                date(formatString: "MMMM DD, YYYY")
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
           }
         }
       }
-    }
-  }
-`;
+    `}
+    render={data => <IndexPage data={data} />}
+  />
+);

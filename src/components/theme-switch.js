@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import {Box} from 'grid-styled';
+
+import {Box} from 'components/system';
 
 import iconThemeDark from 'static-assets/icons/theme-dark.svg';
 import iconThemeLight from 'static-assets/icons/theme-light.svg';

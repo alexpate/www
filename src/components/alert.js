@@ -1,17 +1,18 @@
 import React from 'react';
-import {Box} from 'grid-styled';
+import styled from 'styled-components';
 
-const StyledAlert = Box.extend`
+import {Box} from 'components/system';
+
+const StyledAlert = styled(Box)`
   width: 100%;
-  border-radius: 4px;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.secondary};
   font-size: 14px;
   line-height: 1.6em;
-  color: #fff;
+  color: ${props => props.theme.colors.primary};
 `;
 
-export default props => (
-  <StyledAlert px={[8, 16]} py={[16, 24]} my={[8, 16]} type={props.type}>
-    {props.children}
+export default ({children}) => (
+  <StyledAlert px={[8, 16]} py={[16]} my={[8, 16]}>
+    {children}
   </StyledAlert>
 );

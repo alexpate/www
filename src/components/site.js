@@ -1,13 +1,17 @@
 import React from 'react';
-import styled, {ThemeProvider} from 'styled-components';
+import {ThemeProvider} from 'styled-components';
+
 import Footer from 'components/footer';
 import Header from 'components/header';
 import Page from 'components/page';
+import Spine from 'components/spine';
+import {Inner} from 'components/system';
 import GlobalStyles from 'components/global-styles';
 
 const sharedTheme = {
   fontWeight: [300, 400, 500, 600],
   fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 72],
+  space: [0, 8, 16, 32, 64, 128],
 };
 
 const theme = {
@@ -15,18 +19,11 @@ const theme = {
     ...sharedTheme,
     colors: {
       theme: 'light',
-      background: '#fcfdff',
-      heading: '#494E72',
-      text: '#4E6087',
-      textHover: '#3336c7',
-      toggleBackground: '#3336c7',
-      toggleButton: '#fcfdff',
-      border: '#e6e9ef',
-      mutedBorder: '#e7eefd',
-      link: '#3336c7',
-      primary: '#00f',
+      primary: '#e7e2e2',
+      secondary: '#121212',
+      link: '#2b32fd',
       syntax: {
-        background: '#f4f7fd',
+        background: '#ccc5c5',
         text: '#586e75',
       },
     },
@@ -35,16 +32,9 @@ const theme = {
     ...sharedTheme,
     colors: {
       theme: 'dark',
-      background: '#121212',
-      heading: '#fff',
-      text: '#fff',
-      textHover: '#3336c7',
-      toggleBackground: '#3336c7',
-      toggleButton: '#fcfdff',
-      border: '#26282b',
-      mutedBorder: '#292c33',
-      link: '#757bff',
-      primary: '#757bff',
+      primary: '#121212',
+      secondary: '#e7e2e2',
+      link: '#2b32fd',
       syntax: {
         background: '#1e1e1e',
         text: '#6f8186',
@@ -53,14 +43,7 @@ const theme = {
   },
 };
 
-const Inner = styled.div`
-  width: 100%;
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 0 16px;
-`;
-
-export default class Index extends React.Component {
+export default class Site extends React.Component {
   constructor(props) {
     super(props);
 
@@ -82,11 +65,9 @@ export default class Index extends React.Component {
   }
 
   onThemeChange() {
-    const newSelectedTheme =
-      this.state.selectedTheme === 'dark' ? 'light' : 'dark';
-    this.setState({
-      selectedTheme: newSelectedTheme,
-    });
+    const newSelectedTheme = this.setState(prevState => ({
+      selectedTheme: prevState === 'dark' ? 'light' : 'dark',
+    }));
 
     if (global.window && global.window.localStorage) {
       global.window.localStorage.setItem(
@@ -102,13 +83,14 @@ export default class Index extends React.Component {
     return (
       <ThemeProvider theme={theme[selectedTheme]}>
         <Page>
+          <Spine />
           <GlobalStyles />
+          <Header
+            onThemeChange={this.onThemeChange}
+            selectedTheme={selectedTheme}
+          />
+          {children}
           <Inner>
-            <Header
-              onThemeChange={this.onThemeChange}
-              selectedTheme={selectedTheme}
-            />
-            {children()}
             <Footer />
           </Inner>
         </Page>
