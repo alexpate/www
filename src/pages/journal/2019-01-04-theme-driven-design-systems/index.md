@@ -26,7 +26,7 @@ Defining components as the lowest elements of a system provides little room for 
 
 These values (often referred to as 'design tokens'), provide a nice route to opt out of the provided components, but still remain within the bounds of the system. For example, an engineer may want to build a variant of an input, that although visually looks similar to a normal input, may have a wildly different technical implementation.
 
-Consider the following two components. Although both the wrapping containers are visually similar, they must have two seperate implementations to allow for the second component to contain non-text content.
+Consider the following two components. Although both the wrapping containers are visually similar, they must have two separate implementations to allow for the second component to contain non-text content.
 
 ![Two implementations of two visually similar inputs](./multiple-implementations-visually-similar-component.png)
 
@@ -68,7 +68,7 @@ const VisualInput = styled.div`
 </VisualInput>
 ```
 
-Having the styles hard-coded within the invidual implementations provides opportunity for divergence. Using design tokens, we can abstract the style values out above the implementations, and then pass those values back down to the implementations via variables.
+Having the styles hard-coded within the individual implementations provides opportunity for divergence. Using design tokens, we can abstract the style values out above the implementations, and then pass those values back down to the implementations via variables.
 
 ![How design tokens work](./design-tokens.png)
 
@@ -89,7 +89,7 @@ Our example above refactored to use design tokens, could look something like thi
 ```css
 :root {
   --inputDefaultBorderColor: 1px solid #cfd8df;
-  --inputhoverBorderColor: 1px solid #3255f1;
+  --inputHoverBorderColor: 1px solid #3255f1;
 }
 ```
 
@@ -97,11 +97,11 @@ _...example usage..._
 
 ```css
 input {
-  border: var(--inputDefaultBordercolor);
+  border: var(--inputDefaultBorderColor);
 }
 
 input:hover {
-  border: var(--inputHoverBordercolor);
+  border: var(--inputHoverBorderColor);
 }
 ```
 
@@ -136,6 +136,8 @@ const VisualInput = styled.div`
 Tools such as [Theo](https://github.com/salesforce-ux/theo) will help you to convert your design tokens in to the required formats.
 
 ---
+
+As UI systems mature and spread across a company, the requirement for them to be able to work with new technologies and frameworks will only increase. Whether design tokens as a tool are the answer to this or not, the concept of thinking about components as compositions of these tokens will still hold true.
 
 
 ## Further reading
