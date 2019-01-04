@@ -57,7 +57,7 @@ export default class Site extends React.Component {
       };
     } else {
       this.state = {
-        selectedTheme: 'dark',
+        selectedTheme: 'light',
       };
     }
 
