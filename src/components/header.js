@@ -10,8 +10,10 @@ import StyledSwitch from './theme-switch';
 const StyledNav = styled(Flex)`
   width: 100%;
   padding: 32px 0 24px;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: transparent;
   z-index: 10;
+  position: relative;
+  transition: color 0.2s ease-out, background 0.2s ease-out;
 `;
 
 const Nav = styled(Box)`
@@ -68,7 +70,7 @@ export default ({onThemeChange, selectedTheme}) => (
           </li>
           <li>
             <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
-              <Link to="/portfolio/">Journal</Link>
+              <Link to="/journal/">Journal</Link>
             </Text>
           </li>
         </ul>

@@ -81,7 +81,14 @@ const Markdown = styled(Box)`
   }
 
   .gatsby-resp-image-wrapper {
-    margin: 24px 0;
+    margin: 24px 0 !important;
+    width: 100% !important;
+    max-width: unset !important;
+
+    @media screen and (min-width: 52em) {
+      width: calc(100% + 200px) !important;
+      margin-left: -100px !important;
+    }
   }
 
   code[class*='language-'],

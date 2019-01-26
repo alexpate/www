@@ -83,6 +83,7 @@ exports.createPages = ({actions, graphql}) => {
           node {
             fields {
               slug
+              pageType
             }
           }
         }

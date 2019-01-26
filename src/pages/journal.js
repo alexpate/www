@@ -1,15 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {StaticQuery, graphql, Link} from 'gatsby';
-import styled from 'styled-components';
 
 import PageHeader from 'components/page-header';
-import {Text, H3} from 'components/typography';
+import {Text} from 'components/typography';
 import Section from 'components/section';
 import Site from 'components/site';
-import {Inner, Box, Flex} from 'components/system';
+import {Inner, Box} from 'components/system';
 
-import {PROJECT_HERO_MAP} from '../constants';
+import {PostDate} from 'pages/index';
 
 const PortfolioPage = ({data}) => {
   const {edges: posts} = data.allMarkdownRemark;
@@ -17,16 +16,16 @@ const PortfolioPage = ({data}) => {
   return (
     <Site>
       <main>
-        <Helmet title={`Portfolio - ${meta.defaultTitle}`}>
+        <Helmet title={`Journal - ${meta.defaultTitle}`}>
           <meta
             name="twitter:title"
-            content={`Portfolio - ${meta.defaultTitle}`}
+            content={`Journal - ${meta.defaultTitle}`}
           />
           <meta name="twitter:description" content={meta.defaultDescription} />
         </Helmet>
         <PageHeader
-          title="Portfolio"
-          subTitle="A selection of design and development projects"
+          title="Journal"
+          subTitle="Musings on design, development, and startups"
         />
         <Section noBottomBorder>
           <Inner>
@@ -39,11 +38,13 @@ const PortfolioPage = ({data}) => {
                       to={post.fields.slug}
                       style={{textDecoration: 'none'}}
                     >
-                      <PortfolioLinkItem
-                        title={post.frontmatter.title}
-                        subtitle={post.frontmatter.role}
-                        projectKey={post.frontmatter.key}
-                      />
+                      {post.frontmatter.title}
+                      <PostDate is="time" dateTime={post.fields.date}>
+                        {post.fields.date}
+                      </PostDate>
+                      <Text is="span" fontSize={1}>
+                        {post.excerpt}
+                      </Text>
                     </Link>
                   </Text>
                 </Box>
@@ -58,7 +59,7 @@ const PortfolioPage = ({data}) => {
 export default () => (
   <StaticQuery
     query={graphql`
-      query PortfolioPageQuery {
+      query JournalPageQuery {
         site {
           siteMetadata {
             defaultTitle
@@ -67,7 +68,7 @@ export default () => (
         }
         allMarkdownRemark(
           sort: {fields: [fields___date], order: DESC}
-          filter: {fileAbsolutePath: {regex: "/work/.*\\.md$/"}}
+          filter: {fileAbsolutePath: {regex: "/journal/.*\\.md$/"}}
         ) {
           edges {
             node {
@@ -79,8 +80,6 @@ export default () => (
               }
               frontmatter {
                 title
-                role
-                key
               }
             }
           }
@@ -89,34 +88,4 @@ export default () => (
     `}
     render={data => <PortfolioPage data={data} />}
   />
-);
-
-const StyledPortfolioLinkItem = styled(Flex)`
-  border-radius: 4px;
-  transition: all 0.3s ease-out;
-  transform: scale(1);
-  background-color: ${props => props.theme.colors.portfolioHeroBackground};
-  background-image: url(${props => PROJECT_HERO_MAP[props.projectKey]});
-  background-position: calc(100% + 240px) 24px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-
-  @media screen and (min-width: 52em) {
-    background-position: calc(100% + 80px) 20px;
-    background-size: 480px;
-    transform: scale(1.02);
-  }
-
-  &:hover {
-    transform: scale(1.04);
-    background-position: calc(100% + 80px) 15px;
-    box-shadow: 0 8px 13px 0 rgba(45, 47, 51, 0.03);
-  }
-`;
-
-const PortfolioLinkItem = ({title, subtitle, projectKey}) => (
-  <StyledPortfolioLinkItem px={3} pb={[3]} pt={[3, 4]} projectKey={projectKey}>
-    <H3 m={0}>{title}</H3>
-    <Text fontSize={1}>{subtitle}</Text>
-  </StyledPortfolioLinkItem>
 );

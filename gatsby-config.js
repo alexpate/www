@@ -26,8 +26,9 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               linkImagesToOriginal: false,
-              maxWidth: 740,
-              withWebp: true,
+              maxWidth: 800,
+              withWebp: false,
+              quality: 100,
             },
           },
           {
@@ -36,7 +37,12 @@ module.exports = {
               classPrefix: 'language-',
             },
           },
-          'gatsby-plugin-sharp',
+          {
+            resolve: 'gatsby-plugin-sharp',
+            options: {
+              quality: 100,
+            },
+          },
         ],
       },
     },

@@ -15,6 +15,7 @@ const StyledSpine = styled.div`
   transform-origin: bottom left;
   padding: 0 16px;
   display: none;
+  transition: background 0.2s ease-out;
 
   @media screen and (min-width: 52em) {
     display: flex;

@@ -11,7 +11,8 @@ export const Flex = system(
   {
     display: 'flex',
   },
-  'space'
+  'space',
+  'flex'
 );
 
 export const Inner = system(

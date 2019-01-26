@@ -1,4 +1,10 @@
 import system from '@rebass/components';
+import {style} from 'styled-system';
+
+const textTransform = style({
+  prop: 'textTransform',
+  cssProperty: 'textTransform',
+});
 
 const BaseType = system(
   {
@@ -9,7 +15,8 @@ const BaseType = system(
   'fontWeight',
   'fontSize',
   'lineHeight',
-  'color'
+  'color',
+  textTransform
 );
 
 export const H1 = system({

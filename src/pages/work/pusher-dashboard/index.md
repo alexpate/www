@@ -1,13 +1,29 @@
 ---
-title: 'Pusher dashboard'
+title: 'Pusher Dashboard'
+role: 'Design and development'
+year: '2016'
+url: 'https://dashboard.pusher.com'
+key: 'pusher'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis id ipsum iaculis gravida. Suspendisse fermentum quam magna. Duis quis eros dictum, venenatis ipsum ac, euismod arcu. Cras interdum neque et nibh tristique accumsan. Phasellus porta velit a tortor gravida pellentesque. Integer sagittis nisi quis rhoncus pulvinar. Praesent ultricies, nunc at tincidunt faucibus, purus tellus pharetra est, quis fringilla massa ante sed ligula. Vivamus eu augue luctus, finibus augue vel, sollicitudin elit. Vestibulum lobortis bibendum malesuada. Maecenas id facilisis ligula. Pellentesque eget felis et tortor interdum imperdiet. Aliquam odio tortor, suscipit eu nibh sed, ultricies finibus ex.
+Pusher is a developer tooling company that offers hosted API's to add real-time functionality to apps and websites. With around 250,000 customers including companies such as GitHub, The Financial Times, and InVision
 
-Vivamus et magna eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sodales pulvinar sem, at iaculis elit efficitur nec. In pellentesque tristique felis, nec finibus risus. Nam felis nibh, hendrerit pellentesque lacus ut, euismod maximus sem. Aenean accumsan non leo non cursus. In cursus eros sed massa tincidunt, et posuere lorem tempor. Aenean auctor metus quis urna pellentesque, vel vestibulum est venenatis.
+Although API's being the primary product, the client dashboard is the primary way that developers interact and configure their Pusher instances.
 
-Suspendisse imperdiet sodales consectetur. Mauris bibendum, eros non placerat eleifend, tellus augue cursus nulla, et congue felis erat nec justo. Integer fermentum cursus enim. Etiam vitae odio leo. Ut imperdiet in tortor eu euismod. Duis sollicitudin lobortis nunc. Donec ipsum sapien, dignissim nec tortor vitae, vestibulum vestibulum neque. Quisque nec laoreet odio. Phasellus nisi erat, vehicula in tempor vitae, facilisis sit amet massa.
+<!-- ![Navigation redesign hierarchy](./cluster.png) -->
+As is the case with a lot of early stage products, the dashboard had suffered from feature overload, with new views and features being added with little consideration to the overarching user experience and aesthetic.
 
-Phasellus egestas est at interdum dapibus. Maecenas non ultrices enim. Pellentesque a tortor at nunc sagittis tempor non aliquam nisi. Pellentesque aliquet lectus ac lacus egestas, non pretium erat ornare. Morbi pulvinar augue odio. Sed auctor lectus nibh, sit amet venenatis risus bibendum nec. Mauris sed pretium nibh, vitae dictum massa. Sed volutpat mi ut suscipit pulvinar. Vestibulum condimentum urna et magna pretium fermentum. Nunc feugiat, quam ut posuere tempus, sem libero vulputate eros, et convallis augue erat ac eros. Fusce quis dui vel metus maximus hendrerit. In est lorem, ultrices id elementum non, tempor eget odio. Integer ut risus tristique, porttitor odio vel, gravida sapien. Aenean sed turpis auctor, suscipit libero non, volutpat dui.
+---
 
-Nullam in convallis risus. Praesent eget est cursus erat tempor rutrum semper iaculis mi. Ut finibus ultrices imperdiet. Donec elementum ex id nisi consectetur tincidunt. Donec eget sapien nec nisi bibendum gravida. Cras risus ex, congue ac pretium quis, dictum id nulla. Proin sit amet consequat neque, quis ultrices augue. Proin auctor metus vestibulum, volutpat turpis eu, rutrum dui. Suspendisse tincidunt fermentum erat sit amet tincidunt.
+## Content hierarchy and navigation
+The site hierarchy and the way in which users navigate around the dashboard was one of the first areas that we looked at. There was no existing hierarchy between 
+
+As an alternative, we designed a three tier navigation:
+
+1. **The global user menu** - This sits at the top of every page, and allowed users to quickly access global links such as their account settings, or documentation.
+2. **App global menu** - Like the user menu, the app menu is persistent and allows quick access to view app stats, the dashboard home page, and the create new app view.
+3. **View specific navigation** - This sits within the main content of the page, and was used for accessing views lower down in the tree such as app settings.
+
+![Navigation redesign hierarchy](./navigation-structure@2x.jpg)
+
+![Pusher dashboard user menu](./user-menu@2x.jpg)

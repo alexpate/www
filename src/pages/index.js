@@ -8,7 +8,7 @@ import {Box, Flex, Inner} from 'components/system';
 import {H1, Text, P} from 'components/typography';
 import Section, {SectionTitle} from 'components/section';
 
-const PostDate = styled(Text)`
+export const PostDate = styled(Text)`
   font-size: 0.8em;
   display: block;
 `;
@@ -18,6 +18,7 @@ const HomeFeature = styled(Flex)`
   overflow: hidden;
   background-color: ${props => props.theme.colors.primary};
   position: relative;
+  transition: color 0.2s ease-out, background 0.2s ease-out;
 `;
 
 const IndexPage = ({data}) => {
