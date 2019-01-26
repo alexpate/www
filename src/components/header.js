@@ -63,13 +63,12 @@ export default ({onThemeChange, selectedTheme}) => (
           </li>
           <li>
             <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
-              <a
-                href="https://twitter.com/alexjpate"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Twitter
-              </a>
+              <Link to="/portfolio/">Work</Link>
+            </Text>
+          </li>
+          <li>
+            <Text fontSize={[1, 2]} style={{lineHeight: '1em'}}>
+              <Link to="/portfolio/">Journal</Link>
             </Text>
           </li>
         </ul>

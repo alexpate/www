@@ -18,7 +18,9 @@ exports.onCreateNode = ({node, getNode, actions}) => {
     let slug = permalink;
 
     if (!slug && relativePath.includes('journal')) {
-      // Generate final path + graphql fields for blog posts
+      /*
+       * Generate final path + graphql fields for blog posts
+       */
       const match = BLOG_POST_SLUG_REGEX.exec(relativePath);
       if (match) {
         const year = match[1];
@@ -34,11 +36,22 @@ exports.onCreateNode = ({node, getNode, actions}) => {
           Number.parseInt(day)
         );
 
-        // Blog posts are sorted by date and display the date in their header.
+        /*
+         * Blog posts are sorted by date and display the date in their header.
+         */
         createNodeField({
           node,
           name: 'date',
           value: date.toJSON(),
+        });
+
+        /*
+         * Used to determine the template type
+         */
+        createNodeField({
+          node,
+          name: 'pageType',
+          value: 'journal',
         });
       }
     }
@@ -47,7 +60,9 @@ exports.onCreateNode = ({node, getNode, actions}) => {
       slug = relativePath;
     }
 
-    // Used to generate URL to view this content.
+    /*
+     * Used to generate URL to view this content.
+     */
     createNodeField({
       node,
       name: `slug`,
@@ -58,8 +73,9 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 
 exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions;
+  const journalPostTemplate = path.resolve(`src/templates/journal.js`);
+  const workPostTemplate = path.resolve(`src/templates/work.js`);
 
-  const blogPostTemplate = path.resolve(`src/templates/article.js`);
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -80,11 +96,12 @@ exports.createPages = ({actions, graphql}) => {
     const posts = result.data.allMarkdownRemark.edges;
 
     // Create pages for each markdown file.
-    posts.forEach(({node}, index) => {
-      const {slug} = node.fields;
+    posts.forEach(({node}) => {
+      const {slug, pageType} = node.fields;
       createPage({
         path: slug,
-        component: blogPostTemplate,
+        component:
+          pageType === 'journal' ? journalPostTemplate : workPostTemplate,
         context: {
           slug,
         },

@@ -9,7 +9,7 @@ import PageHeader from 'components/page-header';
 import Markdown from 'components/markdown';
 import FollowButton from 'components/follow-button';
 
-export default function Template({data}) {
+export default function JournalTemplate({data}) {
   const {markdownRemark: post} = data;
   const meta = data.site.siteMetadata;
 
@@ -54,7 +54,7 @@ export default function Template({data}) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($slug: String!) {
+  query JournalPostByPath($slug: String!) {
     site {
       siteMetadata {
         author
