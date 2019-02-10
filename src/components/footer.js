@@ -23,33 +23,40 @@ const StyledFooter = styled(Flex)`
 
 const Footer = () => (
   <StyledFooter as="footer">
-    <span itemScope="" itemType="http://schema.org/Organization">
+    <Flex
+      justifyContent="space-between"
+      width="100%"
+      itemScope=""
+      itemType="http://schema.org/Organization"
+    >
       <link itemProp="url" href="https://alexpate.uk" />
-      &copy; {CURRENT_YEAR} -
-      <a
-        target="_blank"
-        rel="noopener noreferrer me"
-        href="https://twitter.com/alexjpate"
-        itemProp="sameAs"
-      >
-        Twitter
-      </a>
-      <a
-        target="_blank"
-        rel="noopener noreferrer me"
-        href="http://github.com/alexpate"
-        itemProp="sameAs"
-      >
-        GitHub
-      </a>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="http://github.com/alexpate/alexpate.uk"
-      >
-        View Source
-      </a>
-    </span>
+      &copy; 2014 - {CURRENT_YEAR}
+      <span>
+        <a
+          target="_blank"
+          rel="noopener noreferrer me"
+          href="https://twitter.com/alexjpate"
+          itemProp="sameAs"
+        >
+          Twitter
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer me"
+          href="http://github.com/alexpate"
+          itemProp="sameAs"
+        >
+          GitHub
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://github.com/alexpate/alexpate.uk"
+        >
+          View Source
+        </a>
+      </span>
+    </Flex>
   </StyledFooter>
 );
 

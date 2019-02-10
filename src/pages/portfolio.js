@@ -34,18 +34,13 @@ const PortfolioPage = ({data}) => {
               .filter(post => post.node.frontmatter.title.length > 0)
               .map(({node: post}) => (
                 <Box mb={3} key={post.frontmatter.title}>
-                  <Text fontWeight="500">
-                    <Link
-                      to={post.fields.slug}
-                      style={{textDecoration: 'none'}}
-                    >
-                      <PortfolioLinkItem
-                        title={post.frontmatter.title}
-                        subtitle={post.frontmatter.role}
-                        projectKey={post.frontmatter.key}
-                      />
-                    </Link>
-                  </Text>
+                  <Link to={post.fields.slug} style={{textDecoration: 'none'}}>
+                    <PortfolioLinkItem
+                      title={post.frontmatter.title}
+                      subtitle={post.frontmatter.role}
+                      projectKey={post.frontmatter.key}
+                    />
+                  </Link>
                 </Box>
               ))}
           </Inner>
@@ -92,6 +87,7 @@ export default () => (
 );
 
 const StyledPortfolioLinkItem = styled(Flex)`
+  flex-direction: column;
   border-radius: 4px;
   transition: all 0.3s ease-out;
   transform: scale(1);

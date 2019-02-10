@@ -1,5 +1,5 @@
-import pusherHero from 'pages/work/pusher-dashboard/hero.png';
-import kaloDesignSystemHero from 'pages/work/kalo-design-system/hero.png';
+import pusherHero from 'pages/work/pusher-dashboard/hero@2x.png';
+import kaloDesignSystemHero from 'pages/work/kalo-product-ui-system/hero@2x.png';
 
 const sharedTheme = {
   fontWeight: [300, 400, 500, 600],
@@ -40,6 +40,10 @@ export const theme = {
   },
 };
 
+/**
+ * These are used as the featured images on the work portfolio pages. The keys are defined
+ * within the frontmatter of the individual project markdown files.
+ */
 export const PROJECT_HERO_MAP = {
   pusher: pusherHero,
   kaloDesignSystem: kaloDesignSystemHero,

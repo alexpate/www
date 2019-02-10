@@ -35,6 +35,7 @@ const ProjectMetaGrid = styled(Flex)`
 `;
 
 const StyledProjectMetaGridItem = styled(Flex)`
+  flex-direction: column;
   position: relative;
   flex-basis: auto;
 
@@ -85,7 +86,12 @@ export default function WorkTemplate({data}) {
               <ProjectMetaGridItem title="Role">{role}</ProjectMetaGridItem>
               <ProjectMetaGridItem title="Link">
                 {url ? (
-                  <a href={url} style={{textDecoration: 'none'}}>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{textDecoration: 'none'}}
+                  >
                     View project <IconOpenInNew />
                   </a>
                 ) : (

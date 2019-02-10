@@ -86,7 +86,10 @@ export default () => (
             defaultDescription
           }
         }
-        allMarkdownRemark(sort: {fields: [fields___date], order: DESC}) {
+        allMarkdownRemark(
+          sort: {fields: [fields___date], order: DESC}
+          filter: {fileAbsolutePath: {regex: "/journal/.*\\.md$/"}}
+        ) {
           edges {
             node {
               excerpt(pruneLength: 100)

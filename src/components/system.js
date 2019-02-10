@@ -12,7 +12,10 @@ export const Flex = system(
     display: 'flex',
   },
   'space',
-  'flex'
+  'flex',
+  'justifyContent',
+  'display',
+  'width'
 );
 
 export const Inner = system(
@@ -27,5 +30,6 @@ export const Inner = system(
   },
   'space',
   'maxWidth',
-  'width'
+  'width',
+  'flex'
 );

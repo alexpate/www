@@ -1,10 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 import {Box, Inner} from 'components/system';
 import {H1, Text} from 'components/typography';
 
 import {PROJECT_HERO_MAP} from '../constants';
+
+const keyframesProjectHeader = keyframes`
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 const StyledProjectHeader = styled(Box)`
   width: 100%;
@@ -17,9 +28,15 @@ const StyledProjectHeader = styled(Box)`
 
   ${Inner} {
     &:after {
+      animation: ${keyframesProjectHeader} 1s ease-out;
+      animation-delay: 400ms;
+      transform: translateY(20%);
+      opacity: 0;
+      animation-fill-mode: forwards;
       background-image: url(${props => PROJECT_HERO_MAP[props.projectKey]});
       background-position: top left;
       background-repeat: no-repeat;
+      background-size: 1650px;
       content: '';
       height: 100%;
       position: absolute;
