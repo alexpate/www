@@ -24,26 +24,30 @@ const ProfilePage = ({data}) => {
         <Inner>
           <Section>
             <P>
-              I’m Alex, a UI Engineer based in London. Although being an
-              engineer by trade, I straddle the line between design and code.
-            </P>
-            <P>
-              I have a particular focus on the internal role that UI engineering
-              plays, in regards to design systems, and creating tooling and
-              processes to help product teams scale. I’m currently working at{' '}
+              I’m Alex, a UI Engineer based in London currently at{' '}
               <a
-                href="https://kalohq.com"
+                href="https://monzo.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Kalo
+                Monzo
               </a>
-              , developing an internal design system.
+              . Although being an engineer by trade, I straddle the line between
+              design and code.
+            </P>
+            <P>
+              I have a particular focus on scaling design teams building
+              tooling, design systems, and processes.
             </P>
           </Section>
           <Section>
             <SectionTitle>Experience</SectionTitle>
-            <P fontWeight={500}>Kalo (2017 - present)</P>
+            <P fontWeight={500}>Monzo (2019 - Present)</P>
+            <P>
+              Working in the design platform team, building tools to help the
+              design discipline scale.
+            </P>
+            <P fontWeight={500}>Kalo (2017 - 2019)</P>
             <P>
               Lead the development of the internal design system, which is used
               across the product team by designers and engineers.

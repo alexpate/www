@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: 'https://alexpate.uk',
     defaultTitle: 'Alex Pate - Design & Code',
     defaultDescription:
-      'Alex Pate is a digital product designer in London, building things at Kalo. Working somewhere on the boundary between design and code.',
+      'Alex Pate is a digital product designer in London, building things at Monzo. Working somewhere on the boundary between design and code.',
   },
   plugins: [
     'gatsby-plugin-styled-components',
