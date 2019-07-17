@@ -40,8 +40,7 @@ const IndexPage = ({data}) => {
             <P>
               I have a particular focus on the internal role that UI engineering
               plays, in regards to design systems, and creating tooling and
-              processes to help product teams scale. I’m currently working at
-              Kalo, developing an internal design system.
+              processes to help product teams scale.
             </P>
           </Inner>
         </HomeFeature>
