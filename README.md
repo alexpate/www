@@ -6,17 +6,17 @@
 
 How to get this site running locally:
 
-* `git clone https://github.com/alexpate/alexpate.uk`
-* `npm install`
-* To develop the site: `npm run start`
-* To build the site for production: `npm run build`
-* The site should now be running at http://localhost:8000
+- `git clone https://github.com/alexpate/alexpate.uk`
+- `npm install`
+- To develop the site: `npm run start`
+- To build the site for production: `npm run build`
+- The site should now be running at http://localhost:8000
 
 ## Deployment
 
 As it's a static site, the site is hosted in an S3 bucket, which is then served via a heavily cached cloudfront instance.
 
-Deployment happens on CircleCI, which is triggered whenever a commit is pushed to master (or staging).
+Build and deployment is triggered at every push to master, and takes place in GitHub actions. See the [main workflow file](.github/workflows/build-and-deploy.yml)
 
 ## Say hello!
 
