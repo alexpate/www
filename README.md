@@ -1,4 +1,4 @@
-# alexpate.uk
+# journal.alexpate.uk
 
 👋 Welcome to the source code of my [personal site](https://alexpate.uk).
 
