@@ -14,7 +14,7 @@ How to get this site running locally:
 
 ## Deployment
 
-As it's a static site, the site is hosted in an S3 bucket, which is then served via a heavily cached cloudfront instance.
+As it is a static site, the site is hosted in an S3 bucket, which is then served via a heavily cached cloudfront instance.
 
 Build and deployment is triggered at every push to master, and takes place in GitHub actions. See the [main workflow file](.github/workflows/build-and-deploy.yml)
 
