@@ -4,20 +4,13 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
 import Site from 'components/site';
-import {Box, Flex, Inner} from 'components/system';
-import {H1, Text, P} from 'components/typography';
-import Section, {SectionTitle} from 'components/section';
+import {Box, Inner} from 'components/system';
+import {Text, H1} from 'components/typography';
+import Section from 'components/section';
 
 const PostDate = styled(Text)`
   font-size: 0.8em;
   display: block;
-`;
-
-const HomeFeature = styled(Flex)`
-  align-items: center;
-  overflow: hidden;
-  background-color: ${props => props.theme.colors.primary};
-  position: relative;
 `;
 
 const IndexPage = ({data}) => {
@@ -30,23 +23,9 @@ const IndexPage = ({data}) => {
           <meta name="twitter:title" content={meta.defaultTitle} />
           <meta name="twitter:description" content={meta.defaultDescription} />
         </Helmet>
-        <HomeFeature py={[3, 4, 5]}>
-          <Inner>
-            <H1>Design &amp; code, at scale.</H1>
-            <P>
-              I’m Alex, a UI Engineer based in London. Although being an
-              engineer by trade, I straddle the line between design and code.
-            </P>
-            <P>
-              I have a particular focus on the internal role that UI engineering
-              plays, in regards to design systems, and creating tooling and
-              processes to help product teams scale.
-            </P>
-          </Inner>
-        </HomeFeature>
         <Section>
           <Inner>
-            <SectionTitle>Articles</SectionTitle>
+            <H1>Journal</H1>
             {posts
               .filter(post => post.node.frontmatter.title.length > 0)
               .map(({node: post}) => (

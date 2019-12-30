@@ -4,7 +4,6 @@ import {ThemeProvider} from 'styled-components';
 import Footer from 'components/footer';
 import Header from 'components/header';
 import Page from 'components/page';
-import Spine from 'components/spine';
 import {Inner} from 'components/system';
 import GlobalStyles from 'components/global-styles';
 
@@ -19,11 +18,11 @@ const theme = {
     ...sharedTheme,
     colors: {
       theme: 'light',
-      primary: '#e7e2e2',
-      secondary: '#121212',
+      primary: '#fff',
+      secondary: '#000',
       link: '#2b32fd',
       syntax: {
-        background: '#e1d7d7',
+        background: '#fafafa',
         text: '#394244',
       },
     },
@@ -86,7 +85,6 @@ export default class Site extends React.Component {
     return (
       <ThemeProvider theme={theme[selectedTheme]}>
         <Page>
-          <Spine />
           <GlobalStyles />
           <Header
             onThemeChange={this.onThemeChange}

@@ -57,11 +57,6 @@ const Markdown = styled(Box)`
     font-weight: 500;
   }
 
-  img {
-    width: calc(100% + 200px);
-    margin: 32px 0 23px -100px;
-  }
-
   h2 {
     font-size: 18px;
     font-weight: 600;
