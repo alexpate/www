@@ -2,11 +2,11 @@ module.exports = {
   pathPrefix: `/`,
   siteMetadata: {
     author: 'Alex Pate',
-    title: `Alex Pate - Design & Code`,
+    title: `Journal of Alex Pate`,
     siteUrl: 'https://alexpate.uk',
-    defaultTitle: 'Alex Pate - Design & Code',
+    defaultTitle: 'Journal of Alex Pate',
     defaultDescription:
-      'Alex Pate is a digital product designer in London, building things at Monzo. Working somewhere on the boundary between design and code.',
+      'Alex Pate is a design-focused engineer based in London, building things at Monzo. Working somewhere on the boundary between design and code.',
   },
   plugins: [
     'gatsby-plugin-styled-components',
