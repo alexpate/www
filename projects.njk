@@ -1,0 +1,23 @@
+---
+layout: layouts/home.njk
+---
+
+<section class="section">
+  <h1>Work</h1>
+  <p>A selection of recent and past projects</p>
+</section>
+
+<section class="section">
+  {% for post in collections.projects | reverse %}
+    <a class="selected-project" href="{{post.url | url }}">
+      <figure>
+        <img src="/img/featured-images/{{ post.data.featured_image }}" />
+      </figure>
+      <div>
+        <h3>{{ post.data.title}}</h3>
+        <p>{{ post.data.description }} <br /> <br />Read more → </p>
+      </div>
+    </a>
+
+  {% endfor %}
+</section>

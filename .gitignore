@@ -1,6 +1,3 @@
-node_modules
-.cache/
-public/
-.DS_Store
-yarn-error.log
-yarn.lock
+_site/
+node_modules/
+package-lock.json

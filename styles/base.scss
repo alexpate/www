@@ -1,0 +1,66 @@
+@import 'variables';
+@import 'layout';
+@import 'header';
+@import 'selected-project';
+@import 'prism';
+@import 'animations';
+
+@font-face {
+  font-family: 'NeueHaasUnica';
+  src: url('/static/nhup.woff2') format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-canvas);
+}
+
+html {
+  font-size: 0.9rem;
+
+  @media screen and (min-width: 40em) {
+    font-size: 1rem;
+  }
+}
+
+body {
+  color: var(--color-text);
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: 'NeueHaasUnica', sans-serif;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.15;
+}
+
+a {
+  color: var(--color-text);
+}
+
+a[href^="https://twitter.com"]
+{
+  color: #55acee;
+}
+
+a[href^="https://github.com"]
+{
+  color: #aaa;
+}
+
+a[href^="https://dribbble.com"]
+{
+  color: #ea4c89;
+}
