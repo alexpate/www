@@ -18,7 +18,14 @@ if (themeToggle) {
   });
 }
 
-document.body.dataset.theme = localStorage.colorScheme;
+if (localStorage.colorScheme) {
+  document.body.dataset.theme = localStorage.colorScheme;
+} else if (
+  window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches
+) {
+  changeColorScheme('dark');
+}
 
 // Listen for changes to the users preferences
 window
