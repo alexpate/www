@@ -1,0 +1,138 @@
+.home-hero {
+  position: relative;
+
+  @media screen and (min-width: 40em) {
+    padding-top: $xl * 2;
+    margin-top: $xl * 2;
+  }
+
+  h1 {
+    margin-top: 0;
+
+    @media (prefers-reduced-motion: no-preference) {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      animation-fill-mode: forwards;
+    }
+  }
+
+  p {
+    @media (prefers-reduced-motion: no-preference) {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 500ms 100ms cubic-bezier(0.4, 0, 0.2, 1);
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.orbs {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  opacity: 0.4;
+  top: 0;
+
+  #orb1,
+  #orb2,
+  #orb3,
+  #orb4 {
+    border-radius: 9999px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    aspect-ratio: 1 / 1;
+    height: fit-content;
+    position: relative;
+    animation: orbFloat 10s ease infinite;
+    box-shadow: 0px 1px 0px rgba(17, 17, 26, 0.1),
+      0px 8px 24px rgba(17, 17, 26, 0.1), 0px 16px 48px rgba(17, 17, 26, 0.1);
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: orbGradient 40s ease infinite;
+      background-size: 100% 1000%;
+      background-image: linear-gradient(
+        to bottom,
+        #f437cd,
+        #162aef,
+        #f34033,
+        #17cfaf,
+        #d8a9c1,
+        #f437cd,
+        #162aef,
+        #f34033,
+        #17cfaf,
+        #d8a9c1,
+        #f437cd,
+        #162aef,
+        #f34033,
+        #17cfaf,
+        #d8a9c1
+      );
+    }
+  }
+
+  #orb1 {
+    width: 25%;
+    z-index: 4;
+    align-self: flex-start;
+  }
+
+  #orb2 {
+    margin-left: -10%;
+    animation-duration: 20s;
+    width: 55%;
+    z-index: 3;
+
+    &:before {
+      animation-direction: reverse;
+    }
+  }
+
+  #orb3 {
+    width: 40%;
+    z-index: 2;
+    margin-left: -10%;
+    margin-top: 10%;
+    align-self: flex-end;
+    animation-duration: 15s;
+  }
+
+  #orb4 {
+    background-color: blue;
+    width: 50%;
+    z-index: 1;
+    animation-direction: reverse;
+    margin-left: -30%;
+  }
+}
+
+@keyframes orbGradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes orbFloat {
+  0% {
+    transform: translatey(-20px);
+  }
+  50% {
+    transform: translatey(20px);
+  }
+  100% {
+    transform: translatey(-20px);
+  }
+}

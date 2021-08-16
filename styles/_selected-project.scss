@@ -3,11 +3,16 @@
   display: flex;
   color: inherit;
   text-decoration: none;
+  flex-direction: column;
+  gap: $md;
+
+  @media screen and (min-width: 40em) {
+    flex-direction: row;
+  }
 
   figure {
     margin: 0;
     flex: 1.5;
-    margin-right: $md;
 
     img {
       max-width: 100%;
@@ -20,7 +25,11 @@
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+
+    @media screen and (min-width: 40em) {
+      font-size: 1rem;
+    }
   }
 
   h3 {

@@ -1,0 +1,40 @@
+p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: -0.15rem;
+  line-height: 1.15;
+
+  @media screen and (min-width: 40em) {
+    font-size: 4.1rem;
+  }
+}
+
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+a {
+  color: var(--color-text);
+}
+
+a[href^="https://twitter.com"]
+{
+  color: #55acee;
+}
+
+a[href^="https://github.com"]
+{
+  color: #aaa;
+}
+
+a[href^="https://dribbble.com"]
+{
+  color: #ea4c89;
+}

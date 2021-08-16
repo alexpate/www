@@ -1,13 +1,29 @@
 @import 'variables';
+@import 'utils';
 @import 'layout';
+@import 'typography';
 @import 'header';
 @import 'selected-project';
 @import 'prism';
 @import 'animations';
+@import 'home-hero';
 
 @font-face {
-  font-family: 'NeueHaasUnica';
-  src: url('/static/nhup.woff2') format('woff2');
+  font-family: 'Neue Haas Unica';
+  src: url('/static/fonts/NeueHaasUnica-Medium.woff2') format('woff2'),
+    url('/static/fonts/NeueHaasUnica-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Unica';
+  src: url('/static/fonts/NeueHaasUnica-Regular.woff2') format('woff2'),
+    url('/static/fonts/NeueHaasUnica-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -34,33 +50,5 @@ body {
   color: var(--color-text);
   min-width: 100vw;
   min-height: 100vh;
-  font-family: 'NeueHaasUnica', sans-serif;
-}
-
-p {
-  font-size: 1.3rem;
-}
-
-h1 {
-  font-size: 4rem;
-  line-height: 1.15;
-}
-
-a {
-  color: var(--color-text);
-}
-
-a[href^="https://twitter.com"]
-{
-  color: #55acee;
-}
-
-a[href^="https://github.com"]
-{
-  color: #aaa;
-}
-
-a[href^="https://dribbble.com"]
-{
-  color: #ea4c89;
+  font-family: 'Neue Haas Unica', sans-serif;
 }

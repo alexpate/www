@@ -34,7 +34,7 @@ eleventyNavigation:
   {% for post in collections.featuredProjects | reverse %}
     <a class="selected-project" href="{{post.url | url }}">
       <figure>
-        <img src="/img/featured-images/{{ post.data.featured_image }}" />
+        <img src="/img/featured-images/{{ post.data.featured_image }}" alt="{{post.data.title}}" />
       </figure>
       <div>
         <h3>{{ post.data.title}}</h3>

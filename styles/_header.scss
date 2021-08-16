@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 640px;
   padding: $sm $lg;
-  margin: 0 auto;
+  margin: 0 auto $lg;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +14,11 @@
   a {
     color: inherit;
     text-decoration: none;
+    font-size: 1.2rem;
+
+    @media screen and (min-width: 40em) {
+      font-size: 1.1rem;
+    }
   }
 
   .logo {
@@ -21,9 +26,8 @@
   }
 
   nav {
-    a + a {
-      margin-left: $xs;
-    }
+    display: flex;
+    gap: $sm;
   }
 
   #theme-toggle {
