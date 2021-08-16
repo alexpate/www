@@ -1,6 +1,6 @@
 {
   "name": "@alexpate/www",
-  "version": "5.0.2",
+  "version": "1.0.0",
   "description": "My personal website",
   "scripts": {
     "build": "eleventy",
@@ -15,17 +15,16 @@
   },
   "author": {
     "name": "Alex Pate",
-    "email": "git@alexpate.uk",
-    "url": "https://alexpate.uk/"
+    "email": "git@alexjpate.com",
+    "url": "https://alexjpate.com"
   },
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "eleventy-plugin-sass": "^1.2.0",
     "luxon": "^1.26.0",
     "markdown-it": "^12.0.4"
   },
-  "dependencies": {
-    "eleventy-plugin-sass": "^1.2.0"
-  }
+  "dependencies": {}
 }
