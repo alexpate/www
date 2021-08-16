@@ -1,0 +1,49 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+
+<section class="section home-hero">
+  <div class="orbs">
+    <div id="orb1"></div>
+    <div id="orb2"></div>
+    <div id="orb3"></div>
+  </div>
+
+  <h1>A web engineer and designer, helping build industry leading products.</h1>
+  <p>
+    I'm a design-focused engineer based in London. My current role at Monzo,
+    focuses on building tooling to improve the design workflow of designers,
+    engineers, and user researchers.
+  </p>
+  <p>
+    My work has been featured on Awwwards, and I've written for Web Designer
+    Magazine and net Magazine.
+  </p>
+
+  <p>
+    <a href="/profile">View profile →</a>
+  </p>
+</section>
+
+<section class="section">
+  <h2>Selected work</h2>
+
+  {% for post in collections.featuredProjects | reverse %}
+    <a class="selected-project" href="{{post.url | url }}">
+      <figure>
+        <img src="/img/featured-images/{{ post.data.featured_image }}" />
+      </figure>
+      <div>
+        <h3>{{ post.data.title}}</h3>
+        <p>{{ post.data.description }} <br /> <br />Read more → </p>
+      </div>
+    </a>
+  {% endfor %}
+
+   <p>
+    <a href="/projects">View all work →</a>
+  </p>
+</section>

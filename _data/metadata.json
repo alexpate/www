@@ -1,0 +1,11 @@
+{
+  "title": "Alex Pate",
+  "url": "https://alexpate.uk",
+  "language": "en",
+  "description": "Alex Pate is a web engineer and designer based in London, building things at Monzo. Working somewhere on the boundary between design and code",
+  "author": {
+    "name": "Your Name Here",
+    "email": "youremailaddress@example.com",
+    "url": "https://example.com/about-me/"
+  }
+}

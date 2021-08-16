@@ -1,0 +1,29 @@
+.selected-project {
+  margin-bottom: $md;
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+
+  figure {
+    margin: 0;
+    flex: 1.5;
+    margin-right: $md;
+
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  div {
+    flex: 1;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h3 {
+    margin: 0;
+  }
+}

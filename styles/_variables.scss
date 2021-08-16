@@ -1,0 +1,28 @@
+$spacing-unit: 8px;
+
+$xs: $spacing-unit / 2;
+$sm: $spacing-unit;
+$md: $spacing-unit * 2;
+$lg: $spacing-unit * 3;
+$xl: $spacing-unit * 4;
+
+:root {
+  --spacing-unit: 8px;
+  --xs: calc(var(--spacing-unit) / 2);
+  --sm: var(--spacing-unit);
+  --md: calc(var(--spacing-unit) * 2);
+  --lg: calc(var(--spacing-unit) * 3);
+  --xl: calc(var(--spacing-unit) * 4);
+}
+
+[data-theme='dark'] {
+  --color-canvas: #14182c;
+  --color-well: #{lighten(#14182c, 10%)};
+  --color-text: #fff;
+}
+
+[data-theme='light'] {
+  --color-canvas: #fff;
+  --color-well: #{darken(#fff, 10%)};
+  --color-text: #161e40;
+}

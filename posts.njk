@@ -1,0 +1,21 @@
+---
+layout: layouts/home.njk
+---
+
+<section class="section">
+  <h1>Writing</h1>
+  <p>A selection of articles on design, engineering, and personal experience.</p>
+</section>
+
+<section class="section">
+  {% for post in collections.posts | reverse %}
+    <div class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+      <a href="{{ post.url | url }}" class="postlist-link">
+      <h2>
+        {{ post.data.title }}
+        </h2>
+        </a>
+      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+    </div>
+  {% endfor %}
+</section>
