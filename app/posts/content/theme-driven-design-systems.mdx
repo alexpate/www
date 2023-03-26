@@ -17,7 +17,7 @@ As an example, we can breakdown a web dropdown (`<select>`) in to some primitive
 
 These values are often the same across multiple components. For example, the border color of a dropdown on hover, will likely be the same as the border color of a text input or checkbox on hover.
 
-![Shared tokens across an input, dropdown, checkbox, and radio button](/img/2019-01-04-theme-driven-design-systems/component-tokens.png)
+![Shared tokens across an input, dropdown, checkbox, and radio button](/posts/2019-01-04-theme-driven-design-systems/component-tokens.png)
 
 ## Encouraging experimentation
 
@@ -31,7 +31,7 @@ These values (often referred to as 'design tokens'), provide a nice route to opt
 
 Consider the following two components. Although both the wrapping containers are visually similar, they must have two separate implementations to allow for the second component to contain non-text content.
 
-![Two implementations of two visually similar inputs](/img/2019-01-04-theme-driven-design-systems/multiple-implementations-visually-similar-component.png)
+![Two implementations of two visually similar inputs](/posts/2019-01-04-theme-driven-design-systems/multiple-implementations-visually-similar-component.png)
 
 The implementation of the first component might be as simple as:
 
@@ -73,7 +73,7 @@ const VisualInput = styled.div`
 
 Having the styles hard-coded within the individual implementations provides opportunity for divergence. Using design tokens, we can abstract the style values out above the implementations, and then pass those values back down to the implementations via variables.
 
-![How design tokens work](/img/2019-01-04-theme-driven-design-systems/design-tokens.png)
+![How design tokens work](/posts/2019-01-04-theme-driven-design-systems/design-tokens.png)
 
 Our example above refactored to use design tokens, could look something like this:
 

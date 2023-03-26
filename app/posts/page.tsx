@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import {getArticleSlugs} from '@/lib/get-articles-slugs';
+import './syntax.css';
 
 async function getSlugs() {
-  const ARTICLES_PER_PAGE = 10;
-  const slugs = getArticleSlugs();
+  const slugs = await getArticleSlugs();
 
   const results = await Promise.allSettled(
     slugs.map((slug) => {
