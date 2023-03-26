@@ -12,10 +12,10 @@ interface PostMeta {
 }
 
 export async function generateStaticParams() {
-  const allPostPaths = await glob('src/app/posts/content/*.mdx');
+  const allPostPaths = await glob('app/posts/content/*.mdx');
 
   const filteredPostPaths = allPostPaths.map((path) => {
-    return path.replace('src/app/posts/content/', '').replace('.mdx', '');
+    return path.replace('app/posts/content/', '').replace('.mdx', '');
   });
 
   return filteredPostPaths.map((path) => ({
@@ -27,7 +27,7 @@ async function readPost(slug: string): Promise<{
   render: FC;
   meta: PostMeta;
 } | null> {
-  const allPostPaths = await glob('src/app/posts/content/*.mdx');
+  const allPostPaths = await glob('app/posts/content/*.mdx');
 
   const postPath = allPostPaths.find((path) => path.endsWith(`${slug}.mdx`));
 
@@ -35,7 +35,7 @@ async function readPost(slug: string): Promise<{
     return null;
   }
 
-  const cleanedPostPath = postPath.replace('src/app/posts/content/', '');
+  const cleanedPostPath = postPath.replace('app/posts/content/', '');
 
   const post = await import(`../content/${cleanedPostPath}`);
 

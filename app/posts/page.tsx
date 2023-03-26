@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import {getArticleSlugs} from '../../lib/get-articles-slugs';
+import {getArticleSlugs} from '../../src/lib/get-articles-slugs';
 
 async function getSlugs() {
   const ARTICLES_PER_PAGE = 10;
