@@ -1,10 +1,9 @@
 import glob from 'glob';
-import Image from 'next/image';
 import {notFound} from 'next/navigation';
 import {FC} from 'react';
 import {get} from '@vercel/edge-config';
 
-import '../../syntax.css';
+import './syntax.css';
 
 interface PostMeta {
   title: string;

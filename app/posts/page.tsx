@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import {getArticleSlugs} from '@/lib/get-articles-slugs';
-import './syntax.css';
 
 async function getSlugs() {
   const slugs = await getArticleSlugs();
