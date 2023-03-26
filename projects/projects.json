@@ -1,5 +1,0 @@
-{
-  "tags": ["projects"],
-  "permalink": "{{ page.filePathStem }}/index.html",
-  "layout": "layouts/project.njk"
-}
