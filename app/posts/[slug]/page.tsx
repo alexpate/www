@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import matter from 'gray-matter';
 
 import '../../github-dark.css';
 import { notFound } from 'next/navigation';
