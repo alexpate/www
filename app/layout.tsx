@@ -40,7 +40,7 @@ export default function RootLayout({
               </Link>
               <Link
                 className="text-white text-base font-semibold"
-                href="/profile"
+                href="/#contact"
               >
                 Contact
               </Link>

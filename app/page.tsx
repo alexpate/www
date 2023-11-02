@@ -14,7 +14,7 @@ const experience: {
 }[] = [
   {
     company: 'MoonPay',
-    role: 'Front-end Engineer',
+    role: 'Senior Front-end Engineer',
     date: '2022 - present',
     description:
       "Bringing web engineering fire-power to where it's needed in the company, from growth to product.",
@@ -90,8 +90,9 @@ const projects: {
     ),
   },
   {
-    title: 'flagba.se',
-    description: 'Launching soon',
+    title: 'FlagDB',
+    href: 'https://flagdb.com',
+    description: 'A database of flags from around the world',
     isUnreleased: true,
     icon: (
       <Image
@@ -225,7 +226,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-8">
+      <section className="py-8" id="contact">
         <h2 className="font-semibold text-base mb-4 text-white/90">Contact</h2>
         <div className="space-y-4">
           {contact.map((contactMethod) => {

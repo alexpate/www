@@ -8,6 +8,7 @@ import '../../github-dark.css';
 import { notFound } from 'next/navigation';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
+import { getPost } from '@/lib/articles';
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join('posts'));
@@ -17,41 +18,6 @@ export async function generateStaticParams() {
   }));
 
   return paths;
-}
-
-interface Post {
-  meta: {
-    [key: string]: string;
-  };
-  content: string;
-  slug: string;
-}
-
-async function getPost(slug: string): Promise<Post | null> {
-  if (!slug) {
-    return null;
-  }
-
-  const files = fs.readdirSync('posts');
-
-  const filename = files.find((file) => {
-    const regex = new RegExp(`^\\d{4}-\\d{2}-\\d{2}-${slug}.mdx$`);
-    return regex.test(file);
-  });
-
-  if (!filename) {
-    return null;
-  }
-
-  const postFile = fs.readFileSync(path.join('posts', filename), 'utf-8');
-
-  const { data: meta, content } = matter(postFile);
-
-  return {
-    meta,
-    slug,
-    content,
-  };
 }
 
 export async function generateMetadata({ params }: any) {
