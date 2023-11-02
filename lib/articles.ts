@@ -21,6 +21,11 @@ interface DateAndSlug {
   slug: string;
 }
 
+/**
+ * Extracts date and slug from filename.
+ * @param filename - The filename to extract data from.
+ * @returns An object containing the date and slug, or null if the filename does not match the expected format.
+ */
 export const getDateAndSlugFromFilename = (
   filename: string
 ): DateAndSlug | null => {
@@ -34,33 +39,62 @@ export const getDateAndSlugFromFilename = (
   return null;
 };
 
+/**
+ * Reads a file and returns its front matter and date and slug.
+ * @param filename - The name of the file to read.
+ * @returns An object containing the front matter, date, slug, and href, or null if the filename does not match the expected format.
+ */
+const getPostFromFile = (filename: string): Post | null => {
+  const fileContent = fs.readFileSync(path.join('posts', filename), 'utf-8');
+
+  const { data: frontMatter, content } = matter(fileContent);
+
+  const dateAndSlug = getDateAndSlugFromFilename(filename);
+
+  if (!dateAndSlug) {
+    return null;
+  }
+
+  const { date, slug } = dateAndSlug;
+
+  return {
+    meta: frontMatter,
+    content,
+    slug,
+    date,
+    href: `/posts/${slug}`,
+  };
+};
+
+/**
+ * Gets a post by its slug.
+ * @param slug - The slug of the post to get.
+ * @returns The post with the given slug, or null if no such post exists.
+ */
+export const getPostBySlug = (slug: string): Post | null => {
+  const files = fs.readdirSync(path.join('posts'));
+
+  for (const filename of files) {
+    if (getRegexForSlug(slug).test(filename)) {
+      const post = getPostFromFile(filename);
+      if (post) {
+        return post;
+      }
+    }
+  }
+
+  return null;
+};
+
+/**
+ * Gets all posts.
+ * @returns An array of all posts, sorted by date in descending order.
+ */
 export const getAllPosts = async (): Promise<Post[]> => {
   const files = fs.readdirSync(path.join('posts'));
 
   const posts: Post[] = files
-    .map((filename) => {
-      const fileContent = fs.readFileSync(
-        path.join('posts', filename),
-        'utf-8'
-      );
-
-      const { data: frontMatter } = matter(fileContent);
-
-      const dateAndSlug = getDateAndSlugFromFilename(filename);
-
-      if (!dateAndSlug) {
-        return null;
-      }
-
-      const { date, slug } = dateAndSlug;
-
-      return {
-        meta: frontMatter,
-        slug,
-        date,
-        href: `/posts/${slug}`,
-      };
-    })
+    .map(getPostFromFile)
     .filter((post): post is Post => post !== null);
 
   const filteredAndSortedPosts = posts.sort((a, b) => {
@@ -73,39 +107,14 @@ export const getAllPosts = async (): Promise<Post[]> => {
   return filteredAndSortedPosts;
 };
 
-export const getPost = async (requestedSlug: string): Promise<Post | null> => {
-  if (!requestedSlug) {
-    return null;
-  }
+/**
+ * Generates an array of all the paths for the posts.
+ * @returns An array of all the paths for the posts.
+ */
+export async function getAllPostPaths() {
+  const posts = await getAllPosts();
 
-  const files = fs.readdirSync('posts');
+  const paths = posts.map((post) => ({ slug: post.slug }));
 
-  const filename = files.find((file) => {
-    const regex = new RegExp(`^\\d{4}-\\d{2}-\\d{2}-${requestedSlug}.mdx$`);
-    return regex.test(file);
-  });
-
-  if (!filename) {
-    return null;
-  }
-
-  const dateAndSlug = getDateAndSlugFromFilename(filename);
-
-  if (!dateAndSlug) {
-    return null;
-  }
-
-  const { date, slug } = dateAndSlug;
-
-  const postFile = fs.readFileSync(path.join('posts', filename), 'utf-8');
-
-  const { data: meta, content } = matter(postFile);
-
-  return {
-    meta,
-    slug,
-    content,
-    date,
-    href: `/posts/${slug}`,
-  };
-};
+  return paths;
+}

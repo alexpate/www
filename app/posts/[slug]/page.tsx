@@ -7,20 +7,16 @@ import '../../github-dark.css';
 import { notFound } from 'next/navigation';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import { getPost } from '@/lib/articles';
+import { getAllPostPaths, getPostBySlug } from '@/lib/articles';
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join('posts'));
-
-  const paths = files.map((filename) => ({
-    slug: filename.replace('.mdx', ''),
-  }));
+  const paths = getAllPostPaths();
 
   return paths;
 }
 
 export async function generateMetadata({ params }: any) {
-  const post = await getPost(params.slug);
+  const post = getPostBySlug(params.slug);
 
   return {
     title: post?.meta.title,
@@ -33,7 +29,7 @@ type Params = {
 };
 
 export default async function Post({ params }: { params: Params }) {
-  const post = await getPost(params.slug);
+  const post = getPostBySlug(params.slug);
 
   if (!post) return notFound();
 
