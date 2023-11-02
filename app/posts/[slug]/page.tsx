@@ -1,87 +1,99 @@
-import glob from 'glob';
-import {notFound} from 'next/navigation';
-import {FC} from 'react';
-import {get} from '@vercel/edge-config';
+import fs from 'fs';
+import path from 'path';
 
-import './syntax.css';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import matter from 'gray-matter';
 
-interface PostMeta {
-  title: string;
-  description: string;
-}
+import '../../github-dark.css';
+import { notFound } from 'next/navigation';
+import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
 
 export async function generateStaticParams() {
-  const allPostPaths = await glob('app/posts/content/*.mdx');
+  const files = fs.readdirSync(path.join('posts'));
 
-  const filteredPostPaths = allPostPaths.map((path) => {
-    return path.replace('app/posts/content/', '').replace('.mdx', '');
-  });
-
-  return filteredPostPaths.map((path) => ({
-    slug: path,
+  const paths = files.map((filename) => ({
+    slug: filename.replace('.mdx', ''),
   }));
+
+  return paths;
 }
 
-async function readPost(slug: string): Promise<{
-  render: FC;
-  meta: PostMeta;
-} | null> {
-  const allPostPaths = await glob('app/posts/content/*.mdx');
+interface Post {
+  meta: {
+    [key: string]: string;
+  };
+  content: string;
+  slug: string;
+}
 
-  const postPath = allPostPaths.find((path) => path.endsWith(`${slug}.mdx`));
-
-  if (!postPath) {
+async function getPost(slug: string): Promise<Post | null> {
+  if (!slug) {
     return null;
   }
 
-  const cleanedPostPath = postPath.replace('app/posts/content/', '');
+  const files = fs.readdirSync('posts');
 
-  const post = await import(`../content/${cleanedPostPath}`);
+  const filename = files.find((file) => {
+    const regex = new RegExp(`^\\d{4}-\\d{2}-\\d{2}-${slug}.mdx$`);
+    return regex.test(file);
+  });
+
+  if (!filename) {
+    return null;
+  }
+
+  const postFile = fs.readFileSync(path.join('posts', filename), 'utf-8');
+
+  const { data: meta, content } = matter(postFile);
 
   return {
-    render: post.default,
-    meta: post.meta,
+    meta,
+    slug,
+    content,
   };
 }
 
-async function getViewCount(slug: string) {
-  const viewCount = await get(slug);
+export async function generateMetadata({ params }: any) {
+  const post = await getPost(params.slug);
 
-  if (!viewCount) {
-    return 0;
-  }
-
-  return viewCount as number;
+  return {
+    title: post?.meta.title,
+    description: post?.meta.description,
+  };
 }
 
-export default async function Post({
-  params: {slug},
-}: {
-  params: {
-    slug: string;
-  };
-}) {
-  const post = await readPost(slug);
-  const viewCount = await getViewCount(slug);
+type Params = {
+  slug: string;
+};
 
-  if (!post || post == null) {
-    notFound();
-  }
+export default async function Post({ params }: { params: Params }) {
+  const post = await getPost(params.slug);
 
-  const {render: MDXPost, meta} = post;
+  if (!post) return notFound();
+
+  const { meta, content } = post;
 
   return (
-    <main>
-      <section className="pt-20 pb-10 max-w-2xl">
-        <h1 className="font-medium text-5xl text-white tracking-tighter">
-          {meta.title}
-        </h1>
-        <span className="text-white text-sm">{viewCount} views</span>
+    <div className="px-4">
+      <section className="pb-10 max-w-2xl">
+        <h1 className="font-medium text-5xl text-white">{meta.title}</h1>
       </section>
 
-      <section className="py-5 max-w-lg prose text-white">
-        <MDXPost />
+      <section className="py-5">
+        <article className="prose prose-xl prose-invert">
+          {/* @ts-expect-error Server Component*/}
+          <MDXRemote
+            source={content}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+                rehypePlugins: [[rehypeHighlight, { languages: true }]],
+              },
+            }}
+          />
+        </article>
       </section>
-    </main>
+    </div>
   );
 }

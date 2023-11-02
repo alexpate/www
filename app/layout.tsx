@@ -1,8 +1,8 @@
 import './globals.css';
-import {Inter} from 'next/font/google';
+
 import Link from 'next/link';
-import {clsx} from 'clsx';
-import {Metadata} from 'next';
+
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Alex Pate - Product Engineer',
@@ -14,39 +14,41 @@ export const metadata: Metadata = {
     images: ['https://alexjpate.com/og.png'],
     title: 'Alex Pate - Product Engineer',
   },
+  metadataBase: new URL('https://alexjpate.com'),
 };
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--inter-font',
-});
-
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head></head>
-      <body className={clsx(inter.variable, 'bg-slate-900')}>
-        <main className="max-w-xl mx-auto bg-slate-900">
+      <body className="bg-slate-950">
+        <main className="max-w-xl mx-auto">
+          <header className="pt-16 pb-16 px-4 flex justify-between">
+            <Link href="/">
+              <h1 className="text-base font-semibold text-white">ap</h1>
+            </Link>
+            <nav className="flex gap-4">
+              <Link
+                href="/posts"
+                className="text-white text-base font-semibold"
+              >
+                Writing
+              </Link>
+              <Link
+                className="text-white text-base font-semibold"
+                href="/profile"
+              >
+                Contact
+              </Link>
+            </nav>
+          </header>
           {children}
-          <Footer />
         </main>
       </body>
     </html>
   );
 }
-
-const Footer = () => {
-  return (
-    <footer className="flex justify-between border-t border-gray-200 mt-10 py-4">
-      <nav className="flex gap-4 font-medium text-md text-white/60">
-        <Link href="/">Home</Link>
-        <Link href="/profile">Profile</Link>
-        <Link href="/posts">Writing</Link>
-      </nav>
-      <div className="flex gap-4 font-medium text-md text-white/60">
-        <Link href="https://twitter.com/alexjpate">Twitter</Link>
-        <Link href="https://www.linkedin.com/in/alexjpate">LinkedIn</Link>
-      </div>
-    </footer>
-  );
-};

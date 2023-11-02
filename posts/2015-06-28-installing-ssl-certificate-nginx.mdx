@@ -1,9 +1,7 @@
-export const meta = {
-    title:  "Installing a Positive SSL certificate on Nginx",
-    summary: "This is a quick guide of how to install an SSL certificate on an nginx server. It assumes that you",
-    slug: "installing-ssl-certificate-nginx",
-    date: "2015-06-28"
-}
+---
+title: 'Installing a Positive SSL certificate on Nginx'
+summary: 'This is a quick guide of how to install an SSL certificate on an nginx server. It assumes that you'
+---
 
 This is a quick guide of how to install an SSL certificate on an nginx server. It assumes that you already have a server set up, and have purchased an SSL certificate. If not, you can pick one up from [namecheap](http://www.namecheap.com/?aff=88180) for a pretty decent price. (And yes, that is an affiliate link!)
 
@@ -107,7 +105,7 @@ There's no right way of doing this, but here's an excerpt of what mine looks lik
 
 The bottom block redirects non-https to https.
 
-```nginx
+```bash
 server {
     listen 443 default ssl ipv6only=on;
 
