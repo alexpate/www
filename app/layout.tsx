@@ -1,8 +1,9 @@
 import './globals.css';
 
-import Link from 'next/link';
-
 import { Metadata } from 'next';
+import Link from 'next/link';
+import localFont from 'next/font/local';
+import clsx from 'clsx';
 
 export const metadata: Metadata = {
   title: 'Alex Pate - Product Engineer',
@@ -17,6 +18,32 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://alexjpate.com'),
 };
 
+const ttHovesFont = localFont({
+  src: [
+    {
+      path: './tt-hoves-regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './tt-hoves-medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './tt-hoves-semibold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './tt-hoves-bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -25,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className="bg-slate-950">
+      <body className={clsx(ttHovesFont.className, 'bg-slate-950')}>
         <main className="max-w-xl mx-auto">
           <header className="pt-16 pb-16 px-4 flex justify-between">
             <Link href="/">
