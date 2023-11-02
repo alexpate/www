@@ -76,7 +76,7 @@ const projects: {
   isUnreleased?: boolean;
 }[] = [
   {
-    title: 'product.engineer',
+    title: 'hyperdusk',
     description: 'Launching soon',
     isUnreleased: true,
     icon: (
@@ -92,7 +92,8 @@ const projects: {
   {
     title: 'FlagDB',
     href: 'https://flagdb.com',
-    description: 'A database of flags from around the world',
+    description:
+      'A personal project to build a database of flags from around the world',
     isUnreleased: true,
     icon: (
       <Image
