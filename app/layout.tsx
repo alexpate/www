@@ -1,4 +1,4 @@
-import './globals.css';
+import './assets/globals.css';
 
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -12,8 +12,20 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     creator: '@alexjpate',
-    images: ['https://alexjpate.com/og.png'],
+    images: ['/og.png'],
     title: 'Alex Pate - Product Engineer',
+  },
+  openGraph: {
+    title: 'Alex Pate - Product Engineer',
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Alex Pate - Product Engineer',
+      },
+    ],
+    siteName: 'Alex Pate - Product Engineer',
   },
   metadataBase: new URL('https://alexjpate.com'),
 };
@@ -21,22 +33,22 @@ export const metadata: Metadata = {
 const ttHovesFont = localFont({
   src: [
     {
-      path: './tt-hoves-regular.woff2',
+      path: './assets/tt-hoves-regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './tt-hoves-medium.woff2',
+      path: './assets/tt-hoves-medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './tt-hoves-semibold.woff2',
+      path: './assets/tt-hoves-semibold.woff2',
       weight: '600',
       style: 'normal',
     },
     {
-      path: './tt-hoves-bold.woff2',
+      path: './assets/tt-hoves-bold.woff2',
       weight: '700',
       style: 'normal',
     },

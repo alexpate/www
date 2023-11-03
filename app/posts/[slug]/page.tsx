@@ -1,13 +1,11 @@
-import fs from 'fs';
-import path from 'path';
-
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
-import '../../github-dark.css';
+import '../../assets/github-dark.css';
 import { notFound } from 'next/navigation';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import { getAllPostPaths, getPostBySlug } from '@/lib/articles';
+import { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const paths = getAllPostPaths();
@@ -15,12 +13,14 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export async function generateMetadata({ params }: any) {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
 
   return {
     title: post?.meta.title,
     description: post?.meta.description,
+    publisher: 'Alex Pate',
+    creator: 'Alex Pate',
   };
 }
 
