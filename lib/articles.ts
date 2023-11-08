@@ -17,7 +17,7 @@ export const getRegexForSlug = (slug: string): RegExp => {
 };
 
 const POSTS_PATH = 'posts';
-const WORK_PATH = 'work';
+const WORK_PATH = 'projects';
 
 interface DateAndSlug {
   date: string;
