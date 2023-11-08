@@ -68,7 +68,7 @@ const getPostFromFile = (filename: string, isWork?: boolean): Post | null => {
     content,
     slug,
     date,
-    href: `/${isWork ? 'work' : 'posts'}/${slug}`,
+    href: `/${isWork ? 'projects' : 'posts'}/${slug}`,
   };
 };
 
