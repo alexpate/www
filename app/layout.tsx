@@ -56,6 +56,19 @@ const ttHovesFont = localFont({
   display: 'swap',
 });
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Alex Pate',
+  image: 'https://alexjpate.com/avatar.jpeg',
+  url: 'https://alexjpate.com',
+  sameAs: [
+    'https://twitter.com/alexjpate',
+    'https://www.github.com/alexpate',
+    'https://www.linkedin.com/in/alexjpate/',
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -63,7 +76,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={clsx(ttHovesFont.className, 'bg-slate-950')}>
         <main className="max-w-xl mx-auto">
           <header className="pt-16 pb-16 px-4 flex justify-between">
