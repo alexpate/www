@@ -1,0 +1,24 @@
+---
+title: Year in Monzo 2019
+description: A unique experience in to how each customer has spent over the past year
+featured_image: year-in-monzo-2019.png
+year: 2019
+role: Engineering
+---
+
+Year in Monzo is an interactive web based experience that provides customers with unique insights in to how they spend and saved over the past year.
+
+## Generating dynamic images at scale
+
+As part of the experience, we pre-generated two personalised images for each user which contained stats about their spending, which could then be shared on social networks.
+
+Each image was generated using Chromium via the Chrome DevTools protocol. We went for this approach as it gave us a large amount of flexibility over the layout and design of the final image, as it was ultimately just HTML and CSS.
+
+A GoLang service passed the HTML template in to Chromium, took a screenshot, and saved the image. Running Chromium in the backend
+
+However, this posed a large engineering problem. How do you generate 6M unique images without failure?
+
+Our requirements were:
+
+1. **Zero failures**. Two images should be generated for every single user.
+2. **Re-runnable quickly**. In the case that a bug is found close launch, we needed to be able to quickly re-generate all of the images. I.e. a process that takes multiple hours isn't acceptable.
