@@ -16,6 +16,9 @@ export const getRegexForSlug = (slug: string): RegExp => {
   return new RegExp(`^\\d{4}-\\d{2}-\\d{2}-${slug}.mdx$`);
 };
 
+const POSTS_PATH = 'posts';
+const WORK_PATH = 'work';
+
 interface DateAndSlug {
   date: string;
   slug: string;
@@ -44,8 +47,11 @@ export const getDateAndSlugFromFilename = (
  * @param filename - The name of the file to read.
  * @returns An object containing the front matter, date, slug, and href, or null if the filename does not match the expected format.
  */
-const getPostFromFile = (filename: string): Post | null => {
-  const fileContent = fs.readFileSync(path.join('posts', filename), 'utf-8');
+const getPostFromFile = (filename: string, isWork?: boolean): Post | null => {
+  const fileContent = fs.readFileSync(
+    path.join(isWork ? WORK_PATH : POSTS_PATH, filename),
+    'utf-8'
+  );
 
   const { data: frontMatter, content } = matter(fileContent);
 
@@ -62,7 +68,7 @@ const getPostFromFile = (filename: string): Post | null => {
     content,
     slug,
     date,
-    href: `/posts/${slug}`,
+    href: `/${isWork ? 'work' : 'posts'}/${slug}`,
   };
 };
 
@@ -71,12 +77,12 @@ const getPostFromFile = (filename: string): Post | null => {
  * @param slug - The slug of the post to get.
  * @returns The post with the given slug, or null if no such post exists.
  */
-export const getPostBySlug = (slug: string): Post | null => {
-  const files = fs.readdirSync(path.join('posts'));
+export const getPostBySlug = (slug: string, isWork?: boolean): Post | null => {
+  const files = fs.readdirSync(path.join(isWork ? WORK_PATH : POSTS_PATH));
 
   for (const filename of files) {
     if (getRegexForSlug(slug).test(filename)) {
-      const post = getPostFromFile(filename);
+      const post = getPostFromFile(filename, isWork);
       if (post) {
         return post;
       }
@@ -90,11 +96,11 @@ export const getPostBySlug = (slug: string): Post | null => {
  * Gets all posts.
  * @returns An array of all posts, sorted by date in descending order.
  */
-export const getAllPosts = async (): Promise<Post[]> => {
-  const files = fs.readdirSync(path.join('posts'));
+export const getAllPosts = async (isWork?: boolean): Promise<Post[]> => {
+  const files = fs.readdirSync(path.join(isWork ? WORK_PATH : POSTS_PATH));
 
   const posts: Post[] = files
-    .map(getPostFromFile)
+    .map((item) => getPostFromFile(item, isWork))
     .filter((post): post is Post => post !== null);
 
   const filteredAndSortedPosts = posts.sort((a, b) => {
@@ -111,8 +117,8 @@ export const getAllPosts = async (): Promise<Post[]> => {
  * Generates an array of all the paths for the posts.
  * @returns An array of all the paths for the posts.
  */
-export async function getAllPostPaths() {
-  const posts = await getAllPosts();
+export async function getAllPostPaths(isWork?: boolean) {
+  const posts = await getAllPosts(isWork);
 
   const paths = posts.map((post) => ({ slug: post.slug }));
 

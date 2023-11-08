@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { FC } from 'react';
-import { ViewCount } from '../posts/[slug]/view-count';
 
 interface Props {
   title: string;
