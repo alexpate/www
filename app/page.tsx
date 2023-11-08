@@ -148,10 +148,10 @@ export default async function Home() {
         </h1>
         <p className="text-white/70 text-lg">
           I’m Alex, a product engineer and designer based in Milan, Italy. I
-          partner with cutting-edge to create best-in-class products. I’m
-          currently working with MoonPay to help build the future of finance.
-          Before that, I’ve built personal and business banking products for
-          millions of customers at Monzo.
+          work with leading-edge companies to create exceptional products. I’m
+          currently working with MoonPay to help make web3 accessible. Before
+          that, I built personal and business banking products for millions of
+          customers at Monzo.
         </p>
       </section>
 
