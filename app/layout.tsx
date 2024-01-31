@@ -2,7 +2,8 @@ import './assets/globals.css';
 
 import { Metadata } from 'next';
 import Link from 'next/link';
-import localFont from 'next/font/local';
+import { GeistSans } from 'geist/font/sans';
+
 import clsx from 'clsx';
 
 export const metadata: Metadata = {
@@ -30,32 +31,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://alexjpate.com'),
 };
 
-const ttHovesFont = localFont({
-  src: [
-    {
-      path: './assets/tt-hoves-regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './assets/tt-hoves-medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: './assets/tt-hoves-semibold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: './assets/tt-hoves-bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  display: 'swap',
-});
-
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -82,7 +57,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={clsx(ttHovesFont.className, 'bg-slate-950')}>
+      <body className={clsx(GeistSans.className, 'bg-slate-950')}>
         <main className="max-w-xl mx-auto">
           <header className="pt-16 pb-16 px-4 flex justify-between">
             <Link href="/">
