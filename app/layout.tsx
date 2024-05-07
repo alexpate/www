@@ -2,7 +2,7 @@ import './assets/globals.css';
 
 import { Metadata } from 'next';
 import Link from 'next/link';
-
+import { Analytics } from '@vercel/analytics/react';
 import localFont from 'next/font/local';
 import { JetBrains_Mono } from 'next/font/google';
 
@@ -50,6 +50,7 @@ const jsonLd = {
   name: 'Alex Pate',
   image: 'https://alexjpate.com/avatar.jpeg',
   url: 'https://alexjpate.com',
+  jobTitle: 'Product Engineer',
   sameAs: [
     'https://twitter.com/alexjpate',
     'https://www.github.com/alexpate',
@@ -115,6 +116,7 @@ export default function RootLayout({
             </p>
           </footer>
         </div>
+        <Analytics />
       </body>
     </html>
   );
