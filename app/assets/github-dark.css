@@ -14,7 +14,6 @@
 pre:has(.hljs),
 .hljs {
   color: #c9d1d9;
-  background: rgba(0, 0, 0, 0.4);
 }
 
 .hljs-doctag,

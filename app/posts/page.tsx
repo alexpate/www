@@ -1,3 +1,4 @@
+import { PageHeader } from '@/app/components/page-header';
 import { ArticleLink } from '../components/article-link';
 import { getAllPosts } from '@/lib/articles';
 
@@ -5,9 +6,9 @@ export default async function Page() {
   const posts = await getAllPosts();
 
   return (
-    <div>
-      <h1 className="font-semibold text-2xl mb-4 text-white/90">Writing</h1>
-      <section className="py-5">
+    <main className="px-4 md:px-0">
+      <PageHeader title="Writing" />
+      <section className="divide-y">
         {posts.map((post) => {
           return (
             <ArticleLink
@@ -20,6 +21,6 @@ export default async function Page() {
           );
         })}
       </section>
-    </div>
+    </main>
   );
 }

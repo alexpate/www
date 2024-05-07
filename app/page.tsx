@@ -5,159 +5,80 @@ import Image from 'next/image';
 import { ArticleLink } from './components/article-link';
 import clsx from 'clsx';
 import { getAllPosts } from '@/lib/articles';
-
-const experience: {
-  company: string;
-  role: string;
-  date: string;
-  description: string;
-}[] = [
-  {
-    company: 'MoonPay',
-    role: 'Senior Front-end Engineer',
-    date: '2022 - present',
-    description:
-      "Bringing web engineering fire-power to where it's needed in the company, from growth to product.",
-  },
-  {
-    company: 'Monzo',
-    role: 'Web Engineer / Product Designer',
-    date: '2019 - 2021',
-    description:
-      'Joined as a Product Designer building design tooling, then moved into a Web Engineer role working on both internal web, and the customer business banking web app',
-  },
-  {
-    company: 'Kalo',
-    role: 'UI Engineer',
-    date: '2017 - 2019',
-    description: 'Various web things.',
-  },
-  {
-    company: 'Pusher',
-    role: 'Front-end Engineer',
-    date: '2015 - 2017',
-    description:
-      'Built and maintained the Pusher website and introduced the first design system',
-  },
-];
-
-const contact: {
-  method: string;
-  link: string;
-  label: string;
-}[] = [
-  {
-    method: 'Email',
-    link: 'mailto:hey@alexjpate.com',
-    label: 'hey@alexjpate.com',
-  },
-  {
-    method: 'Twitter',
-    link: 'https://twitter.com/alexjpate',
-    label: '@alexjpate',
-  },
-  {
-    method: 'GitHub',
-    link: 'https://github.com/alexpate',
-    label: 'git/alexpate',
-  },
-  {
-    method: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/alexjpate/',
-    label: 'in/alexjpate',
-  },
-];
+import { Title } from '@/app/components/title';
 
 const projects: {
   href?: string;
   title: string;
   description: string;
-  icon: ReactElement;
-  isUnreleased?: boolean;
+  image: string;
 }[] = [
   {
-    title: 'hyperdusk',
-    description: 'Launching soon',
-    isUnreleased: true,
-    icon: (
-      <Image
-        src="/projects/duo-icon.png"
-        width={40}
-        height={40}
-        alt=""
-        className="rounded-lg"
-      />
-    ),
+    title: 'Glow',
+    href: 'https://glow.as',
+    description:
+      'A dynamic link-in-bio tool to help creators and brands drive traffic',
+    image: '/glow.png',
   },
   {
     title: 'FlagDB',
     href: 'https://flagdb.com',
     description:
       'A personal project to build a database of flags from around the world',
-    isUnreleased: true,
-    icon: (
-      <Image
-        src="/projects/dusk-ai-icon.png"
-        width={40}
-        height={40}
-        alt=""
-        className="rounded-lg"
-      />
-    ),
+    image: '/flagdb.png',
   },
   {
     href: 'https://duo.alexjpate.com',
     title: 'Duo',
     description: 'A collection of colour combinations',
-    icon: (
-      <Image
-        src="/projects/duo-icon.png"
-        width={40}
-        height={40}
-        alt=""
-        className="rounded-lg"
-      />
-    ),
+    image: '/duo.png',
   },
   {
     href: 'https://github.com/alexpate/awesome-design-systems',
     title: 'Awesome Design Systems',
     description: 'A curated list of design systems',
-    icon: (
-      <Image
-        src="/projects/awesome-design-systems-icon.png"
-        width={40}
-        height={40}
-        alt=""
-        className="rounded-lg"
-      />
-    ),
+    image: '/awesome-design-systems.png',
   },
 ];
 
 export default async function Home() {
   const posts = await getAllPosts();
+
   return (
-    <main className="px-4">
-      <section className="pb-16">
-        <h1 className="font-semibold text-4xl mb-4 text-white">
-          Ciao, I’m Alex. <br />
-          <span className="text-white/60">
+    <main className="px-4 md:px-0">
+      <section className="pb-14 border-b border-slate-300 mb-14">
+        <h1 className="font-semibold text-4xl mb-4 text-slate-950">
+          Ciao, I’m Alex.
+          <span className="block text-slate-500 font-normal text-2xl">
             A product engineer from the UK based in Milan.
           </span>
         </h1>
-        <p className="text-white/70 text-lg">
-          I’m Alex, a product engineer and designer based in Milan, Italy. I
-          work with leading-edge companies to create exceptional products. I’m
+        <p className="text-slate-700 text-lg md:text-xl leading-normal">
+          I work with leading-edge companies to create exceptional products. I’m
           currently working with MoonPay to help make web3 accessible. Before
           that, I built personal and business banking products for millions of
           customers at Monzo.
         </p>
+        <Link
+          href="/info"
+          className="group bg-slate-950 hover:bg-slate-800 transition-colors inline-block mt-8 font-mono text-xs font-semibold rounded-full px-8 py-3 text-white"
+        >
+          More Information{' '}
+          <span className="inline-block group-hover:translate-x-2 transition-transform">
+            →
+          </span>
+        </Link>
       </section>
 
-      <section className="pt-10 pb-16">
-        <h2 className="font-semibold text-base mb-4 text-white/90">Projects</h2>
-        <div className="space-y-4">
+      <section className="pb-16">
+        <Title as="h2" variant="secondary" className="mb-4">
+          Personal Projects
+        </Title>
+
+        <p className="text-slate-700 text-lg">
+          Below is a selection of recent projects that I&apos;ve worked on.
+        </p>
+        <div className="md:w-[170%] md:-ml-[35%] grid grid-cols-1 md:grid-cols-2 grid-flow-dense gap-8 mt-16">
           {projects.map((project) => {
             const isLink = !!project.href;
             const WrappingComponent = isLink ? Link : 'div';
@@ -167,52 +88,36 @@ export default async function Home() {
                 href={project.href ?? '/'}
                 key={project.title}
                 className={clsx(
-                  'flex gap-4 items-center bg-slate-900 rounded-xl p-5',
-                  isLink ? 'hover:bg-slate-800' : 'cursor-default opacity-50'
+                  'flex flex-col justify-center bg-slate-100 hover:bg-slate-200/70 transition-colors rounded-xl p-8'
                 )}
               >
-                {project.icon}
-                <span>
-                  <h3 className="text-white font-medium text-base">
-                    {project.title}
-                  </h3>
-                  <h3 className="text-white/70 text-sm">
-                    {project.description}
-                  </h3>
-                </span>
+                <div className="relative rounded-xl mb-4 shadow-project">
+                  <Image
+                    width={450}
+                    height={240}
+                    quality={90}
+                    src={project.image}
+                    alt=""
+                    className="rounded-xl bg-cover"
+                  />
+                </div>
+                <h3 className="text-slate-700 font-semibold tracking-tight text-xl">
+                  {project.title}
+                </h3>
+                <h3 className="text-slate-500 text-base">
+                  {project.description}
+                </h3>
               </WrappingComponent>
             );
           })}
         </div>
       </section>
 
-      <section className="py-8">
-        <h2 className="font-semibold text-base mb-4 text-white/90">
-          Experience
-        </h2>
-        <div className="space-y-6">
-          {experience.map((exp) => {
-            return (
-              <div className="grid grid-cols-content gap-4" key={exp.date}>
-                <span className="text-white/50">{exp.date}</span>
-                <div className="flex flex-col">
-                  <span className="text-white">{exp.company}</span>
-                  <span className="text-white/40 text-sm">{exp.role}</span>
-                  <p className="mt-2 text-white/70 text-lg">
-                    {exp.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
       <section className="pt-10 pb-16">
-        <h2 className="font-semibold text-lg mb-4 text-white/90">
+        <Title as="h2" variant="secondary" className="mb-8">
           Recent Writing
-        </h2>
-        <div className="flex flex-col gap-4">
+        </Title>
+        <div className="divide-y">
           {posts.slice(0, 3).map((post) => {
             return (
               <ArticleLink
@@ -225,25 +130,15 @@ export default async function Home() {
             );
           })}
         </div>
-      </section>
-
-      <section className="py-8" id="contact">
-        <h2 className="font-semibold text-base mb-4 text-white/90">Contact</h2>
-        <div className="space-y-4">
-          {contact.map((contactMethod) => {
-            return (
-              <div
-                className="grid grid-cols-content gap-4"
-                key={contactMethod.method}
-              >
-                <span className="text-white/50">{contactMethod.method}</span>
-                <Link href={contactMethod.link} className="text-white/70">
-                  {contactMethod.label}
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+        <Link
+          href="/posts"
+          className="group bg-slate-950 hover:bg-slate-800 transition-colors inline-block mt-8 font-mono text-xs font-semibold rounded-full px-8 py-3 text-white"
+        >
+          View More Posts{' '}
+          <span className="inline-block group-hover:translate-x-2 transition-transform">
+            →
+          </span>
+        </Link>
       </section>
     </main>
   );

@@ -36,13 +36,23 @@ export default async function Post({ params }: { params: Params }) {
   const { meta, content } = post;
 
   return (
-    <div className="px-4">
-      <section className="pb-10 max-w-2xl">
-        <h1 className="font-medium text-5xl text-white">{meta.title}</h1>
+    <main className="px-4 md:px-0">
+      <section>
+        <h1 className="font-semibold tracking-tight text-4xl text-slate-900">
+          {meta.title}
+        </h1>
+        <span className="text-slate-500 text-sm tracking-tight font-mono block mt-4">
+          Published on{' '}
+          <time dateTime={post.date}>
+            {new Intl.DateTimeFormat('en-GB', {
+              dateStyle: 'medium',
+            }).format(new Date(post.date))}
+          </time>
+        </span>
       </section>
 
       <section className="py-5">
-        <article className="prose prose-xl prose-invert">
+        <article className="prose prose-lg">
           {/* @ts-expect-error Server Component*/}
           <MDXRemote
             source={content}
@@ -55,6 +65,6 @@ export default async function Post({ params }: { params: Params }) {
           />
         </article>
       </section>
-    </div>
+    </main>
   );
 }

@@ -6,7 +6,7 @@ export default async function WorkPage() {
 
   return (
     <div>
-      <h1 className="font-semibold text-2xl mb-4 text-white/90">
+      <h1 className="font-semibold text-2xl mb-4 text-slate-900">
         Past Projects
       </h1>
       <section className="py-5">
