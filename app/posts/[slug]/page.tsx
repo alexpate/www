@@ -1,5 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
-
+import { Pluggable } from 'unified';
 import '../../assets/github-dark.css';
 import { notFound } from 'next/navigation';
 import remarkGfm from 'remark-gfm';
@@ -58,7 +58,9 @@ export default async function Post({ params }: { params: Params }) {
             options={{
               mdxOptions: {
                 remarkPlugins: [remarkGfm],
-                rehypePlugins: [[rehypeHighlight, { languages: true }]],
+                rehypePlugins: [
+                  [rehypeHighlight, { languages: true }],
+                ] as unknown as Pluggable[],
               },
             }}
           />
