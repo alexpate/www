@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import { getAllPostPaths, getPostBySlug } from '@/lib/articles';
 import { Metadata } from 'next';
+import { Title } from '@/app/components/title';
 
 export async function generateStaticParams() {
   const paths = getAllPostPaths(true);
@@ -36,14 +37,13 @@ export default async function WorkItem({ params }: { params: Params }) {
   const { meta, content } = post;
 
   return (
-    <div className="px-4">
-      <section className="pb-10 max-w-2xl">
-        <h1 className="font-medium text-5xl text-white">{meta.title}</h1>
-      </section>
+    <main className="px-4 md:px-0">
+      <Title as="h1" variant="primary">
+        {meta.title}
+      </Title>
 
       <section className="py-5">
-        <article className="prose prose-xl prose-invert">
-          {/* @ts-expect-error Server Component*/}
+        <article className="prose prose-lg">
           <MDXRemote
             source={content}
             options={{
@@ -55,6 +55,6 @@ export default async function WorkItem({ params }: { params: Params }) {
           />
         </article>
       </section>
-    </div>
+    </main>
   );
 }

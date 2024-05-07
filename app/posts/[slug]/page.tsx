@@ -53,7 +53,6 @@ export default async function Post({ params }: { params: Params }) {
 
       <section className="py-5">
         <article className="prose prose-lg">
-          {/* @ts-expect-error Server Component*/}
           <MDXRemote
             source={content}
             options={{
