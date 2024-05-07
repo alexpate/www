@@ -78,7 +78,7 @@ export default async function Home() {
         <p className="text-slate-700 text-lg">
           Below is a selection of recent projects that I&apos;ve worked on.
         </p>
-        <div className="md:w-[170%] md:-ml-[35%] grid grid-cols-1 md:grid-cols-2 grid-flow-dense gap-8 mt-16">
+        <div className="lg:w-[170%] lg:-ml-[35%] grid grid-cols-1 md:grid-cols-2 grid-flow-dense gap-8 mt-16">
           {projects.map((project) => {
             const isLink = !!project.href;
             const WrappingComponent = isLink ? Link : 'div';
