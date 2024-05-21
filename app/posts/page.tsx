@@ -5,11 +5,18 @@ import { getAllPosts } from '@/lib/articles';
 export default async function Page() {
   const posts = await getAllPosts();
 
+  const filteredPosts = posts.filter((post) => {
+    if (post.meta?.draft && process.env.NODE_ENV !== 'development') {
+      return false;
+    }
+    return true;
+  });
+
   return (
     <main className="px-4 md:px-0">
       <PageHeader title="Writing" />
       <section className="divide-y">
-        {posts.map((post) => {
+        {filteredPosts.map((post) => {
           return (
             <ArticleLink
               key={post.meta.title}

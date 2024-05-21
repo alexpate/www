@@ -38,6 +38,10 @@ export default async function Post({ params }: { params: Params }) {
 
   if (!post) return notFound();
 
+  if (post.meta.draft && process.env.NODE_ENV !== 'development') {
+    return notFound();
+  }
+
   const { meta, content } = post;
 
   return (
