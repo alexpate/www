@@ -1,0 +1,67 @@
+---
+title: 'Future CSS: Native scroll animations'
+summary: Exploring the future of CSS animations with scroll-linked animations
+---
+
+Linking an animation to a users scroll position is something that every front-end developer has had to do at some point.
+
+It's a common pattern that normally requires writing a bit (or sometimes alot) of JavaScript. But did you know that you
+might soon be able to do this natively in CSS?
+
+CSS Scroll-driven Animations are a new proposal for creating animations that are tied to the scroll offset of an element.
+
+## How can I use it?
+
+Let's take a look at how you can use CSS Scroll-driven Animations in a few examples.
+
+### Example 1
+
+<ScrollAnimationDemoOne />
+
+_(As of May 2024, this demo will only work in Chrome)_
+
+This first demo, shows a simple progress bar that scales in width as you scroll down the page. You'll recognise the @keyframe animation from regular CSS animations, but the magic happens in the `animation-timeline` and `scroll-timeline` properties.
+
+Let's start with looking at the code. For simplicity, I've removed all of the other styles (like colours and layout), but if you want you can find the full code in the demo [here](https://github.com/alexpate/www/blob/main/app/components/posts).
+
+```css
+.container {
+  timeline-scope: --scale-progress;
+}
+
+.scrollContainer {
+  scroll-timeline: --scale-progress block;
+}
+
+.progress {
+  animation: scaleProgress linear;
+  animation-timeline: --scale-progress;
+  animation-duration: auto;
+}
+
+@keyframes scaleProgress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+```
+
+Okay, so let's break it down.
+
+The `timeline-scope` property is used to set a scope for the animation. As our progress element is outside the scroll container, we need to manually set the scope. If our progress element was inside the scroll container we wouldn't need to set this property.
+
+The `scroll-timeline` property is used to link the animation to the scroll position of the element. In this case, we're linking it to the `block` axis, which means the animation will be triggered as the element scrolls vertically.
+
+The `animation-timeline` property is used to link the animation to the timeline scope we set earlier. This must be on the same element as the `animation` property.
+
+## Support. Can you use it today?
+
+Unfortunately, the spec is still in the early stages and is not yet fully supported by any major browser (as of May 2024), however you can still experiment with it in Chrome by enabling the `#enable-experimental-web-platform-features` flag.
+
+## Further Reading
+
+- https://scroll-driven-animations.style/
+- https://caniuse.com/css-scroll-timeline
