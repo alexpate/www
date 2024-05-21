@@ -1,0 +1,22 @@
+.container {
+  timeline-scope: --scale-progress;
+}
+
+.scrollContainer {
+  scroll-timeline: --scale-progress block;
+}
+
+.progress {
+  animation: scaleProgress linear;
+  animation-timeline: --scale-progress;
+  animation-duration: auto;
+}
+
+@keyframes scaleProgress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

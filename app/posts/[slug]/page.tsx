@@ -6,6 +6,13 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import { getAllPostPaths, getPostBySlug } from '@/lib/articles';
 import { Metadata } from 'next';
+import { ScrollAnimationDemoOne } from '@/app/components/posts/2024-05-20-future-css-scroll-animations';
+import {
+  TextWrapHero,
+  TextWrapHeroBalance,
+  TextWrapHeroPretty,
+  TextWrapPrettyVsBalance,
+} from '@/app/components/posts/2024-05-21-future-css-text-wrap-pretty';
 
 export async function generateStaticParams() {
   const paths = getAllPostPaths();
@@ -55,12 +62,17 @@ export default async function Post({ params }: { params: Params }) {
         <article className="prose prose-lg">
           <MDXRemote
             source={content}
+            components={{
+              ScrollAnimationDemoOne,
+              TextWrapHero,
+              TextWrapHeroBalance,
+              TextWrapHeroPretty,
+              TextWrapPrettyVsBalance,
+            }}
             options={{
               mdxOptions: {
                 remarkPlugins: [remarkGfm],
-                rehypePlugins: [
-                  [rehypeHighlight, { languages: true }],
-                ] as unknown as Pluggable[],
+                rehypePlugins: [[rehypeHighlight]] as unknown as Pluggable[],
               },
             }}
           />

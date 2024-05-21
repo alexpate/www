@@ -1,0 +1,84 @@
+---
+title: 'Future CSS: Text Wrap Pretty'
+summary: Exploring the future of CSS text wrapping with the `text-wrap` property
+---
+
+Orphan words are a common problem in web design. They can make a page look unbalanced and distract the reader.
+
+They're also notoriously difficult to fix, particularly in responsive web design, where text can reflow at different screen sizes.
+
+But did you know that **you can** fix this natively in CSS?
+
+## The text-wrap property
+
+The text-wrap property helps us control how, as the name suggests, text wraps in an element. Personally, I use it a lot when rendering code blocks on my blog, as it helps to ensure that code snippets don't break randomly in the middle of a word.
+
+## 1) text-wrap: balance
+
+The `balance` value is a relatively new addition to the `text-wrap` property. It's designed to help prevent orphans in text by balancing the number of words on each line.
+
+For example, let's say you're building a hero section:
+
+<TextWrapHero />
+
+Notice how the number of words on the first line is significantly greater than on the last? That's not ideal. But with `text-wrap: balance`, we can fix it:
+
+```css
+.subheading {
+  text-wrap: balance;
+}
+```
+
+<TextWrapHero variant="balance" />
+
+As you can see, the text is now "balanced" across the two lines.
+
+## 2) text-wrap: pretty
+
+The `pretty` value is another new addition to the `text-wrap` property. It's designed to help prevent orphans at the end of chunks of text, making it a good candidate for use in long paragraphs.
+
+Let's use our hero section example again, but this time with `text-wrap: pretty`:
+
+```css
+.subheading {
+  text-wrap: pretty;
+}
+```
+
+<TextWrapHero variant="pretty" />
+
+As you can see, although the number of words on each line is different, there aren't any orphaned words.
+
+### When should I use `pretty` vs `balance`?
+
+Although similar, there are some key differences between `pretty` and `balance`:
+
+You can think of `balance` as a way to ensure that the number of words on each line is roughly the same. This is great for headings, where you want to ensure that the text is balanced across multiple lines.
+
+On the other hand, `pretty` is a way to ensure that there aren't any orphaned words at the end of a block of text. This is great for long paragraphs, where you want to ensure that the text flows nicely.
+
+Here's a side-by-side comparison of non-wrapped text, `pretty`, and `balance`. Notice how with `balance` the length of the lines is significantly shorter, albeit more consistent.
+
+<TextWrapPrettyVsBalance />
+
+### Gotchas
+
+Okay, so why not just use `text-wrap: pretty | balance` all the time? Well, there are a few gotchas to be aware of:
+
+#### Browser support
+
+Firstly, it's not supported in all browsers yet. This is a great enhancement for the future, but don't rely on it for critical text.
+
+#### Performance
+
+Secondly, there's a performance cost. Although both are designed to help prevent orphans, `pretty` is more computationally expensive than `balance`. As such, you should use `pretty` sparingly and only when you really need it.
+
+### Limits
+
+Browsers also implement a limit on the number of lines considered when wrapping text with `balance`. This is to prevent performance issues, but it can also lead to unexpected results if you're not aware of it. `Pretty` doesn't have this limit, but this can lead to performance issues.
+
+### Further reading
+
+- [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap)
+- [Can I Use - Pretty](https://caniuse.com/mdn-css_properties_text-wrap_pretty)
+- [Can I Use - Balance](https://caniuse.com/css-text-wrap-balance)
