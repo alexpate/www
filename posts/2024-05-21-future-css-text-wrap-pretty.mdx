@@ -9,13 +9,17 @@ They're also notoriously difficult to fix, particularly in responsive web design
 
 But did you know that **you can** fix this natively in CSS?
 
+`pretty` and `balance` are two new values for the `text-wrap` property that are proposed in the CSS Text Module Level 4. They're designed to help prevent single words from being left on a line by themselves, also known as "orphans".
+
+But before we dive into how to use them, let's take a step back and look at the `text-wrap` property itself.
+
 ## The text-wrap property
 
 The text-wrap property helps us control how, as the name suggests, text wraps in an element. Personally, I use it a lot when rendering code blocks on my blog, as it helps to ensure that code snippets don't break randomly in the middle of a word.
 
 ## 1) text-wrap: balance
 
-The `balance` value is a relatively new addition to the `text-wrap` property. It's designed to help prevent orphans in text by balancing the number of words on each line.
+The `balance` value is the first new addition to the `text-wrap` property. It's designed to help prevent orphans in text by balancing the number of words on each line.
 
 For example, let's say you're building a hero section:
 
@@ -67,15 +71,15 @@ Okay, so why not just use `text-wrap: pretty | balance` all the time? Well, ther
 
 #### Browser support
 
-Firstly, it's not supported in all browsers yet. This is a great enhancement for the future, but don't rely on it for critical text.
+Firstly, both of these properties are still in the "proposal" stage. This means that they're not supported in all browsers yet. This is a great enhancement for the future, but don't rely on it for critical text. As of May 2024, `balance` is partially supported in the latest versions Chrome, Firefox, and Safari, while `pretty` is only supported in Chrome and Edge.
+
+#### Limits
+
+Browsers also implement a limit on the number of lines considered when wrapping text with `balance`. This is to prevent performance issues, but it can also lead to unexpected results if you're not aware of it. `pretty` doesn't have this limit, but this can lead to performance issues. As such, consider using `balance` for headings and `pretty` for long paragraphs where absolutely necessary.
 
 #### Performance
 
-Secondly, there's a performance cost. Although both are designed to help prevent orphans, `pretty` is more computationally expensive than `balance`. As such, you should use `pretty` sparingly and only when you really need it.
-
-### Limits
-
-Browsers also implement a limit on the number of lines considered when wrapping text with `balance`. This is to prevent performance issues, but it can also lead to unexpected results if you're not aware of it. `Pretty` doesn't have this limit, but this can lead to performance issues.
+Secondly, there's a performance cost. Behind the scenes, the browser engine has to make some relatively expensive computations. As mentioned above `balance` will only be computed on a limited number of lines in order to avoid an overly expensive computation, whilst `pretty` has no such limit. As such, you should use `pretty` sparingly and only when you really need it.
 
 ### Further reading
 
