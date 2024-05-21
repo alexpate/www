@@ -9,8 +9,6 @@ import { Metadata } from 'next';
 import { ScrollAnimationDemoOne } from '@/app/components/posts/2024-05-20-future-css-scroll-animations';
 import {
   TextWrapHero,
-  TextWrapHeroBalance,
-  TextWrapHeroPretty,
   TextWrapPrettyVsBalance,
 } from '@/app/components/posts/2024-05-21-future-css-text-wrap-pretty';
 
@@ -65,8 +63,6 @@ export default async function Post({ params }: { params: Params }) {
             components={{
               ScrollAnimationDemoOne,
               TextWrapHero,
-              TextWrapHeroBalance,
-              TextWrapHeroPretty,
               TextWrapPrettyVsBalance,
             }}
             options={{
