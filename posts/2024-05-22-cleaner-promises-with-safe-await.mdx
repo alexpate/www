@@ -5,7 +5,7 @@ summary: Explore how the safe-await pattern can simplify handling JavaScript pro
 
 Nested try/catch blocks are a common pattern in JavaScript when working with promises. However, they often lead to hard-to-read and maintain code.
 
-To better understand the problem, let's look at an example where we have a series of promises, each relying on the result of the previous one:
+To better understand the problem, let's look at an example where we have a series of promises, each relying on the result of the previous one _(or if you just want to skip to the solution, [click here](#solution)!)_
 
 ```javascript
 async function doSomething() {
@@ -78,9 +78,13 @@ func doSomething() (finalResult, error) {
 
 This pattern makes it easy to see where errors are being returned and handle them accordingly.
 
+<span id="solution" />
+
 ### Back to JavaScript: The Safe-Await Pattern
 
-Recently, I discovered the [safe-await](https://github.com/DavidWells/safe-await) package, which provides a similar pattern for JavaScript promises. Here's how we can rewrite our example using safe-await:
+Recently, I discovered the [safe-await](https://github.com/DavidWells/safe-await)
+package, which provides a similar pattern for JavaScript promises. Here's how we
+can rewrite our example using safe-await:
 
 ```javascript
 async function doSomething() {
