@@ -1,0 +1,115 @@
+---
+title: 'Cleaner JavaScript promises with safe-await'
+summary: Explore how the safe-await pattern can simplify handling JavaScript promises, making code cleaner and more maintainable.
+---
+
+Nested try/catch blocks are a common pattern in JavaScript when working with promises. However, they often lead to hard-to-read and maintain code.
+
+To better understand the problem, let's look at an example where we have a series of promises, each relying on the result of the previous one:
+
+```javascript
+async function doSomething() {
+  try {
+    const result = await someFunction();
+    try {
+      const anotherResult = await anotherFunction(result);
+      try {
+        const finalResult = await finalFunction(anotherResult);
+        return finalResult;
+      } catch (err) {
+        console.error(err);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
+#### What's the Problem?
+
+This code is hard to read and maintain. The final return result is buried halfway through the script, making it difficult to trace error handling. Although each try/catch block is small here, in a real-world application, they might contain much more code.
+
+#### A Better Pattern: Single try/catch Block
+
+One way to clean this up is to use a single try/catch block around the entire promise chain:
+
+```javascript
+async function doSomething() {
+  try {
+    const result = await someFunction();
+    const anotherResult = await anotherFunction(result);
+    const finalResult = await finalFunction(anotherResult);
+    return finalResult;
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
+This approach is an improvement, but it still has a drawback: handling all errors in a single catch block can obscure where the error originated.
+
+### The Go Error Handling Pattern
+
+At Monzo, I was introduced to Go, where errors are always returned from functions, allowing for multiple return values that include both the result and the error. Here's how the previous example would look using the Go error handling pattern:
+
+```go
+func doSomething() (finalResult, error) {
+  result, err := someFunction()
+  if err != nil {
+    return nil, err
+  }
+
+  anotherResult, err := anotherFunction(result)
+  if err != nil {
+    return nil, err
+  }
+
+  finalResult, err := finalFunction(anotherResult)
+  if err != nil {
+    return nil, err
+  }
+
+  return finalResult, nil
+}
+```
+
+This pattern makes it easy to see where errors are being returned and handle them accordingly.
+
+### Back to JavaScript: The Safe-Await Pattern
+
+Recently, I discovered the [safe-await](https://github.com/DavidWells/safe-await) package, which provides a similar pattern for JavaScript promises. Here's how we can rewrite our example using safe-await:
+
+```javascript
+async function doSomething() {
+  const [error1, result] = await safeAwait(someFunction());
+  if (error1) {
+    console.error(error1);
+    return;
+  }
+
+  const [error2, anotherResult] = await safeAwait(anotherFunction(result));
+  if (error2) {
+    console.error(error2);
+    return;
+  }
+
+  const [error3, finalResult] = await safeAwait(finalFunction(anotherResult));
+  if (error3) {
+    console.error(error3);
+    return;
+  }
+
+  return finalResult;
+}
+```
+
+Although this pattern is slightly more verbose, it is much easier to read and maintain.
+
+While I have found the safe-await pattern useful in my codebases, it’s important to consider what’s best for your team and project. This pattern provides a clearer structure for handling asynchronous operations and errors, but you should always consider the trade-offs when introducing new patterns to your codebase.
+
+### Credits
+
+- David Wells for the [safe-await](https://www.npmjs.com/package/safe-await) package.
