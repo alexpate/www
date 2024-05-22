@@ -17,7 +17,7 @@ const projects: {
     title: 'Glow',
     href: 'https://glow.as',
     description:
-      'A dynamic link-in-bio tool to help creators and brands drive traffic',
+      'A super simple way to create beautiful personal landing pages.',
     image: '/glow.png',
   },
   {
