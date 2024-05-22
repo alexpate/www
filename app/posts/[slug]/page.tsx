@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import { getAllPostPaths, getPostBySlug } from '@/lib/articles';
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 import { ScrollAnimationDemoOne } from '@/app/components/posts/2024-05-20-future-css-scroll-animations';
 import {
   TextWrapHero,
@@ -18,14 +18,35 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: { slug: string } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
+
+  const parentMeta = await parent;
 
   return {
     title: post?.meta.title,
-    description: post?.meta.description,
+    description: post?.meta.summary,
     publisher: 'Alex Pate',
     creator: 'Alex Pate',
+    twitter: {
+      ...parentMeta?.twitter,
+      siteId: undefined,
+      site: undefined,
+      creator: '@alexjpate',
+      creatorId: '243263662',
+      description:
+        post?.meta?.summary || parentMeta?.twitter?.description || undefined,
+      title: post?.meta?.title || parentMeta?.twitter?.title,
+    },
+    openGraph: {
+      ...parentMeta?.openGraph,
+      title: post?.meta?.title || parentMeta?.openGraph?.title,
+      description: post?.meta?.summary || parentMeta?.openGraph?.description,
+      url: `https://alexjpate.com/posts/${params.slug}`,
+    },
   };
 }
 
