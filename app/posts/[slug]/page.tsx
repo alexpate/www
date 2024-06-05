@@ -11,6 +11,7 @@ import {
   TextWrapHero,
   TextWrapPrettyVsBalance,
 } from '@/app/components/posts/2024-05-21-future-css-text-wrap-pretty';
+import ChartComponent from '@/app/components/posts/2024-06-03-ten-years-of-spotify-data';
 
 export async function generateStaticParams() {
   const paths = getAllPostPaths();
@@ -89,6 +90,7 @@ export default async function Post({ params }: { params: Params }) {
               ScrollAnimationDemoOne,
               TextWrapHero,
               TextWrapPrettyVsBalance,
+              ChartComponent,
             }}
             options={{
               mdxOptions: {

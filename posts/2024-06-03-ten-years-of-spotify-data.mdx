@@ -1,0 +1,31 @@
+---
+title: 'Ten years of Spotify data'
+summary: Exploring the Spotify API to analyse my listening habits over the past decade.
+---
+
+I've been a Spotify user for over ten years now, and for the past eight of those years, I've kept monthly playlists of my most-listened-to tracks.
+
+These might be songs I've discovered that month and am listening to on repeat, or old ones that I rediscovered.
+
+I've always found it interesting to look back at these playlists and see what I was listening to at different times in my life. Particulary as they often bring back memories of what I was doing at the time.
+
+However I've often thought whether there was any hidden insights in this data that might reflect on my mental state or mood at different times.
+
+## The Spotify API
+
+Spotify has a [Web API](https://developer.spotify.com/documentation/web-api/) that allows you to access a wealth of data about your listening habits. This includes all of the data that you would expect, such as your playlists, tracks etc. But more interestingly, it also includes audio features for each track.
+
+### Audio features
+
+Spotify provides a set of audio features for each track, which are calculated using machine learning algorithms. These include things like:
+
+- Danceability - how suitable a track is for dancing
+- Energy - how energetic a track is
+- Speechiness - how much speech is in the track
+- Valence - how positive the track is
+
+These features are given as a value between 0 and 1 and can be used to give a rough idea of the mood of a track.
+
+For example, for a really high tempo dance track, we would expect high values for danceability, energy and valence. Whereas for a slower classical track, we might expect lower values.
+
+<ChartComponent />
