@@ -1,25 +1,20 @@
 ---
 title: 'Future CSS: Native scroll animations'
 summary: Exploring the future of CSS animations with scroll-linked animations
-draft: true
 ---
 
-Linking an animation to a users scroll position is something that every front-end developer has had to do at some point.
-
-It's a common pattern that normally requires writing a bit (or sometimes alot) of JavaScript. But did you know that you
-might soon be able to do this natively in CSS?
+Linking animations to a user's scroll position is a common task for front-end developers, typically requiring a significant amount of JavaScript. However, did you know that you might soon be able to achieve this natively with CSS?
 
 CSS Scroll-driven Animations are a new proposal for creating animations that are tied to the scroll offset of an element.
 
 ## How can I use it?
 
-Let's take a look at how you can use CSS Scroll-driven Animations in a few examples.
+Let's take a look at how you can use CSS Scroll-driven Animations in an example.
 
-### Example 1
+### Example
 
 <ScrollAnimationDemoOne />
 
-_(As of May 2024, this demo will only work in Chrome)_
 
 This first demo, shows a simple progress bar that scales in width as you scroll down the page. You'll recognise the @keyframe animation from regular CSS animations, but the magic happens in the `animation-timeline` and `scroll-timeline` properties.
 

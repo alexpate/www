@@ -1,7 +1,33 @@
+'use client';
+
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import { useEffect, useState } from 'react';
 
 export function ScrollAnimationDemoOne() {
+  const [isCssTimelineSupported, setIsCssTimelineSupported] = useState(true);
+
+  useEffect(() => {
+    if (
+      !(
+        typeof CSS !== 'undefined' && CSS.supports('animation-timeline', 'auto')
+      )
+    ) {
+      setIsCssTimelineSupported(false);
+    }
+  }, []);
+
+  if (!isCssTimelineSupported) {
+    return (
+      <div className="w-full bg-stone-200 flex items-center justify-center text-center px-4 py-8 rounded-lg">
+        <span className="text-base">
+          This demo isn't supported in your browser. <br />
+          As of May 2024, this demo will only work in Chrome.
+        </span>
+      </div>
+    );
+  }
+
   return (
     <div className={clsx('flex items-start flex-col gap-2', styles.container)}>
       <div
