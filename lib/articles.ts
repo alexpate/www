@@ -96,7 +96,15 @@ export const getPostBySlug = (slug: string, isWork?: boolean): Post | null => {
  * Gets all posts.
  * @returns An array of all posts, sorted by date in descending order.
  */
-export const getAllPosts = async (isWork?: boolean): Promise<Post[]> => {
+export const getAllPosts = async ({
+  includeDrafts,
+  filePath,
+  isWork,
+}: {
+  includeDrafts?: boolean;
+  filePath?: string;
+  isWork?: boolean;
+}): Promise<Post[]> => {
   const files = fs.readdirSync(path.join(isWork ? WORK_PATH : POSTS_PATH));
 
   const posts: Post[] = files
@@ -118,7 +126,7 @@ export const getAllPosts = async (isWork?: boolean): Promise<Post[]> => {
  * @returns An array of all the paths for the posts.
  */
 export async function getAllPostPaths(isWork?: boolean) {
-  const posts = await getAllPosts(isWork);
+  const posts = await getAllPosts({ isWork });
 
   const paths = posts.map((post) => ({ slug: post.slug }));
 

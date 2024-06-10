@@ -42,7 +42,9 @@ const projects: {
 ];
 
 export default async function Home() {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts({
+    includeDrafts: process.env.NODE_ENV === 'development',
+  });
 
   return (
     <main className="px-4 md:px-0">

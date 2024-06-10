@@ -3,7 +3,9 @@ import { ArticleLink } from '../components/article-link';
 import { getAllPosts } from '@/lib/articles';
 
 export default async function Page() {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts({
+    includeDrafts: process.env.NODE_ENV === 'development',
+  });
 
   const filteredPosts = posts.filter((post) => {
     if (post.meta?.draft && process.env.NODE_ENV !== 'development') {
