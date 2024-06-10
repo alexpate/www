@@ -21,7 +21,7 @@ export function ScrollAnimationDemoOne() {
     return (
       <div className="w-full bg-stone-200 flex items-center justify-center text-center px-4 py-8 rounded-lg">
         <span className="text-base">
-          This demo isn't supported in your browser. <br />
+          This demo isn&apos;t supported in your browser. <br />
           As of May 2024, this demo will only work in Chrome.
         </span>
       </div>
