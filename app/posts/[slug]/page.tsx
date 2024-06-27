@@ -11,6 +11,10 @@ import {
   TextWrapHero,
   TextWrapPrettyVsBalance,
 } from '@/app/components/posts/2024-05-21-future-css-text-wrap-pretty';
+import {
+  DebouncedSearchInput,
+  SearchInput,
+} from '@/app/components/posts/2024-06-27-debouncing-an-input-in-react';
 
 export async function generateStaticParams() {
   const paths = getAllPostPaths();
@@ -89,6 +93,8 @@ export default async function Post({ params }: { params: Params }) {
               ScrollAnimationDemoOne,
               TextWrapHero,
               TextWrapPrettyVsBalance,
+              SearchInput,
+              DebouncedSearchInput,
             }}
             options={{
               mdxOptions: {

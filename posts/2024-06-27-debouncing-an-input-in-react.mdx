@@ -1,0 +1,119 @@
+---
+title: 'Debouncing an input in React'
+summary: A quick approach to debouncing an input in React and Typescript.
+draft: true
+---
+
+I was recently building a search component in React that required debouncing an input element.
+
+In the past when I've needed this pattern, I've used libraries like [lodash](https://lodash.com/), however I never really stopped to think about what's actually happening under the hood.
+
+This article is mostly for my own reference to understand the concept, but I hope it's helpful to you as well.
+
+## What is debouncing?
+
+Debouncing is a technique used to limit the rate at which a function is called. It's often used in scenarios where a function is called multiple times in quick succession, but you only want to run it once after a certain period of time has passed.
+
+For example, I was building a search component that would make an API request every time the user typed in a character. This could (and did) lead to a lot of unnecessary API requests. Debouncing the input would ensure that the API request only fired after the user had stopped typing for a certain period of time.
+
+<SearchInput />
+
+In the example above, I've replaced the API request with a simple filter to demonstrate the concept.
+
+```tsx
+const SearchInput = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredData, setFilteredData] = useState(fakeData);
+
+  useEffect(() => {
+    if (searchTerm === '') {
+      setFilteredData(fakeData);
+      return;
+    }
+
+    setFilteredData(fakeData.filter((item) => item.title.includes(searchTerm)));
+  }, [searchTerm]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  return (
+    <div className="w-full px-4 py-7 bg-stone-200 rounded-md flex flex-col gap-4">
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleChange}
+        placeholder="Search animals..."
+      />
+      <ul>
+        {filteredData.map((item) => {
+          return (
+            <li key={item.id} className="text-stone-800">
+              {item.title}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+```
+
+## Debouncing an input in React
+
+Now let's look at that same example, but with the input debounced.
+
+<DebouncedSearchInput />
+
+```tsx
+const SearchInput = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredData, setFilteredData] = useState(fakeData);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (searchTerm === '') {
+        setFilteredData(fakeData);
+        return;
+      }
+
+      setFilteredData(
+        fakeData.filter((item) => item.title.includes(searchTerm))
+      );
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  return (
+    <div className="w-full px-4 py-7 bg-stone-200 rounded-md flex flex-col gap-4">
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleChange}
+        placeholder="Search animals..."
+      />
+      <ul>
+        {filteredData.map((item) => {
+          return (
+            <li key={item.id} className="text-stone-800">
+              {item.title}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+```
+
+## So what's different?
+
+The main differences are in the useEffect hook. Our logic to filter the data is now wrapped in a `setTimeout` function that delays the execution by 500ms.
+
+Everytime the user types, the `useEffect` hook is called, but the `setTimeout` function is cleared and reset. This means that the function will only run once the user has stopped typing for 500ms.
