@@ -14,6 +14,12 @@ const projects: {
   image: string;
 }[] = [
   {
+    title: 'Hystruct',
+    href: 'https://www.hystruct.com',
+    description: 'Scrape structured data from the web with AI',
+    image: '/hystruct.png',
+  },
+  {
     title: 'Glow',
     href: 'https://glow.as',
     description:
@@ -26,12 +32,6 @@ const projects: {
     description:
       'A personal project to build a database of flags from around the world',
     image: '/flagdb.png',
-  },
-  {
-    href: 'https://duo.alexjpate.com',
-    title: 'Duo',
-    description: 'A collection of colour combinations',
-    image: '/duo.png',
   },
   {
     href: 'https://github.com/alexpate/awesome-design-systems',
