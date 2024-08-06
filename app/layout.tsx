@@ -22,7 +22,7 @@ const JetBrainsMonoFont = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Alex Pate - Product Engineer',
   description:
-    'Alex Pate is a product engineer based in Milan, currently building the future of payments at MoonPay. Working somewhere on the boundary between design and code',
+    'Alex Pate is a product engineer based in Milan, working somewhere on the boundary between design and code.',
   twitter: {
     card: 'summary_large_image',
     creator: '@alexjpate',

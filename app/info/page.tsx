@@ -12,7 +12,7 @@ const experience: {
   {
     company: 'MoonPay',
     role: 'Senior Front-End Engineer',
-    date: 'April 2022 → Today',
+    date: 'April 2022 → July 2024',
     logo: '/moonpay-logo.jpg',
   },
   {
@@ -41,26 +41,35 @@ export default async function InfoPage() {
       <PageHeader title="Information" />
       <section className="pb-8 prose prose-lg">
         <p>
-          I&apos;m currently working with MoonPay to help build the future of
+          Hi there, I&apos;m Alex. I build my own products, along side working
+          with some amazing companies to help them build theirs.
+        </p>
+        <p>
+          Most recently, I was working with MoonPay to help build the future of
           payments. Before that, I was working with Monzo - the fastest growing
           bank in the UK. Originally joining as a product designer, I
           transitioned into a web engineer role where I worked with a variety of
-          teams to build products to help millions of customers.
+          teams to help rethink modern day banking for their millions of
+          customers.
         </p>
 
         <p>
-          Before, I was working with Kalo (which eventually became Polywork)
-          where I was the first UI Engineering hire. My responsibilities
-          included building out the design system as well as ensuring a high bar
-          of design quality across the product.
+          I also worked with Kalo (which eventually became Polywork) where I was
+          the first UI Engineering hire. My responsibilities included building
+          out the design system as well as ensuring a high bar of design quality
+          across the product.
         </p>
 
         <p>
-          Aside I also enjoy building my own projects, mostly to scrath my own
-          itch. I&apos;ve built products like{' '}
-          <Link href="https://flagdb.com">FlagDB</Link> and{' '}
-          <Link href="https://glow.as">Glow</Link>, and am currently building a
-          tool to make the process of generating mobile wallet passes easier.
+          I&apos;ve always bounced somewhere between design and engineering,
+          however the common thread has always been my love for building things
+          that people love to use.
+        </p>
+
+        <p>
+          If you&apos;re interested in working together, feel free to reach out
+          to me here:{' '}
+          <Link href="mailto:hey@alexjpate.com">hey@alexjpate.com</Link>.
         </p>
       </section>
 

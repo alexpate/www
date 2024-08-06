@@ -56,8 +56,8 @@ export default async function Home() {
           </span>
         </h1>
         <p className="text-slate-700 text-lg md:text-xl leading-normal">
-          I work with leading-edge companies to create exceptional products. I’m
-          currently working with MoonPay to help make web3 accessible. Before
+          I work with leading-edge companies to create exceptional products. I
+          most recently worked with MoonPay to help make web3 accessible. Before
           that, I built personal and business banking products for millions of
           customers at Monzo.
         </p>
