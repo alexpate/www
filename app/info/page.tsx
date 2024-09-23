@@ -12,7 +12,7 @@ const experience: {
   {
     company: 'MoonPay',
     role: 'Senior Front-End Engineer',
-    date: 'April 2022 → July 2024',
+    date: 'April 2022 → August 2024',
     logo: '/moonpay-logo.jpg',
   },
   {
