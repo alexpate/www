@@ -15,6 +15,7 @@ import {
   DebouncedSearchInput,
   SearchInput,
 } from '@/app/components/posts/2024-06-27-debouncing-an-input-in-react';
+import { ContainerQueryDemo } from '@/app/components/posts/2024-09-23-future-css-container-queries';
 
 export async function generateStaticParams() {
   const paths = getAllPostPaths();
@@ -95,6 +96,7 @@ export default async function Post({ params }: { params: Params }) {
               TextWrapPrettyVsBalance,
               SearchInput,
               DebouncedSearchInput,
+              ContainerQueryDemo,
             }}
             options={{
               mdxOptions: {

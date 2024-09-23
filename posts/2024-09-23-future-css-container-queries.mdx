@@ -1,0 +1,141 @@
+---
+title: 'Future CSS: Container Queries'
+summary: A look at the future of CSS with container queries.
+---
+
+One of the trickiest parts of web design is getting components to adapt not just to the viewport but to their own container sizes. Wouldn't it be great if elements could respond to the space they're actually given?
+
+Well, good news! CSS Container Queries are here to save the day.
+
+### The Limitations of Media Queries
+
+Media queries have been the backbone of responsive design for years. They allow us to apply styles based on the viewport's dimensions, which is great for adjusting layouts on different devices. But here's the catch: media queries only consider the viewport, not the actual size of an element's container.
+
+Imagine you have a reusable card component that looks great in one section of your site but doesn't quite fit in another due to different container sizes. With media queries alone, adjusting the card for each context becomes a nightmare.
+
+### Enter Container Queries
+
+Container Queries enable elements to adapt their styling based on the size of their parent container. This means your components can be truly modular and context-aware, adjusting themselves no matter where they're placed.
+
+### How Do Container Queries Work?
+
+First things first, you need to designate an element as a container. You do this using the `container-type` property.
+
+```css
+.container {
+  container-type: inline-size;
+}
+```
+
+- **`container-type: inline-size`**: This tells the browser to consider the container's inline size (usually width in left-to-right languages).
+- **`container-type: size`**: This considers both the inline size and block size (width and height).
+
+Once you've set up your container, you can write styles that respond to its size using the `@container` rule.
+
+### A Practical Example
+
+Let's build a responsive card component that adapts based on its container's width.
+
+Try resizing the card below using the resize handle to see how the text wraps based on the container's horizontal width. When the card is wider than 500px, the text and image will be displayed side by side. When it's narrower, the text will wrap below the image.
+
+<ContainerQueryDemo />
+
+**HTML Structure**
+
+```html
+<div class="card-container">
+  <div class="card">
+    <img src="image.jpg" />
+    <div class="content">
+      <h2>Card Title</h2>
+      <p>This is some sample text to illustrate the card component.</p>
+    </div>
+  </div>
+</div>
+```
+
+**CSS Styling**
+
+```css
+/* Designate the container */
+.card-container {
+  container-type: inline-size;
+}
+
+/* Default card styles */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust card layout based on container width */
+@container (min-width: 500px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+```
+
+_Note: We've removed some of the styles for the card to only show the container query CSS in action!_
+
+In this setup, the `.card` will stack its content vertically by default. However, when its parent `.card-container` is at least 500 pixels wide, the `.card` switches to a horizontal layout.
+
+### When to Use Container Queries
+
+Container Queries are ideal for:
+
+- **Reusable Components**: Create elements that adapt seamlessly in different parts of your site without additional tweaks.
+- **Nested Layouts**: Design components that respond intelligently when placed inside grids, flex containers, or other complex layouts.
+- **Design Systems**: Develop a consistent and flexible UI library where components are truly modular.
+
+### Comparing Media Queries and Container Queries
+
+**Using Media Queries**
+
+```css
+@media (min-width: 800px) {
+  .sidebar {
+    width: 250px;
+  }
+}
+```
+
+This adjusts the `.sidebar` based on the viewport width, which might not be ideal if the sidebar is within a narrower container.
+
+**Using Container Queries**
+
+```css
+.sidebar-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 500px) {
+  .sidebar {
+    width: 250px;
+  }
+}
+```
+
+Here, the `.sidebar` adjusts its width based on the size of `.sidebar-container`, making it more adaptable to different layouts.
+
+### Gotchas to Keep in Mind
+
+Before you start sprinkling container queries all over your stylesheet, here are a few things to consider:
+
+**Browser Support**
+
+As of September 2024, container queries are supported in the latest versions of Chrome, Edge, Firefox, and Safari. Firefox has partial support, but you might need to enable it manually in the settings. It's worth checking [Can I Use](https://caniuse.com/css-container-queries) before deploying to production to ensure your target browsers are supported.
+
+**Performance Considerations**
+
+While container queries are powerful, they can introduce performance overhead if overused or applied to very deep or complex DOM trees. It's a good idea to use them thoughtfully and test their impact on your site's performance.
+
+### Conclusion
+
+CSS Container Queries open up a whole new world for responsive design, allowing components to be truly context-aware. They help eliminate the need for excessive media queries and make your codebase cleaner and more maintainable.
+
+If you're interested in learning more, here are some resources:
+
+- [MDN: CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries)
+- [Can I Use: CSS Container Queries](https://caniuse.com/css-container-queries)
