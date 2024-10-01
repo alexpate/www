@@ -50,7 +50,7 @@ export async function generateMetadata(
       ...parentMeta?.openGraph,
       title: post?.meta?.title || parentMeta?.openGraph?.title,
       description: post?.meta?.summary || parentMeta?.openGraph?.description,
-      url: `https://alexjpate.com/posts/${params.slug}`,
+      url: `https://alexpate.com/posts/${params.slug}`,
     },
   };
 }

@@ -9,8 +9,8 @@ const contact: {
 }[] = [
   {
     method: 'Email',
-    link: 'mailto:hey@alexjpate.com',
-    label: 'hey@alexjpate.com',
+    link: 'mailto:hey@alexpate.com',
+    label: 'hey@alexpate.com',
   },
   {
     method: 'Twitter',

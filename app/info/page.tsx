@@ -69,7 +69,7 @@ export default async function InfoPage() {
         <p>
           If you&apos;re interested in working together, feel free to reach out
           to me here:{' '}
-          <Link href="mailto:hey@alexjpate.com">hey@alexjpate.com</Link>.
+          <Link href="mailto:hey@alexpate.com">hey@alexpate.com</Link>.
         </p>
       </section>
 

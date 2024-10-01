@@ -1,6 +1,6 @@
-# alexjpate.com
+# alexpate.com
 
-👋 Welcome to the source code of my [personal site](https://alexjpate.com).
+👋 Welcome to the source code of my [personal site](https://alexpate.com).
 
 ## Installation
 

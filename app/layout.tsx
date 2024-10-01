@@ -41,15 +41,15 @@ export const metadata: Metadata = {
     ],
     siteName: 'Alex Pate - Product Engineer',
   },
-  metadataBase: new URL('https://alexjpate.com'),
+  metadataBase: new URL('https://alexpate.com'),
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Alex Pate',
-  image: 'https://alexjpate.com/avatar.jpeg',
-  url: 'https://alexjpate.com',
+  image: 'https://alexpate.com/avatar.jpeg',
+  url: 'https://alexpate.com',
   jobTitle: 'Product Engineer',
   sameAs: [
     'https://twitter.com/alexjpate',
