@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
 import localFont from 'next/font/local';
 import { JetBrains_Mono } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import clsx from 'clsx';
 
@@ -117,6 +118,7 @@ export default function RootLayout({
           </footer>
         </div>
         <Analytics />
+        <GoogleAnalytics gaId="G-NRKQPP7M9P" />
       </body>
     </html>
   );
