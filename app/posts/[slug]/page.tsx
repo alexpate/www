@@ -16,6 +16,8 @@ import {
   SearchInput,
 } from '@/app/components/posts/2024-06-27-debouncing-an-input-in-react';
 import { ContainerQueryDemo } from '@/app/components/posts/2024-09-23-future-css-container-queries';
+import Head from 'next/head';
+import { createPostJsonLd } from '@/lib/jsonLd/post';
 
 export async function generateStaticParams() {
   const paths = getAllPostPaths();
@@ -70,43 +72,51 @@ export default async function Post({ params }: { params: Params }) {
 
   const { meta, content } = post;
 
-  return (
-    <main className="px-4 md:px-0">
-      <section>
-        <h1 className="font-semibold tracking-tight text-4xl text-slate-900">
-          {meta.title}
-        </h1>
-        <span className="text-slate-500 text-sm tracking-tight font-mono block mt-4">
-          Published on{' '}
-          <time dateTime={post.date}>
-            {new Intl.DateTimeFormat('en-GB', {
-              dateStyle: 'medium',
-            }).format(new Date(post.date))}
-          </time>
-        </span>
-      </section>
+  const postJsonLd = createPostJsonLd(post);
 
-      <section className="py-5">
-        <article className="prose prose-lg">
-          <MDXRemote
-            source={content}
-            components={{
-              ScrollAnimationDemoOne,
-              TextWrapHero,
-              TextWrapPrettyVsBalance,
-              SearchInput,
-              DebouncedSearchInput,
-              ContainerQueryDemo,
-            }}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm],
-                rehypePlugins: [[rehypeHighlight]] as unknown as Pluggable[],
-              },
-            }}
-          />
-        </article>
-      </section>
-    </main>
+  return (
+    <>
+      <main className="px-4 md:px-0">
+        <section>
+          <h1 className="font-semibold tracking-tight text-4xl text-slate-900">
+            {meta.title}
+          </h1>
+          <span className="text-slate-500 text-sm tracking-tight font-mono block mt-4">
+            Published on{' '}
+            <time dateTime={post.date}>
+              {new Intl.DateTimeFormat('en-GB', {
+                dateStyle: 'medium',
+              }).format(new Date(post.date))}
+            </time>
+          </span>
+        </section>
+
+        <section className="py-5">
+          <article className="prose prose-lg">
+            <MDXRemote
+              source={content}
+              components={{
+                ScrollAnimationDemoOne,
+                TextWrapHero,
+                TextWrapPrettyVsBalance,
+                SearchInput,
+                DebouncedSearchInput,
+                ContainerQueryDemo,
+              }}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                  rehypePlugins: [[rehypeHighlight]] as unknown as Pluggable[],
+                },
+              }}
+            />
+          </article>
+        </section>
+      </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
+      />
+    </>
   );
 }
