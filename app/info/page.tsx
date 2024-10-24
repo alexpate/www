@@ -102,6 +102,14 @@ export default async function InfoPage() {
             );
           })}
         </div>
+
+        <Link
+          href="/resume.pdf"
+          target="_blank"
+          className="block my-8 text-slate-500 text-sm font-medium"
+        >
+          Download resume →
+        </Link>
       </section>
     </main>
   );
