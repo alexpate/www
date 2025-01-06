@@ -98,11 +98,9 @@ export const getPostBySlug = (slug: string, isWork?: boolean): Post | null => {
  */
 export const getAllPosts = async ({
   includeDrafts,
-  filePath,
   isWork,
 }: {
   includeDrafts?: boolean;
-  filePath?: string;
   isWork?: boolean;
 }): Promise<Post[]> => {
   const files = fs.readdirSync(path.join(isWork ? WORK_PATH : POSTS_PATH));
@@ -111,12 +109,22 @@ export const getAllPosts = async ({
     .map((item) => getPostFromFile(item, isWork))
     .filter((post): post is Post => post !== null);
 
-  const filteredAndSortedPosts = posts.sort((a, b) => {
-    if (new Date(a.date) > new Date(b.date)) {
-      return -1;
-    }
-    return 1;
-  });
+  const filteredAndSortedPosts = posts
+    .sort((a, b) => {
+      if (new Date(a.date) > new Date(b.date)) {
+        return -1;
+      }
+      return 1;
+    })
+    .filter((post) => {
+      if (post.meta?.draft) {
+        if (includeDrafts) {
+          return true;
+        }
+        return false;
+      }
+      return true;
+    });
 
   return filteredAndSortedPosts;
 };
