@@ -10,6 +10,12 @@ const experience: {
   logo: string;
 }[] = [
   {
+    company: 'Mainframe',
+    role: 'Design Engineer',
+    date: 'November 2024 → Present',
+    logo: '/mainframe-logo.jpg',
+  },
+  {
     company: 'MoonPay',
     role: 'Senior Front-End Engineer',
     date: 'April 2022 → August 2024',
