@@ -8,6 +8,7 @@ import { JetBrains_Mono } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 import clsx from 'clsx';
+import Script from 'next/script';
 
 const SaansFont = localFont({
   src: './saans-font.woff2',
@@ -71,6 +72,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            src="https://analytics.ahrefs.com/analytics.js"
+            data-key="tgAseXOCr25EjtPoO0MNSw"
+            defer={true}
+          />
+        )}
       </head>
       <body
         className={clsx(
