@@ -75,7 +75,7 @@ export default function RootLayout({
         {process.env.NODE_ENV === 'production' && (
           <Script
             src="https://analytics.ahrefs.com/analytics.js"
-            data-key="tgAseXOCr25EjtPoO0MNSw"
+            data-key="Lp8HPBxSc/ujln/5tFmj3A"
             defer={true}
           />
         )}
