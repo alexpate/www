@@ -1,9 +1,9 @@
 ---
-title: "SVG Progress Circles Part 2 - With JavaScript"
-summary: "This is a follow on post from my previous post a few weeks ago, about implementing an SVG progress"
+title: 'SVG Progress Circles Part 2 - With JavaScript'
+summary: 'This is a follow on post from my previous post a few weeks ago, about implementing an SVG progress'
 ---
 
-This is a follow on post from my previous post a few weeks ago, about implementing an [SVG progress circle using Sass](/journal/pure-svg-progress-circles/). I mentioned briefly that it could be done in JavaScript, so here's the code:
+This is a follow on post from my previous post a few weeks ago, about implementing an [SVG progress circle using Sass](/posts/pure-svg-progress-circles/). I mentioned briefly that it could be done in JavaScript, so here's the code:
 
 [Skip to demo](http://codepen.io/alexpate/pen/wGxVZd)
 
@@ -32,7 +32,7 @@ class ProgressCircle {
 
   calcDashOffset() {
     let circumference = Math.PI * (2 * this.radius);
-    return Math.floor(circumference - this.percent / 100 * circumference);
+    return Math.floor(circumference - (this.percent / 100) * circumference);
   }
 
   createCSS() {
