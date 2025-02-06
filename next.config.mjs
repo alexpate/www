@@ -9,6 +9,11 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/project/pusher-chameleon',
+        destination: '/projects/pusher-chameleon',
+        permanent: true,
+      },
     ];
   },
 };
