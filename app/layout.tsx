@@ -32,7 +32,10 @@ export const metadata: Metadata = {
     title: 'Alex Pate - Product Engineer',
   },
   openGraph: {
+    type: 'website',
     title: 'Alex Pate - Product Engineer',
+    description:
+      'Alex Pate is a product engineer based in Milan, working somewhere on the boundary between design and code.',
     images: [
       {
         url: '/og.png',
