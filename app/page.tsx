@@ -113,6 +113,16 @@ export default async function Home() {
             );
           })}
         </div>
+
+        <Link
+          href="/projects"
+          className="group bg-slate-950 hover:bg-slate-800 transition-colors inline-block mt-8 font-mono text-xs font-semibold rounded-full px-8 py-3 text-white"
+        >
+          View older projects
+          <span className="inline-block group-hover:translate-x-2 transition-transform">
+            →
+          </span>
+        </Link>
       </section>
 
       <section className="pt-10 pb-16">
