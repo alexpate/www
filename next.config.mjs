@@ -14,6 +14,11 @@ const nextConfig = {
         destination: '/projects/pusher-chameleon',
         permanent: true,
       },
+      {
+        source: '/journal/pure-svg-progress-circles',
+        destination: '/posts/pure-svg-progress-circles',
+        permanent: true,
+      },
     ];
   },
 };
