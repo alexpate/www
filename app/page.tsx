@@ -20,11 +20,11 @@ const projects: {
     image: '/hystruct.png',
   },
   {
-    title: 'Glow',
-    href: 'https://glow.as',
+    title: 'Linky',
+    href: 'https://lin.ky',
     description:
       'A super simple way to create beautiful personal landing pages.',
-    image: '/glow.png',
+    image: '/linky.png',
   },
   {
     title: 'FlagDB',
