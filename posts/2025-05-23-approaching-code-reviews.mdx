@@ -1,0 +1,98 @@
+---
+title: 'Approaching code reviews'
+summary: Some thoughts and personal experience with code reviews
+---
+
+Disclaimer, this isn't a guide on how to do code reviews, but rather a personal reflection of how I've approached them over the past few years.
+
+Code reviews are one of the most powerful tools we have as engineers. They're not just for improving code quality, but also for leveling up other engineers, spreading knowledge, and helping to build a strong team culture.
+
+Over the past ten years, I've found that my code reviews have evolved, albeit sometimes not always in a good way.
+
+As a junior engineer eager to impress, I would spend an age carefully testing PR's, line by line and writing up detailed comments.
+
+As a mid level engineer, laziness and perhaps complaceny creep in, and I'd start to just skim the PR and every now and then leave a thumbs up.
+
+But as I've grown, I've come to realise that they're a critical part of the process, and I've developed this philosophy for approaching reviews:
+
+- Be thoughtful
+- Be collaborative
+- Always consider the bigger picture
+
+## 1. Start with the problem, not the code
+
+One of the biggest mistakes I've made is jumping straight into the diff. I think a better approach is to step back and ask: what problem is this code actually trying to solve?
+
+Sometimes it might be obvious: a small bug fix or installing a new package. Other times it might be a whole new feature.
+
+Often, particulary when working with tools like Linear that can automatically sync up PR's with issues, there might be a handy link to the issue which we can scan over.
+
+Either way, if the problem is unclear, it's not worth going any further and I'll often ask the author to add in some more context.
+
+This is also really important for our future selves and future team mates.
+
+Understanding the "why" also helps me give more meaningful feedback on the "how."
+
+## 2. Prioritize Signal Over Noise
+
+Now that we have context, we can start to look at the code.
+Not all feedback is created equal. I try to focus on what truly matters:
+
+**Correctness**
+Are there bugs, broken logic, or edge cases being missed?
+
+**Clarity**
+Is the code understandable to someone who didn't write it? This also might include things like indentation if this isn't handled by the linter (for example eslint, prettier etc.).
+
+**Maintainability**
+Will this be easy to work with six months from now?
+
+Yes, I’ll still call out style or naming issues, but I treat them as secondary. Overloading a review with low-impact comments can distract from the things that really deserve attention.
+
+## 3. Frame feedback as a conversation
+
+I try to avoid prescriptive language like “you should” or “this is wrong.” Instead, I ask questions and make space for discussion:
+
+“Could this be handled with X instead?”
+“Have you considered putting this in a separate function?”
+“How does this behave if the input is empty?”
+
+This tone invites dialogue instead of defensiveness, and often leads to better outcomes. It also shows respect for the author’s thinking - even if I ultimately suggest a change. Who knows, perhaps they had already considered it but didn't think it was the best solution.
+
+## 4. Acknowledge what is working
+
+A great review doesn’t just point out flaws - it highlights wins.
+
+When I see a clever approach, a clear variable name, or a nicely documented comment, I'll flag it.
+
+Recognising good work builds confidence and reinforces positive habits. It also helps to remind the team that code reviews aren't just about catching mistakes, they're about learning from each other as well.
+
+## 5. Zoom out from the diff
+
+It's easy to get tunnel vision when reviewing and focus only on the diff in front of you, but a good trait is to look at what surrounds the change.
+
+Is this change consistent with the patterns we use elsewhere?
+
+Does this PR open or close any doors for future work?
+
+Does this PR introduce any tech debt that we should note?
+
+A great PR is one that leaves the codebase better, not just different.
+
+## 6. Keep the momentum moving
+
+As engineers we're often working in a fast changing codebase and on multiple PR's at once.
+
+A review can lose its value if its stuck in limbo for days. There's nothing more frustrating than finally getting something reviewed, only to find that an upstream merge now means that the PR requires some changes.
+
+If I'm the blocker (and aware of it!), I'll try to prioritise it and get itr reviewed. If I need more time, I'll let the author know that I've seen it and give them an estimate for when I'll review it.
+
+Building products is ultimately a team sport, and responsiveness and respecting your teammates time and flow is part of that.
+
+## Final thoughts
+
+The best reviews aren’t just about the code. They’re about collaboration, trust, and building a team that cares about quality - not just at the individual level, but across the board.
+
+So when you review, don’t just check for bugs. Look for ways to support your teammate’s growth, improve shared understanding, and leave the codebase a little cleaner than you found it.
+
+That’s the kind of review that moves a team forward.
