@@ -10,7 +10,7 @@ import { Metadata } from 'next';
 import { Title } from '@/app/components/title';
 
 export async function generateStaticParams() {
-  const paths = getAllPostPaths(true);
+  const paths = await getAllPostPaths(true);
 
   return paths;
 }
