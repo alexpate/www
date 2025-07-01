@@ -100,18 +100,18 @@ export default function RootLayout({
             <nav className="flex gap-4">
               <Link
                 href="/info"
-                className="text-950 text-sm tracking-tighter font-mono font-semibold"
+                className="text-slate-950 text-sm tracking-tighter font-mono font-semibold"
               >
                 Information
               </Link>
               <Link
                 href="/posts"
-                className="text-950 text-sm tracking-tighter font-mono font-semibold"
+                className="text-slate-950 text-sm tracking-tighter font-mono font-semibold"
               >
                 Writing
               </Link>
               <Link
-                className="text-950 text-sm tracking-tighter font-mono font-semibold"
+                className="text-slate-950 text-sm tracking-tighter font-mono font-semibold"
                 href="/contact"
               >
                 Contact

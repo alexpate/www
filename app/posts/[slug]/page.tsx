@@ -20,7 +20,7 @@ import Head from 'next/head';
 import { createPostJsonLd } from '@/lib/jsonLd/post';
 
 export async function generateStaticParams() {
-  const paths = getAllPostPaths();
+  const paths = await getAllPostPaths();
 
   return paths;
 }
