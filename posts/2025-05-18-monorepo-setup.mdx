@@ -1,0 +1,95 @@
+---
+title: Monorepo Setup with Next.js and Turborepo
+summary: A look at my current monorepo setup with Next.js and Turborepo
+---
+
+When I started building Starkie AI, my [AI Photo](https://starkie.ai) project, I quickly found myself juggling a next.js frontend, an express API, and various UI and DB utilities. Maintaining them in separate repos felt messy: version mismatches, linking pain, duplicated configs. So I migrated into a monorepo setup that’s stayed clean and manageable ever since. In this post, I’ll walk through _how I structure things_, _which tools make sense_, and _the little tricks_ I picked up along the way.
+
+---
+
+### 1. Why a Monorepo
+
+I didn’t adopt a monorepo because it’s the “right architecture” or because everyone does it. I did it because:
+
+- I have multiple deployable apps (frontend, admin app, API) that share code (UI components, types, helper logic).
+
+So monorepo here is a pragmatic choice, not a posture. If your project is just a single microservice, it probably doesn’t need this. But once you cross the “two apps + shared bits” threshold, it’s a nice guardrail.
+
+---
+
+### 2. The Layout (and Why It Feels Right)
+
+Here’s (roughly) what my repo looks like:
+
+```
+apps/
+  admin/
+  frontend/
+  api/
+packages/
+  prisma/
+  ui/
+.env.local
+docker-compose.yml
+pnpm-workspace.yaml
+tsconfig.json
+turbo.json
+eslint.config.mjs
+…
+```
+
+_A small note on this, I've also experimented having all of my apps and packages at the root level (`app.admin`, `app.frontend`), however I found that some AI tools like Cursor seem to prefer having a directory to work in_
+
+**What each folder means:**
+
+- `apps/` — These are the **deployable** projects. E.g. My two next.js frontends and my API.
+- `packages/` — Shared modules: UI component library, Prisma client/lib, utility logic, etc.
+- Root-level config files — workspace setup, build orchestration, linting, types, etc.
+
+I like this layout because it’s predictable: if I need shared logic, it lives in `packages`. If I need a new app (e.g. mobile UI), I drop it into `apps`.
+
+One small decision: I keep a per-app `.env.local` (or equivalent) rather than a global `.env` that spans everything. Makes it safer when switching context.
+
+---
+
+### 3. Key Tools That Glue It Together
+
+Here’s what really makes this setup work _without breaking my brain_:
+
+- **pnpm workspaces** — fast installs, and local linking of packages works out of the box.
+- **Turborepo** — orchestrates build, lint, test pipelines across apps and packages. I don’t have to reinvent orchestration.
+- **TypeScript project references / shared tsconfig** — helps incremental builds, ensures that packages depend on each other correctly.
+- **Local packages** (e.g. `@ui`, `@utils`) — so inside my apps I can do ` import {Button} from '@starkie/ui'` seamlessly.
+- **ESLint / Prettier at root** — unified style across all apps and packages.
+- **Docker / docker-compose** — gives me quick access to a postgres database locally
+
+With these, I can run:
+
+```bash
+pnpm install
+pnpm turbo run dev
+```
+
+… and everything spins up (frontend, backend, UI watchers) without extra scripts per folder.
+
+---
+
+### 4. Tiny Tricks That Save My Sanity
+
+Here are small habits and tweaks I’ve learned that make a big difference:
+
+- **Selective pipelines** — in `turbo.json`, skip building apps/packages that haven’t changed (incremental).
+- **Use `prebuild` or `prepare` hooks** in packages that generate code (e.g. Prisma client), so downstream apps get fresh artifacts.
+- **Pin package versions at root** — avoid subtle mismatches (e.g. React version drift).
+- **Explicit dependency direction**: packages under `packages/` should depend _only_ “downwards” or on external libs; they should _not_ depend on apps. Keeps the architecture clean.
+- **Lint imports** — disallow relative imports that skip `packages` boundaries; force you to use workspace boundaries.
+
+---
+
+### 5. Future
+
+This monorepo isn't perfect, but it's where I'm currently at from scaling a side project to an actual product with customers.
+
+It's helped me ship faster, cut down on duplicated code, and stay sane as the project grows.
+
+If you’re starting a project with multiple moving pieces, I’d encourage you to try a lean monorepo early - you can always break it apart later if complexity truly demands it.
