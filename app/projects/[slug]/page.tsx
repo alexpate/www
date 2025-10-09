@@ -15,8 +15,13 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const workItem = getPostBySlug(params.slug, true);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const workItem = getPostBySlug(slug, true);
 
   return {
     title: workItem?.meta.title,
@@ -30,8 +35,13 @@ type Params = {
   slug: string;
 };
 
-export default async function WorkItem({ params }: { params: Params }) {
-  const post = getPostBySlug(params.slug, true);
+export default async function WorkItem({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug, true);
 
   if (!post) return notFound();
 

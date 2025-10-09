@@ -26,10 +26,11 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: { params: { slug: string } },
+  { params }: { params: Promise<{ slug: string }> },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   const parentMeta = await parent;
 
@@ -52,7 +53,7 @@ export async function generateMetadata(
       ...parentMeta?.openGraph,
       title: post?.meta?.title || parentMeta?.openGraph?.title,
       description: post?.meta?.summary || parentMeta?.openGraph?.description,
-      url: `https://alexpate.com/posts/${params.slug}`,
+      url: `https://alexpate.com/posts/${slug}`,
     },
   };
 }
@@ -61,8 +62,9 @@ type Params = {
   slug: string;
 };
 
-export default async function Post({ params }: { params: Params }) {
-  const post = getPostBySlug(params.slug);
+export default async function Post({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) return notFound();
 

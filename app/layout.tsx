@@ -1,11 +1,11 @@
-import './assets/globals.css';
-
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
 import localFont from 'next/font/local';
 import { JetBrains_Mono } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
+
+import './globals.css';
 
 import clsx from 'clsx';
 import Script from 'next/script';
@@ -57,7 +57,7 @@ const jsonLd = {
   url: 'https://alexpate.com',
   jobTitle: 'Product Engineer',
   sameAs: [
-    'https://twitter.com/alexjpate',
+    'https://x2.com/alexjpate',
     'https://www.github.com/alexpate',
     'https://www.linkedin.com/in/alexjpate/',
   ],

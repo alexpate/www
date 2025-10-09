@@ -93,7 +93,7 @@ export default async function Home() {
                   'flex flex-col justify-center bg-slate-100 hover:bg-slate-200/70 transition-colors rounded-xl p-8'
                 )}
               >
-                <div className="relative rounded-xl mb-4 shadow-project">
+                <div className="relative rounded-xl mb-4 box-shadow-project">
                   <Image
                     width={450}
                     height={240}
@@ -129,7 +129,7 @@ export default async function Home() {
         <Title as="h2" variant="secondary" className="mb-8">
           Recent Writing
         </Title>
-        <div className="divide-y">
+        <div className="divide-y divide-slate-200">
           {posts.slice(0, 3).map((post) => {
             return (
               <ArticleLink
