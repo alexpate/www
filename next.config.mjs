@@ -9,7 +9,7 @@ const nextConfig = {
     return [
       {
         source: '/profile',
-        destination: '/',
+        destination: '/info',
         permanent: true,
       },
       {
@@ -18,8 +18,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/journal/pure-svg-progress-circles',
-        destination: '/posts/pure-svg-progress-circles',
+        source: '/journal/:path',
+        destination: '/posts/:path',
         permanent: true,
       },
     ];
