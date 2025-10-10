@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { ReactElement } from 'react';
 import Image from 'next/image';
 
 import { ArticleLink } from './components/article-link';
@@ -10,12 +9,14 @@ import { Title } from '@/app/components/title';
 const projects: {
   href?: string;
   title: string;
+  infoLabel?: string;
   description: string;
   image: string;
 }[] = [
   {
     title: 'Hystruct',
     href: 'https://www.hystruct.com',
+    infoLabel: 'Acquired 2025',
     description: 'Scrape structured data from the web with AI',
     image: '/hystruct.png',
   },
@@ -27,11 +28,10 @@ const projects: {
     image: '/linky.png',
   },
   {
-    title: 'FlagDB',
-    href: 'https://flagdb.com',
-    description:
-      'A personal project to build a database of flags from around the world',
-    image: '/flagdb.png',
+    title: 'Starkie AI',
+    href: 'https://starkie.ai',
+    description: 'A platform to generate photos of yourself using AI',
+    image: '/starkie.png',
   },
   {
     href: 'https://github.com/alexpate/awesome-design-systems',
@@ -105,6 +105,11 @@ export default async function Home() {
                 </div>
                 <h3 className="text-slate-700 font-semibold tracking-tight text-xl">
                   {project.title}
+                  {project.infoLabel && (
+                    <span className="text-green-500 text-xs uppercase ml-2">
+                      ({project.infoLabel})
+                    </span>
+                  )}
                 </h3>
                 <h3 className="text-slate-500 text-base">
                   {project.description}
